@@ -1,0 +1,42 @@
+\ProvidesPackage{usepkg}
+\usepackage[italian]{babel}
+%%%
+
+\usepackage[utf8]{inputenc}    % utf8 support
+%% csquote serve a
+\usepackage{csquotes}
+%%%
+\usepackage[backend=biber,style=authoryear,maxcitenames=1,natbib=true]{biblatex}
+%%%
+\usepackage{ebgaramond}
+%\usepackage{pxfonts}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp,gensymb}
+%%%%%%%%%
+
+\usepackage{calc}
+\usepackage{tikz}
+\usetikzlibrary{
+arrows,
+calc,
+fit,
+intersections,
+positioning,
+decorations.pathreplacing
+}
+%http://tex.stackexchange.com/questions/39285/whats-the-advantage-of-using-csquotes-over-using-an-editors-auto-replacement-f
+\usepackage[normalem]{ulem} % either use this (simple) or
+\usepackage{hepnames}
+%http://www.terminally-incoherent.com/blog/2007/09/19/latex-squeezing-the-vertical-white-space/
+\usepackage{color}
+%\usepackage{datetime}
+\usepackage{tensor}
+\usepackage{siunitx}%% SI unitx
+\sisetup{%              SI setup
+    range-phrase = {\text{ -- }},
+    list-separator = {\text{, }},
+    list-final-separator = {\text{, e }},
+    list-pair-separator = {\text{ e }},
+}%
+\usepackage{mathtools}
+\usepackage[]{textpos}
