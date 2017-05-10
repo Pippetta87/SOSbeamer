@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[12pt,xcolor={usenames}]{beamer}
 
 % There are many different themes available for Beamer. A comprehensive
 % list with examples is given here:
@@ -34,7 +34,6 @@
 %\usetheme{Warsaw}
 
 %% colors
-\usepackage[usenames,dvipsnames]{xcolor}
 \definecolor{bittersweet}{rgb}{1.0, 0.44, 0.37}
 \definecolor{brilliantlavender}{rgb}{0.96, 0.73, 1.0}
 \definecolor{antiquefuchsia}{rgb}{0.57, 0.36, 0.51}
@@ -86,7 +85,7 @@
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
 
-\date{Tesina 09 Marzo, \today}
+\date{Tesina 19 Giugno, \today}
 % - Either use conference name or its abbreviation.
 % - Not really informative to the audience, more for people (including
 %   yourself) who are reading the slides online
@@ -118,62 +117,12 @@
   \titlepage
 \end{frame}
 
-\begin{frame}{Outline}
-  \tableofcontents
-  % You might wish to add the option [pausesections]
-\end{frame}
 
 % Section and subsections will appear in the presentation overview
 % and table of contents.
 
-\section{Importanza studio oscillazioni stellari}
 
-\subsection{Osservabili stellari}
-
-\begin{frame}<1>[label=noinside]{Modello stellare}{Come indagare la fisica interna a una stella?}
-
-\onslide<1->\begin{block}{Osservabili stellari:}
-$L$, $M$, $R$, $T_e$, $(\frac{Z}{X})_{ph}$, $g_{ph}$.
-\end{block}
-
-\onslide<1->\begin{block}{Informazioni sulla struttura interna?} Condizione di equilibrio idrostatico
-\end{block}
-
-%Teorema Vogt-Russel: $X_i(r)$, $M$ \pause equilibrio (idrostatico/termico) determinano struttura stellare .
-%\pause
-
-\onslide<1->\begin{block}{Modello stellare: diagramma di \hr{}.}
-\end{block}
-
-\onslide<2->\begin{block}{Descrizione fisica interno stellare: parametri aggiuntivi}
-Convezione, diffusione e sedimentazione elementi pesanti, equazione di stato, opacit\'a
-\end{block}
-
-\onslide<2->\begin{block}{Astrosismologia}
-Restringo spazio parametri sistemi stellari lontani
-\end{block}
-
-\end{frame}
-
-
-{ % all template changes are local to this group.
-    \setbeamertemplate{navigation symbols}{}
-    \begin{frame}[plain]{Diagramma di \hr{}}
-        \begin{tikzpicture}[remember picture,overlay]
-            \node[at=(current page.center)] {
-                %\includegraphics[width=\paperwidth]{yourimage}
-            };
-        \end{tikzpicture}
-     \end{frame}
-}
-
-
-
-\againframe<2>{noinside}
-
-\subsection{Argomenti trattai nella tesina}
-
-\begin{frame}{Eliosismologia}{}
+\begin{frame}{Eliosismologia}{Argomenti trattai nella tesina}
 \begin{block}{Oscillazioni dei 5-minuti}
 Modi discreti Onde acustiche Cavit\'a risonanti
 \end{block}
@@ -191,154 +140,30 @@ Informazioni sulla velocit\'a del suono e abbondanza di elio nella zona convetti
 Inversione non asintotica, linerizzazione delle correzioni attorno ad un modello solare. Correzioni struttura idrostatica e composizione. Vincoli al modello solare.
 \end{block}
 
-
-
 \end{frame}
 
-\subsection{Elisismologia}
-
-\begin{frame}{Pulsazioni stellari}{Modi Normali}
-\begin{columns}
-
-\begin{column}{0.5\textwidth}  %%<--- here
-    \begin{center}
-     %\includegraphics[width=0.5\textwidth]{image1}
-     \end{center}
-\end{column}
-
-\begin{column}{0.5\textwidth}
-\onslide<1-> \begin{block}{Stelle pulsanti}
-Onde stazionarie: Pulsazione radiale/non radiale: .
-
-\onslide<2-> meccanismo di eccitazione: solar-like pulsator, Cefeidi.
-
-\onslide<3-> Modo fondamentale $\Pi\approx\tau_{dyn}=\sqrt{\frac{R^3}{GM}}\propto\overline{\rho}\expy{-\frac{1}{2}}$.
-
-\onslide<4-> Modi di oscillazione\onslide<5-> - informazioni sull'interno stellare
-
-\onslide<5-> Elio-sismologia: Modi $\Leftrightarrow$ Modelli solari
-
-\onslide<5-> Astero-sismologia: Modi $\Leftrightarrow$ Spazio parametri modello stellare
-
-
-\end{block}
-
-\end{column}
-
-\end{columns}
+\begin{frame}{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
 \end{frame}
 
 
 
-\section{Oscillazioni solari}
 
-\subsection{Problema osservativo}
+\part{Modello solare e osservabili sismologiche}
 
-\begin{frame}{Fenomeni periodici sulla superficie solare}{Oscillazioni dei 5 minuti}
-Oscillazioni nella fotosfera:
+\input{MSS}
 
-Effetto doppler, Variazioni intensit\'a
-\pause
-\cite{lei62velocity}: righe di ??, 296 s, dimensioni fisiche osservazion ?? 
-\pause
-caratteristiche oscillazione: ampiezza, frequenze
+\part{Comportamento periodico con grande coerenza spaziale e temporale}
 
-\pause
-Intensit\'a
+\input{modi}
 
+\part{Tecniche e risultati di inversione}
 
-\end{frame}
+\input{inversione}
 
+\part{Come fare una presentazione}
 
-
-\subsection{Oscillazioni lineari adiabatiche}
-
-
-\begin{frame}{Onde in un gas}
-
-\begin{block}{Oscillazioni adiabatiche}
-
-\end{block}
-
-\end{frame}
-
-\begin{frame}{Modi normali}{Modello di Ulrich}
-Frequenze discrete \pause Distribuzione diagramma $k_h-\omega$.
-
-\pause
-Spettro acustic: a basse frequenze non c'\'e propagazione di fase.
-(propagazione riflessione densit\'a)
-\pause
-
-Interferenza costruttiva
-
-\end{frame}
-
-\begin{frame}{Oscillazioni lineari adiabatiche}{Equazione del moto perturbato}
-\begin{equation}
-\rho\TDof{t}\vec{v}=\rho(\PDof{t}+\scap{v}{\nabla})\vec{v}=-\nabla P+\rho\vec{g}
-\end{equation}
-
-\end{frame}
-
-% Placing a * after \section means it will not show in the
-% outline or table of contents.
-\section*{Summary}
-
-\begin{frame}{Summary}
-  \begin{itemize}
-  \item
-    The \alert{first main message} of your talk in one or two lines.
-  \item
-    The \alert{second main message} of your talk in one or two lines.
-  \item
-    Perhaps a \alert{third message}, but not more than that.
-  \end{itemize}
-  
-  \begin{itemize}
-  \item
-    Outlook
-    \begin{itemize}
-    \item
-      Something you haven't solved.
-    \item
-      Something else you haven't solved.
-    \end{itemize}
-  \end{itemize}
-\end{frame}
-
-
-
-% All of the following is optional and typically not needed. 
-\appendix
-\section<presentation>*{\appendixname}
-\subsection<presentation>*{For Further Reading}
-
-\begin{frame}[allowframebreaks]
-  \frametitle<presentation>{For Further Reading}
-    
-  \begin{thebibliography}{10}
-    
-  \beamertemplatebookbibitems
-  % Start with overview books.
-
-  \bibitem{Author1990}
-    A.~Author.
-    \newblock {\em Handbook of Everything}.
-    \newblock Some Press, 1990.
- 
-    
-  \beamertemplatearticlebibitems
-  % Followed by interesting articles. Keep the list short. 
-
-  \bibitem{Someone2000}
-    S.~Someone.
-    \newblock On this and that.
-    \newblock {\em Journal of This and That}, 2(1):50--100,
-    2000.
-  \end{thebibliography}
-\end{frame}
+\input{howbeamer}
 
 \end{document}
-
-
