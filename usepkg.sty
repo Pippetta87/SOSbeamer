@@ -1,7 +1,7 @@
 \ProvidesPackage{usepkg}
 \usepackage[italian]{babel}
 %%%
-
+\usepackage{comment}
 \usepackage[utf8]{inputenc}    % utf8 support
 %% csquote serve a
 \usepackage{csquotes}
@@ -13,6 +13,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{textcomp,gensymb}
 %%%%%%%%%
+
+\usepackage{capt-of}
 
 %\usepackage{calc}
 %\usepackage{tikz}
@@ -30,16 +32,23 @@
 \usepackage{hepnames}
 %http://www.terminally-incoherent.com/blog/2007/09/19/latex-squeezing-the-vertical-white-space/
 
+\usepackage{calc}
+%\usepackage{color}
+
 \usepackage{tikz}
 \usetikzlibrary{
 arrows,
 calc,
 fit,
+matrix,
 intersections,
 positioning,
 shapes,automata,
 decorations.markings
 }
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{filecontents}
 
 %\usepackage{datetime}
 \usepackage{tensor}
@@ -52,3 +61,6 @@ decorations.markings
 }%
 \usepackage{mathtools}
 \usepackage[]{textpos}
+\usepackage{subfigure}
+
+\usepackage{booktabs}
