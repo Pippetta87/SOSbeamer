@@ -127,7 +127,7 @@ columns={authors,x, y, z, zx
 
 \section{Strutture autogravitanti in equilibrio}
 
-\begin{frame}{Conservazione di massa e momento (Euleriana)}
+\begin{frame}{Distribuzione di massa - Conservazione di massa e momento}
 
 \begin{block}{Massa}
 
@@ -167,6 +167,73 @@ La condizione di equilibrio idrostatico:
 \TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\label{eq:fidroequilibrio}
 \end{equation}
 \end{frame}
+
+\subsection{Equazione di stato $P(\rho,T)$}
+
+deviazioni dalla legge dei gas perfetti per tenere conto dei fenomeni di ionizzazione parziale e stati atomici eccitati, della radiazione, della statistica di Fermi-Dirac per gli elettroni, \'e necessario considerare l'interazione Coulombiana.
+
+\begin{frame}{Gas perfetto ioni-elettroni}
+
+
+\begin{equation}
+P_G=P_I+P_e=\frac{\rho}{\mu}\gasconstant{}T
+\end{equation}
+
+\begin{block}{Peso molecolare medio}
+massa media in amu per particella libera
+\begin{align}
+&\mu=\frac{1}{\bar{n}_HX+\bar{n}_{He}Y+\bar{n}_{Z}Z}\label{eq:meanmw}\\
+&\bar{n}_i=\frac{1+f_i}{A_i}
+\end{align}
+
+\end{block}
+
+
+\end{frame}
+
+\subsection{Energia interna per unit\'a di massa}
+
+\begin{frame}{Energia interna: traslazioni}
+
+\begin{align}
+&u=\frac{1}{\rho}\sum_i\int f^{(0)}(\vec{p}_i)\frac{p^2_i}{2m_i}=\frac{3}{2}\frac{P}{\rho}=\frac{3}{2}\frac{\gasconstant T}{\mu}\\
+&E_i=\int_0^Mu\,dm=\frac{3}{2}\int_M\frac{P}{\rho}\,dm\label{eq:traslintenergy}
+\end{align}
+
+ $f^{(0)}(\vec{p}_i)$ \'e il numero di particelle della specie i per unit\'a di volume con impulso in $[\vec{p},\vec{p}+d\vec{p}]$
+
+\end{frame}
+
+
+\subsection{Correzioni alla legge dei gas perfetti}
+
+\begin{frame}{Correzioni alla legge dei gas perfetti}
+
+\begin{itemize}
+\item Degenerazione elettronica: \[\Delta P\leq2\%\]
+
+\item Pressione di radiazione: \[P_r=\frac{1}{3}aT^4\]
+
+\item Ionizzazione.
+
+\begin{figure}
+        \includegraphics[width=0.4\textwidth,keepaspectratio]{ionfraction}\label{ionfraction}
+       % \caption{Profilo radiale della popolazione dei diversi gradi di ionizzazione per $\cel{He}{4}{}{}$, CNO, $\cel{Ne}{20}{}{}$, $\cel{Fe}{56}{}{}$. Stati di ionizzazione maggiore sono pi\'u interni. Da \cite{basu2008helioseismology}.}
+\end{figure}%
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Correzioni alla legge dei gas perfetti}
+
+
+
+\end{frame}
+
+\subsection{Tempo-scala dinamico}
+
+
 
 \section{Trasporto dell'energia}
 
