@@ -242,22 +242,19 @@ L'equazione di Poisson per $\phi$:
 \begin{equation}\label{eq:poissonscreened}
 \nabla^2\phi=-4\pi e\sum Zn_Z-4\pi\sum Z_i\delta(\vec{r}-\vec{r}_i)
 \end{equation}
-Nel regime di schermaggio debole, dove l'energia coulombiana \'e molto minore dell'energia termica $e\phi\ll KT$, espando $n_Z$ al prim'ordine quindi in \eqref{eq:poissonscreened} rimane il termine lineare in $phi$.
+Nel regime di schermaggio debole: $e\phi\ll KT$. In \eqref{eq:poissonscreened} rimane il termine lineare in $\phi$.
 
 
 
-Introduco il raggio di Debye:
+Raggio di Debye:
 \begin{equation}
 \frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\zeta,\ \zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}\label{eq:debyeradius}
 \end{equation}
-quindi ho l'equazione di Poisson \eqref{eq:poissonscreened} a distanza $|\vec{r}-\vec{r}_i|$ dallo ione $Z_i$ in $\vec{r}_i$:
-\begin{equation}\label{eq:poissonspheric}
-\frac{r_D^2}{r_i}\TtwoDy{r}{(r_i\phi_i)}
-\end{equation}
-con
-\begin{equation}
-\phi=\sum_i\phi_i
-\end{equation}
+
+\begin{align}
+&\frac{r_D^2}{r_i}\TtwoDy{r}{(r_i\phi_i)}\tag{\ref{eq:poissonscreened} $Z_i$}\\
+&\phi=\sum_i\phi_i
+\end{align}
 
 \end{block}
 
@@ -269,7 +266,6 @@ La soluzione di \eqref{eq:poissonscreened} \'e
 \end{equation}
 
 
-Le correzioni dovute alle interazioni coulombiane sono
 \begin{align}
 &u=\frac{3}{2}\frac{\gasconstant{}T}{\mu}+u_c,\ u_c=\frac{1}{2}\int\phi(\vec{r})\rho(\vec{r})\,d^3r\\
 &P=\frac{\rho}{\mu}kT+P_c,\  P_c=\frac{1}{3}u_c
