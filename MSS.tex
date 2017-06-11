@@ -216,7 +216,9 @@ massa media in amu per particella libera
 
 \item Ionizzazione.
 
-\item Interazioni coulombiane. Formula di Boltzmann per la densit\'a delle particelle con carica Z:
+\item Interazioni coulombiane. 
+
+Formula di Boltzmann per la densit\'a delle particelle con carica Z:
 \begin{align}
 &n_Z=\overline{n}_Z\exp{-\frac{Ze\phi_i}{kT}}\\
 &\nabla^2\phi=-4\pi e\sum Zn_Z-4\pi\sum Z_i\delta(\vec{r}-\vec{r}_i)\label{eq:poissonscreened}
@@ -233,26 +235,37 @@ massa media in amu per particella libera
        % \caption{Profilo radiale della popolazione dei diversi gradi di ionizzazione per $\cel{He}{4}{}{}$, CNO, $\cel{Ne}{20}{}{}$, $\cel{Fe}{56}{}{}$. Stati di ionizzazione maggiore sono pi\'u interni. Da \cite{basu2008helioseismology}.}
 \end{figure}%
 
-\begin{block}{Interazioni coulombiane}
+\begin{block}{Interazioni coulombiane} 
+
+Raggio di Debye:
+\begin{equation}
+\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\zeta,\ \zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}\label{eq:debyeradius}
+\end{equation}
+
+\begin{equation}
+u_c=\frac{1}{2}\int\phi(\vec{r})\rho(\vec{r})\,d^3r,\ P_c=\frac{1}{3}u_c
+\end{equation}
+
+Regioni di ionizzazione parziale di idrogeno ed elio
+
+
+\end{block}
+
+\begin{block}{Schermaggio debole: $e\phi\ll KT$.}
+
+
+
 
 Formula di Boltzmann per la densit\'a delle particelle con carica Z:
 \begin{align}
 &n_Z=\overline{n}_Z\exp{-\frac{Ze\phi_i}{kT}}\\
 &\nabla^2\phi=-4\pi e\sum Zn_Z-4\pi\sum Z_i\delta(\vec{r}-\vec{r}_i)\label{eq:poissonscreened}
 \end{align}
-
-\end{block}
-
-\begin{block}{Schermaggio debole: $e\phi\ll KT$.}
-
 In \eqref{eq:poissonscreened} rimane il termine lineare in $\phi$.
 
 
 
-Raggio di Debye:
-\begin{equation}
-\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\zeta,\ \zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}\label{eq:debyeradius}
-\end{equation}
+
 
 \begin{align}
 &\frac{r_D^2}{r_i}\TtwoDy{r}{(r_i\phi_i)}\tag{\ref{eq:poissonscreened} $Z_i$}\\
