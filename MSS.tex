@@ -216,16 +216,22 @@ massa media in amu per particella libera
 
 \item Ionizzazione.
 
-\begin{figure}
-        \includegraphics[width=0.4\textwidth,keepaspectratio]{ionfraction}\label{ionfraction}
-       % \caption{Profilo radiale della popolazione dei diversi gradi di ionizzazione per $\cel{He}{4}{}{}$, CNO, $\cel{Ne}{20}{}{}$, $\cel{Fe}{56}{}{}$. Stati di ionizzazione maggiore sono pi\'u interni. Da \cite{basu2008helioseismology}.}
-\end{figure}%
+\item Interazioni coulombiane. Formula di Boltzmann per la densit\'a delle particelle con carica Z:
+\begin{align}
+&n_Z=\overline{n}_Z\exp{-\frac{Ze\phi_i}{kT}}\\
+&\nabla^2\phi=-4\pi e\sum Zn_Z-4\pi\sum Z_i\delta(\vec{r}-\vec{r}_i)\label{eq:poissonscreened}
+\end{align}
 
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}{Correzioni alla legge dei gas perfetti}
+
+\begin{figure}
+        \includegraphics[width=0.4\textwidth,keepaspectratio]{ionfraction}\label{ionfraction}
+       % \caption{Profilo radiale della popolazione dei diversi gradi di ionizzazione per $\cel{He}{4}{}{}$, CNO, $\cel{Ne}{20}{}{}$, $\cel{Fe}{56}{}{}$. Stati di ionizzazione maggiore sono pi\'u interni. Da \cite{basu2008helioseismology}.}
+\end{figure}%
 
 \begin{block}{Interazioni coulombiane}
 
