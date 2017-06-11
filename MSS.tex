@@ -127,7 +127,7 @@ columns={authors,x, y, z, zx
 
 \section{Strutture autogravitanti in equilibrio}
 
-\begin{frame}{Distribuzione di massa - Conservazione di massa e momento}
+\begin{frame}{Distribuzione di massa - Conservazione di massa e momento - tempo scala dinamico}
 
 \begin{block}{Massa}
 
@@ -154,19 +154,28 @@ dm=4\pi r^2\rho \,dr\label{eq:massaguscio}
 
 \end{frame}
 
-\begin{frame}{Equilibrio idrostatico}
+\begin{frame}{Equilibrio idrostatico: $\ddvec{r}=0$.}
 
-$\ddvec{r}=0$:
+
+\begin{align}
+\nabla P=\rho \vec{f}\Label{eq:idrosta} \TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\Label{eq:fidroequilibrio}
+\end{align}
+
+
+Per giustificare l'ipotesi di equilibrio idrostatico stimo i tempi caratteristici di evoluzione della struttura solare nel caso la forza dovuta alla pressione o la forza di gravit\'a non fossero bilanciate, approssimando il valore caratteristico della derivata di due variabili con il rapporto del loro valore caratteristico:
+\begin{align}
+&\tau_{ff}\approx\sqrt{\frac{\rsun{}}{g}}\\
+&\tau_{esp}\approx \rsun{}\sqrt{\frac{\rho}{P}}
+\end{align}
+
+Per i valori solari \ref{wrap-tab:sunO} $\tau_{ff}\approx\tau_{esp}\approx\SI{27}{\minute}$.
+
 \begin{equation}
-\nabla P=\rho \vec{f}\label{eq:idrosta}
+\tau_{idro}^{\odot}= \sqrt{\frac{R^3}{GM}}\approx\frac{1}{2}(G\overline{\rho})\expy{-\frac{1}{2}}
 \end{equation}
 
-
-La condizione di equilibrio idrostatico:
-\begin{equation}
-\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\label{eq:fidroequilibrio}
-\end{equation}
 \end{frame}
+
 
 \subsection{Equazione di stato $P(\rho,T)$}
 
@@ -218,7 +227,6 @@ massa media in amu per particella libera
 
 \item Interazioni coulombiane.
 
-Raggio di Debye:
 \begin{align}
 &\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\zeta\label{eq:debyeradius}\\
 &\zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}
@@ -236,17 +244,24 @@ Regioni di ionizzazione parziale di idrogeno ed elio
 
 \begin{frame}{EOS}
 
-\begin{figure}
-        \includegraphics[height=0.4\textheight,keepaspectratio]{ionfraction}\label{ionfraction}
-       % \caption{Profilo radiale della popolazione dei diversi gradi di ionizzazione per $\cel{He}{4}{}{}$, CNO, $\cel{Ne}{20}{}{}$, $\cel{Fe}{56}{}{}$. Stati di ionizzazione maggiore sono pi\'u interni. Da \cite{basu2008helioseismology}.}
-\end{figure}%
 
+Due approcci usati per determinare l'equazione di stato e quindi le grandezze termodinamiche del plasma solare sono lo schema chimico e lo schema fisico: il primo considera atomi e molecole, la cui popolazione per stati eccitati e diversi gradi di ionizzazione \'e ottenuto minimizzando l'energia libera da cui sono ricavate le altre grandezze termodinamiche; utilizzando questo approccio \'e stata ricavata l'equazione di stato MHD. Il secondo considera nuclei ed elettroni come costituenti fondamentali interagenti tramite potenziale Coulombiano e trova le soluzione dell'equazione di Schr\"oedinger per un problema a molti corpi, questo approccio, usato per ricavare l'equazione di stato OPAL, \'e pi\'u adatto per trattare le regioni interne del Sole.
+
+
+\begin{figure}[!ht]
+\begin{subfigure}[b]{0.5\textwidth}
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{ionfraction}\label{ionfraction}
+        \subcaption{Profilo radiale della popolazione dei diversi gradi di ionizzazione per $\cel{He}{4}{}{}$, CNO, $\cel{Ne}{20}{}{}$, $\cel{Fe}{56}{}{}$. Stati di ionizzazione maggiore sono pi\'u interni. Da \cite{basu2008helioseismology}.}
+\end{subfigure}%
+~
+\begin{subfigure}[b]{0.5\textwidth}
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{gamma1eos}\label{fig:gamma1eos}
+        \subcaption{Andamento di $\Gamma_1$ calcolato tramite equazione di stato MHD/OPAL. Da \cite{trampedach2006synoptic}.}
+\end{subfigure}
+\end{figure}
 
 
 \end{frame}
-
-\subsection{Tempo-scala dinamico}
-
 
 
 \section{Trasporto dell'energia}
