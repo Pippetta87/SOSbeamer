@@ -230,19 +230,16 @@ massa media in amu per particella libera
 \begin{block}{Interazioni coulombiane}
 
 Formula di Boltzmann per la densit\'a delle particelle con carica Z:
-\begin{equation}
-n_Z=\overline{n}_Z\exp{-\frac{Ze\phi_i}{kT}}
-\end{equation}
+\begin{align}
+&n_Z=\overline{n}_Z\exp{-\frac{Ze\phi_i}{kT}}\\
+&\nabla^2\phi=-4\pi e\sum Zn_Z-4\pi\sum Z_i\delta(\vec{r}-\vec{r}_i)\label{eq:poissonscreened}
+\end{align}
 
 \end{block}
 
-\begin{block}{Schermaggio debole}
+\begin{block}{Schermaggio debole: $e\phi\ll KT$.}
 
-L'equazione di Poisson per $\phi$:
-\begin{equation}\label{eq:poissonscreened}
-\nabla^2\phi=-4\pi e\sum Zn_Z-4\pi\sum Z_i\delta(\vec{r}-\vec{r}_i)
-\end{equation}
-Nel regime di schermaggio debole: $e\phi\ll KT$. In \eqref{eq:poissonscreened} rimane il termine lineare in $\phi$.
+In \eqref{eq:poissonscreened} rimane il termine lineare in $\phi$.
 
 
 
