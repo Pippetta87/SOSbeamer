@@ -162,24 +162,15 @@ dm=4\pi r^2\rho \,dr\label{eq:massaguscio}
 \end{align}
 
 
-Per giustificare l'ipotesi di equilibrio idrostatico stimo i tempi caratteristici di evoluzione della struttura solare nel caso la forza dovuta alla pressione o la forza di gravit\'a non fossero bilanciate, approssimando il valore caratteristico della derivata di due variabili con il rapporto del loro valore caratteristico:
-\begin{align}
-&\tau_{ff}\approx\sqrt{\frac{\rsun{}}{g}}\\
-&\tau_{esp}\approx \rsun{}\sqrt{\frac{\rho}{P}}
-\end{align}
-
-Per i valori solari \ref{wrap-tab:sunO} $\tau_{ff}\approx\tau_{esp}\approx\SI{27}{\minute}$.
+Per giustificare l'ipotesi di equilibrio idrostatico stimo i tempi caratteristici di evoluzione della struttura solare nel caso la forza dovuta alla pressione o la forza di gravit\'a non fossero bilanciate, approssimando il valore caratteristico della derivata di due variabili con il rapporto del loro valore caratteristico.
 
 \begin{equation}
-\tau_{idro}^{\odot}= \sqrt{\frac{R^3}{GM}}\approx\frac{1}{2}(G\overline{\rho})\expy{-\frac{1}{2}}
+\tau_{ff}\approx\tau_{esp}\approx\tau_{idro}^{\odot}= \sqrt{\frac{R^3}{GM}}\approx\frac{1}{2}(G\overline{\rho})\expy{-\frac{1}{2}}\approx\SI{27}{\minute}
 \end{equation}
 
 \end{frame}
 
-
 \subsection{Equazione di stato $P(\rho,T)$}
-
-deviazioni dalla legge dei gas perfetti per tenere conto dei fenomeni di ionizzazione parziale e stati atomici eccitati, della radiazione, della statistica di Fermi-Dirac per gli elettroni, \'e necessario considerare l'interazione Coulombiana.
 
 \begin{frame}{Gas perfetto ioni-elettroni}
 
@@ -219,43 +210,52 @@ massa media in amu per particella libera
 \begin{frame}{Correzioni alla legge dei gas perfetti}
 
 \begin{itemize}
-\item Degenerazione elettronica: $\Delta P\leq2\%$.
+\item Degenerazione elettronica ($\Delta P\leq2\%$).
+
+\begin{align}
+&P_{FD}=[\exp{\psi(\rho,T)+\midfrac{p^2}{2mKT}}+1]\expy{-1}\\
+&n_e=\frac{\rho N_A}{\mu_e}=\frac{8\pi}{3h^3m_e}(2m_eKT)\expy{\midfrac{3}{2}}F_{\midfrac{3}{2}}(\psi(\rho,T))\\
+%n_e=\intzi{}\frac{8\pi p^2\,dp}{h^3(\exp{\frac{u_k}{KT}-\psi}+1)}\\
+&P_e=\frac{1}{3}\intzi{}pn_e\TDy{p}{u_k}\,dp
+\end{align}
 
 \item Pressione di radiazione: $P_r=\frac{1}{3}aT^4$.
 
 \item Ionizzazione.
 
-\item Interazioni coulombiane.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Correzioni alla legge dei gas perfetti: Interazioni coulombiane}
 
 \begin{align}
-&\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\zeta\label{eq:debyeradius}\\
-&\zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}
+&\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\zeta\\
+&\zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}\xrightarrow{FD}\sum_{i}(Z_i^2+\frac{F_{\midfrac{3}{2}}'(\psi)}{F_{\midfrac{3}{2}}(\psi)}_i)\frac{\rho X_i}{A_i}
 \end{align}
 
 \begin{equation}
-u_c=\frac{1}{2}\int\phi(\vec{r})\rho(\vec{r})\,d^3r,\ P_c=\frac{1}{3}u_c
+u_c=\frac{1}{2}\int\phi(\vec{r})\rho_c(\vec{r})\,d^3r,\ P_c=\frac{1}{3}u_c
 \end{equation}
 
 Regioni di ionizzazione parziale di idrogeno ed elio
-
-\end{itemize}
 
 \end{frame}
 
 \begin{frame}{EOS}
 
+\begin{itemize}
+\item Schema chimico (MHD): atomi e molecole, stati eccitati e diversi gradi di ionizzazione
 
-Due approcci usati per determinare l'equazione di stato e quindi le grandezze termodinamiche del plasma solare sono lo schema chimico e lo schema fisico: il primo considera atomi e molecole, la cui popolazione per stati eccitati e diversi gradi di ionizzazione \'e ottenuto minimizzando l'energia libera da cui sono ricavate le altre grandezze termodinamiche; utilizzando questo approccio \'e stata ricavata l'equazione di stato MHD. Il secondo considera nuclei ed elettroni come costituenti fondamentali interagenti tramite potenziale Coulombiano e trova le soluzione dell'equazione di Schr\"oedinger per un problema a molti corpi, questo approccio, usato per ricavare l'equazione di stato OPAL, \'e pi\'u adatto per trattare le regioni interne del Sole.
-
-
-\begin{figure}[!ht]
-        \includegraphics[height=0.4\textwidth,keepaspectratio]{ionfraction}\label{fig:ionfraction}
-        \caption{Profilo radiale della popolazione dei diversi gradi di ionizzazione per $\cel{He}{4}{}{}$, CNO, $\cel{Ne}{20}{}{}$, $\cel{Fe}{56}{}{}$. Stati di ionizzazione maggiore sono pi\'u interni. Da \cite{basu2008helioseismology}.}
-\end{figure}
+\item Schema fisico (OPAL): nuclei ed elettroni, potenziale Coulombiano, Schr\"oedinger per un problema a molti corpi.
+\end{itemize}
 
 \begin{figure}[!ht]
-        \includegraphics[height=0.4\textwidth,keepaspectratio]{gamma1eos}\label{fig:gamma1eos}
-        \caption{Andamento di $\Gamma_1$ calcolato tramite equazione di stato MHD/OPAL. Da \cite{trampedach2006synoptic}.}
+\subfigure[Avant la diode]{\includegraphics[width=0.4\textwidth,keepaspectratio]{ionfraction}}
+~
+\subfigure[Après le détecteur de crête]{\includegraphics[width=0.4\textwidth,keepaspectratio]{gamma1eos}}
+%\subcaption{Profilo radiale della popolazione dei diversi gradi di ionizzazione per $\cel{He}{4}{}{}$, CNO, $\cel{Ne}{20}{}{}$, $\cel{Fe}{56}{}{}$. Stati di ionizzazione maggiore sono pi\'u interni. Da \cite{basu2008helioseismology}.}\label{ionfraction}
+%\subcaption{Andamento di $\Gamma_1$ calcolato tramite equazione di stato MHD/OPAL. Da \cite{trampedach2006synoptic}.}\label{fig:gamma1eos}
 \end{figure}
 
 
