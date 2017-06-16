@@ -498,6 +498,246 @@ v_A(1+2\frac{Y}{X})\approx-v_H
 \end{comment}
 
 
+\section{Trasporto di energia}
+
+\subsection{Trasporto radiativo.}
+
+Nell'interno stellare il cammino libero medio dei fotoni \'e molto corto $\frac{1}{\kappa\rho}\approx\SI{1}{\cm}\ll \rsun{}$, con $\kappa$ opacit\'a radiativa per unit\'a di massa, quindi considero la radiazione localmente in equilibrio con la materia. Il flusso di energia verso la superficie \'e generato da una piccola anisotropia nell'intensit\'a descritta al prim'ordine tramite:
+\begin{equation}
+I_{\nu}=B(\nu,T)-\frac{1}{\kappa_{\nu}'\rho}\nabla_s B(\nu,T)
+\end{equation}
+integrando sull'angolo solido, il flusso di energia risulta
+\begin{align}
+&\vec{F}_{\nu}=-\frac{4\pi}{3\kappa_{\nu}\rho}\nabla B(\nu,T)\shortintertext{ed esplicitando il gradiente termico e integrando sulle frequenze}
+&\vec{F}=-[\frac{4\pi}{3\rho}\intzi{}\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\,d\nu]\nabla T\label{eq:radiativeflux}
+\end{align}
+
+Definisco l'opacit\'a media di Rosseland:
+\begin{equation}
+\frac{1}{\kappa}=(\intzi{}\PDy{T}{B(\nu,T)})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}=(\frac{acT^3}{\pi})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\label{eq:rosselandopacity}
+\end{equation}
+quindi riscrivo \eqref{eq:radiativeflux} utilizzando la pressione di radiazione $P_{rad}=\int\,d\nu\frac{4\pi}{3c}B_{\nu}=\frac{1}{3}aT^4$:
+\begin{align}
+&\vec{F}=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{c}{\kappa\rho}\nabla P_{rad}\shortintertext{che per una distribuzione sferica di materia diventa}
+&F_r=-\frac{c}{\kappa\rho}\TDof{r}(\frac{1}{3}aT^4)=-\frac{4acT^3}{3\kappa\rho}\TDy{r}{T}\label{eq:radfluxTgradrelation}
+\end{align}
+
+Definisco il gradiente radiativo a partire da \eqref{eq:radfluxTgradrelation}
+\begin{equation}
+\nrad{}=\Dcvar{\PDly{P}{T}}{rad}=\frac{3}{16\pi acG}\frac{\kappa l(r)P}{m(r)T^4}\label{eq:radiativegradient}
+\end{equation}
+con $l(r)=4\pi r^2F$ luminosit\'a totale in funzione di r.
+
+\subsection{Opacit\'a.}
+
+I fenomeni che contribuiscono all'opacit\'a nel Sole sono:
+
+\begin{itemize}
+
+\item \parbox[t]{\dimexpr\textwidth-\leftmargin}{%
+\vspace{-2.5mm}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\vspace{-\baselineskip}
+\includegraphics[keepaspectratio,width=0.9\linewidth]{opacitylld}
+\caption{Profilo radiale di $\kappa$ e $\PDly{T}{\kappa}$. Da \cite{stix91sun}.}
+\end{wrapfigure}
+
+
+Scattering fotone-elettrone (sc). Classicamente \'e descritto come lo scattering di un'onda elettromagnetica piana da parte di un dipolo oscillante, scattering Thomson per $h\nu\ll m_ec^2$
+
+\begin{align}
+&\kappa_{\nu}\propto\frac{r_e^2}{\mu_em_u}, \kappa_{sc}=0.20(1+X)\si{\squared\cm\per\gram}\\
+&r_e=\SI{2.82e-13}{\cm}
+\end{align}
+
+Per $T\geq\SI{e8}{\kelvin}$ il momento trasferito all'elettrone non \'e trascurabile, scattering Compton.
+
+}
+
+\item Brehmstrahlung inverso (ff). L'assorbimento di un fotone da parte di un elettrone libero \'e energeticamente possibile quando l'elettrone \'e vicino ad uno ione, l'opacit\'a in questo caso ha l'andamento
+
+\begin{equation}
+\kappa_{ff}\propto\rho T\expy{-\frac{7}{2}}
+\end{equation}
+
+si tiene conto degli effetti quantistici tramite un opportuno coefficiente, il fattore di Gaunt.
+
+\item Reazioni di ionizzazione (bf).
+
+\item Transizione elettronica a livelli eccitati (bb).
+
+\item Scattering atomici e ione $H^-$. La presenza di metalli con potenziale di ionizzazione minore di H ed He rendono disponibile elettroni per la formazione di $H^-$, sistema debolmente legato per cui un fotone con $h\nu>\SI{0.75}{\ev}$ o $\lambda<\SI{1655}{\nano\meter}$ pu\'o essere assorbito.
+
+\end{itemize}
+
+La conduzione pu\'o essere trascurata in quanto nel Sole $l_{\Pphoton}\gg l_{\Pelectron}$, cio\'e i tempi caratteristici per il trasporto di calore per conduzione sono molto maggiori di quelli radiativi.
+
+%\begin{equation}
+%\delta\kappa(r)=\frac{\kappa_{OPAL}(\bar{T}(r),\bar{\rho}(r),\bar{Y}(r),\bar{Z}(r))}{\kappa_{OP}(\bar{T}(r),\bar{\rho}(r),\bar{Y}(r),\bar{Z}(r))}-1\leq0.025
+%\end{equation}
+
+\begin{tikzpicture}[]
+%([shift={(1.5,0)}]0,0)
+
+\node[anchor=north west] (opint) at (0,0) {\includegraphics[height=0.35\textheight,keepaspectratio]{opcontrib-int-g}};
+\node[anchor=west,right=2.5cm of opint.east] (opout) {\includegraphics[height=0.35\textheight,keepaspectratio]{opcontrib-out-g}};
+\begin{scope}[scale=0.6]
+\node[draw,anchor=west,label={[label distance=2mm]-90:Scattering \Pphoton\Pelectron},minimum size=5mm,below right=1cm and 9mm of opint.east] (sc) {};
+\node[draw,label={[label distance=2mm]-90:ff},fill=black,minimum size=5mm,above=10mm of sc] (ff) {};
+\node[draw,label={[label distance=2mm]-90:bb},fill=bb,minimum size=5mm,above=10mm of ff] (bb) {};
+\node[draw,label={[label distance=2mm]-90:bf},fill=bf,minimum size=5mm,above=10mm of bb] (bf) {};
+\end{scope}
+
+\begin{scope}[node distance=3.62mm]
+\node[minimum size=2mm,name=hydrogen, right=6.5mm of opint.south west] {\tiny H};
+\node[minimum size=2mm,name=helium, right=of hydrogen.west] {\tiny He};
+\node[minimum size=2mm,name=carbonium, right=of helium.west] {\tiny C};
+\node[minimum size=2mm,name=nitrum, right=of carbonium.west] {\tiny N};
+\node[minimum size=2mm,name=oxygen, right=of nitrum.west] {\tiny O};
+\node[minimum size=2mm,name=neon, right=of oxygen.west] {\tiny Ne};
+\node[minimum size=2mm,name=sodium, right=of neon.west] {\tiny Na};
+\node[minimum size=2mm,name=magnesium, right=of sodium.west] {\tiny Mg};
+\node[minimum size=2mm,name=alluminium, right=of magnesium.west] {\tiny Al};
+\node[minimum size=2mm,name=silicium, right=of alluminium.west] {\tiny Si};
+\node[minimum size=2mm,name=sulfur, right=of silicium.west] {\tiny S};
+\node[minimum size=2mm,name=argon, right=of sulfur.west] {\tiny Ar};
+\node[minimum size=2mm,name=calcium, right=of argon.west] {\tiny Ca};
+\node[minimum size=2mm,name=cromum, right=of calcium.west] {\tiny Cr};
+\node[minimum size=2mm,name=manganese, right=of cromum.west] {\tiny Mn};
+\node[minimum size=2mm,name=ferrum, right=of manganese.west] {\tiny Fe};
+\node[minimum size=2mm,name=nikel, right=of ferrum.west] {\tiny Ni};
+
+\end{scope}
+ 
+\node[anchor=north west, below right=1mm and 0.5cm of opint.south west] {\parbox{\textwidth}{\captionof{figure}{Importanza dei varii contributi all'opacit\'a nell'interno solare; composizione GS98. Da \cite{bla11opacity}.}\label{fig:opacitycontrib} }};
+ 
+\end{tikzpicture}
+
+
+\subsection{Condizione di in-stabilit\'a dinamica: trasporto convettivo.}
+
+Una regione stellare \'e convettivamente stabile se una perturbazione di densit\'a infinitesima non cresce ad ampiezza finita. Considero l'equazione del moto per blob di materia che subisce spostamento $\Delta r$ dalla  posizione di equilibrio:
+\begin{equation}
+\rho\PtwoDy{t}{(\Delta r)}=-g\Delta\rho=-g[\Dcvar{\TDy{r}{\rho}}{e}-\Dcvar{\TDy{r}{\rho}}{amb}]\Delta r
+\end{equation}
+
+La forza di archimede ha verso opposta alla perturbazione se $[\Dcvar{\TDy{r}{\rho}}{e}-\Dcvar{\TDy{r}{\rho}}{amb}]>0$ .
+
+Considero un'equazione di stato generica $\rho(P,T,\mu)$ e definita tramite:
+\begin{align}
+&\frac{d\rho}{\rho}=\alpha\frac{dP}{P}-\delta\frac{dT}{T}+\phi\frac{d\mu}{\mu}\label{eq:deltatherm}\\
+&P=\frac{\rho\gasconstant{}T}{\mu}\quad\Rightarrow\quad\alpha=\delta=\phi=1
+\end{align}
+
+Definisco le lunghezze caratteristiche per variazione di densit\'a e pressione:
+\begin{equation}
+\densityscale{}=-\frac{dr}{d\ln{\rho}},\ H_P=-\frac{dr}{d\ln{P}}
+\end{equation}
+e i gradienti termici per il blob, l'ambiente e il gradiente di composizione chimica ambientale
+\begin{equation}
+\nabla=\Dcvar{\TDly{P}{T}}{amb},\ \nabla_e=\Dcvar{\TDly{P}{T}}{blob},\ \nmu{}=\Dcvar{\TDly{P}{\mu}}{amb}\label{eq:nablavitense}
+\end{equation}
+
+Riscrivo l'equazione del moto utilizzando l'equazione di stato, supponendo il moto dell'elemento in equilibrio di pressione con l'ambiente, essendo $\nmu{}_{blob}\approx0$:
+\begin{equation}
+\PtwoDy{t}{(\Delta r)}=-g\frac{\delta}{H_P}[\nabla_e-\nabla-\frac{\phi}{\delta}\nmu{}]\Delta r\label{eq:galleggiamento}
+\end{equation}
+suppongo inoltre un moto del blob adiabatico $\nabla_e=\nabla_{ad}$ con
+\begin{equation}
+\nabla_{ad}=\frac{P\delta}{T\rho c_P}
+\end{equation}
+
+Introduco la frequenza di \bv{}:
+\begin{equation}
+N^2=g(\frac{1}{\Gamma_1P}\TDy{r}{P}-\frac{1}{\rho}\TDy{r}{\rho})=g(\frac{1}{\densityscale{}}-\frac{g}{c_s^2})\label{eq:bvfs}
+\end{equation}
+$N^2$ rappresenta la massima frequenza sotto cui pu\'o oscillare una particella di fluido sottoposta a onde di gravit\'a mantenendo l'equilibrio di pressione con l'ambiente.
+
+Riscrivo l'equazione \eqref{eq:galleggiamento}
+\begin{equation}
+\PtwoDy{t}{(\Delta r)}=-N^2\Delta r
+\end{equation}
+che descrive un comportamento oscillatorio per $N^2>0$, cio\'e una regione solare \'e stabile per convezione se
+
+\begin{equation}
+\nrad{}<\nad+\frac{\phi}{\delta}\nmu{}\label{eq:ledoux}
+\end{equation}
+
+dove ho usato $\nabla_{amb}=\nrad{}$ definito in \eqref{eq:radiativegradient}, cio\'e il gradiente che si ha nel caso la luminosit\'a si trasportata dai fotoni; nelle zone in cui il criterio di Ledoux (o \sch{} se trascuro il gradiente di $\mu$) non \'e verificato si ha trasporto convettivo.
+
+Le stelle con massa $M\leq1.1\msun{}$ hanno una regione radiativa interna mentre la parte esterna \'e convettiva: la regione in cui vale l'uguaglianza in \eqref{eq:ledoux} \'e la base della zona convettiva, la cui posizione \'e determinata dall'aumentare dell'opacit\'a col diminuire della temperatura.
+% e dal gradiente adiabatico, il cui valore \'e diminuito dal calore latente di idrogeno ed elio nelle regioni di ionizzazione parziale.
+
+Una maggiore efficienza del trasporto convettivo di energia si riflette in una minore differenza tra il gradiente di temperature adiabatico ed effettivo.
+
+\begin{figure}[!h]
+\begin{subfigure}[b]{0.55\textwidth}
+    \includegraphics[ width=0.99\textwidth,keepaspectratio]{proportionflux}
+    \subcaption{Profilo radiale (profondit\'a in \si{\kilo\meter}) del flusso convettivo $F_c$ rispetto al flusso totale $F$, della super-adiabaticit\'a $\nabla-\nad{}$ e regioni di ionizzazione idrogeno e $\cel{He}{4}{}{}$. Da \cite{gou76convection}.}
+    \label{fluxproportion}
+\end{subfigure}
+~
+\begin{subfigure}[b]{0.4\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.9\textwidth]{specificheatnablaa}
+\subcaption{Profilo radiale di $c_P$ e $\nabla_a$: si ha cambiamento di comportamento nelle regioni di ionizzazione parziale di idrogeno ed elio. Da \cite{stix91sun}.}
+\end{subfigure}
+\end{figure}
+
+
+\subsection{Teoria della mixing-length.}
+
+In presenza di convezione il flusso di energia verso l'esterno ha una componente radiativa, determinata dal gradiente di temperatura, e una componente dominante convettiva 
+\begin{equation}
+F=F_{con}+F_{rad}=\frac{\lsun{}}{4\pi r^2}
+\end{equation}
+Definisco il gradiente radiativo fittizio:
+\begin{equation}
+F=\frac{4acG}{3}\frac{T^4m}{\kappa Pr^2}\nrad{}\label{eq:fictionrad}
+\end{equation}
+
+Per determinare il gradiente di temperatura effettivo $\nabla$ uso la teoria della mixing-length (\cite{prandtl25tur} e \cite{vitense53kon}):
+si considera l'eccesso di calore trasportato dai blob di gas nel moto convettivo $c_P\Delta T$ rispetto all'ambiente, il cui cammino libero medio \'e la mixing-length $l_m=\alpha H_P$, che da luogo al flusso di energia
+
+\begin{equation}
+F_{con}=\exv{\rho vc_P\Delta T}\label{eq:convectiveflux}
+\end{equation}
+
+dove $\exv{}$ indica una media opportuna sulla sfera di raggio r. Determino il valor medio della differenza di temperatura prendendo come valore caratteristico dello spostamento del blob, considerando moti in entrambi i versi, $\Delta r\approx\frac{l_m}{2}$:
+\begin{equation}
+\frac{\Delta T}{T}\approx\frac{1}{T}\PDy{r}{(\Delta T)}\frac{l_m}{2}=(\nabla-\nabla_e)\frac{l_m}{2}\frac{1}{H_P}
+\end{equation}
+
+Assumo il lavoro medio fatto dalla forza di galleggiamento per unit\'a di massa $-g\frac{\Delta\rho}{\rho}$ uguale al valore medio della forza, cio\'e la met\'a di quello alla superficie sferica data, moltiplicato lo spostamento medio $\frac{l_m}{2}$ quindi, assumendo in oltre che in media met\'a del lavoro fatto dalla forza di galleggiamento sia trasformato in energia cinetica del blob si ottiene
+
+\begin{equation}
+v^2=g\delta(\nabla-\nabla_e)\frac{l_m^2}{8H_P}\label{eq:blobvelocity}
+\end{equation}
+
+Infine determino gli scambi radiative del blob: il modulo del flusso radiativo \'e proporzionale al gradiente termico in direzione normale alla superficie del blob
+\begin{equation}
+f=\frac{4acT^3}{3\kappa\rho}|\PDy{n}{T}|
+\end{equation}
+quindi l'energia scambiata dall'intera superficie S del blob \'e $\lambda=Sf$ che determina, per la prima legge della termodinamica, una variazione di temperatura per unit\'a di tempo:
+\begin{equation}
+\PDy{t}{T_e}=-\frac{\lambda}{\rho Vc_P}
+\end{equation}
+indicato con $V$ il volume del blob.
+
+La variazione della temperatura del blob per unit\'a distanza percorsa \'e quindi
+\begin{equation}
+\Dcvar{\TDy{r}{T}}{e}=\Dcvar{\TDy{r}{T}}{ad}-\frac{\lambda}{\rho Vc_Pv}\label{eq:Tchangelength}
+\end{equation}
+e approssimando il gradiente normale alla superficie con $\exv{\Delta T}$ ed usando le definizioni \eqref{eq:nablavitense} si ottiene:
+\begin{equation}
+\frac{\nabla_e-\nad{}}{\nabla-\nabla_e}=\frac{6acT^3}{\kappa\rho^2c_Pl_mv}
+\end{equation}
+
+Le 5 equazioni \eqref{eq:fictionrad},\eqref{eq:radiativegradient}, \eqref{eq:convectiveflux}, \eqref{eq:blobvelocity}, \eqref{eq:nablavitense} determinano completamente le variabili $F_{rad}, F_{con}, v, \nabla_e, \nabla$ in funzione di $P,T,l(r),m(r),c_P,\nad{},\nrad{},g$ .
+
+
+
 \section{Produzione di energia - reazioni di fusione}
 
 
