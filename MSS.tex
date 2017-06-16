@@ -293,11 +293,15 @@ e dalla conservazione dell'energia $\TDy{t}{W}+L=0$ segue che durante la fase di
 L=-\frac{1}{2}\dot{\Omega}=\dot{E}_i
 \end{equation}
 
+\subsection{Struttura in equilibrio idrostatico e termico in assenza di reazioni nucleari}
+
 Nel caso in cui la contrazione gravitazionale sia l'unica fonte di energia per una massa gassosa in equilibrio idrostatico, il suo tempo di evoluzione caratteristico \'e il tempo di \kh{}:
 \begin{equation}
-\tkh{}=\frac{\Omega}{L}\approx\frac{GM^2}{2RL}
+\tkh{}=\frac{\Omega}{L}\approx\frac{GM^2}{2RL}\approx\SI{1.6e7}{\year}
 \end{equation}
-e sostituendo i valori solari di (\ref{wrap-tab:sunO}) si ha $\tkh{}\approx\SI{1.6e7}{\year}$.
+
+cammino libero medio degli atomi e dei fotoni sia breve, si raggiunge rapidamente l'equilibrio idrostatico e termico locale. Il processo di contrazione gravitazionale continua, su tempi-scala termodinamici, fino a che l'energia prodotta dalle reazioni nucleari bilancia l'energia irradiata.
+
 
 \end{frame}
 
@@ -306,23 +310,23 @@ e sostituendo i valori solari di (\ref{wrap-tab:sunO}) si ha $\tkh{}\approx\SI{1
 
 \begin{frame}{Prima legge TD}
 
-La prima legge della termodinamica esprime la conservazione dell'energia interna, ovvero mette in relazione il flusso di calore $dq$ per unit\'a di massa in un elemento di gas nell'intervallo di tempo $dt$ con la variazione di energia interna per unit\'a di massa $du$ e di volume specifico $dV$:
-\begin{equation}
-\TDy{t}{q}=\TDy{t}{u}+P\TDof{t}(\frac{1}{\rho})\label{eq:prima}
-%\TDy{t}{u}+P\TDy{t}{V}
-\end{equation}
-che posso riscrivere come
+$dq$ per unit\'a di massa per $dt$:
 \begin{align}
+&\TDy{t}{q}=\TDy{t}{u}+P\TDof{t}(\frac{1}{\rho})\label{eq:prima}\\
+%\TDy{t}{u}+P\TDy{t}{V}
 &\TDy{t}{\ln{T}}=\frac{\Gamma_2-1}{\Gamma_2}\TDy{t}{\ln{P}}+\frac{\TDy{t}{q}}{c_PT}\label{eq:primatemp}\\
 &\TDy{t}{\ln{P}}=\Gamma_1\TDy{t}{\ln{\rho}}+\frac{\rho(\Gamma_3-1)}{P}\TDy{t}{q}\label{eq:primapres}
 \end{align}
-dove ho introdotto gli esponenti adiabatici $\Gamma_i$
+Esponenti adiabatici $\Gamma_i$:
 \begin{equation}\label{eq:adibatexp}
 \Gamma_1=\Dcvar{\TDly{\rho}{P}}{Ad}, \ \Gamma_3-1=\Dcvar{\TDly{\rho}{T}}{Ad},\ \frac{\Gamma_2-1}{\Gamma_2}=\Dcvar{\TDly{P}{T}}{Ad}
 \end{equation}
 
-%Il contributo delle modificazioni chimiche aggiungo al lato di destra di \eqref{eq:prima} il termine contenente il potenziale chimico $-\mu_idN_i$ con $\mu_i=\Dcvar{\PDy{N_i}{u}}{S,V}$ all'equilibrio \'e trascurabile.
-%Vedi: chemical mixing, equilibrium slowness (partial ionization region, nuclear burning) mass action law: $\sum n_i\mu_i=0$??, minimizzazione energia libera.
+\end{frame}
+
+\section{Equilibrio termico}
+
+\begin{frame}{Equilibrio termico}
 
 Scrivo il bilancio di calore per un elemento di massa unitaria di gas:
 \begin{equation}
@@ -333,19 +337,12 @@ dove $\epsilon$ \'e l'energia prodotta per unit\'a di tempo e massa e $\vec{F}$ 
 \TDy{r}{L}=4\pi r^2[\rho\epsilon-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]\label{eq:fenergyconservation}
 \end{equation}
 
-\end{frame}
-
-\begin{frame}{Equilibrio termico}
-
-Tengo conto dell'energia generata sotto forma di neutrini, che, alle densit\'a tipiche dell'interno solare, hanno interazioni trascurabili con la materia e quindi dal punto di vista energetico sono paragonabili a un flusso di uscente di cui tengo conto aggiungendo un termine negativo $-\epsilon_{\nu}$ tale che $L_{\nu}=\int_0^M\epsilon_{\nu}\,dm$.
-
 Nel caso stazionario:
 \begin{equation}
 \TDy{t}{q}=0\ \Rightarrow\ dL=4\pi r^2\rho\epsilon\,dr
 \end{equation}
 e i processi nucleari che avvengono nella parte centrale forniscono il calore per bilanciare il flusso di energia irradiata.
 
-cammino libero medio degli atomi e dei fotoni sia breve, si raggiunge rapidamente l'equilibrio idrostatico e termico locale. Il processo di contrazione gravitazionale continua, su tempi-scala termodinamici, fino a che l'energia prodotta dalle reazioni nucleari bilancia l'energia irradiata.
 
 \end{frame}
 
