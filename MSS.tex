@@ -377,36 +377,37 @@ $(-D_{12})/D_{12}=\frac{1}{3}lv_{th}$ con $l\approx(n\sigma)\expy{-1}$ cammino l
 
 \begin{frame}{Urti}
 
-approssimando la soluzione dell'equazione del trasporto di Boltzmann del trasporto con la distribuzione di equilibrio traslata della velocit\'a di diffusione $\tau_{diff}\approx\SI{6e13}{\year}$.
 
- La distribuzione di velocit\'a $f_i(\vec{r},\vec{v},t)$ della specie i \'e soluzione dell'equazione del trasporto:
 \begin{equation}
 \TDy{t}{f_i}=\PDy{t}{f_i}+\vec{v}_i\cdot\PDy{\vec{r}}{f_i}+\vec{F}_i\cdot\PDy{\vec{v}}{f_i}=-\Div_{\vec{p}}(\vec{s})=C(f_j)\label{eq:Btransport}
 \end{equation}
-$\vec{s}$ \'e il flusso nello spazio dei momenti dovuto alle collisioni.
+$\tau_{diff}\approx\SI{6e13}{\year}$: soluzione dell'equazione del trasporto di Boltzmann approssimabile con la distribuzione di equilibrio traslata della velocit\'a di diffusione .
 
 Introduco la sezione d'urto collisionale di Rutherford:
 \begin{equation}
 d\sigma=\frac{4\pi(Z_iZ_j)^2}{\mu^2(\vec{v}-\vec{v}')^4}\frac{d\chi}{\chi^3}
 \end{equation}
-per piccoli angoli $\chi$ di deviazione della velocit\'a relativa nel sistema CM  e $\mu$ massa ridotta. Considero un parametro d'impatto massimo $\lambda=\max{(r_D,a_0)}$, distanza alla quale il potenziale coulombiano \'e schermato dalle altre cariche:
-\begin{equation}
-\sigma_{ij}\propto \frac{e^4Z_i^2Z_j^2}{(KT)^2}\ln{\Lambda_{st}}
-\end{equation}
-da risultati numerici si ha che
-\begin{equation}
-\ln{\Lambda_{ij}}\propto\ln{[1+0.18769(\frac{4KT\lambda}{Z_iZ_je^2})]}
-\end{equation}
 
-Scrivo il termine collisionale $C(f)$, considerando solo il contributo degli urti con la specie j con distribuzione $f_j$ , nella forma
+Parametro d'impatto massimo: $\lambda=\max{(r_D,a_0)}$: $L=\int\frac{d\chi}{\chi}=\log{(\frac{1}{\chi_{min}})}$
+
+\begin{align}
+&\sigma_{ij}\propto \frac{e^4Z_i^2Z_j^2}{(KT)^2}\ln{\Lambda_{st}}\\
+&\ln{\Lambda_{ij}}\propto\ln{[1+0.18769(\frac{4KT\lambda}{Z_iZ_je^2})]}
+\end{align}
+
+Termine collisionale $C(f)$ (urti con la specie j con distribuzione $f_j$):
 \begin{equation}
 C(f_i,f_j)=\int\,d^3p_j\,d\sigma|\vec{v}_i-\vec{v}_j|(f_i'f_j'-f_if_j)
 \end{equation}
-dove le quantit\'a primate si riferiscono ai valori dopo l'urto. La forza netta dovuta agli urti \'e:
-\begin{equation}
-\vec{R}_{ij}=\int m\vec{v}C(f_i,f_j)\,d^3v_i\label{eq:friction}
-\end{equation}
 
+La forza netta dovuta agli urti \'e:
+\begin{align}
+&\vec{R}_{ij}=\int m\vec{v}C(f_i,f_j)\,d^3v_i\label{eq:friction}\\
+&\vec{R}_{ij}=n_in_j\mu_{ij}\alpha_{ij}\vec{V}_{ij}\label{eq:resistance}\\
+&\alpha_{ij}=\frac{\mu_{ij}}{KT}\int v_r^3\sigma^Tf^{(0)}(\vec{v_r})\,d^3v_r\label{eq:collisionintegral}\\ &\sigma^T=\int(1-\cos{\chi})\,d\sigma\label{eq:sigmatransport}
+\end{align}
+
+\begin{comment}
 Considero il problema in cui le due specie hanno velocit\'a relativa media diversa da zero ma piccola rispetto alla velocit\'a termica: nel sistema in cui la prima specie ha velocit\'a media nulla la seconda ha velocit\'a $V_{ij}$ quindi la distribuzione di velocit\'a della prima \'e la distribuzione di equilibrio a temperatura T quella della seconda \'e  la distribuzione di equilibrio a temperatura T traslata di $V_{ij}$, velocit\'a di diffusione:
 \begin{equation}
 f_j=f_j^{(0)}+\frac{m_j}{KT}(\vec{V}_{ij}\cdot\vec{v}_j)f_j^{(0)}
@@ -416,6 +417,7 @@ da cui si ottiene:
 &\vec{R}_{ij}=n_in_j\mu_{ij}\alpha_{ij}\vec{V}_{ij}\label{eq:resistance}\\
 &\alpha_{ij}=\frac{\mu_{ij}}{KT}\int v_r^3\sigma^Tf^{(0)}(\vec{v_r})\,d^3v_r\label{eq:collisionintegral}\\ &\sigma^T=\int(1-\cos{\chi})\,d\sigma\label{eq:sigmatransport}
 \end{align}
+\end{comment}
 
 \begin{block}{Diffusione termica}
 
