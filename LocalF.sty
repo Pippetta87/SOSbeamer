@@ -1,5 +1,6 @@
 \ProvidesPackage{LocalF}
 
 \newcounter{columneqc}
-\newcommand\Label[1]{&\refstepcounter{columneqc}(\theeqution.\thecolumneqc)\ltx@label{#1}&}
+\stepcounter{\theequation}
+\newcommand\Label[1]{&\refstepcounter{columneqc}(\theequation.\thecolumneqc)\ltx@label{#1}&}
 
