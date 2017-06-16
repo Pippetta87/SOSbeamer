@@ -265,9 +265,9 @@ Regioni di ionizzazione parziale di idrogeno ed elio
 
 \section{Trasporto dell'energia}
 
-cammino libero medio degli atomi e dei fotoni sia breve, si raggiunge rapidamente l'equilibrio idrostatico e termico locale. Il processo di contrazione gravitazionale continua, su tempi-scala termodinamici, fino a che l'energia prodotta dalle reazioni nucleari bilancia l'energia irradiata.
-
 \subsection{Teorema del viriale}
+
+\begin{frame}{T Viriale}
 
 Il teorema del viriale esprime una propriet\'a statistica di particelle interagenti: 
 
@@ -275,7 +275,6 @@ L'energia potenziale gravitazionale della stella \'e
 \begin{equation}
 \Omega=-\int_0^M\frac{Gm(r)}{r}\,dm\label{eq:energiapg}
 \end{equation}
-
 
 \begin{equation}
 \frac{1}{2}\TtwoDy{t}{I}=2E_i+\Omega
@@ -300,8 +299,12 @@ Nel caso in cui la contrazione gravitazionale sia l'unica fonte di energia per u
 \end{equation}
 e sostituendo i valori solari di (\ref{wrap-tab:sunO}) si ha $\tkh{}\approx\SI{1.6e7}{\year}$.
 
+\end{frame}
+
 
 \subsection{Conservazione dell'energia interna}
+
+\begin{frame}{Prima legge TD}
 
 La prima legge della termodinamica esprime la conservazione dell'energia interna, ovvero mette in relazione il flusso di calore $dq$ per unit\'a di massa in un elemento di gas nell'intervallo di tempo $dt$ con la variazione di energia interna per unit\'a di massa $du$ e di volume specifico $dV$:
 \begin{equation}
@@ -330,6 +333,10 @@ dove $\epsilon$ \'e l'energia prodotta per unit\'a di tempo e massa e $\vec{F}$ 
 \TDy{r}{L}=4\pi r^2[\rho\epsilon-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]\label{eq:fenergyconservation}
 \end{equation}
 
+\end{frame}
+
+\begin{frame}{Equilibrio termico}
+
 Tengo conto dell'energia generata sotto forma di neutrini, che, alle densit\'a tipiche dell'interno solare, hanno interazioni trascurabili con la materia e quindi dal punto di vista energetico sono paragonabili a un flusso di uscente di cui tengo conto aggiungendo un termine negativo $-\epsilon_{\nu}$ tale che $L_{\nu}=\int_0^M\epsilon_{\nu}\,dm$.
 
 Nel caso stazionario:
@@ -337,6 +344,11 @@ Nel caso stazionario:
 \TDy{t}{q}=0\ \Rightarrow\ dL=4\pi r^2\rho\epsilon\,dr
 \end{equation}
 e i processi nucleari che avvengono nella parte centrale forniscono il calore per bilanciare il flusso di energia irradiata.
+
+cammino libero medio degli atomi e dei fotoni sia breve, si raggiunge rapidamente l'equilibrio idrostatico e termico locale. Il processo di contrazione gravitazionale continua, su tempi-scala termodinamici, fino a che l'energia prodotta dalle reazioni nucleari bilancia l'energia irradiata.
+
+\end{frame}
+
 
 \section{Produzione di energia - reazioni di fusione}
 
