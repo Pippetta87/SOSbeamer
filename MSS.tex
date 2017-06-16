@@ -349,16 +349,37 @@ e i processi nucleari che avvengono nella parte centrale forniscono il calore pe
 
 \begin{frame}{Velocit\'a di diffusione}
 
-La velocit\'a di diffusione relativa di due elementi si pu\'o scrivere:
-\begin{align}
-&v_{12}=\frac{1}{n_1}\int\,d^3v_1f_1\vec{v}_1-\frac{1}{n_{2}}\int\,d^3v_{2}f_{2}\vec{v}_{2}\\
-&=-D_{12}\left[\frac{1}{c_1c_{2}}\PDy{r}{c_1}+\frac{m_{2}-m_1}{c_1m_1+c_{2}m_{2}}\frac{1}{P}\PDy{r}{P}-\frac{m_1m_{2}(\vec{F}_1-\vec{F}_{2})}{KT(c_1m_1+c_{2}m_{2})}+\frac{K_T}{n_1n_{2}}\frac{1}{T}\PDy{r}{T}\right]\label{eq:diffusionaller}
-\end{align}
-$D_{12}=\frac{1}{3}lv_{th}$ con $l\approx(n\sigma)\expy{-1}$ cammino libero medio con $\sigma$ sezione d'urto media e il coefficiente di diffusione termica $K_T$
+L'equazione \eqref{eq:diffusionaller} descrive l'effetto sulle diverse particelle, importante per l'evoluzione chimica solare, delle , pressione e temperatura presenti nel Sole 
+
+ (\citet{aller1960diffusion})
+\begin{equation}
+v_{12}=\frac{1}{n_1}\int\,d^3v_1f_1\vec{v}_1-\frac{1}{n_{2}}\int\,d^3v_{2}f_{2}\vec{v}_{2}
+\end{equation}
+
+\begin{itemize}\label{itm:diffusionaller}
+\item disomogeneit\'a di composizione
+\begin{equation}
+\propto\frac{1}{c_1c_{2}}\PDy{r}{c_1}
+\end{equation}
+\item disomogeneit\'a pressione:
+\begin{equation}
+\frac{m_{2}-m_1}{c_1m_1+c_{2}m_{2}}\frac{1}{P}\PDy{r}{P}-\frac{m_1m_{2}(\vec{F}_1-\vec{F}_{2})}{KT(c_1m_1+c_{2}m_{2})}
+\end{equation}
+\item Forze agenti per unit\'a di massa $F_i$:
+\begin{equation}
+\frac{m_{2}-m_1}{c_1m_1+c_{2}m_{2}}\frac{1}{P}\PDy{r}{P}-\frac{m_1m_{2}(\vec{F}_1-\vec{F}_{2})}{KT(c_1m_1+c_{2}m_{2})}
+\end{equation}
+\item disomogeneit\'a pressione
+\begin{equation}
+\frac{K_T}{n_1n_{2}}\frac{1}{T}\PDy{r}{T}
+\end{equation}
+\end{itemize}
+
+$(-D_{12})/D_{12}=\frac{1}{3}lv_{th}$ con $l\approx(n\sigma)\expy{-1}$ cammino libero medio con $\sigma$ sezione d'urto media e il coefficiente di diffusione termica $K_T$
 
 Sebbene il tempo caratteristico per percorre un raggio solare sia lungo $\tau_{diff}\approx\SI{6e13}{\year}$ i processi di diffusione producono effetti non trascurabili sulla struttura solare e sull'abbondanza superficiale degli elementi: la loro inclusione nei \mss{} produce un miglior accordo con le osservazioni.
 
-L'equazione \eqref{eq:diffusionaller} descrive l'effetto sulle diverse particelle, importante per l'evoluzione chimica solare, delle disomogeneit\'a di composizione, pressione e temperatura presenti nel Sole approssimando la soluzione dell'equazione del trasporto di Boltzmann del trasporto con la distribuzione di equilibrio traslata della velocit\'a di diffusione. La distribuzione di velocit\'a $f_i(\vec{r},\vec{v},t)$ della specie i \'e soluzione dell'equazione del trasporto:
+approssimando la soluzione dell'equazione del trasporto di Boltzmann del trasporto con la distribuzione di equilibrio traslata della velocit\'a di diffusione. La distribuzione di velocit\'a $f_i(\vec{r},\vec{v},t)$ della specie i \'e soluzione dell'equazione del trasporto:
 \begin{equation}
 \TDy{t}{f_i}=\PDy{t}{f_i}+\vec{v}_i\cdot\PDy{\vec{r}}{f_i}+\vec{F}_i\cdot\PDy{\vec{v}}{f_i}=-\Div_{\vec{p}}(\vec{s})=C(f_j)\label{eq:Btransport}
 \end{equation}
