@@ -115,6 +115,8 @@ In \citet{lei62velocity} si osserva che la superficie solare ha scale spazio-tem
 
 \begin{block}{Modi normali - onde gravo-acustiche in cavit\'a risonanti di varia profondit\'a}
 
+Le oscillazioni solari sono in prevalenza dovute ad onde acustiche, in cui la forza di richiamo \'e prodotta dal gradiente di pressione, modi p, e onde in cui la forza di richiamo \'e la forza di gravit\'a, i modi g: i modi osservabili pi\'u facilmente hanno periodo attorno a \SI{5}{\minute} ci\'o \'e dovuto all'aumento del rumore solare a basse frequenze e ai processi di eccitazione dei modi che trasferiscono la massima energia ai modi di tale periodo.
+
 Il modello proposto da \citet{ulrich70five} e \citet*{stein71five} considera le propriet\'a dei modi normali non radiali di oscillazione del Sole, in particolare usando la relazione di dispersione per onde acustiche, si ha la definizione di cavit\'a risonanti all'interno del Sole: la variazione delle propriet\'a del gas delimita le regioni di propagazione a diverse profondit\'a a seconda delle caratteristiche trasversali del moto.
 
 \end{block}
@@ -250,6 +252,8 @@ La condizione di non propagazione oltre la fotosfera dipende dalla descrizione d
 
 \subsection{Energia dei modi-effetti di superficie}
 
+\begin{frame}{Energia dei modi}
+
 Indico con $\exv{E_{kin}^{nl}}$ la media temporale dell'energia cinetica del modo
 \begin{equation}
 E_{kin}^{nl}=\frac{1}{2}\int_V|\vec{v}|^2\rho_0\,dV=\frac{\omega^2}{2}\int_V|\vec{\xi}|^2\rho_0\,dV
@@ -263,7 +267,6 @@ dove $\exv{\dvec{\xi}_{nl}(R)}$ indica la velocit\'a quadratica media superficia
 I_{nl}=\frac{1}{M\exv{\vec{\xi}(R)\vec{\xi}^*(R)}}\int_V\,d^3x\rho_0\vec{\xi}\vec{\xi}^*
 \end{equation}
 
-Le oscillazioni solari sono in prevalenza dovute ad onde acustiche, in cui la forza di richiamo \'e prodotta dal gradiente di pressione, modi p, e onde in cui la forza di richiamo \'e la forza di gravit\'a, i modi g: i modi osservabili pi\'u facilmente hanno periodo attorno a \SI{5}{\minute} ci\'o \'e dovuto all'aumento del rumore solare a basse frequenze e ai processi di eccitazione dei modi che trasferiscono la massima energia ai modi di tale periodo.
 
 \begin{figure}[!ht]
 
@@ -286,12 +289,13 @@ $Q_{nl}=1$ per $l=0$ e diminuisce al crescere di $l$; l'ampiezza superficiale re
 
 Il comportamento all'aumentare della frequenza mostrato in \subref{fig:nFreqdiff} \'e dovuto al fatto che per frequenze maggiori la regione in cui si ha riflessione interna \'e pi\'u in alto dove l'approssimazione adiabatica \'e meno valida; la figura \subref{fig:phasedifference} mostra la propagazione di fase ad alte frequenze dovuta ad effetti dissipativi.
 
+\end{frame}
 
 \subsection{Principio variazionale}    %Vedi pg 110 dalsnote.
 
 \begin{frame}{Variazioni nel modello provocano variazioni nelle frequenze dei modi}
 
-EOM lionearizzata
+EOM linearizzata
 
 \begin{equation}\label{eq:EOMrhoc}%Unno89
 -\omega^2\rho_0\xi=\nabla(c_s^2\rho\scap{\nabla}{\xi}+\nabla P\cdot\vec{\xi})-\vec{g}_0\nabla\cdot(\rho_0\vec{\xi})-G\rho_0\nabla(\int_V\frac{\nabla\cdot(\rho_0\vec{\xi})\,d^3r'}{|\vec{r}-\vec{r}'|})
@@ -358,6 +362,246 @@ La determinazione dell'abbondanza di elio nella regione convettiva \'e dovuta pr
 
 
 \section{Campo di velocit\'a solare}
+
+
+\subsection{Analisi fenomeni stazionari stocastici}
+
+\begin{wrapfigure}[16]{r}{0.5\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.48\textwidth]{lowlmodes}
+\caption{Densit\'a spettrale modi p di basso grado angolare. Da \cite{chr02helioseismology}.}\label{fig:lowlmodes}
+\end{wrapfigure}
+
+\begin{frame}{Misura velocit\'a Doppler}
+
+I fenomeni periodici sulla superficie solare sono osservabili tramite tecniche fotometriche o spettroscopiche, tramite effetto doppler: una parte basilare dell'informazione contenuta nei modi di oscillazione \'e ricavata analizzando  lo spostamento doppler delle righe di assorbimento dei metalli presenti negli strati visibili pi\'u esterni del sole.
+
+L'ampiezza della velocit\'a di oscillazione per il singolo modo \'e  al pi\'u \SI{15}{\cm\per\second} quindi l'effetto doppler causa uno shift, al massimo, di $\frac{\Delta\lambda}{\lambda}\approx\num{e-10}$. Le misure Doppler su luce integrata sull'intero disco solare sono effettuate tramite uno spettroscopio a scattering risonante, in cui lo splitting  Zeeman dovuto a un campo magnetico esterno applicato a vapori di $Na/K$ permette la trasmissione  in due bande molto strette simmetriche rispetto alla linea spettrale di cui si vuole misurare lo shift: la velocit\'a Doppler \'e proporzionale alla differenza di intesit\'a osservata nelle due bande. Il tacometro di Fourier \'e uno degli strumenti pi\'u utilizzati per misure Doppler  con risoluzione spaziale.
+
+Il segnale Doppler osservato \'e proporzionale a:
+\begin{equation}
+    V_D(\theta,\phi,t)=\sin{\theta}\cos{\phi}\sum_{n,l,m}A_{nlm}c_{lm}P_l^m(\cos{\theta})\cos{(m\phi-\omega_{nlm}t-\beta_{nlm})}
+\end{equation}
+
+Il fattore $\sin{\theta}\cos{\phi}$ deriva dalla proiezione della velocit\'a radiale sulla linea di vista: i modi con periodo attorno ai 5 minuti di grado l non elevato causano uno spostamento quasi totalmente radiale:
+\begin{align}
+&\frac{\delta h|_{rms}}{\delta r|_{rms}}=\frac{\sqrt{l(l+1)}}{\sigma^2}\intxt{per oscillazioni con periodo intorno a \SI{5}{\minute} \'e}
+&\sigma^2=\frac{\rsun{}}{G\msun{}}\omega^2\approx1000
+\end{align}
+
+\begin{comment}
+\begin{align}
+&\delta r|_{rms}=\exv{\vec{\xi}\cdot\hat{r}}=\frac{1}{2}|\tilde{xi}_r|^2\\
+&=\frac{1}{\Pi}\int_0^{\pi}\,dt\frac{1}{4\pi}\oint\Re{\tilde{\xi}_rY_{l,m}(\theta,\phi)\exp{-i\omega t}}^2\,d\omega\\
+&\delta h_{rms}^2=\exv{|\vec{\xi}_h|^2}=\frac{1}{2}l(l+1)|\tilde{\xi}_h(r)|^2\\
+&\frac{\delta h|_{rms}}{\delta r|_{rms}}=\frac{\sqrt{l(l+1)}}{\sigma}
+\end{align}
+\end{comment}
+
+Per isolare il contributo di una singola $Y_{l_0m_0}$ considero
+\begin{equation}\label{eq:dopplerTS}
+V_{l_0m_0}(t)=\int_AV_D(\theta,\phi,t)W_{l_0m_0}(\theta,\phi)\,dA=\sum_{n,l,m}S_{l_0m_0,lm}A_{nlm}(t)\cos{(\omega_{nlm}t+\beta_{nlm,L_0m_0})}
+\end{equation}
+e ho integrato sul disco solare con $W_{l_0m_0}\approx Y_{l_0m_0}$. $S_{l_0m_0,lm}$ \'e la funzione di risposta che non \'e esattamente $\propto\delta_{ll_0}\delta_{mm_0}$ poich\'e le armoniche sferiche sono ortogonali sull'intera sfera ma contiene contributi da valori di $(l,m)$ vicini.
+
+Considero la trasformata di Fourier di \eqref{eq:dopplerTS} per tempo di osservazione $T$
+\begin{equation}
+V_{l_0m_0}(\nu)=\int_{-\midfrac{T}{2}}^{\midfrac{T}{2}}V_{l_0m_0}(t)\exp{i2\pi\nu t}\,dt
+\end{equation}
+
+
+\end{frame}
+
+
+
+\begin{frame}{Fenomeni stazionari stocastici}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[keepaspectratio,width=0.3\textwidth]{Powerspectraldensity}
+\caption{Densit\'a spettrale di oscillatore smorzato di frequenza naturale $\midfrac{\omega_{nl}}{2\pi}$ con forzante stocastica. $P_f$ \'e la DSP della forzante. $P=P_fP_L$. Da \cite{houdek2006stochastic}.}\label{fig:Powerspectraldensity}
+\end{figure}
+
+Un segnale di durata T permette una risoluzione $\Delta\omega=\frac{2\pi}{T}$ mentre il limite superiore delle frequenze osservate \'e dato dalla frequenza di Nyquist $\omega_{Ny}=\frac{\pi}{\Delta t}$ con $\Delta t$ risoluzione temporale; nel caso le dimensioni lineari $L_i$ della regione osservata siano piccole da poter trascurare la curvatura si hanno analoghe relazioni per le variabili spaziali cartesiane e vettore d'onda associato:
+\begin{equation}
+\Delta\omega=\frac{2\pi}{T}\leq\omega\leq\frac{\pi}{\Delta t},\ \Delta k_i=\frac{2\pi}{L_i}\leq k_i\leq\frac{\pi}{\Delta x_i}
+\end{equation}
+
+I modi normali sono identificati tramite la distribuzione spaziale delle oscillazioni in superficie, cio\'e tramite $(l,m)$ o, approssimando localmente l'oscillazione con un onda piana, tramite $k_h$, con
+\begin{equation}
+\vec{k}=k_r\hat{r}+\vec{k}_h,\ k_h^2=\frac{l(l+1)}{r^2}
+\end{equation}
+e dalla distribuzione delle frequenze, che identifica l'ordine n ovvero il numero di zeri radiali della velocit\'a perturbata.
+
+Considero la trasformata di Fourier di un processo stocastico $x(t)$ campionato per un tempo T:
+\begin{align}
+&X_T(\nu)=\int_{-\frac{T}{2}}^{\frac{T}{2}}x(t)\exp{i2\pi\nu t}\intxt{la cui densit\'a spettrale di potenza (DSP) \'e}
+&P_T(\nu)=\frac{1}{T}|X_T(\nu)|^2\label{eq:powerspectraldensity}
+%&S_T(\nu)=\frac{1}{T}\int_{-T/2}^{T/2}\int_{-T/2}^{T/2}x(t)x(t')\exp{i2\pi\nu t}\exp{i2\pi\nu t}\,dt\,dt'\\
+=\int_{-T/2}^{T/2}\left[\frac{1}{T}\int_{-T/2}^{T/2}x(t')x(t'+\tau)\,dt'\right]\exp{i2\pi\nu \tau}\,d\tau\intxt{e definendo la funzione di autocorrelazione $C_T(\tau)$ si ha}
+&P_T(\nu)=\int_{-T/2}^{T/2}C_T(\tau)\exp{i2\pi\nu\tau}\,d\tau\\
+&C(\tau)=E(x(t)x(t+\tau))=\lim_{T\to\infty}{C_T(\tau)}
+\end{align}
+
+\end{frame}
+
+\begin{frame}{Forma del picco della densit\'a spettrale di potenza}
+
+\begin{columns}
+\begin{column}{width=0.45\textwidth}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[keepaspectratio,width=0.4\textwidth]{modespheomenology}
+\caption{Risultati osservativi per $\Gamma$, $\exv{V^2}$ e $E_{nl}$ in funzione della frequenza per modi con $l\approx20$. Da \cite{libbrecht1988solar}.}\label{fig:Powerspectraldensity}
+\end{figure}
+
+\end{column}
+
+\begin{column}
+
+Il valore di aspettazione della densit\'a spettrale per un tempo di osservazione tendente a infinito \'e:
+\begin{align}
+&P_x(\nu)=\lim_{T\to\infty}{E[P_T(\nu)]}=\int_{-\infty}^{-\infty}C(\tau)\exp{2\pi i\nu\tau}\,d\tau\intxt{da cui si ha il teorema di Wiener-Khinchin}
+&C(\tau)=\int_{-\infty}^{-\infty}P_x(\nu)\exp{-2\pi i\nu\tau}\,d\nu\intxt{che per $\tau=0$ da l'identit\'a di Parseval:}
+&C(0)=\int_{-\infty}^{-\infty}P_x(\nu)\,d\nu=E(x^2)
+\end{align}
+
+Il segnale solare osservato \'e sovrapposizione di un segnale armonico e del rumore: la densit\'a spettrale si scrive
+\begin{equation}
+P_x(\nu)=\sum_i\frac{AB_i\midfrac{\Gamma^2}{4}}{(\nu-\nu_0-\Delta\nu_i)^2+\midfrac{\Gamma^2}{4}}+P_n(\nu)
+\end{equation}
+dove $A$ \'e l'altezza del picco $\Gamma$ la larghezza a met\'a altezza, i termini $\Delta\nu_i$ e $B_i$ descrivono i lobi parassiti; il secondo termine descrive il rumore solare e strumentale.
+
+Il profilo lorentziano della densit\'a spettrale del segnale periodico deriva dall'assunzione che le autofunzioni dei modi obbediscano all'equazione del moto di un oscillatore armonico smorzato con forzante stocastica. Determino la densit\'a spettrale dell'oscillatore
+\begin{equation}
+I_{nl}[\TtwoDy{t}{\xi_{nl}}+\Gamma_{nl}\TDy{t}{\xi_{nl}}+\omega_0^2\xi_{nl}]=f(t)
+\end{equation}
+
+con $\midfrac{\Gamma}{2}=\Im{\omega}$ costante di smorzamento, inverso del tempo di vita.
+
+Assumendo $\omega_{nl}\gg\Gamma_{nl}$, cio\'e gli scambi di energia tra i modi e la turbolenza hanno tempo caratteristico $\tau_{nad}\gg\Pi_{osc}$, lo spettro in frequenza dell'oscillatore $P(\omega)=\exv{|\xi_{nl}(\omega)|^2}$,vicino a $\omega_0$ \'e della forma:
+\begin{equation}
+P(\omega)\propto P_LP_f=\frac{\midfrac{\Gamma_{nl}}{2\pi}}{(\omega-\omega_0)^2+\midfrac{\Gamma_{nl}}{4}}P_f
+\end{equation}
+
+
+L'energia dell'oscillatore varia su tempi scala proporzionali a $\invers{\Gamma}_{nl}$ attorno al valor medio $\bar{E}_{nl}$:
+\begin{align}
+&\TDy{t}{E_{nl}}+\Gamma_{nl}E_{nl}=\exv{\dvec{\xi}_{nl}\cdot\vec{F}}\\
+&\exv{{E}_{nl}}=\frac{\exv{\dvec{\xi}_{nl}\cdot\vec{F}}}{\Gamma_{nl}}
+\end{align}
+dove $\exv{\dvec{\xi}_{nl}\cdot\vec{F}}$ \'e il lavoro della forzante mediato su un periodo.
+
+Il valore di aspettazione dell'energia totale di un modo si ottiene dalle osservazioni tramite:
+\begin{equation}
+E_{nl}=I_{nl}\exv{V_{nl}^2}=I_{nl}\frac{1}{T_{obs}}\int_{-\infty}^{\infty}|V(\nu)|^2\,d\nu\propto I_{nl}\Gamma_{nl}A_{nl}
+\end{equation}
+dove $A_{nl}$ \'e l'altezza di picco della densit\'a spettrale di potenza per $V_{l_0m_0}(\nu)$.
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+\subsection{Rotazione}
+
+\begin{frame}{Perturbazioni alle frequenze dei modi}
+
+\begin{equation}
+\rho_0(\PDof{t}+\scap{v_0}{\nabla})^2\vec{\xi}\label{eq:inertialtermvf}
+\end{equation}
+
+Il Sole \'e un rotatore lento: le osservazioni della superficie mostrano una dipendenza dalla co-latitudine 
+\begin{equation*}
+\frac{\Omega(\theta)}{2\pi}=\SI{451.5}{\nano\hertz}-\SI{65.3}{\nano\hertz}\cos^2{\theta}-\SI{66.7}{\nano\hertz}\cos^4{\theta}
+\end{equation*}
+questa legge \'e soggetta a discrepanze e variazioni temporali.
+
+Il campo di velocit\'a rotazionale \'e 
+\begin{equation}
+\vec{v_0}=\vecp{\Omega}{r}
+\end{equation}
+
+Considero il termine dovuto alla rotazione come una piccola correzione alle frequenze dei modi
+\begin{equation}
+\omega_{n,l,m}=\omega_{(n,l)}+\Delta\omega_{(l,m)}
+\end{equation}
+Nel caso di rotazione uniforme \'e facile trovare le correzioni dovute alla rotazione: passando al SR corotante $(r',\theta',\phi')=(r,\theta,\phi-\Omega t)$ e data la dipendenza delle oscillazioni dall'angolo azimutale e dal tempo deve essere $\cos{(m\phi'-\omega_{n,l}t)}=\cos{(m\phi-\omega_{n,l,m}t)}$ cio\'e $\Delta\omega_{(l,m)}=m\Omega$.
+
+I modi di oscillazioni sono onde stazionarie nel rifermento corotante mentre nel riferimento inerziale si ha uno spostamento delle frequenze per le onde che hanno una componente parallela all'equatore; le onde prograde/retrograde ($m=\pm l$) hanno shift massimo. 
+
+\end{frame}
+
+\begin{frame}{Effetto Doppler della rotazione sulle frequenze dei modi}
+
+\begin{columns}
+
+\begin{column}{0.5\textwidth}
+
+\'E possibile identificare l'effetto della rotazione effettuando una misura sensibile a onde con direzione di propagazione parallela all'equatore
+\begin{equation}
+\frac{\Delta\omega}{\omega}=\pm\frac{V_{adv}}{V_{ph}}
+%&V_{adv}=\pm\frac{\Delta\omega}{k_h}
+\end{equation}
+che da una indicazione della velocit\'a media dovuta alla rotazione $V_{adv}$ nella regione in cui \'e confinato il modo con $V_{ph}=\frac{\omega}{k_h}$.
+
+\end{column}
+
+\begin{column}{0.5\textwidth}
+
+\begin{minipage}{0.9\textwidth}
+\captionof{figure}{Diagramma $\omega-k_h$ per osservazione di una regione solare $\ang{;;2}\times\ang{;;2}$ mediata in direzione nord-sud: la misura \'e maggirmente sensibile alle onde che si propagano in direzione est-ovest lungo l'equatore. Si osserva lo spostamento dovuto alla rotazione dalla predizione per modello non-rotante (linee continue). Da \cite{rhodes1979new}.}\label{fig:rotationshiftridge}
+\end{minipage}
+
+\begin{minipage}{0.9\textwidth}
+\includegraphics[keepaspectratio,angle=0,width=0.9\textwidth]{rotationshiftridge}
+\end{minipage}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Principio variazionale per splitting da rotazione}
+
+L'equazione del moto al primo ordine nella perturbazione, con $\alpha=(l,m)$, \'e:
+\begin{equation}\label{eq:eomrotation}
+\begin{split}
+&\rho_0(\omega_{\alpha}^2+2\omega_{\alpha}\Delta\omega_{\alpha})\vec{\xi}=\\
+&\nabla P_1-\frac{\rho_1}{\rho_0}\nabla P_0+\rho_0\nabla\Phi_1+2i\omega_{\alpha}\rho_0(\scap{v_0}{\nabla})\vec{\xi}
+\end{split}
+\end{equation}
+dove ho esplicitato il termine inerziale \eqref{eq:inertialtermvf} e usando $(\scap{v_0}{\nabla})\vec{\xi}=im\vec{\Omega}\xi+\vecp{\Omega}{\xi}$, lo splitting dovuto alla rotazione \'e:
+\begin{equation}\label{eq:splitfreqrotation}
+\begin{split}
+&\Delta\omega_{\alpha}=\frac{i\int\rho_0\xi_{\alpha}^*(\scap{v_0}{\nabla})\xi_{\alpha}\,d^3x}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}\,d^3x}\\
+&=\frac{-m\int\rho_0\Omega\xi_{\alpha}^*\xi_{\alpha}\,d^3x+i\int\rho_0\xi_{\alpha}^*(\vecp{\Omega}{\xi_{\alpha}})\,d^3x}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}\,d^3x}
+\end{split}
+\end{equation}
+
+La velocit\'a angolare contribuisce a $\Delta\omega_{\alpha}$ negli strati in cui $\xi_{\alpha}$ \'e apprezzabile. Nel caso di rotazione dipendente solo da r si ha che $\Delta\omega_{\alpha}$ \'e lineare in m: ho $2l+1$ frequenze equispaziate e per modi p di alto n approssimo lo splitting delle frequenze con:
+\begin{align}
+&\delta\omega_{nlm}\approx m\frac{\int_{r_t}^R\Omega(r)\,\frac{dr}{c}}{\int_{r_t}^R\frac{dr}{c}}\intxt{per $\Omega(r)$ puramente radiale, cio\'e  per una media sulla latitudine; per velocit\'a angolare generale $\Omega(r,\theta)$, usando le propriet\'a dei polinomi di Legendre $P_l^m(x)$:}
+&\delta\omega_{nlm}\approx m\frac{\int_{\cos{\Theta}}^{-\cos{\Theta}}(\cos^2{\Theta}-\cos^2{\theta})\expy{-\frac{1}{2}}\int_{r_t}^R(1-\frac{L^2c^2}{r^2\omega^2})\expy{\frac{1}{2}}\Omega(r,\theta)\frac{dr}{c}\,d(\cos{\theta})}{\int_{r_t}^R(1-\frac{L^2c^2}{r^2\omega^2})\expy{\frac{1}{2}}\,\frac{dr}{c}}\intxt{dove}
+&\Theta=\sin^{-1}{(\frac{m}{L}).}
+\end{align}
+
+
+Le autofunzioni hanno ampiezza apprezzabile nella fascia compresa tra le latitudini $\pm\Theta$: questo permette la risoluzione anche della dipendenza da $\theta$ della rotazione.
+
+Il problema di trovare $\Omega(r,\theta)$ dalla differenza $\Delta\omega_{\alpha}$ \'e lineare in $\Omega$ quindi $\Delta\omega_{\alpha}\propto\Omega$. Per determinare quindi la rotazione si utilizzano tecniche di inverzione basate sul principio variazionale.
+
+
+Parametrizzano le frequenze nel multipletto $(n,l)$ tramite:
+\begin{equation}
+\nu_{nlm}=\nu_{nl0}+\sum_{j=1}^{j_{\max}}a_j(n,l)\pol_j^{(l)}(m)\label{eq:freqmulti}
+\end{equation}
+e ricavo i coefficienti tramite fit con le frequenze osservate; i coefficienti dispari contengono il contributo della rotazione al termine lineare, i coefficienti pari effetti delle asfericit\'a nella struttura solare e effetti quadratici della rotazione.
+
+\end{frame}
 
 \section{Caratteristiche asintotiche delle oscillazioni adiabatiche}
 
