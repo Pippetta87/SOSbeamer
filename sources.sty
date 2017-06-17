@@ -201,6 +201,20 @@ x y z zx% xi yi zi zxi
 %%PPCHAIN & S
 \begin{filecontents}{ppchain.tex}
 
+\setmuskip{\thinmuskip}{0mu}\setmuskip{\medmuskip}{0mu}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position .5 with {\arrow{>}}},postaction={decorate}},
+-->/.style={decoration={
+  markings,
+  mark=at position .8 with {\arrow{>}}},postaction={decorate}},
+box/.style={%
+%draw,
+minimum width=25mm,%
+    minimum height=6mm,%
+    align=center}
+}
+
 \begin{tikzpicture}
 
 \begin{scope}[scale=0.8,transform shape]
@@ -264,20 +278,6 @@ x y z zx% xi yi zi zxi
 \node[anchor=north west]  at ($(ppchain.south)+(-50mm,-1mm)$) {\parbox{0.5\textwidth}{\captionof{figure}{Reazioni catena PP: terminazioni per temperature caratteristiche del centro solare. Da \cite{adelberger2011solar}.}}};
 
 \end{tikzpicture}
-
-\setmuskip{\thinmuskip}{0mu}\setmuskip{\medmuskip}{0mu}
-\tikzset{->-/.style={decoration={
-  markings,
-  mark=at position .5 with {\arrow{>}}},postaction={decorate}},
--->/.style={decoration={
-  markings,
-  mark=at position .8 with {\arrow{>}}},postaction={decorate}},
-box/.style={%
-%draw,
-minimum width=25mm,%
-    minimum height=6mm,%
-    align=center}
-}
 
 \begin{tikzpicture}
 
