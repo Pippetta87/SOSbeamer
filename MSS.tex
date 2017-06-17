@@ -731,6 +731,22 @@ dove $Q_{ij}$ \'e l'energia liberata per reazione tra nucleo di specie i e j; $X
 f(E)dE\propto\frac{E\expy{\frac{1}{2}}}{(kT)\expy{\frac{3}{2}}}\exp{-\frac{E}{kT}}\,dE\label{eq:MB}
 \end{equation}
 
+Per determinare $\exv{\sigma v}$ uso il fatto che l'integrando
+\begin{equation}
+S(E)\exp{-\frac{E}{kT}-\frac{b}{\sqrt{E}}}\label{eq:reactionrateM}
+\end{equation}
+ha forma approssimativamente gaussiana il cui massimo $E_G$, energia pi\'u probabile di reazione, e FWHM sono:
+\begin{equation}
+E_G=\SI{5.665}{\kilo\ev} A\expy{\frac{1}{3}}T_7\expy{\frac{2}{3}},\ \Delta E=4.249W\expy{\frac{1}{6}}T_7\expy{\frac{5}{6}}
+\end{equation}
+posto $W=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$.
+
+Il rate locale per reazioni non risonanti si scrive approssimativamente come:
+\begin{equation}
+\exv{\sigma v}=\num{1.3005e-15}[\frac{Z_1Z_2}{AT_6^2}]\expy{\frac{1}{3}}fS_{eff}\exp{-\tau}\si{\cubic\cm\per\second},\ \tau=\frac{3E_G}{kT}\approx\num{42.487}(Z_1^2Z_2^2AT_6\expy{-1})\expy{\frac{1}{3}}
+\end{equation}
+$S_{eff}$ \'e il risultato dell'espansione dell'integrando per $\invers{\tau}\ll1$ ed estrapolato a $E_G$ a partire dal valore a $E(0)$ determinato dalla fisica nucleare.
+
 \end{frame}
 
 \begin{frame}{Reazioni catena PP}
@@ -817,8 +833,8 @@ minimum width=25mm,%
 \end{frame}
 
 \begin{frame}{Fattore astrofisico}
-
-\begin{tikzpicture}
+\centering
+\begin{tikzpicture}[ampersand replacement=\&]
 
 \begin{scope}[scale=0.5,transform shape,every node/.style={scale=0.6}]
 \matrix[matrix of nodes,column sep={60pt,between origins},row
@@ -841,32 +857,15 @@ $\cel{Be}{7}{}{}(p,\Pphoton)\cel{B}{8}{}{}$& $(2.08 \pm 0.16)10^{-2}$ & $\pm 7.5
 \draw[] (R2.south -| s.west) -- (R2.south -| s.east);
  \end{scope}
  
-\node (pep) at ($(s.south)+(47mm,-6mm)$) {\parbox{\textwidth}{\begin{equation*}\begin{split}\scriptscriptstyle II: R(p\Pelectron p)=&\scriptscriptstyle1.102(1\pm0.01)10^{-4}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}\\
-&\scriptscriptstyle[1+0.002(T_6-16)]R(pp)\end{split}\end{equation*}}};
-\node[below=0.1mm of pep] (ec) {\parbox{\textwidth}{\begin{equation*}\begin{split}\scriptscriptstyle I: R(\cel{Be}{7}{}{}(\Pelectron,\Pnue)\cel{Li}{7}{}{})=&\scriptscriptstyle5.6(1\pm0.02)10^{-9}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}\\
-&\scriptscriptstyle[1+0.004(T_6-16)]\si{\per\second}\end{split}\end{equation*}}};
+\node (pep) at ($(s.south)+(47mm,-6mm)$) {\parbox{\textwidth}{\begin{equation*}\scriptscriptstyle II: R(p\Pelectron p)=\scriptscriptstyle1.102(1\pm0.01)10^{-4}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}
+\scriptscriptstyle[1+0.002(T_6-16)]R(pp)\end{equation*}}};
+\node[below=0.1mm of pep] (ec) {\parbox{\textwidth}{\begin{equation*}\scriptscriptstyle I: R(\cel{Be}{7}{}{}(\Pelectron,\Pnue)\cel{Li}{7}{}{})=\scriptscriptstyle5.6(1\pm0.02)10^{-9}\midfrac{\rho}{\mu_e}T_6\expy{-1/2}\scriptscriptstyle[1+0.004(T_6-16)]\si{\per\second}\end{equation*}}};
  
 \node[below=0.1mm of ec] (captions) {\parbox{\textwidth}{\captionof{figure}{Fattore astrofisico reazioni catena PP}}};
 
 \end{tikzpicture}
 
 \end{frame}
-
-Per determinare $\exv{\sigma v}$ uso il fatto che l'integrando
-\begin{equation}
-S(E)\exp{-\frac{E}{kT}-\frac{b}{\sqrt{E}}}\label{eq:reactionrateM}
-\end{equation}
-ha forma approssimativamente gaussiana il cui massimo $E_G$, energia pi\'u probabile di reazione, e FWHM sono:
-\begin{equation}
-E_G=\SI{5.665}{\kilo\ev} A\expy{\frac{1}{3}}T_7\expy{\frac{2}{3}},\ \Delta E=4.249W\expy{\frac{1}{6}}T_7\expy{\frac{5}{6}}
-\end{equation}
-posto $W=Z_j^2Z_k^2A=Z_j^2Z_k^2\frac{A_iA_j}{A_i+A_j}$.
-
-Il rate locale per reazioni non risonanti si scrive approssimativamente come:
-\begin{equation}
-\exv{\sigma v}=\num{1.3005e-15}[\frac{Z_1Z_2}{AT_6^2}]\expy{\frac{1}{3}}fS_{eff}\exp{-\tau}\si{\cubic\cm\per\second},\ \tau=\frac{3E_G}{kT}\approx\num{42.487}(Z_1^2Z_2^2AT_6\expy{-1})\expy{\frac{1}{3}}
-\end{equation}
-$S_{eff}$ \'e il risultato dell'espansione dell'integrando per $\invers{\tau}\ll1$ ed estrapolato a $E_G$ a partire dal valore a $E(0)$ determinato dalla fisica nucleare.
 
 \begin{frame}{Schermaggio elettronico}
 
