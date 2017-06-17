@@ -613,3 +613,219 @@ e ricavo i coefficienti tramite fit con le frequenze osservate; i coefficienti d
 
 \section{Caratteristiche asintotiche delle oscillazioni adiabatiche}
 
+
+\subsection{Comportamento asintotico dei modi.}
+
+\begin{frame}{Approssimazione di Cowling}
+
+(\cite{cow41oscillations})
+\begin{equation}
+\Phi'(r)=-\frac{4\pi G}{2l+1}\left[\frac{1}{r^{l+1}}\int_0^r\rho'(r)r'^{l+2}\,dr'+r^l\int_r^R\frac{\rho'(r')}{r'^{r'^{l-1}}}\,dr'\right]\label{eq:perturbedgravitational}
+\end{equation}
+
+da cui si vede che $|\Phi'|$ \'e trascurabile rispetto a $\rho'$ sia nel caso in cui $l\gg1$, per l'esponente crescente con l al denominatore dei due addendi in \eqref{eq:perturbedgravitational}, sia nel caso $|n|\gg1$, per il comportamento rapidamente oscillante di $\rho'$.
+
+Il sistema \eqref{eigenomega} si riduce a:
+\begin{subequations}\label{cowosc:main}
+\begin{align}
+&\frac{1}{r^2}\TDof{r}(r^2\xi_r)-\frac{\xi_rg_0}{c^2}+\frac{1}{\rho_0}(\frac{1}{c^2}-\frac{l(l+1)}{r^2\omega^2})P'=0\label{cowosc:a}\\
+&\frac{1}{\rho_0}(\TDof{r}+\frac{g}{c^2})P'-(\omega^2-N^2)\xi_r=0\label{cowosc:b}
+\end{align}
+\end{subequations}
+
+\end{frame}
+
+\subsection{Relazione di dispersione per i modi gravo-acustici.}
+
+\begin{frame}{Relazione di dispersione}
+
+\begin{block}{Lontano da superficie}
+
+Approssimo il comportamento spaziale delle oscillazioni localmente con un'onda piana $\vec{\xi}\propto\exp{i\scap{k}{x}}$ con $\vec{k}=k_r\hat{r}+\vec{k}_h$.
+
+\'E utile fare l'ulteriore approssimazione, valida per grandi n, di trascurare la variabile perturbata rispetto alla sua derivata radiale, e cos\'i si ottiene
+\begin{equation}\label{eq:secondorder}
+\TtwoDy{r}{\xi_r}=\frac{\omega^2}{c_s^2}(1-\frac{N^2}{\omega^2})(\frac{S_l^2}{\omega^2}-1)\xi_r=-K(r)\xi_r
+\end{equation}
+$K(r)>0$: comportamento oscillante.
+
+\begin{equation}
+k_r^2=\frac{\omega^2}{c_s^2}(\frac{N^2}{\omega^2}-1)(\frac{S_l^2}{\omega^2}-1)\label{eq:approximatedispersion}
+\end{equation}
+
+Le approssimazioni fatte non sono pi\'u valide vicino alla superficie dove il termine in $\invers{H_P}$ non \'e trascurabile per $H_P$ piccolo e vicino al centro solare dove il termine in $\frac{2}{r}$ non \'e trascurabile.
+
+\begin{block}{Frequenza acustica critica}
+
+Considero \eqref{cowosc:main}  per lunghezza d'onda delle perturbazioni molto minore della scala caratteristica di variazione di $N, c$.
+
+
+Sostituisco
+\begin{align}
+&\xi_r\propto\rho_0\expy{-\frac{1}{2}}\exp{ik_rr},\ P_1\propto\rho_0\expy{\frac{1}{2}}\exp{ik_rr}\intxt{dove la dipendenza dalla densit\'a di equilibrio \'e dovuta alla conservazione dell'energia. Definisco la frequenza critica acustica:}
+&\omega_A=\frac{c_s}{2\densityscale{}}\sqrt{1-2\TDy{r}{\densityscale{}}}\propto T\expy{-\frac{1}{2}}\label{eq:acusticcutoff} \intxt{quindi ottengo la relazione di dispersione:}
+&k_r^2=\frac{\omega^2-\omega_A^2}{c^2}+S_l\frac{N^2-\omega^2}{c^2\omega^2}=\frac{\omega^2}{c^2}(1-\frac{\omega_{l,+}^2}{\omega^2})(1-\frac{\omega_{l,-}^2}{\omega^2})\label{eq:localdispersion}\intxt{dove ho definito le frequenze critiche per i modi gravo-acustici}
+&\omega_{\pm}=\frac{1}{2}(S_l^2+\omega_c^2)\pm\sqrt{\frac{1}{2}(S_l^2+\omega_c^2)^2-N^2S_l^2}
+\end{align}
+
+\end{block}
+
+\end{frame}
+
+\subsection{Cavit\'a risonanti.} \label{sec:resonantcavity} %Definizione frequenze critiche
+
+\begin{frame}{Frequenze critiche}
+
+\begin{minipage}{\linewidth}
+\begin{tikzpicture}
+\node[inner sep=0pt] (image) at (-0.5,0)
+  {\includegraphics[keepaspectratio=true,scale=0.35]{cutoff}};
+  \node (legenda) at (5.8,3) { Legenda };
+  \draw [draw=black!50] (legenda.north west) rectangle +(0.35\textwidth, -4cm);
+  \draw [dotted] (6,2) -- (5.5,2) node[at start, anchor=west] {$\frac{\omega_c}{2\pi}$;};
+  \draw [dashed] (7.5,2) -- (7,2) node[at start, anchor=west] {$\frac{S_l}{2\pi}$;};
+  \draw [] (9,2) -- (8.5,2) node[at start, anchor=west] {$\frac{N}{2\pi}$;};
+  \node at (7.9,0.5) {\parbox{0.32\textwidth}{Le linee orizzontali a \SI{100}{\micro\hertz} e \SI{3000}{\micro\hertz} demarcano le regione in cui sono confinati risp. un modo g e p.}};
+  \node (caption) at (7.6,-2.3) { \begin{minipage}[l]{0.3\textwidth}
+\captionof{figure}{Frequenze caratteristiche calcolate tramite il modello S. Da \cite{chr02helioseismology}.\label{cutoff}}%   
+    \end{minipage}};
+\end{tikzpicture}
+\end{minipage}
+
+\end{frame}
+
+\begin{frame}{Raggio di inversione del moto}
+
+\begin{wrapfigure}[17]{r}{0.4\textwidth}
+\centering
+\includegraphics[keepaspectratio,angle=0,width=0.4\textwidth]{plowertp}
+\caption{Andamento del raggio di inversione del moto in funzione del grado l. Da \cite{dal03notes}.}\label{fig:plowertp}
+\end{wrapfigure}
+
+Le onde acustiche sono confinate in una regione che \'e limitata superiormente dall'aumento della frequenza critica acustica
+\begin{equation}
+\omega_A=\frac{c_s}{2\densityscale{}}\sqrt{1-2\TDy{r}{\densityscale{}}}\propto T\expy{-\frac{1}{2}}\label{eq:acusticcutoff}
+\end{equation}
+ causato dalla diminuzione della temperatura che provoca la riflessione delle onde con periodo attorno ai 5-min, mentre l'aumento della velocit\'a del suono con la profondit\'a e la conseguente rifrazione dell'onda porta a propagazione del moto puramente tangenziale $k_r=0$ nel guscio sferico per cui $c_s=\frac{\omega}{k_h}\approx\omega \frac{r}{L}$ ovvero per $\omega=S_l$ frequenza di Lamb definita da
+\begin{equation}
+S_l^2=\frac{l(l+1)c_s^2}{r^2}\label{eq:Lambf}
+\end{equation}
+che riscivo in termini del raggio di inversione del moto:
+
+\begin{equation}
+\frac{c(r_t)}{r_t}=\frac{\omega}{L}
+\end{equation}
+
+Le regione di propagazione dei modi g sono definite da $\omega<N$: i modi g sono confinati nelle regioni pi\'u interne del Sole.
+Le onde di gravit\'a sono presenti nelle regioni in cui il gas \'e neutro o completamente ionizzato ($N^2$ grande) mentre sono riflesse dalle regioni dove $N$ \'e piccolo o immaginario: ionizzazione parziale, instabilit\'a convettiva, centro del Sole.
+
+I modi g sono confinati tra la la parte centrale dove $g\to0$ e il fondo della zona convettiva dove $N^2<0$.
+
+\end{frame}
+
+\begin{frame}{Traiettoria delle onde}
+
+\begin{figure}[!ht]
+\includegraphics[keepaspectratio,width=0.8\textwidth]{raypath-gp}
+\caption{(a): Percorso di due onda acustiche $p_8(l=2), p_8(l=100)$; (b): Percorso di un'onda di gravit\'a: $g_{10}(l=5)$. Da\cite{gou91seismic}.}
+\end{figure}
+
+\end{frame}
+
+\subsection{Condizione di risonanza radiale}
+
+\begin{frame}{Legge di Duvall}
+
+\begin{figure}[19]{r}{0.4\textwidth}
+\centering
+\includegraphics[keepaspectratio,width=0.4\textwidth]{dispersionDuvall}
+\caption{I modi p sono allineati su un'unica curva, dove n \'e l'ordine radiale e $\alpha$ una fase dovuta alla riflessione. Da \cite{duv82dispersion}.}\label{fig:duv82dispersion}
+\end{figure}
+
+Questo comportamento \'e stato osservato per i modi p da \citet{duv82dispersion}. Un grafico di $\frac{\pi(n+\alpha)}{\omega}$ rispetto a $\frac{\omega}{k_h}$ rappresenta i modi p con un'unica curva (vedi \ref{fig:duv82dispersion}), per $\alpha$ opportuno con:
+\begin{equation}
+(n+\alpha)\frac{\pi}{\omega}=F'(\frac{\omega}{k_h})=F(\frac{\omega}{L})\label{eq:duvallr}
+\end{equation}
+e usando la relazione di dispersione per onde acustiche \eqref{eq:approximatedispersion}
+\begin{equation}
+k_r^2\frac{\omega^2}{c_s^2}(\frac{S_l^2}{\omega^2}-1)
+\end{equation}
+si ha:
+\begin{align}
+&F(w)=\int_{r_t}^R\sqrt{1-\frac{c_s^2}{r^2w^2}}\,\frac{dr}{c_s}\label{eq:duvallf}\\
+&(n+\alpha)\pi\approx\int_{r_t}^Rk_r\,dr\approx\int_{r_t}^R\frac{\omega}{c_s}\sqrt{1-\frac{S_l^2}{\omega^2}}\,dr\label{eq:duvallexpli}
+\end{align}
+
+\end{frame}
+
+\begin{frame}{Condizione di risonanza radiale}
+
+Le frequenze dei modi sono determinate dalla condizione, per l fissato, che l'onda interferisca costruttivamente con se stessa. Un'onda stazionaria in direzione radiale implica che l'integrale di $k_r$ nella regione di propagazione fra due zeri consecutivi sia un intero multiplo di $\pi$:
+\begin{equation}
+\omega\int_{r_1}^{r_2}\sqrt{1-\frac{\omega_A^2}{\omega^2}-\frac{S_l^2}{\omega^2}(1-\frac{N^2}{\omega^2})}\,\frac{dr}{c}\approx\pi(n-\frac{1}{2})\label{eq:JWKBmode}
+\end{equation}
+che tiene conto del numero dei nodi radiali e dello sfasamento $\alpha$ prodotto nelle regioni di riflessione.
+
+
+Utilizzando invece il limite per basse frequenze di \eqref{eq:approximatedispersion} per i modi g trovo la relazione di dispersione approssimata per $l\neq0$:
+\begin{equation}
+k_r^2=\frac{S_l^2}{c^2}(\frac{N^2}{\omega^2}-1)\label{eq:dispersionag}
+\end{equation}
+%[introdotta in precedenza \eqref{eq:bvf}]
+e ottengo l'espressione analoga di \eqref{eq:duvallexpli} per i modi g:
+\begin{equation}\label{eq:duvallg}
+\frac{(n+\alpha_g)\pi}{L}\approx\int_{r_1}^{r_2}(\frac{N^2}{\omega^2}-1)\expy{\frac{1}{2}}\,d\ln{r}
+\end{equation}
+con $r_2\approx R_{cz}$ e $\alpha_g$ \'e una fase dovuta alla riflessione e dipende dall'andamento di $N^2$ nella regione di inversione del moto, alla base della zona convettiva.
+
+\end{frame}
+
+\subsection{Espressioni asintotiche delle frequenze dei modi}
+
+\begin{frame}{Espressioni asintotiche}
+
+\begin{block}{Modi p confinati nella zona convettiva}
+
+Per modi di alto grado angolare, confinati nella regione convettiva, considerando $\Gamma_1$ e $g$ lentamenta variabili e una stratificazione adiabatica, ho la relazione di dispersione approssimata
+\begin{equation}
+\omega^2=\frac{2}{\mu_p}\frac{g}{R}(n+\alpha)
+\end{equation}
+dove $\mu_p=\frac{1}{\Gamma_1-1}$ \'e l'inidce politropico efficace della regione considerate.
+
+\end{block}
+
+\begin{block}{Modi p di basso l}
+I modi di basso l penetrano in profondit\'a, quindi approssimo $r_t\approx0$, e, usando l'espansione
+\begin{equation}
+F(w)\approx\int_0^R\frac{dr}{c}-w\expy{-1}\frac{\pi}{2}\label{eq:Flinear}
+\end{equation}
+ risulta
+\begin{equation}
+\int_0^R\frac{dr}{c}-\frac{L}{\omega}\frac{\pi}{2}=\frac{(n+\alpha)\pi}{\omega}
+\end{equation}
+e quindi le  frequenze sono equispaziate in n e $\nu_{nl}\approx\nu_{n-1,l+2}$ (per le deviazioni da questa uguaglianza, vedi \eqref{eq:tassoul}):
+
+\begin{equation}
+\nu_{nl}=\frac{\omega_{nl}}{2\pi}\approx(n+\frac{l}{2}+\frac{1}{4}+\alpha)\Delta\nu\label{eq:freqequi}
+\end{equation}
+con $\Delta\nu=[2\int_0^R\frac{dr}{c}]\expy{-1}\approx\SI{136}{\micro\hertz}$.
+
+\end{block}
+
+\begin{block}{Modi g di basso l}
+
+Per i modi g approssimo \eqref{eq:JWKBmode} con
+\begin{equation}
+\int_{r_1}^{r_2}\sqrt{\frac{N^2}{\omega}-1}\frac{dr}{r}=\frac{(n-\frac{1}{2})\pi}{L}
+\end{equation}
+dove l'integrale comprende la regione di propagazione e i punti di inversione del moto sono definiti dall'andamento di N.
+
+I modi g di alto n e basso l soddisfano un'equazione analoga a \eqref{eq:freqequi} con periodi equispaziati
+\begin{equation}
+\omega=\frac{L\int_{r_1}^{r_2}N\frac{dr}{r}}{\pi(n+\frac{l}{2}+\alpha_g)}
+\end{equation}
+e $\lim_{n\to\infty}{\alpha_g}\approx-\midfrac{1}{6}$.
+
+\end{block}
+
+\end{frame}
