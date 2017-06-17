@@ -384,15 +384,6 @@ Il fattore $\sin{\theta}\cos{\phi}$ deriva dalla proiezione della velocit\'a rad
 &\sigma^2=\frac{\rsun{}}{G\msun{}}\omega^2\approx1000
 \end{align}
 
-\begin{comment}
-\begin{align}
-&\delta r|_{rms}=\exv{\vec{\xi}\cdot\hat{r}}=\frac{1}{2}|\tilde{xi}_r|^2\\
-&=\frac{1}{\Pi}\int_0^{\pi}\,dt\frac{1}{4\pi}\oint\Re{\tilde{\xi}_rY_{l,m}(\theta,\phi)\exp{-i\omega t}}^2\,d\omega\\
-&\delta h_{rms}^2=\exv{|\vec{\xi}_h|^2}=\frac{1}{2}l(l+1)|\tilde{\xi}_h(r)|^2\\
-&\frac{\delta h|_{rms}}{\delta r|_{rms}}=\frac{\sqrt{l(l+1)}}{\sigma}
-\end{align}
-\end{comment}
-
 Per isolare il contributo di una singola $Y_{l_0m_0}$ considero
 \begin{equation}\label{eq:dopplerTS}
 V_{l_0m_0}(t)=\int_AV_D(\theta,\phi,t)W_{l_0m_0}(\theta,\phi)\,dA=\sum_{n,l,m}S_{l_0m_0,lm}A_{nlm}(t)\cos{(\omega_{nlm}t+\beta_{nlm,L_0m_0})}
@@ -404,9 +395,16 @@ Considero la trasformata di Fourier di \eqref{eq:dopplerTS} per tempo di osserva
 V_{l_0m_0}(\nu)=\int_{-\midfrac{T}{2}}^{\midfrac{T}{2}}V_{l_0m_0}(t)\exp{i2\pi\nu t}\,dt
 \end{equation}
 
-
 \end{frame}
 
+\begin{comment}
+\begin{align}
+&\delta r|_{rms}=\exv{\vec{\xi}\cdot\hat{r}}=\frac{1}{2}|\tilde{xi}_r|^2\\
+&=\frac{1}{\Pi}\int_0^{\pi}\,dt\frac{1}{4\pi}\oint\Re{\tilde{\xi}_rY_{l,m}(\theta,\phi)\exp{-i\omega t}}^2\,d\omega\\
+&\delta h_{rms}^2=\exv{|\vec{\xi}_h|^2}=\frac{1}{2}l(l+1)|\tilde{\xi}_h(r)|^2\\
+&\frac{\delta h|_{rms}}{\delta r|_{rms}}=\frac{\sqrt{l(l+1)}}{\sigma}
+\end{align}
+\end{comment}
 
 
 \begin{frame}{Fenomeni stazionari stocastici}
