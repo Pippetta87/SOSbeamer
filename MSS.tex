@@ -968,22 +968,32 @@ Per determinare il modello solare attuale evolvo il modello del Sole in sequenza
 
 \subsection{Caratteristiche solari determinate dall'eliosismologia}
 
+\begin{frame}{Velocit\'a del suono}
 L'osservazione della superficie solare ha rivelato la presenza di oscillazioni descrivibili come modi normali adiabatici dell'intera struttura solare determinati da $P(r)$, $\rho(r)$, $g(r)$ e $\Gamma_1(r)$: poich\'e queste quantit\'a sono legate dalle equazioni della struttura stellare si considerano 2 combinazioni indipendentidi queste grandezze. La quantit\'a fondamentale determinata dalla misura delle frequenze dei modi, data la natura prevalentemente acustica, \'e
 \begin{equation}
 c_s^2=\Gamma_1\frac{P}{\rho}
 \end{equation}
 
+\end{frame}{Accordo frequenze modi e MSS}
+
 \begin{figure}[!ht]
-\begin{subfigure}[r]{0.5\textwidth}
         \includegraphics[width=0.99\textwidth,keepaspectratio]{dsoundspeedduvall}
         \caption{Differenza relativa del profilo di $c_s$ (determinata invertendo \eqref{eq:analinversionc}) per frequenze dei modi calcolate con MSS e osservate. La differenza relativa \'e minore del $5\%$. Da \cite{christensen1985speed}.}
 \label{dsoundduvall}
-    \end{subfigure}
-~
-\begin{subfigure}[r]{0.5\textwidth}
+    \end{figure}
+    
+    Il buon accordo tra il profilo di $c_s$ determinato eliosismologicamente e calcolato da un modello solare (\subref{dsoundduvall}) giustifica l'uso del modello per calcolare il comportamento dei modi solari che come illustrer\'o nell'ultima parte permette di determinare il profilo di $\rho$ e $c_s$ in miglior accordo con le osservazioni.
+
+    
+\end{frame}
+
+
+\begin{frame}{Caratteristiche zona convettiva}
+
+\begin{figure}[!ht]
         \includegraphics[width=0.99\textwidth,keepaspectratio]{WrbczHHeioniz}
         \caption{Profilo di W calcolato da un modello solare. Da \cite{basu2008helioseismology}.}\label{fig:dlessc}
-    \end{subfigure}
+    
 \end{figure}
 
 La regione radiativa ha stratificazione sub-adiabatica mentre a partire da $r=R_b$ si ha stratificazione quasi-adiabatica,  $\Gamma_1\approx\frac{5}{3}$: $P\propto\rho\expy{\frac{5}{3}}$. Il gradiente adimensionale della velocit\'a del suono $W$ mette in risalto la discontinuit\'a del gradiente termico (alla base della zona convettiva) e in $\Gamma_1$ (nelle zone di ionizzazione):
@@ -995,8 +1005,9 @@ W=\frac{1}{g}\TDy{r}{c^2}%=\Gamma_1(\invers{\PDly{\rho}{P}}-1)
 
 Nella figure (\subref{fig:dlessc}) si vedono la base della zona convettiva intorno a $0.7\rsun{}$ e i picchi dovuti alle regioni di ionizzazione a $HeII$, intorno a $0.98\rsun{}$, e di ionizzazione di $HI$ e $HeI$ verso la superficie: \'e possibile determinare l'abbondanza di $He$ nella zona convettiva anche se non \'e la tecnica pi\'u accurata.
 
-Il buon accordo tra il profilo di $c_s$ determinato eliosismologicamente e calcolato da un modello solare (\subref{dsoundduvall}) giustifica l'uso del modello per calcolare il comportamento dei modi solari che come illustrer\'o nell'ultima parte permette di determinare il profilo di $\rho$ e $c_s$ in miglior accordo con le osservazioni.
+\end{frame}
 
+\begin{frame}{Vincoli ai parametri MSS}
 \begin{wrapfigure}[15]{r}{0.5\textwidth}
         \includegraphics[width=0.5\textwidth,keepaspectratio]{deltaCdeltaQ}
         \caption{Profilo della derivata logaritmica di $c_s$ rispetto ai parametri del MSS $(\PDly{Q}{c_s})$. Da \cite{villante2014chemical}.}
@@ -1004,5 +1015,4 @@ Il buon accordo tra il profilo di $c_s$ determinato eliosismologicamente e calco
 
 Inoltre ricavando da un modello solare la dipendenza delle quantit\'a determinate eliosismicamente dai parametri del modello \'e possibile imporre dei vincoli ai parametri cercando i valori dei parametri che meglio riproduco le grandezze determinate eliosismologicamente.
 
-
-
+\end{frame}
