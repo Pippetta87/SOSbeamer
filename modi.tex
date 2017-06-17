@@ -1,85 +1,3 @@
-\begin{comment}
-\section{Osservabili stellari/demo beamer}
-\begin{frame}<1>[label=noinside]{Modello stellare}{Come indagare la fisica interna a una stella?}
-\onslide<1->\begin{block}{Osservabili stellari:}
-$L$, $M$, $R$, $T_e$, $(\frac{Z}{X})_{ph}$, $g_{ph}$.
-\end{block}
-\onslide<1->\begin{block}{Informazioni sulla struttura interna?} Condizione di equilibrio idrostatico
-\end{block}
-%Teorema Vogt-Russel: $X_i(r)$, $M$ \pause equilibrio (idrostatico/termico) determinano struttura stellare .
-%\pause
-\onslide<1->\begin{block}{Modello stellare: diagramma di \hr{}.}
-\end{block}
-\onslide<2->\begin{block}{Descrizione fisica interno stellare: parametri aggiuntivi}
-Convezione, diffusione e sedimentazione elementi pesanti, equazione di stato, opacit\'a
-\end{block}
-\onslide<2->\begin{block}{Astrosismologia}
-Restringo spazio parametri sistemi stellari lontani
-\end{block}
-\end{frame}
-{ % all template changes are local to this group.
-\setbeamertemplate{navigation symbols}{}
-    \begin{frame}[plain]{Diagramma di \hr{}}
-        \begin{tikzpicture}[remember picture,overlay]
-            \node[at=(current page.center)] {
-                %\includegraphics[width=\paperwidth]{yourimage}
-            };
-        \end{tikzpicture}
-     \end{frame}
-}
-\againframe<2>{noinside}
-\section{Osservazioni}
-\subsection{Fitting polinomiale: inversione ''1.5-D''.}
-\begin{frame}<1>[label=noinside]{Modello stellare}{Come indagare la fisica interna a una stella?}
-\onslide<1->\begin{block}{Rotazione superficiale}
-\begin{equation*}
-\frac{\Omega(\theta)}{2\pi}=\SI{451.5}{\nano\hertz}-\SI{65.3}{\nano\hertz}\cos^2{\theta}-\SI{66.7}{\nano\hertz}\cos^4{\theta}
-\end{equation*}
-\end{block}
-\onslide<1->\begin{block}{Informazioni sulla struttura interna?} Condizione di equilibrio idrostatico
-\end{block}
-%Teorema Vogt-Russel: $X_i(r)$, $M$ \pause equilibrio (idrostatico/termico) determinano struttura stellare .
-%\pause
-\onslide<1->\begin{block}{Modello stellare: diagramma di \hr{}.}
-\end{block}
-\onslide<2->\begin{block}{Descrizione fisica interno stellare: parametri aggiuntivi}
-Convezione, diffusione e sedimentazione elementi pesanti, equazione di stato, opacit\'a
-\end{block}
-\onslide<2->\begin{block}{Astrosismologia}
-Restringo spazio parametri sistemi stellari lontani
-\end{block}
-\end{frame}
-\subsection{Osservazione dello splitting in m: inversione ''2D''.}
-\begin{figure}[!ht]
-\centering
-\includegraphics[keepaspectratio,width=0.8\textwidth]{invertedrotation}
-\caption{Inversione della velocit\'a di rotazione a diverse latitudini. La linea verticale tratteggiata indica la base della zona convettiva. Da \cite{chr02helioseismology}.}
-\end{figure}
-Considero la correzione al primo ordine in $\Omega$. Il campo di velocit\'a rotazionale in coordinate sferiche \'e 
-\begin{align}
-&\vec{v_0}=(0,0,r\Omega\sin{\theta})=\vecp{\Omega}{r}\\
-&\vec{\Omega(r,\theta)}=(\Omega(r,\theta)\cos{\theta},-\Omega(r,\theta)\sin{\theta},0)
-\end{align}
-In assenza di moti macroscopici il termine d'inerzia \'e $\rho_0\TDy{t}{\vec{v}}=\rho_0\PtwoDy{t}{\vec{\xi}}$, mentre in caso di rotazione si ha
-\begin{equation}
-\rho_0(\PDof{t}+\scap{v_0}{\nabla})^2\vec{\xi}
-\end{equation}
-Considero il termine dovuto alla rotazione come una piccola correzione alle frequenze dei modi
-\begin{align}
-&\omega_{(l,m)}+\Delta\omega_{(l,m)}&\intertext{quindi l'equazione del moto al primo ordine nella perturbazione, con $\alpha=(l,m)$, \'e}\nonumber\\
-&\rho_0(\omega_{\alpha}^2+2\omega_{\alpha}\Delta\omega_{\alpha})\vec{\xi}=\nabla P_1-\frac{\rho_1}{\rho_0}\nabla P_0+\rho_0\nabla\Phi_1+2i\omega_{\alpha}\rho_0(\scap{v_0}{\nabla})\vec{\xi}\\
-&\intertext{da cui si deduce}\nonumber\\
-&\Delta\omega_{\alpha}=\frac{i\int\rho_0\xi_{\alpha}^*(\scap{v_0}{\nabla})\xi_{\alpha}}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}}=\frac{-m\int\rho_0\Omega\xi_{\alpha}^*\xi_{\alpha}\,dV+i\int\rho_0\xi_{\alpha}^*(\vecp{\Omega}{\xi_{\alpha}})\,dV}{\int\rho_0\xi_{\alpha}^*\xi_{\alpha}}
-\end{align}
-Il problema di trovare $\Omega(r,\theta)$ dalla differenza $\Delta\omega_{\alpha}$ \'e lineare in $\Omega$ quindi $\Delta\omega_{\alpha}\propto\Omega$. Per determinare quindi la rotazione dobbiamo conoscere l'autovalore $\xi_{\alpha}$ dello stato imperturbato.
-%Per rotazione puramente radiale $\Omega(r)$ la relazione tra lo splitting delle frequenze e la rotazione \'e
-%\begin{equation}
-%\Delta\omega_{\alpha}=-m\frac{\int_0^{\rsun{}}\rho_0\Omega\{|\xi_r-\xi_h|^2+[l(l+1)-2]|\xi_h|^2\}r^2\,dr}{\int_0^{\rsun{}}\rho_0\{|\xi_r|^2+l(l+1)|\xi_h|^2\}r^2\,dr}=\int_0^{\rsun{}}K_{\alpha}(r)\Omega(r)\,dr
-%\end{equation}
-%Any given $\Delta\omega_{\alpha}$ samples angular velocity in the depth range corresponding to $\xi_{\alpha}$.
-La velocit\'a angolare contribuisce a $\Delta\omega_{\alpha}$ negli strati in cui $\xi_{\alpha}$ \'e apprezzabile. Nel caso di rotazione dipendente solo da r si ha che $\Delta\omega_{\alpha}$ \'e lineare in m: ho $2l+1$ frequenze equispaziate.
-
-\end{comment}
 
 \section{Modi normali della struttura solare}
 
@@ -188,25 +106,33 @@ il termine a destra \'e trascurabile:
 
 %%% SOS
 
+\begin{frame}{Oscillazioni dei 5 minuti}
+
+\begin{block}{Comportamento periodico dell'atmosfera solare con grande coerenza spaziale e temporale}
 
 In \citet{lei62velocity} si osserva che la superficie solare ha scale spazio-temporali privilegiate: in particolare \'e presente un comportamento periodico nell'atmosfera a tutte le altezze rilevato tramite effetto doppler. Il periodo \'e di circa 300 secondi e la lunghezza caratteristica di qualche \si{\mega\meter}.
 
+\end{block}
+
+\begin{block}{Modi normali - onde gravo-acustiche in cavit\'a risonanti di varia profondit\'a}
+
 Il modello proposto da \citet{ulrich70five} e \citet*{stein71five} considera le propriet\'a dei modi normali non radiali di oscillazione del Sole, in particolare usando la relazione di dispersione per onde acustiche, si ha la definizione di cavit\'a risonanti all'interno del Sole: la variazione delle propriet\'a del gas delimita le regioni di propagazione a diverse profondit\'a a seconda delle caratteristiche trasversali del moto.
 
-In questa sezione ricavo l'equazione del moto perturbato che descrive i modi normali del Sole: considero piccole perturbazioni dello stato di equilibrio e adiabatiche cio\'e molto pi\'u rapide del tempo scala per scambio di calore dovuto al flusso radiativo o alle reazioni nucleari; e descrivo qualitativamente il diverso comportamento dei modi di gravit\'a e pressione.
+\end{block}
+
+\end{frame}
+
+\subsection{Perturbazione adiabatiche.}
+
+\begin{frame}{Perturbazioni adiabatiche}
 
 
-\subsection{Perturbazione dello stato di equilibrio.}
-
-Descrivo le oscillazioni come piccole perturbazioni attorno allo stato di equilibrio stazionario (gli effetti non lineari, fra cui lo scambio di energia tra i modi, sono dell'ordine di $\frac{v}{c_s}$ dove v \'e l'ampiezza della velocit\'a dell'oscillazione). 
-In generale pu\'o essere presente un campo di velocit\'a $\vec{v}_0$:
+con $\vec{v}'$ perturbazione euleriana della velocit\'a. La variazione di una grandezza euleriana nel riferimento solidale con l'elemento di fluido si esprime tramite
 \begin{align}
-&\vec{v}=\vec{v}_0+\vec{v}'\intxt{con $\vec{v}'$ perturbazione euleriana della velocit\'a. La variazione di una grandezza euleriana nel riferimento solidale con l'elemento di fluido si esprime tramite:}
+&\vec{v}=\vec{v}_0+\vec{v}'
 &\TDof{t}=\PDof{t}+(\vec{v}_0\cdot\nabla)
 \end{align}
-in prima approssimazione prendo $\vec{v}_0=0$ per poi considerare come perturbazioni gli effetti dovuti a campi di velocit\'a in specie rotazione.
 
-Indico con $P'(\vec{r},t)$ e $\delta P$ la perturbazione euleriana e lagrangiana della pressione e con $\rho'$, $\Phi'$ e $\vec{g}'$ la perturbazione euleriana della densit\'a , e le perturbazioni euleriane del potenziale gravitazionale e dell'accelerazione di gravit\'a conseguenti  con $\delta\vec{r}=\vec{\xi}$ il vettore spostamento perturbato. Il valore attuale della pressione \'e la sovrapposizione del valore di equilibrio e della perturbazione:
 \begin{align}
 &P(\vec{r},t)=P_0(\vec{r})+P'(\vec{r},t)\label{eq:pressureperturbation}\\
 &\Lvar{P(\vec{r})}=P(\vec{r}+\Lvar{\vec{r}})-P_0(\vec{r})=P'(\vec{r})+\Lvar{\vec{r}}\cdot\nabla P_0\\
@@ -222,8 +148,6 @@ Analogamente per l'equazione di continuit\'a ottengo
 \rho'+\div{(\rho_0\Lvar{\vec{r}})}=0\label{eq:contper}
 \end{equation}
 
-\subsection{Oscillazioni lineari adiabatiche.}
-
 L'equazione di conservazione dell'energia interna \eqref{eq:primatemp}, esplicitando il bilancio di calore \eqref{eq:heatgl}, \'e
 
 \begin{equation}
@@ -232,49 +156,12 @@ L'equazione di conservazione dell'energia interna \eqref{eq:primatemp}, esplicit
 
 Mostro schematicamente che il termine a destra \'e trascurabile su tempi del periodo delle oscillazioni solari.
 
-Stimo il tempo caratteristico $\tau_R$ per flusso radiativo \eqref{eq:radfluxTgradrelation}, con $H$ lunghezza caratteristica per  la variazione di T:
-
-\noindent
-\begin{minipage}[c]{0.5\textwidth}
-\begin{align*}
-&\frac{1}{\rho c_P}\nabla\cdot(\frac{4acT^3}{3\kappa\rho}\nabla T)\approx\frac{4acT^4}{3\kappa\rho^2c_PH^2}=\frac{T}{\tau_R}\\
-&\tau_R=\num{e12}\frac{\kappa\rho^2H^2}{T^3}\ (\si{\cgs})
-\end{align*}
-\end{minipage}
-\begin{minipage}[c]{0.5\textwidth}
-\begin{tabular}{ll}
-Sole&Zona convettiva\\
-$\tau_R\approx\SI{e7}{\year}\approx\tkh{}$&$\tau_R\approx\SI{e3}{\year}$\\
-\end{tabular}
-\end{minipage}
-
-%Sole: $\kappa=1$, $\rho=1$, $T=\num{e6}$, $H=\num{e10}$)
-%Zona convettiva$\kappa=100$, $\rho=\num{e-5}$, $T=\num{e4}$, $H=\num{e9}$)
-
-e nella parte interna il termine dovuto alle reazioni nucleari \'e caratterizzato da un tempo $\tau_{\epsilon}\approx\frac{c_PT}{\epsilon}\approx\tkh{}$, che confronta l'energia disponibile per grammo con quella generata dalle reazioni di fusione per unit\'a di tempo.
-
 Entrambi i tempi scala per scambio di calore sono molto maggiori del periodo delle oscillazioni quindi su un periodo i termini dovuti allo scambio di calore sono trascurabili; l'approssimazione adiabatica non \'e pi\'u valida vicino alla superficie solare dove i tempi per lo scambio di calore sono pi\'u brevi.
 
 Il moto di una elemento di fluido \'e descritto dalla relazione adiabatica
 \begin{equation}
 \TDy{t}{P}=\frac{\Gamma_1P}{\rho}\TDy{t}{\rho}
 \end{equation}
-
-\begin{figure}[!ht]
-
-\begin{subfigure}[b]{0.47\textwidth}
-\centering
-\includegraphics[keepaspectratio,width=0.95\textwidth]{midlmodes}
-\caption{I picchi della densit\'a spettrale si dispongono su creste in cui \'e concentrata la potenza in accordo al modello. Determinata usando i primi 144 giorni di osservazione di MDI con $l\leq300$. Da \cite{chr02helioseismology}.}\label{fig:midlmodes}
-\end{subfigure}
-~
-\begin{subfigure}[b]{0.5\textwidth}
-\centering
-\includegraphics[keepaspectratio,width=0.95\textwidth]{nrmodesLAWE}
-\caption{Modi adiabatici calcolati sulla base di un modello solare. Da \cite{chr02helioseismology}.}\label{fig:nrmodesLAWE}
-\end{subfigure}
-
-\end{figure}
 
 La condizione di perturbazione adiabatica linearizzata \'e:
 \begin{align}
@@ -292,7 +179,11 @@ e scrivo la variazione euleriana di densit\'a, pressione e potenziale gravitazio
 (\rho',P',\Phi')=\exp{i\omega t}[\rho'(r),P'(r),\Phi'(r)]Y_l^m
 \end{equation}
 
-%inoltre, introducendo la frequenza di \bv{} (vedi \eqref{eq:bvfs}), $a=\Phi'+\frac{P}{\rho_0}$, $b=\div{\vec{\xi}}$, riscrivo l'equazione del moto \eqref{eq:emper} nella forma (vedi \citet*{ledoux1958variable})
+\end{frame}
+
+\begin{frame}{Frequenze e autofunzioni del vettore perturbato}
+
+
 Dall'equazione del moto \eqref{eq:emper}, poich\'e le deviazioni dalla simmetria sferica sono in prima approssimazione trascurabili, \'e evidente che:
 \begin{equation}
 %&\omega^2\vec{\xi}=\nabla a+\frac{N^2c^2}{g}b\frac{\vec{r}}{r}\\
@@ -343,6 +234,23 @@ La condizione di non propagazione oltre la fotosfera dipende dalla descrizione d
 \end{align}
 \end{itemize}
 
+\end{frame}
+
+\begin{frame}{Diagramma $\nu-l$ per i modi adiabatici}
+
+\begin{figure}[!ht]
+\subfigure[I picchi della densit\'a spettrale si dispongono su creste in cui \'e concentrata la potenza in accordo al modello. Determinata usando i primi 144 giorni di osservazione di MDI con $l\leq300$. Da \cite{chr02helioseismology}.]{\includegraphics[keepaspectratio,width=0.45\textwidth]{midlmodes}}
+\label{fig:midlmodes}
+~
+\subfigure[Modi adiabatici calcolati sulla base di un modello solare. Da \cite{chr02helioseismology}.]{\includegraphics[keepaspectratio,width=0.95\textwidth]{nrmodesLAWE}}
+\label{fig:nrmodesLAWE}
+
+\end{figure}
+
+\end{frame}
+
+\subsection{Energia dei modi-effetti di superficie}
+
 Indico con $\exv{E_{kin}^{nl}}$ la media temporale dell'energia cinetica del modo
 \begin{equation}
 E_{kin}^{nl}=\frac{1}{2}\int_V|\vec{v}|^2\rho_0\,dV=\frac{\omega^2}{2}\int_V|\vec{\xi}|^2\rho_0\,dV
@@ -385,15 +293,13 @@ $Q_{nl}=1$ per $l=0$ e diminuisce al crescere di $l$; l'ampiezza superficiale re
 
 Il comportamento all'aumentare della frequenza mostrato in \subref{fig:nFreqdiff} \'e dovuto al fatto che per frequenze maggiori la regione in cui si ha riflessione interna \'e pi\'u in alto dove l'approssimazione adiabatica \'e meno valida; la figura \subref{fig:phasedifference} mostra la propagazione di fase ad alte frequenze dovuta ad effetti dissipativi.
 
-%in assenza di effetti dissipativi la velocit\'a di fase \'e nulla e la velocit\'a di gruppo infinita, velocit\'a e pressione sono sfasati di $\frac{\pi}{2}$..
 
 \subsection{Principio variazionale}    %Vedi pg 110 dalsnote.
 
-Riscrivo l'equazione del moto linearizzata \eqref{eq:emper} nella forma
-\begin{equation}
--\omega^2\vec{\xi}=\frac{1}{\rho_0}\nabla p'-\vec{g}'-\frac{\rho'}{\rho_0}\vec{g}_0=L(\vec{\xi})\label{eq:eigenhermitian}
-\end{equation}
-da cui, utilizzando \eqref{eq:emper} e \eqref{eq:contper}, ottengo:
+\begin{frame}{Variazioni nel modello provocano variazioni nelle frequenze dei modi}
+
+EOM lionearizzata
+
 \begin{equation}\label{eq:EOMrhoc}%Unno89
 -\omega^2\rho_0\xi=\nabla(c_s^2\rho\scap{\nabla}{\xi}+\nabla P\cdot\vec{\xi})-\vec{g}_0\nabla\cdot(\rho_0\vec{\xi})-G\rho_0\nabla(\int_V\frac{\nabla\cdot(\rho_0\vec{\xi})\,d^3r'}{|\vec{r}-\vec{r}'|})
 \end{equation}
@@ -412,7 +318,11 @@ quindi considerando i termini lineari nelle variazioni e dato che le frequenze c
 \frac{\Lvar{\omega}}{\omega}=-\frac{\int_V\rho\vec{\xi}\Lvar{L}\vec{\xi}\,d^3x}{2\omega^2\int_V\rho\scap{\xi}{\xi}d^3x}
 \end{equation}
 
+\end{frame}
+
 \subsection{Variazioni struttura idrostatica e variazioni nell'equazione di stato e nella  composizione}
+
+\begin{frame}{Variazioni struttura idrostatica}
 
 Esplicito la forma della perturbazione $\delta L$ in \eqref{eq:EOMrhoc} introducendo piccole variazioni nel profilo di $\rho$ e $c_s$:
 \begin{equation}
@@ -434,14 +344,15 @@ con
 
 I kernel $K_Q^j$ dipendono dalle autofunzioni del modello solare, il termine $I_{nl}\expy{-1}F_{Surf}(\omega_{nl})$ tiene conto degli effetti superficiali.
 
-
-Le variazioni della pressione si ottengono dall'equazione di equilibrio idrostatico \eqref{eq:fidroequilibrio}
 \begin{equation}
 \Lvar{P}=\int_r^R(g\Lvar{\rho}+\rho\Lvar{g})\,dr\label{eq:pressurecorrho}
 \end{equation}
 
+\end{frame}
 
-Per investigare la composizione \'e necessario usare l'equazione di stato per esplicitare $\Gamma_1(P,\rho,X_i)$ riscrivendo \eqref{eq:hydroefdiff} nella forma:
+\begin{frame}{Variazioni equazione di stato e composizione}
+
+Dipendenza di $\Gamma_1(P,\rho,X_i)$ dalla composizioneriscrivendo \eqref{eq:hydroefdiff} nella forma:
 \begin{align}
 &\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^R[K^{nl}_{\Gamma_1,\rho}(r)\frac{\delta_r\Gamma_1}{\Gamma_1}(r)+K^{nl}_{\rho,\Gamma_1}(r)\frac{\delta_r\rho}{\rho}(r)]\,dr+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})\label{eq:invdGammadrho}\intxt{utilizzando l'equazione di stato per ricavare la dipendenza di $\Gamma_1$ dalla composizione chimica, \'e possibile ottenere il profilo radiale di $Y$: per diminuire gli errori sistematici dovuti alle discrepanze nell'equazione di stato e nella metallicit\'a riscrivo l'ultima espressione nella forma:}
 &\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^RK^{nl}_{u,Y}(r)\frac{\delta_ru}{u}(r)\,dr+\int K^{nl}_{Y,u}(r)\delta_rY\,dr+\int_0^RK^{nl}_{c^2,\rho}(r)(\frac{\delta\Gamma_1}{\Gamma_1})_{int}\,dr+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})\label{eq:diffthermo}\intxt{dove $(\delta\Gamma_1)_{int}$ \'e la variazione all'equazione di stato a $(P,\rho,Y)$ fissati.}
@@ -449,6 +360,7 @@ Per investigare la composizione \'e necessario usare l'equazione di stato per es
 
 La determinazione dell'abbondanza di elio nella regione convettiva \'e dovuta principalmente alla deviazione da $\Gamma_1=\frac{5}{3}$ nella regione di seconda ionizzazione dell'elio.
 
+\end{frame}
 
 
 \section{Campo di velocit\'a solare}
