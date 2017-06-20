@@ -27,7 +27,9 @@ Restringo spazio parametri sistemi stellari lontani
 \end{frame}
 
 { % all template changes are local to this group.
-    \setbeamertemplate{navigation symbols}{}
+    \set
+\section{beamer}
+template{navigation symbols}{}
     \begin{frame}[plain]{Diagramma di \hr{}}
         \begin{tikzpicture}[remember picture,overlay]
             \node[at=(current page.center)] {
@@ -46,13 +48,13 @@ Restringo spazio parametri sistemi stellari lontani
 
 \end{comment}
 
-\begin{frame}{Problema inverso}
+\begin{frame}<presentation:0>[noframenumbering]{Problema inverso}
 
 \begin{itemize}
 
-\item modi distinti sono confinati in cavit\'a di profondit\'a diversa/ le ampiezze di oscillazione hanno differente comportamento spaziale (profilo radiale di $(P,\rho,\Gamma_1)$, $Y_{ph}$).
+\item diverso comportamento delle autofunzioni
 
-\item l'approssimazione asintotica: inversione legge di Duvall. valida nelle regioni in cui le autofunzioni variano molto pi\'u rapidamente delle grandezze di equilibrio
+\item Inversione legge di Duvall. valida nelle regioni in cui le autofunzioni variano molto pi\'u rapidamente delle grandezze di equilibrio
 
 per i modi pi\'u penetranti nell'interno solare la perturbazione del potenziale gravitazionale influenza sensibilmente $F(\frac{\omega}{L})$ mentre per modi confinati vicino alla superficie $\alpha$ dipende da l.
 
@@ -70,20 +72,21 @@ per i modi pi\'u penetranti nell'interno solare la perturbazione del potenziale 
 \subsection{Inversione analitica della velocit\'a del suono}
 
 \begin{frame}{Inversione analitica velocit\'a del suono}
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}{0.65\textwidth}
 \begin{figure}[!ht]
         \includegraphics[width=0.54\textwidth,keepaspectratio]{soundspeed}
 \end{figure}
 \end{minipage}
-\begin{minipage}{0.5\textwidth}
-\captionof{figure}{Profilo radiale di $c_s^2$ determinato invertendo \eqref{eq:analinversionc} dalle frequenze dei modi osservate. Da \cite{christensen1985speed}.}\label{fig:soundspeedccm}
+~
+\begin{minipage}{0.3\textwidth}
+\captionof{figure}{Profilo radiale di $c_s^2$ determinato invertendo la legge di Duvall dalle frequenze osservate. Da \cite{christensen1985speed}.}\label{fig:soundspeedccm}
 \end{minipage}
 
 
-\begin{align}
-&F(w)=\int_{r_t}^R\sqrt{1-\frac{c_s^2}{r^2w^2}}\,\frac{dr}{c_s}\label{eq:duvallf}\\
-&(n+\alpha)\pi\approx\int_{r_t}^Rk_r\,dr\approx\int_{r_t}^R\frac{\omega}{c_s}\sqrt{1-\frac{S_l^2}{\omega^2}}\,dr%\label{eq:duvallexpli}
-\end{align}
+%\begin{align}
+%&F(w)=\int_{r_t}^R\sqrt{1-\frac{c_s^2}{r^2w^2}}\,\frac{dr}{c_s}\label{eq:duvallf}\\
+%&(n+\alpha)\pi\approx\int_{r_t}^Rk_r\,dr\approx\int_{r_t}^R\frac{\omega}{c_s}\sqrt{1-\frac{S_l^2}{\omega^2}}\,dr%\label{eq:duvallexpli}
+%\end{align}
 
 \begin{equation}
 r=R\Exp{-\frac{2}{\pi}\int_{a_s}^a(w\expy{-2}-a\expy{-2})\expy{-\frac{1}{2}}\TDy{w}{F}\,dw}\label{eq:analinversionc}
@@ -100,18 +103,18 @@ errore sistematico dovuto alla tecnica di inversione nel range $0.4\leq x \leq 0
 \begin{frame}{Effetti evoluzione sulla separazione dei modi}
 
 
-La deviazione dalla \eqref{eq:freqequi} fornisce informazioni sull'evoluzione chimica del core di fusione: infatti estendendo ancora l'espansione di \eqref{eq:duvallf} si ha una misura della variazione di $c_s$ nel core della stella
+%La deviazione dalla \eqref{eq:freqequi} fornisce informazioni sull'evoluzione chimica del core di fusione: infatti estendendo ancora l'espansione di \eqref{eq:duvallf} si ha una misura della variazione di $c_s$ nel core della stella
 \begin{equation}\label{eq:tassoul}
     d_{nl}=\nu_{nl}-\nu_{n-1,l+2}\approx-(4l+6)\frac{\Delta\nu}{4\pi^2\nu_{nl}}\int_0^R\frac{dc_s}{dr}\frac{dr}{r}
 \end{equation}
-La velocit\'a del suono \'e ridotta a causa dell'aumentare di $\mu$ durante la fusione di H in He durante l'evoluzione stellare: il centro solare \'e un minimo locale per la velocit\'a del suono e quindi, essendo il gradiente della velocit\'a del suono positivo, la parte centrale da un contributo sempre pi\'u negativo in \eqref{eq:tassoul} con l'evolversi della stella.
+%La velocit\'a del suono \'e ridotta a causa dell'aumentare di $\mu$ durante la fusione di H in He durante l'evoluzione stellare: il centro solare \'e un minimo locale per la velocit\'a del suono e quindi, essendo il gradiente della velocit\'a del suono positivo, la parte centrale da un contributo sempre pi\'u negativo in \eqref{eq:tassoul} con l'evolversi della stella.
 
 \end{frame}
 
 
-\subsection{Forma differenziale della legge di Duvall}
+%\subsection{Forma differenziale della legge di Duvall}
 
-\begin{frame}{Legge Duvall diferenziale}
+\begin{frame}<handout:0 beamer:0>{Legge Duvall diferenziale}
 
 Considero l'effetto di perturbazioni del modello sulle frequenze dei modi:
 \begin{equation}
@@ -132,7 +135,7 @@ La funzione $S_{nl}$ \'e approssimabile con un temine proporzionale a $Q_{nl}$ (
 %Le differenze nella velocit\'a del suono nelle varie regioni influiscono sulle differenze nelle frequenze con un peso dato dal tempo impiegato da un'onda sonora ad attraversare la regione: le differenze nella regione vicino alla superficie dove $c_s$ \'e minore hanno un effetto relativamente grande sulle differenze di frequenza.
 \end{frame}
 
-\begin{frame}{Inversione di $H_1$ e $h_2$}
+\begin{frame}<handout:0 beamer:0>{Inversione di $H_1$ e $h_2$}
 
 La relazione \eqref{eq:Dlinear}, considerando che $1-\midfrac{L^2c^2}{r^2\omega^2}\approx1$ ad eccezione delle regioni vicino al punto d'inversione $r_t$, pu\'o essere approssimata da
 \begin{equation}
@@ -148,7 +151,7 @@ Le funzioni $H_1(\frac{\omega_{nl}}{L})$ e $H_2(\omega_{nl})$ possono essere ott
 
 \end{frame}
 
-\begin{frame}{Differenze idrogeno/zona ionizzazione}
+\begin{frame}<handout:0 beamer:0>{Differenze idrogeno/zona ionizzazione}
 
 \begin{figure}[!ht]
         \includegraphics[width=0.34\textwidth,keepaspectratio]{H2dnd}
@@ -159,7 +162,7 @@ Le funzioni $H_1(\frac{\omega_{nl}}{L})$ e $H_2(\omega_{nl})$ possono essere ott
 
 
 
-\begin{frame}{Regioni superficiali}
+\begin{frame}<handout:0 beamer:0>{Regioni superficiali}
 
 La funzione $H_2$ \'e determinata dalla regione sotto la fotosfera. \cite{chr92phase}, analizzando la relazione tra $H_2(\omega)$ e le differenze in $c_s(r)$ e $\Gamma_1$ nelle regioni esterne, hanno visto che discrepanze pi\'u vicino alla superficie generano una componente lentamente oscillante in $H_2(\omega)$ e la ''frequenza'' aumenta con l'aumentare della profondit\'a. \'E inoltre possibile indagare l'andamento di $\Gamma_1$ nella regione di seconda ionizzazione di He e pi\'u in generale il comportamento di $H_2(\omega)$ nelle zone di ionizzazione di H e He consente un'analisi dell'equazione di stato e determinazione dell'abbondanza di elio nella zona convettiva. In figura \ref{fig:H2dnd} si mostra le differenze nelle frequenze tra il Sole ed un modello che non considera la diffusione degli elementi: l'andamento oscillatorio della linea continua nel pannello b \'e dovuto alla differenza nell'abbondanza di idrogeno negli strati superficiali.
 
@@ -168,7 +171,9 @@ La funzione $H_2$ \'e determinata dalla regione sotto la fotosfera. \cite{chr92p
 
 \section{Inversione non asintotica.} % Inizio chapter "Inversione non asintotica." senza nuava pagina
 
-La soluzione del problema inverso per il sistema completo di equazioni si basa sulla linearizzazione delle variazioni attorno ad un modello di cui siano calcolabili le autofunzioni dell'operatore $L$ definito in \eqref{eq:variational}.
+\begin{frame}{Inversione non asintotica}
+
+%La soluzione del problema inverso per il sistema completo di equazioni si basa sulla linearizzazione delle variazioni attorno ad un modello di cui siano calcolabili le autofunzioni dell'operatore $L$ definito in \eqref{eq:variational}.
 
 Utilizzo la formula \eqref{eq:variational} specializzata al problema dell'inversione delle differenze $\delta\omega_{nl}=\omega_{\odot}-\omega_{Mod}$ fra frequenze osservate e predette da un modello. Per l'inversione della struttura idrostatica si ha:
 \begin{align}
@@ -176,16 +181,19 @@ Utilizzo la formula \eqref{eq:variational} specializzata al problema dell'invers
 &\frac{\delta_rc^2}{c^2}(r)=\frac{[c_{\odot}^2(r)-c_{mod}^2(r)]}{c^2(r)},\ \frac{\delta_r\rho}{\rho}(r)=\frac{[\rho_{\odot}(r)-\rho_{mod}(r)]}{\rho(r)}
 \end{align}
 
-E quindi si determinano attraverso procedure numeriche le correzioni alla struttura del modello sulla base delle differenze tra frequenze dei modi. Il peso che una perturbazione ha sulla differenze in frequenza \'e determinato dalle autofunzioni dei modi calcolate tramite un modello solare.
+\end{frame}
+
+%E quindi si determinano attraverso procedure numeriche le correzioni alla struttura del modello sulla base delle differenze tra frequenze dei modi. Il peso che una perturbazione ha sulla differenze in frequenza \'e determinato dalle autofunzioni dei modi calcolate tramite un modello solare.
 %Asymptotic approximation for radial eigenfunction (integral equation connectin sound speed $c(r)$ to $\Omega_{nl}$) is inadequate (especially in deep interior)
 
 \begin{frame}{incertezze inversione non asintotica}
 
-In \ref{fig:deltacwu} la banda chiara attorno allo zero, che indica il modello solare in perfetto accordo con le osservazioni sismologiche, mostra l'incertezza nell'inversione della velocit\'a del suono; essa \'e dovuta a
+%In \ref{fig:deltacwu} la banda chiara attorno allo zero, che indica il modello solare in perfetto accordo con le osservazioni sismologiche, mostra l'incertezza nell'inversione della velocit\'a del suono; essa \'e dovuta a
 
 \begin{itemize}
 
-\item Incertezze nelle frequenze dei modi osservate. Oltre all'incertezza statistica propria del determinato strumento \'e possibile valutare gli effette di eventuali errori sistematici confrontando i risultati dell'inversione per set di frequenze ottenute con strumenti diversi: la differenza nella velocit\'a del suono \'e minore di $0.02\%$.
+\item Incertezze nelle frequenze dei modi osservate.%Oltre all'incertezza statistica propria del determinato strumento \'e possibile valutare gli effette di eventuali
+Errori sistematici confrontando i risultati dell'inversione per set di frequenze ottenute con strumenti diversi: la differenza nella velocit\'a del suono \'e minore di $0.02\%$.
 
 \item Incertezze inerenti la tecnica di inversione.
 
@@ -194,7 +202,6 @@ In \ref{fig:deltacwu} la banda chiara attorno allo zero, che indica il modello s
 \end{itemize}
 
 \end{frame}
-
 
 \subsection{Tecniche di inversione numeriche.}
 %vedi JCD 2002 pg 25-32
@@ -214,7 +221,7 @@ con
 \begin{equation}
 \chi^2=\frac{1}{N-N_p}\sum_{\alpha=1}^N(\frac{\delta\omega_{obs}-\delta\omega_{fit}}{\sigma})^2_{\alpha}
 \end{equation}
-N indica il numero totale di modi $\alpha$, $N_p$ il numero di parametri da determinare, $\Delta\nu_{fit}$, ricavato tramite \eqref{eq:variational}, contiene la funzione incognita opportunamente parametrizzata; il secondo addendo del lato destro di \eqref{eq:minimizerls} \'e introdotto per ridurre oscillazioni indesiderate nel risultato dell'inverisone con $\alpha$, parametro di regolarizzazione, scelto opportunamente.
+%N indica il numero totale di modi $\alpha$, $N_p$ il numero di parametri da determinare, $\Delta\nu_{fit}$, ricavato tramite \eqref{eq:variational}, contiene la funzione incognita opportunamente parametrizzata; il secondo addendo del lato destro di \eqref{eq:minimizerls} \'e introdotto per ridurre oscillazioni indesiderate nel risultato dell'inverisone con $\alpha$, parametro di regolarizzazione, scelto opportunamente.
 
 \end{frame}
 
@@ -238,21 +245,22 @@ con $\mathcal{K}(r_0,r)=\sum_ic_i(r_0)K^i(r)$ e la funzione target $\mathcal{T}(
 \end{frame}
 
 
-\begin{frame}{Determinazione variazioni velocit\'a del suono}
+\begin{frame}<presentation:0>[noframenumbering]{Determinazione variazioni velocit\'a del suono}
 
 %Illustro la tecnica SOLA per determinare $\frac{\delta_rc^2}{c^2}$: si formano delle combinazioni lineari di $\frac{\Lvar{\omega_i}}{\omega_i}$ pesate da coefficienti $c_i(r_0)$ tali che $\frac{\Lvar{c^2}}{c^2}$ sia centrato attorno $r_0$ e che gli altri termini in \eqref{eq:invstructure} siano soppressi, queste compongo un averaging kernel $\mathcal{K}_{c^2,\rho}(r_0,r)=\sum_ic_i(r_0)K_{c^2,\rho}^i(r)$, con $\int_0^R\mathcal{K}(r_0,r)\,dr=1$.
 
-Determino i coefficienti minimizzando l'espressione
-\begin{equation}
-\int_0^R[\mathcal{K}_{c^2,\rho}(r_0,r)-\mathcal{T}(r_0,r)]^2\,dr+\beta\int_0^R\mathcal{L}_{\rho,c^2}(r_0,r)\,dr+\mu\sum_i\sigma_ic_i(r_0)c_j(r_0)
-\end{equation}
-dove il kernel cross-term
+%Determino i coefficienti minimizzando l'espressione
+\begin{align*}
+&\int_0^R[\mathcal{K}_{c^2,\rho}(r_0,r)-\mathcal{T}(r_0,r)]^2\,dr+\beta\int_0^R\mathcal{L}_{\rho,c^2}(r_0,r)\,dr\\
+&+\mu\sum_i\sigma_ic_i(r_0)c_j(r_0)
+\end{align*}
+I contributi indesiderati di $\frac{\delta_r\rho}{\rho}$ sono controllati da:
 \begin{equation}
 \mathcal{L}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)
 \end{equation}
-controlla i contributi indesiderati di $\frac{\delta_r\rho}{\rho}$.
 
-Il primo termine approssima il valore di $\frac{\delta c^2}{c^2}$ pesato dal kernel $\mathcal{K}(r,r_0)=\sum_ic_i(r_0)K_{c^2,\rho}^i(r)$, il secondo tiene conto dell'influenza che hanno le discrepanze della seconda funzione su quelle della funzione che abbiamo scelto di invertire pesate da $\mathcal{L}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)$, il terzo \'e il termine di superficie: i coefficienti $c_i(r_0)$ sono scelti in maniera da riprodurre la funzione target, minimizzare la contaminazione delle $\frac{\delta \rho}{\rho}$ via $\mathcal{L}_{\rho,c^2}$ e il rumore.
+%Il primo termine approssima il valore di $\frac{\delta c^2}{c^2}$ pesato dal kernel $\mathcal{K}(r,r_0)=\sum_ic_i(r_0)K_{c^2,\rho}^i(r)$
+%,l secondo tiene conto dell'influenza che hanno le discrepanze della seconda funzione su quelle della funzione che abbiamo scelto di invertire pesate da $\mathcal{L}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)$, il terzo \'e il termine di superficie: i coefficienti $c_i(r_0)$ sono scelti in maniera da riprodurre la funzione target, minimizzare la contaminazione delle $\frac{\delta \rho}{\rho}$ via $\mathcal{L}_{\rho,c^2}$ e il rumore.
 
 \end{frame}
 
@@ -292,14 +300,15 @@ Il primo termine approssima il valore di $\frac{\delta c^2}{c^2}$ pesato dal ker
 
 \begin{figure}[!ht]%{r}{0.5\textwidth}
         \includegraphics[width=0.9\textwidth,keepaspectratio]{deltacwu}
-        \caption{Differenza relativa nel profilo di $c_s$ risultanei dall'inversione delle differenze in frequenza tra Sole e modello: la linea chiara si riferisce alle frequenze di un modello con composzione GS98, la linea scura a composizione AGSS09. La banda chiara mostra l'errore inerente l'inversione eliosismologica, la banda scura l'incertezza a $1\sigma$ sul profilo di $c_s$ predetto dal modello. Da \cite{villante2014chemical}.}\label{fig:deltacwu}
+        \caption{%Differenza relativa nel profilo di $c_s$ risultanei dall'inversione delle differenze in frequenza tra Sole e modello: la linea chiara si riferisce alle frequenze di un modello con composzione GS98, la linea scura a composizione AGSS09. La banda chiara mostra l'errore inerente l'inversione eliosismologica, la banda scura l'incertezza a $1\sigma$ sul profilo di $c_s$ predetto dal modello. 
+Da \cite{villante2014chemical}.}\label{fig:deltacwu}
 \end{figure}
 
 \end{frame}
 
 \begin{frame}{Inversione caratteristiche zona convettiva}
 
-L'inversione di $c_s$ o $\rho$ mostra se un modello solare riproduce accuratamente la posizione della base della zona convettiva in quanto nella zona convettiva si ha gradiente adiabtico maggiore del gradiente radiativo; diminuzione di opacit\'a, nel caso determinata da una minore metallicit\'a, sposta la base della zona convettiva pi\'u in alto come da tabella \ref{tab:CZZvar}.
+%L'inversione di $c_s$ o $\rho$ mostra se un modello solare riproduce accuratamente la posizione della base della zona convettiva in quanto nella zona convettiva si ha gradiente adiabtico maggiore del gradiente radiativo; diminuzione di opacit\'a, nel caso determinata da una minore metallicit\'a, sposta la base della zona convettiva pi\'u in alto come da tabella \ref{tab:CZZvar}.
 
 \begin{table}[!ht]%{r}{0.7\textwidth}
 

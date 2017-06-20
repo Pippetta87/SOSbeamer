@@ -2,7 +2,7 @@
 
 \begin{frame}{Dati osservativi}%<handout:0 beamer:0>
 
-\begin{block}{Et\'a, luminosit\'a, raggio solari}
+\begin{block}{Et\'a, luminosit\'a, massa, raggio solari}
 \begin{tabular}{l|c}
 \hline
 $\agesun{}$&\SI[separate-uncertainty=true]{4.57\pm0.02e9}{\year}\\
@@ -22,15 +22,18 @@ $\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
 Deviazioni da forma sferica trascurabili (campi magnetici, rotazione)
 \end{block}
 
+\begin{block}{Composizione chimica}
+
+\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Righe di assorbimento della fotosfere
+\item Meteoriti CI: primordiale (refrattari)
+\end{itemize}
+
+\end{block}
+
 \end{frame}
 
 \begin{frame}{Dati osservativi}
-
-\begin{block}{Composizione chimica}
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-\item Righe di assorbimento: attuale (non $Y_{ph}$)
-\item Meteoriti CI: primordiale (refrattari)
-\end{itemize}
 
 \begin{table}[]
 
@@ -68,12 +71,128 @@ columns={authors,x, y, z, zx
 \captionof{table}{Metallicit\'a attuale determinata da varii autori.}\label{tab:Zhistory}
 \end{table}
 
+\end{frame}
+
+\section{Modello solare standard}
+
+\begin{frame}{Equazioni della struttura solare}
+
+%Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
+\begin{subequations}\label{subeqn:stellarstructure}
+\begin{align}
+&\TDy{r}{m}=4\pi r^2\rho\\
+&\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\\
+&\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}\\
+&\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
+\end{align}
+\begin{equation}
+\PDy{t}{n_i}+\frac{1}{r^2}\PDof{r}(r^2n_iv_i)=\Dcvar{\PDy{t}{n_i}}{Nucl}\label{eq:difffusionchange}
+\end{equation}
+\end{subequations}
+%con $v_i$ velocit\'a di diffusione specie i. Ottengo il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note la metallicit\'a iniziale Z, l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
+
+\begin{block}{Condizionial bordo}
+\begin{itemize}
+    \item Superficie: $T(R)$, $P(R)$
+    \item Centro: $l(0)$, $m(0)$.
+\end{itemize}
 \end{block}
 
 \end{frame}
 
 
-\section{Strutture autogravitanti in equilibrio}
+\begin{frame}{Calibrazione modello solare}
+
+\begin{block}{Abbondanze elio iniziale}
+
+\end{block}
+
+\begin{block}{efficienza convezione}
+
+\end{block}
+
+\begin{block}{diffusione}
+
+\end{block}
+
+\end{frame}
+
+\section{Equilibrio idrostatico e termico}
+
+\begin{frame}{Equilibrio idrostatico e termico}
+
+\begin{equation*}
+\tau_{idro}^{\odot}= \sqrt{\frac{R^3}{GM}}\approx\frac{1}{2}(G\overline{\rho})\expy{-\frac{1}{2}}\approx\SI{27}{\minute}
+\end{equation*}
+
+\begin{block}{Conservazione del momento}
+
+\begin{columns}
+
+\begin{column}{0.5\textwidth}
+\begin{equation*}
+\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}%\label{eq:fidroequilibrio}
+\end{equation*}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\begin{align*}
+&\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})\\
+&=\sum_{i\neq j}\vec{R}_{ij}
+\end{align*}
+
+\end{column}
+
+\end{columns}
+
+
+\end{block}
+
+\begin{block}{Conservazione energia interna}
+
+\begin{align*}
+&\TDy{t}{q}=\epsilon-\frac{1}{\rho}\nabla\cdot\vec{F}\\%\label{eq:heatgl}
+&\TDy{r}{L}=4\pi r^2[\rho\epsilon-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]%\label{eq:fenergyconservation}
+\end{align*}
+
+\end{block}
+
+\end{frame}
+
+
+\section{Meccanismi di trasporto dell'energia}
+
+\begin{frame}{Trasporto radiativo}
+
+%Il flusso di energia verso la superficie \'e generato da una piccola anisotropia nell'intensit\'a descritta al prim'ordine tramite:
+\begin{align}
+&I_{\nu}=B(\nu,T)-\frac{1}{\kappa_{\nu}'\rho}\nabla_s B(\nu,T)\\
+%P_{rad}=\int\,d\nu\frac{4\pi}{3c}B_{\nu}=\frac{1}{3}aT^4\\
+%\vec{F}=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{c}{\kappa\rho}\nabla P_{rad}\\
+&\nrad{}=\Dcvar{\PDly{P}{T}}{rad}=\frac{3}{16\pi acG}\frac{\kappa l(r)P}{m(r)T^4}\label{eq:radiativegradient}
+%\frac{1}{\kappa}=(\frac{acT^3}{\pi})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\label{eq:rosselandopacity}
+\end{align}
+
+
+\end{frame}
+
+
+\section{Funzioni di struttura}
+
+\begin{frame}{Correzioni alla legge dei gas perfetti: Interazioni coulombiane}
+
+\begin{align}
+&\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\zeta\\
+&\zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}\xrightarrow{FD}\sum_{i}(Z_i^2+\frac{F_{\midfrac{1}{2}}'(\psi)}{F_{\midfrac{1}{2}}(\psi)}_i)\frac{\rho X_i}{A_i}
+\end{align}
+
+\begin{equation}
+u_c=\frac{1}{2}\int\phi(\vec{r})\rho_c(\vec{r})\,d^3r,\ P_c=\frac{1}{3}u_c
+\end{equation}
+
+Regioni di ionizzazione parziale di idrogeno ed elio
+
+\end{frame}
 
 \begin{frame}{Equilibrio idrostatico}
 
@@ -151,11 +270,11 @@ Energia interna:
 
 \end{frame}
 
-\begin{frame}{Correzioni alla legge dei gas perfetti: Interazioni coulombiane}
+\begin{frame}<presentation:0>[noframenumbering]{Correzioni alla legge dei gas perfetti: Interazioni coulombiane}
 
 \begin{align}
 &\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\zeta\\
-&\zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}\xrightarrow{FD}\sum_{i}(Z_i^2+\frac{F_{\midfrac{3}{2}}'(\psi)}{F_{\midfrac{3}{2}}(\psi)}_i)\frac{\rho X_i}{A_i}
+&\zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}\xrightarrow{FD}\sum_{i}(Z_i^2+\frac{F_{\midfrac{1}{2}}'(\psi)}{F_{\midfrac{1}{2}}(\psi)}_i)\frac{\rho X_i}{A_i}
 \end{align}
 
 \begin{equation}
@@ -166,53 +285,31 @@ Regioni di ionizzazione parziale di idrogeno ed elio
 
 \end{frame}
 
-\begin{frame}{EOS}
-
-\begin{itemize}
-\item Schema chimico (MHD): atomi e molecole, stati eccitati e diversi gradi di ionizzazione
-
-\item Schema fisico (OPAL): nuclei ed elettroni, potenziale Coulombiano, Schr\"oedinger per un problema a molti corpi.
-\end{itemize}
-
-\begin{figure}[!ht]
-\subfigure[Popolazione dei diversi gradi di ionizzazione per $\cel{He}{4}{}{}$, CNO, $\cel{Ne}{20}{}{}$, $\cel{Fe}{56}{}{}$. Da \cite{basu2008helioseismology}.]{\includegraphics[width=0.4\textwidth,keepaspectratio]{ionfraction}}\label{ionfraction}
-%\subcaption{Andamento di $\Gamma_1$ calcolato tramite equazione di stato MHD/OPAL. Da \cite{trampedach2006synoptic}.]{\includegraphics[width=0.4\textwidth,keepaspectratio]{ionfraction}}
-~
-\subfigure[Confronto $\Gamma_1$ MHD/OPAL. Da \cite{trampedach2006synoptic}.]{\includegraphics[width=0.4\textwidth,keepaspectratio]{gamma1eos}}
-%\subcaption{Profilo radiale della popolazione dei diversi gradi di ionizzazione per $\cel{He}{4}{}{}$, CNO, $\cel{Ne}{20}{}{}$, $\cel{Fe}{56}{}{}$. Stati di ionizzazione maggiore sono pi\'u interni. Da \cite{basu2008helioseismology}.}\label{ionfraction}
-%\subcaption{Andamento di $\Gamma_1$ calcolato tramite equazione di stato MHD/OPAL. Da \cite{trampedach2006synoptic}.}\label{fig:gamma1eos}
-\end{figure}
-
-
-\end{frame}
-
-
 \subsection{Trasporto dell'energia}
 
 
 \begin{frame}{Teorema del Viriale}
 
 Propriet\'a statistica di particelle interagenti:
-\begin{align*}
-\frac{1}{2}\TtwoDy{t}{I}=2E_i+\Omega\\
-0\approx\int_M\frac{3P}{\rho}\,dm(r)+\Omega
-\end{align*}
-
-L'energia potenziale gravitazionale della stella \'e
+l'energia potenziale gravitazionale della stella \'e
 \begin{equation}
 \Omega=-\int_0^M\frac{Gm(r)}{r}\,dm\label{eq:energiapg}
 \end{equation}
 
+\begin{equation*}
+\frac{1}{2}\TtwoDy{t}{I}=2E_i+\Omega\approx0%\approx\int_M\frac{3P}{\rho}\,dm(r)+\Omega
+\end{equation*}
+
 Detta $W=E_i+\Omega$ l'energia totale della stella, si ha: $\Omega=-2E_i$.
 
-Cammino libero medio degli atomi e dei fotoni breve: l'equilibrio idrostatico e termico locale.
-\begin{equation}
-L=-\frac{1}{2}\dot{\Omega}=\dot{E}_i
-\end{equation}
+%Cammino libero medio degli atomi e dei fotoni breve: l'equilibrio idrostatico e termico locale.
+%\begin{equation}
+%L=-\frac{1}{2}\dot{\Omega}=\dot{E}_i
+%\end{equation}
 
 Tempo di \kh{}:
 \begin{equation}
-\tkh{}=\frac{\Omega}{L}\approx\frac{GM^2}{2RL}\approx\SI{1.6e7}{\year}
+\tkh{}=\frac{\Omega}{2L}\approx\frac{GM^2}{2RL}\approx\SI{1.6e7}{\year}
 \end{equation}
 
 \end{frame}
@@ -220,7 +317,7 @@ Tempo di \kh{}:
 
 \subsection{Equilibrio termico}
 
-\begin{frame}{Prima legge TD}
+\begin{frame}<presentation:0>[noframenumbering]{Prima legge TD}
 
 $dq$ per unit\'a di massa per $dt$:
 \begin{align}
@@ -242,16 +339,16 @@ Scrivo il bilancio di calore per un elemento di massa unitaria di gas:
 \begin{equation}
 \TDy{t}{q}=\epsilon-\frac{1}{\rho}\nabla\cdot\vec{F}\label{eq:heatgl}
 \end{equation}
-dove $\epsilon$ \'e l'energia prodotta per unit\'a di tempo e massa e $\vec{F}$ \'e il flusso di energia verso l'esterno generalmente dovuto alla diffusione di fotoni dalla zona pi\'u calda verso la superficie; sostituendo in \eqref{eq:prima} si ha
+%dove $\epsilon$ \'e l'energia prodotta per unit\'a di tempo e massa e $\vec{F}$ \'e il flusso di energia verso l'esterno generalmente dovuto alla diffusione di fotoni dalla zona pi\'u calda verso la superficie; sostituendo in \eqref{eq:prima} si ha
 \begin{equation}
 \TDy{r}{L}=4\pi r^2[\rho\epsilon-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]\label{eq:fenergyconservation}
 \end{equation}
 
-Nel caso stazionario:
+Nel caso stazionario in cui i processi nucleari che avvengono nella parte centrale forniscono il calore per bilanciare il flusso di energia irradiata:
 \begin{equation}
 \TDy{t}{q}=0\ \Rightarrow\ dL=4\pi r^2\rho\epsilon\,dr
 \end{equation}
-e i processi nucleari che avvengono nella parte centrale forniscono il calore per bilanciare il flusso di energia irradiata.
+
 
 \end{frame}
 
@@ -284,7 +381,7 @@ $D_{12}=\frac{1}{3}lv_{th}$ con $l\approx(n\sigma)\expy{-1}$ cammino libero medi
 
 \end{frame}
 
-\begin{frame}{Urti}
+\begin{frame}<presentation:0>[noframenumbering]{Urti}
 
 
 \begin{equation}
@@ -333,12 +430,12 @@ La forza netta dovuta agli urti \'e:
 &\vec{R}_{ij}=\int m\vec{v}C(f_i,f_j)\,d^3v_i%\label{eq:friction}
 \vec{R}_{ij}=n_in_j\mu_{ij}\alpha_{ij}\vec{V}_{ij}\label{eq:resistance}\\
 &\alpha_{ij}=\frac{\mu_{ij}}{KT}\int v_r^3\sigma^Tf^{(0)}(\vec{v_r})\,d^3v_r%\label{eq:collisionintegral}
-\sigma^T=\int(1-\cos{\chi})\,d\sigma\label{eq:sigmatransport}
+\ (\sigma^T=\int(1-\cos{\chi})\,d\sigma)%\label{eq:sigmatransport}
 \end{align}
 
 \begin{block}{Diffusione termica}
 
-La diffusione termica concentra le particelle pi\'u pesanti (e pi\'u cariche) nelle zone pi\'u calde: in presenza di un gradiente termico si ha un trasferimento netto di momento negli urti in direzione del gradiente, in \eqref{eq:friction} ( dipendenz della sezione d'urto coulombiana dalla velocit\'a relativa $\propto v\expy{-4}$/probabilit\'a di collisione $\propto v\expy{-3}$)).
+La diffusione termica concentra le particelle pi\'u pesanti (e pi\'u cariche) nelle zone pi\'u calde: in presenza di un gradiente termico si ha un trasferimento netto di momento negli urti in direzione del gradiente, in \eqref{eq:resistance}%( dipendenz della sezione d'urto coulombiana dalla velocit\'a relativa $\propto v\expy{-4}$/probabilit\'a di collisione $\propto v\expy{-3}$)).
 
 \end{block}
 
@@ -366,10 +463,11 @@ Nella sedimentazione gravitazionale la forza per unit\'a di volume agente sulle 
 \end{equation}
 in condizioni di equilibrio il momento trasferito tramite urti con le altre specie \'e uguale alla forza per unit\'a di volume.
 
-In un plasma costituito da idrogeno, elio ed elettroni per mantenere la neutralit\'a la velocit\'a di diffusione degli elettroni \'e dello stesso ordine di grandezza di quella degli ioni, quindi l'impulso trasferito \'e trascurabile
+Velocit\'a diffusione H-He:
 \begin{equation}
 v_{HHe}=-\frac{m_{He}T}{m_{HHe}Y\rho \alpha_{HHe}}[\PDy{r}{\ln{(P_eP_H)}}-m_Hg]
 \end{equation}
+Velocit\'a diffusione elementi pesanti
 \begin{columns}
 \begin{column}{0.6\textwidth}
 \begin{align}
@@ -440,24 +538,28 @@ v_A(1+2\frac{Y}{X})\approx-v_H
 
 \begin{frame}{Trasporto radiativo}
 
-$\frac{1}{\kappa\rho}\approx\SI{1}{\cm}$, con $\kappa$ opacit\'a radiativa per unit\'a di massa, quindi considero la radiazione localmente in equilibrio con la materia
+\begin{equation}
+dI=-\sigma\frac{N_A\rho}{\mu}I_{\nu}\quad \frac{1}{\kappa\rho}\approx\SI{1}{\cm}
+\end{equation}
+
+\begin{block}{Radiazione in equilibrio con la materia}
+
 %Il flusso di energia verso la superficie \'e generato da una piccola anisotropia nell'intensit\'a descritta al prim'ordine tramite:
 \begin{align}
 I_{\nu}=B(\nu,T)-\frac{1}{\kappa_{\nu}'\rho}\nabla_s B(\nu,T)\\
-P_{rad}=\int\,d\nu\frac{4\pi}{3c}B_{\nu}=\frac{1}{3}aT^4\\
+%P_{rad}=\int\,d\nu\frac{4\pi}{3c}B_{\nu}=\frac{1}{3}aT^4\\
 \vec{F}=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{c}{\kappa\rho}\nabla P_{rad}\\
-\nrad{}=\Dcvar{\PDly{P}{T}}{rad}=\frac{3}{16\pi acG}\frac{\kappa l(r)P}{m(r)T^4}\label{eq:radiativegradient}
+\nrad{}=\Dcvar{\PDly{P}{T}}{rad}=\frac{3}{16\pi acG}\frac{\kappa l(r)P}{m(r)T^4}\label{eq:radiativegradient}\\
+\frac{1}{\kappa}=(\frac{acT^3}{\pi})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\label{eq:rosselandopacity}
 \end{align}
+
+\end{block}
 
 \end{frame}
 
 \subsection{Opacit\'a.}
 
-\begin{frame}{Opacit\'a media di Rosseland}
-
-\begin{equation}
-\frac{1}{\kappa}=(\frac{acT^3}{\pi})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\label{eq:rosselandopacity}
-\end{equation}
+\begin{frame}{Opacit\'a}
 
 \begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
 
@@ -497,7 +599,7 @@ Effetti quantistic: fattore di Gaunt.
 
 \end{frame}
 
-\begin{frame}{Contributi a $\kappa$ per processoper elemento}
+\begin{frame}<presentation:0>[noframenumbering]{Contributi a $\kappa$ per processoper elemento}
 
 \begin{tikzpicture}[]
 %([shift={(1.5,0)}]0,0)
@@ -813,7 +915,7 @@ $\cel{Be}{7}{}{}(p,\Pphoton)\cel{B}{8}{}{}$\& $(2.08 \pm 0.16)10^{-2}$ \& $\pm 7
 \begin{columns}
 \begin{column}{0.6\textwidth}
 \begin{figure}[!ht]
-       \includegraphics[width=0.4\textwidth,keepaspectratio]{Rscreening}
+       \includegraphics[width=0.8\textwidth,keepaspectratio]{Rscreening}
 \end{figure}
 \end{column}
 
@@ -832,10 +934,10 @@ f=\exp{-\midfrac{U_0}{KT}}\label{eq:screeningfactor}
 \end{equation}
 %dove $U_0=U_s(0)$ poich\'e $r\ll r_D$ e considerando solo la correzione al fattore di penetrazione ($E_G\gg U_0$).
 
-Per determinare $U_0$ considero l'energia potenziale di $Z_1$ e $Z_2$ a distanza $r$
-\begin{equation}
-U=Z_2e\int_{\infty}^r\PDy{r_1}{\phi_1}\,dr_1=\frac{Z_1Z_2e^2\exp{-\midfrac{r}{r_D}}}{r}
-\end{equation}
+%Per determinare $U_0$ considero l'energia potenziale di $Z_1$ e $Z_2$ a distanza $r$
+%\begin{equation}
+%U=Z_2e\int_{\infty}^r\PDy{r_1}{\phi_1}\,dr_1=\frac{Z_1Z_2e^2\exp{-\midfrac{r}{r_D}}}{r}
+%\end{equation}
 %con $\phi_1$ dato da \eqref{eq:screenedpotential}, e quindi
 \begin{equation}
 U_s=U-\frac{Z_1Z_2e^2}{r}\approx\frac{Z_1Z_2e^2}{r_D}
@@ -847,7 +949,7 @@ U_s=U-\frac{Z_1Z_2e^2}{r}\approx\frac{Z_1Z_2e^2}{r_D}
 
 Sulla base dell'efficienza delle reazioni nucleari, del profilo di densit\'a e temperatura ricavati da un modello solare le terminazione della catena pp $\cel{He}{3}{}{}-\cel{He}{3}{}{}$ e $\cel{He}{3}{}{}-\cel{He}{4}{}{}$ generano rispettivamente $83.3\%$, $16.7\%$ della luminosit\'a totale mentre il ciclo CNO circa $1\%$.
 
-Il tempo trascorso da una stella di massa solare in sequenza principale considerando \'e il tempo necessario per la massa di idrogeno nel core di fusione (le temperature necessarie perch\'e il rate di reazione sia apprezzabile si raggiungono nella regione pi\'u interna che costituisce una frazione $f$ pari al $15\%$ della massa solare) ad esaurirsi:
+%Il tempo trascorso da una stella di massa solare in sequenza principale considerando \'e il tempo necessario per la massa di idrogeno nel core di fusione (le temperature necessarie perch\'e il rate di reazione sia apprezzabile si raggiungono nella regione pi\'u interna che costituisce una frazione $f$ pari al $15\%$ della massa solare) ad esaurirsi:
 
 \begin{equation}
 \tau_n\approx\frac{E_n}{L}=\frac{fX\msun Q}{\lsun}\approx\SI{e+10}{\year},\ Q\approx\SI{6.3e18}{\erg\per\gram}
@@ -855,45 +957,7 @@ Il tempo trascorso da una stella di massa solare in sequenza principale consider
 
 \end{frame}
 
-\section{Modello solare standard e osservabili sismologiche}
 
-\begin{frame}{Equazioni della struttura solare}
-
-%Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
-\begin{subequations}\label{subeqn:stellarstructure}
-\begin{align}
-&\TDy{r}{m}=4\pi r^2\rho\\
-&\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\\
-&\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}\\
-&\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
-\end{align}
-\begin{equation}
-\PDy{t}{n_i}+\frac{1}{r^2}\PDof{r}(r^2n_iv_i)=\Dcvar{\PDy{t}{n_i}}{Nucl}\label{eq:difffusionchange}
-\end{equation}
-\end{subequations}
-%con $v_i$ velocit\'a di diffusione specie i. Ottengo il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note la metallicit\'a iniziale Z, l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
-\begin{itemize}
-    \item La superficie \'e definita da $T=T_{eff}$ e si ha la condizione $\lsun{}=4\pi r^2\sigma T_{eff}^4$. La pressione alla superficie \'e legata alla struttura di equilibrio dell'atmosfera.
-
-    \item In $r=0$ deve essere $L=0$, $M=0$.
-    %e condizioni al centro si ricavano espandendo l, m attorno a $r=0$ in termini di $T_c, P_C,X_C,X_{3C}$ ed eguagliando le espansioni ai valori di l e m del punto pi\'u interno.
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}{Modello Sole attuale}
-
-%Per determinare il modello solare attuale evolvo il modello del Sole in sequenza principale partendo da una composizione chimica fissata fino ad ottenere un modello con le caratteristiche del Sole attuale:
-\begin{itemize}
-\item Il valore di Y \'e determinato dalla luminosit\'a solare attuale%: l'aumento del peso molecolare medio $\mu$, determinato tramite \eqref{eq:difffusionchange}, dovuto principalmente alle reazioni di fusione \eqref{eq:energyrate}, deve essere compensato da un'aumento di temperatura con conseguente incremento dell'energia generata e della luminosit\'a.
-
-\item L'efficienza della convezione determina il gradiente della regione esterna convettiva \'e scelta in maniera da avere la temperatura efficace attuale, cio\'e il raggio attuale. %in generale devo  fare ulteriore correzione perch\'e cambiando il gradiente termico della regione esterna la soluzione delle equazioni stellari avr\'a in generale un profilo termico leggermente diverso e un modello solare che non riproduce la luminosit\'a attuale.
-
-\item La composizione iniziale \'e determinata in maniera da riprodurre quella attuale tenendo conto della diffusione.
-
-\end{itemize}
-
-\end{frame}
 
 \begin{frame}{Struttura del MSS}
 
@@ -922,7 +986,7 @@ Il tempo trascorso da una stella di massa solare in sequenza principale consider
 
 \end{frame}
 
-\subsection{Caratteristiche solari determinate dall'eliosismologia}
+\section{Caratteristiche solari determinate dall'eliosismologia}
 
 \begin{frame}{Determinazione Velocit\'a del suono}
 

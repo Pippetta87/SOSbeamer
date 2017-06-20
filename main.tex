@@ -1,4 +1,4 @@
-\documentclass[11pt,xcolor={usenames},fleqn,mathserif,serif]{beamer}
+ \documentclass[11pt,xcolor={usenames},fleqn,mathserif,serif]{beamer}
 
 %%%Usefull link
 %tikz-equations:
@@ -36,6 +36,8 @@
 %\usetheme{Singapore}
 %\usetheme{Szeged}
 %\usetheme{Warsaw}
+
+\hypersetup{pdfpagemode=FullScreen}
 
 \addtobeamertemplate{block begin}{%
   \setlength{\textwidth}{0.9\textwidth}%
@@ -186,41 +188,17 @@
 %\frame{\tableofcontents[onlyparts]}
 
 \begin{frame}[label={intro}]{Studio delle oscillazioni solari}{Argomenti trattati nella tesina}
-\begin{block}{Equazioni fondamentali e input fisici del MSS}
 
-Struttura stellare e costruzione MSS - Grandezze sismologiche.
+Lo studio dei modi adiabatici permette di valutare l'accuratezza del MSS.
 
-\end{block}
-
-
-\begin{block}{Oscillazoni lineari adiabatiche}
-
-Perturbazioni adiabatiche dello stato di equilibrio: modi normali.
-
-Relazione tra variazioni carattaristiche stato di equilibrio e variazioni frequenze.
-
-Osservazioni delle oscillazioni sulla superficie solare. - Campi di velocit\'a solari: rotazione.
-
-Analisi asintotica: cavit\'a risonanti.
-
-\end{block}
-
-\begin{block}{Tecniche di inversione}
-
-Soluzione del problema inverso: determino variazioni della struttura per ottenere miglior accordo con osservazioni.
-
-Determinazione della rotazione, profilo radiale di $c_s$ e caratteristiche zona convettiva.
-
-\end{block}
 \end{frame}
-
 
 
 \part{Modello solare e osservabili sismologiche}\label{part:MSS}
 \frame{\partpage}
 
 \begin{frame}{Argomenti}
-  \tableofcontents[part=1%,pausesections
+  \tableofcontents[part=1,hideallsubsections%,pausesections
   ]
   % You might wish to add the option [pausesections]
 \end{frame}
@@ -232,7 +210,7 @@ Determinazione della rotazione, profilo radiale di $c_s$ e caratteristiche zona 
 \frame{\partpage}
 
 \begin{frame}{Argomenti}
-  \tableofcontents[part=2%,pausesections
+  \tableofcontents[part=2,hideallsubsections%,pausesections
   ]
   % You might wish to add the option [pausesections]
 \end{frame}
@@ -244,15 +222,12 @@ Determinazione della rotazione, profilo radiale di $c_s$ e caratteristiche zona 
 \frame{\partpage}
 
 \begin{frame}{Argomenti}
-  \tableofcontents[part=3%,pausesections
+  \tableofcontents[part=3,hideallsubsections%,pausesections
   ]
   % You might wish to add the option [pausesections]
 \end{frame}
 
 \input{inversione}
 
-\part{Come fare una presentazione}
-
-%\input{howbeamer}
 
 \end{document}
