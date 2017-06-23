@@ -105,7 +105,8 @@ il termine a destra \'e trascurabile:
 \end{figure}
 \end{comment}
 
-%%% SOS
+
+%%% deposito
 
 \section{Modi normali della struttura solare}
 
@@ -125,6 +126,25 @@ Rumore solare a basse frequenze e ai processi di eccitazione dei modi che trasfe
 % La variazione delle propriet\'a del gas delimita le regioni di propagazione a diverse profondit\'a a seconda delle caratteristiche trasversali del moto: $\lambda_h=\frac{2\pi}{k_h}\approx\frac{2\pi R}{\sqrt{l(l+1)}}$
 
 \end{block}
+
+\end{frame}
+
+\begin{frame}{Oscillazioni di equilibrio a simmetria sferica}
+
+\begin{align}
+&Y_{lm}(\theta,\phi)=(-)^mc_{lm}P_l^m(\cos{\theta})\exp{im\phi}\\
+&(\rho',P',\Phi')=\exp{i\omega t}[\rho'(r),P'(r),\Phi'(r)]Y_l^m
+\end{align}
+
+\begin{equation}
+%&\omega^2\vec{\xi}=\nabla a+\frac{N^2c^2}{g}b\frac{\vec{r}}{r}\\
+\hat{r}\cdot(\rot{\vec{\xi}})=0\ \Rightarrow\ \PDof{\theta}(\sin{\theta}\xi_{\phi})-\PDy{\phi}{\xi_{\theta}}=0
+\end{equation}
+ed \'e quindi possibile ricavare la componente tangenziale della perturbazione da una funzione scalare:
+\begin{equation}
+\vec{\xi}=\exp{i\omega t}(\xi_r(r),\xi_h(r)\PDof{\theta},\frac{\xi_h(r)}{\sin{\theta}}\PDof{\phi})Y_l^m(\theta,\phi)
+\end{equation}
+dove ho scomposto il vettore spostamento perturbato in componente radiale $\xi_r(r)$ e tangenziale $\xi_h(r)$.
 
 \end{frame}
 

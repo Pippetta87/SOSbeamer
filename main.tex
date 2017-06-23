@@ -100,7 +100,7 @@
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
 
-\date{Appello Giugno, \today}
+\date{Appello Luglio, \today}
 % - Either use conference name or its abbreviation.
 % - Not really informative to the audience, more for people (including
 %   yourself) who are reading the slides online
@@ -191,6 +191,20 @@
 
 Lo studio dei modi adiabatici permette di valutare l'accuratezza del MSS.
 
+%\begin{columns}
+%\begin{column}{0.6\textwidth}
+\begin{figure}[!ht]
+\includegraphics[height=0.65\textheight,keepaspectratio]{dsoundspeedduvall} 
+
+%\end{column}
+%\begin{column}{0.4\textwidth}
+\captionof{figure}{%Differenza relativa del profilo di $c_s$ (determinata invertendo \eqref{eq:analinversionc}) per frequenze dei modi calcolate con MSS e osservate. La differenza relativa \'e minore del $5\%$.
+Da \cite{christensen1985speed}.}
+\label{dsoundduvall}
+\end{figure}
+%\end{column}
+%\end{columns}
+
 \end{frame}
 
 
@@ -203,6 +217,215 @@ Lo studio dei modi adiabatici permette di valutare l'accuratezza del MSS.
   % You might wish to add the option [pausesections]
 \end{frame}
 
+
+
+\section{Modello solare standard}
+
+\begin{frame}{Equazioni della struttura solare}
+
+%Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
+\begin{subequations}\label{subeqn:stellarstructure}
+\begin{align}
+&\TDy{r}{m}=4\pi r^2\rho\\
+&\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\\
+&\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}\\
+&\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
+\end{align}
+\begin{equation}
+\PDy{t}{n_i}+\frac{1}{r^2}\PDof{r}(r^2n_iv_i)=\Dcvar{\PDy{t}{n_i}}{Nucl}\label{eq:difffusionchange}
+\end{equation}
+\end{subequations}
+%con $v_i$ velocit\'a di diffusione specie i. Ottengo il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note la metallicit\'a iniziale Z, l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
+
+\begin{block}{Condizionial bordo}
+\begin{itemize}
+    \item Superficie: $T(r=\rsun{})$, $P(r=\rsun{})$
+    \item Centro: $l(r=0)$, $m(r=0)$.
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+
+\section{Equilibrio idrostatico e termico}
+
+\begin{frame}{Equilibrio idrostatico e termico}
+
+%\begin{equation*}
+%\tau_{idro}^{\odot}= \sqrt{\frac{R^3}{GM}}\approx\frac{1}{2}(G\overline{\rho})\expy{-\frac{1}{2}}\approx\SI{27}{\minute}
+%\end{equation*}
+
+\begin{block}{Conservazione del momento}
+
+\begin{columns}
+
+\begin{column}{0.5\textwidth}
+\begin{equation*}
+\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}%\label{eq:fidroequilibrio}
+\end{equation*}
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\begin{align*}
+&\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})\\
+&=\sum_{i\neq j}\vec{R}_{ij}
+\end{align*}
+
+\end{column}
+
+\end{columns}
+
+
+\end{block}
+
+\begin{block}{Conservazione energia interna}
+
+\begin{align*}
+&\TDy{t}{q}=\epsilon-\frac{1}{\rho}\nabla\cdot\vec{F}\\%\label{eq:heatgl}
+&\TDy{r}{L}=4\pi r^2[\rho\epsilon-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]%\label{eq:fenergyconservation}
+\end{align*}
+
+\end{block}
+
+\end{frame}
+
+
+\section{Meccanismi di trasporto dell'energia}
+
+\begin{frame}{Trasporto radiativo}
+
+\begin{block}{Equilibrio termico locale}
+%Il flusso di energia verso la superficie \'e generato da una piccola anisotropia nell'intensit\'a descritta al prim'ordine tramite:
+\begin{align*}
+%&I_{\nu}=B(\nu,T)-\frac{1}{\kappa_{\nu}'\rho}\nabla_s B(\nu,T)\\
+%P_{rad}=\int\,d\nu\frac{4\pi}{3c}B_{\nu}=\frac{1}{3}aT^4\\
+%\vec{F}=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{c}{\kappa\rho}\nabla P_{rad}\\
+&\frac{dI_{\nu}}{\rho\,ds}=\kappa_{\nu}B_{\nu}(T)-\kappa_{\nu}I_{\nu}
+%\frac{1}{\kappa}=(\frac{acT^3}{\pi})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\label{eq:rosselandopacity}
+\end{align*}
+\end{block}
+
+\begin{block}{Gradiente radiativo}
+
+\begin{equation*}
+\nrad{}=\Dcvar{\PDly{P}{T}}{rad}=\frac{3}{16\pi acG}\frac{\kappa l(r)P}{m(r)T^4}%\label{eq:radiativegradient}
+\end{equation*}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Trasporto convettivo}
+
+\begin{figure}[!h]
+    \includegraphics[width=0.9\textwidth,keepaspectratio]{proportionflux}
+    \caption{Da \cite{gou76convection}.}
+    \label{fluxproportion}
+\end{figure}
+
+\end{frame}
+
+\section{MSS}
+
+\begin{frame}{Dati osservativi}%<handout:0 beamer:0>
+
+\begin{block}{Et\'a, luminosit\'a, massa, raggio solari}
+\begin{tabular}{l|c}
+\hline
+$\agesun{}$&\SI[separate-uncertainty=true]{4.57\pm0.02e9}{\year}\\
+\hline
+$\rsun{}$&\SI{695658+-140}{\kilo\meter}\\
+\hline
+$G\msun$&\num{132712440018+-8}\SI{e9}{\cubic\meter\per\square\second}\\
+\hline
+$\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
+\hline
+\end{tabular}
+%\caption[Osservabili solari principali.]{Osservabili solari principali. \cite{haberreiter2008solving}.}
+\label{tab:sunO}
+\end{block}
+
+\begin{block}{Simmetria sferica}
+Deviazioni da forma sferica trascurabili (campi magnetici, rotazione)
+\end{block}
+
+\begin{block}{Composizione chimica}
+
+\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+\item Righe di assorbimento della fotosfere
+\item Meteoriti CI: primordiale (refrattari)
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Dati osservativi}
+
+\begin{table}[]
+
+\pgfplotstabletypeset[
+every head row/.style={
+ before row={\toprule &\multicolumn{4}{c|}{Attuale}
+ %&\multicolumn{4}{c|}{Primordiale}
+ \\\midrule},
+ every last row/.style={after row=\bottomrule},
+ after row={\midrule}
+},
+every nth row={2}{before row=\midrule},every last row/.style={after row=\bottomrule},
+every first column/.style={column type/.add={|}{}},
+every last column/.style={column type/.add={}{|}},
+columns/x/.style = {column type/.add={|}{}},
+columns/xi/.style = {column type/.add={|}{}},
+display columns/0/.style={column name={}},
+display columns/1/.style={column name={$X$}},
+display columns/2/.style={column name={$Y$}},
+display columns/3/.style={column name={$Z$}},
+display columns/4/.style={column name={$\frac{Z}{X}$}},
+%display columns/5/.style={column name={$X$}},
+%display columns/6/.style={column name={$Y$}},
+%display columns/7/.style={column name={$Z$}},
+%display columns/8/.style={column name={$\frac{Z}{X}$}},
+create on use/authors/.style={create col/set list={
+%Anders \& Grevesse (1989),Grevesse \& Noels (1993),
+Grevesse et al. (1998),Lodders (2003),Asplund et al. (2005),Lodders et al. (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
+columns/authors/.style={string type},
+columns={authors,x, y, z, zx
+%,xi,yi,zi, zxi
+},
+/pgf/number format/precision=4
+     ]{asplund.txt} %%%
+\captionof{table}{Metallicit\'a attuale determinata da varii autori.}\label{tab:Zhistory}
+\end{table}
+
+\end{frame}
+
+
+\begin{frame}{Calibrazione modello solare}
+
+\begin{block}{Abbondanze elio iniziale}
+Un maggiore peso molecolare medio comporta un maggiore temperatura nel core di fusione
+\end{block}
+
+\begin{block}{efficienza convezione}
+Mixing length $l_m=H_p\alpha$
+\end{block}
+
+\begin{block}{diffusione}
+
+\end{block}
+
+\end{frame}
+
+
+\section{Input fisici del MSS}
+
+\begin{frame}{}
+
+\end{frame}
+
+% SOS
+\part{SSM (sos)}
 \input{MSS}
 
 \part{Oscillazioni della fotosfera con grande coerenza spaziale e temporale - Modi normali di cavit\'a risonanti dell'interno solare}\label{part:oscillations}
@@ -215,6 +438,49 @@ Lo studio dei modi adiabatici permette di valutare l'accuratezza del MSS.
   % You might wish to add the option [pausesections]
 \end{frame}
 
+\section{Modi normali della struttura solare}
+
+\begin{frame}{Modi normali}
+
+\begin{block}{Equazione del moto perturbato linearizzata}
+
+\begin{align}
+&\rho_0\TDof{t}\vec{v}=\rho_0\PtwoDy{t}{\vec{\xi}}=-\nabla P'+\rho_0\vec{g}'+\rho'\vec{g}_0\label{eq:emper}
+\end{align}
+
+\end{block}
+
+\begin{block}{Equazione di continuit\'a e del moto perturbate}
+
+\begin{align*}
+&\rho'+\div{(\rho_0\Lvar{\vec{r}})}=0%\label{eq:contper}
+\end{align*}
+
+\end{block}
+
+\begin{block}{Condizione di moto adiabatico}
+
+\begin{align}
+&P'+\vec{\xi}\cdot\nabla P_0=\frac{\Gamma_{1,0}P_0}{\rho}(\rho'+\vec{\xi}\cdot\nabla\rho_0)\label{eq:adper}
+\end{align}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Oscillazioni di equilibrio a simmetria sferica}
+
+\begin{align}
+%&Y_{lm}(\theta,\phi)=(-)^mc_{lm}P_l^m(\cos{\theta})\exp{im\phi}\\
+&(\rho',P',\Phi')=\exp{i\omega t}[\rho'(r),P'(r),\Phi'(r)]Y_l^m\\
+&\vec{\xi}=\exp{i\omega t}(\xi_r(r),\xi_h(r)\PDof{\theta},\frac{\xi_h(r)}{\sin{\theta}}\PDof{\phi})Y_l^m(\theta,\phi)
+\end{align}
+
+
+\end{frame}
+
+%%% SOS
+\part{OSCILLAZIONI SOS}
 \input{modi}
 
 \part{Tecniche e risultati di inversione}\label{part:inverseproblem}
@@ -226,6 +492,8 @@ Lo studio dei modi adiabatici permette di valutare l'accuratezza del MSS.
   ]
   % You might wish to add the option [pausesections]
 \end{frame}
+
+\part{INVERSIONE SOS}
 
 \input{inversione}
 
