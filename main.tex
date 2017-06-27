@@ -75,6 +75,9 @@
 %\usepackage{length}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Funzioni per questo file main
 \usepackage{mathOp}
+
+\def\status{keeptrying}
+\def\keeptrying{keeptrying}
 \usepackage{LocalF}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -207,6 +210,15 @@ Da \cite{christensen1985speed}.}
 
 \end{frame}
 
+\begin{wordonframe}{Intro modi gravo-acustici-risonanza-MSS}
+
+L'eliosismologia nasce all'inizio degli anni '60 quando Leighton e collaboratori osservarono un comportamento periodico nell'atmosfera solare dovuto a modi gravo-acustici, cio\'e onde gravo-acustiche confinate in gusci sferici di diversa profondit\'a che interferiscono costruttuvamente. %La condizione di risonanza radiale, cio\'e che la cavi\'a contenga un numero intero di lunghezze d'onda e tenendo conto di uno sfasamento ai bordi della cavit\'a, permette
+Le frequenze osservate compongono la parte ad alte frequenze dello spettro dei modi solari, cio\'e onde acustiche la cui forza di richiamo \'e la perturbazione della pressione, e usando la condizione di risonanza radiale (la cavit\'a contiene un numero intero di lunghezze d'onda e un fattore di fase che tiene conto della riflessione in superficie) \'e possibile ricavare il profilo radiale della velocit\'a del suono all'interno del Sole.
+
+Le piccol differenz nel profilo radiale della velocit\'a del suono ricavato dalle frequenze osservate e quello calcolato tramite un modello solare supporta il modello proposto per spiegare il fenomeno oscillatoria e supporta inoltre il modello solare standard. Descrivo le caratteristiche fondamentali del Sole.
+
+
+\end{wordonframe}
 
 \part{Modello solare e osservabili sismologiche}\label{part:MSS}
 \frame{\partpage}
@@ -217,115 +229,7 @@ Da \cite{christensen1985speed}.}
   % You might wish to add the option [pausesections]
 \end{frame}
 
-
-
-\section{Modello solare standard}
-
-\begin{frame}{Equazioni della struttura solare}
-
-%Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
-\begin{subequations}\label{subeqn:stellarstructure}
-\begin{align}
-&\TDy{r}{m}=4\pi r^2\rho\\
-&\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\\
-&\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}\\
-&\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
-\end{align}
-\begin{equation}
-\PDy{t}{n_i}+\frac{1}{r^2}\PDof{r}(r^2n_iv_i)=\Dcvar{\PDy{t}{n_i}}{Nucl}\label{eq:difffusionchange}
-\end{equation}
-\end{subequations}
-%con $v_i$ velocit\'a di diffusione specie i. Ottengo il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note la metallicit\'a iniziale Z, l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
-
-\begin{block}{Condizionial bordo}
-\begin{itemize}
-    \item Superficie: $T(r=\rsun{})$, $P(r=\rsun{})$
-    \item Centro: $l(r=0)$, $m(r=0)$.
-\end{itemize}
-\end{block}
-
-\end{frame}
-
-
-\section{Equilibrio idrostatico e termico}
-
-\begin{frame}{Equilibrio idrostatico e termico}
-
-%\begin{equation*}
-%\tau_{idro}^{\odot}= \sqrt{\frac{R^3}{GM}}\approx\frac{1}{2}(G\overline{\rho})\expy{-\frac{1}{2}}\approx\SI{27}{\minute}
-%\end{equation*}
-
-\begin{block}{Conservazione del momento}
-
-\begin{columns}
-
-\begin{column}{0.5\textwidth}
-\begin{equation*}
-\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}%\label{eq:fidroequilibrio}
-\end{equation*}
-\end{column}
-
-\begin{column}{0.5\textwidth}
-\begin{align*}
-&\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})\\
-&=\sum_{i\neq j}\vec{R}_{ij}
-\end{align*}
-
-\end{column}
-
-\end{columns}
-
-
-\end{block}
-
-\begin{block}{Conservazione energia interna}
-
-\begin{align*}
-&\TDy{t}{q}=\epsilon-\frac{1}{\rho}\nabla\cdot\vec{F}\\%\label{eq:heatgl}
-&\TDy{r}{L}=4\pi r^2[\rho\epsilon-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]%\label{eq:fenergyconservation}
-\end{align*}
-
-\end{block}
-
-\end{frame}
-
-
-\section{Meccanismi di trasporto dell'energia}
-
-\begin{frame}{Trasporto radiativo}
-
-\begin{block}{Equilibrio termico locale}
-%Il flusso di energia verso la superficie \'e generato da una piccola anisotropia nell'intensit\'a descritta al prim'ordine tramite:
-\begin{align*}
-%&I_{\nu}=B(\nu,T)-\frac{1}{\kappa_{\nu}'\rho}\nabla_s B(\nu,T)\\
-%P_{rad}=\int\,d\nu\frac{4\pi}{3c}B_{\nu}=\frac{1}{3}aT^4\\
-%\vec{F}=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{c}{\kappa\rho}\nabla P_{rad}\\
-&\frac{dI_{\nu}}{\rho\,ds}=\kappa_{\nu}B_{\nu}(T)-\kappa_{\nu}I_{\nu}
-%\frac{1}{\kappa}=(\frac{acT^3}{\pi})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\label{eq:rosselandopacity}
-\end{align*}
-\end{block}
-
-\begin{block}{Gradiente radiativo}
-
-\begin{equation*}
-\nrad{}=\Dcvar{\PDly{P}{T}}{rad}=\frac{3}{16\pi acG}\frac{\kappa l(r)P}{m(r)T^4}%\label{eq:radiativegradient}
-\end{equation*}
-
-\end{block}
-
-\end{frame}
-
-\begin{frame}{Trasporto convettivo}
-
-\begin{figure}[!h]
-    \includegraphics[width=0.9\textwidth,keepaspectratio]{proportionflux}
-    \caption{Da \cite{gou76convection}.}
-    \label{fluxproportion}
-\end{figure}
-
-\end{frame}
-
-\section{MSS}
+\section{Modello solare}
 
 \begin{frame}{Dati osservativi}%<handout:0 beamer:0>
 
@@ -349,18 +253,28 @@ $\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
 Deviazioni da forma sferica trascurabili (campi magnetici, rotazione)
 \end{block}
 
-\begin{block}{Composizione chimica}
-
-\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-\item Righe di assorbimento della fotosfere
-\item Meteoriti CI: primordiale (refrattari)
-\end{itemize}
-
-\end{block}
 
 \end{frame}
 
+\begin{wordonframe}{Ipotesi e giustificazione struttura equilibrio idrostatico}
+
+La costruzione di un modello solare \'e molto meno incerta rispetto a una stella qualsiasi poich\'e \'e nota la distanza tramite lo studio delle orbite dei corpi celesti attorno al Sole, l'et\'a di formazione del sistema solare tramite studio dei meteoriti, la luminosit\'a, e il raggio tramite la misura delle dimensioni apparenti del disco solare.
+
+Il modello solare s
+
+\end{wordonframe}
+
 \begin{frame}{Dati osservativi}
+
+\begin{block}{Composizione chimica}
+
+%\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+Righe di assorbimento della fotosfera.
+
+Meteoriti CI: primordiale (refrattari).
+
+\end{block}
+
 
 \begin{table}[]
 
@@ -401,6 +315,158 @@ columns={authors,x, y, z, zx
 \end{frame}
 
 
+\section{Equilibrio idrostatico e termico}
+
+\begin{frame}{Equilibrio idrostatico}
+
+%\begin{equation*}
+%\tau_{idro}^{\odot}= \sqrt{\frac{R^3}{GM}}\approx\frac{1}{2}(G\overline{\rho})\expy{-\frac{1}{2}}\approx\SI{27}{\minute}
+%\end{equation*}
+
+
+\begin{block}{Conservazione momento (Macroscopico)}
+
+\begin{equation*}
+\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}%\label{eq:fidroequilibrio}
+\end{equation*}
+
+\end{block}
+
+\begin{block}{Conservazione momento (microscopico)}
+\begin{align*}
+&\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})\\
+&=\sum_{i\neq j}\vec{R}_{ij}
+\end{align*}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Conservazione energia interna}
+
+\begin{align*}
+&\TDy{t}{q}=\epsilon-\frac{1}{\rho}\nabla\cdot\vec{F}\\%\label{eq:heatgl}
+&\TDy{r}{L}=4\pi r^2[\rho\epsilon-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]%\label{eq:fenergyconservation}
+\end{align*}
+
+
+\end{frame}
+
+
+\section{Meccanismi di trasporto dell'energia}
+
+\begin{frame}{Trasporto radiativo}
+
+\begin{block}{Equilibrio termodinamico locale}
+%Il flusso di energia verso la superficie \'e generato da una piccola anisotropia nell'intensit\'a descritta al prim'ordine tramite:
+\begin{align*}
+%&I_{\nu}=B(\nu,T)-\frac{1}{\kappa_{\nu}'\rho}\nabla_s B(\nu,T)\\
+%P_{rad}=\int\,d\nu\frac{4\pi}{3c}B_{\nu}=\frac{1}{3}aT^4\\
+%\vec{F}=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{c}{\kappa\rho}\nabla P_{rad}\\
+&\frac{dI_{\nu}}{\rho\,ds}=\kappa_{\nu}B_{\nu}(T)-\kappa_{\nu}I_{\nu}\\
+%\frac{1}{\kappa}=(\frac{acT^3}{\pi})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\label{eq:rosselandopacity}
+&\vec{F}=-\frac{4\pi}{3\kappa\rho}\nabla B(T)=-\frac{c}{\kappa\rho}\nabla P_{rad}
+\end{align*}
+\end{block}
+
+\begin{block}{Gradiente radiativo}
+
+\begin{equation*}
+\nrad{}=\Dcvar{\PDly{P}{T}}{rad}=\frac{3}{16\pi acG}\frac{\kappa l(r)P}{m(r)T^4}%\label{eq:radiativegradient}
+\end{equation*}
+
+\end{block}
+
+\end{frame}
+
+\begin{wordonframe}{Trasporto radiativo}
+
+Il trasporto radiativo nell'interno solare \'e descritto considerando il flusso di fotoni  dalle regioni interne pi\'u calde alla superficie come un processo diffusivo e poich\'e il cammino libero medio di un fotone $\invers{\kappa\rho}$ \'e molto piccolo. Posso quindi considerare la radiazione localmente in equilibrio con la materia cio\'e emissione di corpo nero descritta dalla funzione di Plank $B_{\nu}(T)$ (emissivit\'a per unit\'a di frequenza:$B(T)=\frac{ac}{4\pi}T^4$). La soluzione dell'equazione del trasporto radiativo \'e la somma di tutti i contributi $B_{\nu}(-\tau_{\nu})$ pesati dall'esponenziale che descrive l'assorbimento del plasma solare e si pu\'o dimostrare che in condizioni solari il flusso verso la superficie \'e proporzionale a $\nabla B_{\nu}(T)$ (gradiente locale: Espansione $B(\tau_{\nu})$) e al flusso totale integrando sulle frequenze. Infine ricordando che la pressione di radiazione \'e $P_{rad}=\int\,d\nu\frac{4\pi}{3c}B_{\nu}=\frac{1}{3}aT^4$ trovo la relazione tra flusso e gradiente termico.
+
+\end{wordonframe}
+
+\begin{frame}{Trasporto convettivo}
+
+\begin{figure}[!h]
+    \includegraphics[width=0.9\textwidth,keepaspectratio]{proportionflux}
+    \caption{Da \cite{gou76convection}.}
+    \label{fluxproportion}
+\end{figure}
+
+\end{frame}
+
+
+\section{Input fisici del MSS}
+
+\begin{frame}{Modello plasma solare}
+
+\begin{block}{Equazione di stato $P(\rho,T)$}
+Propriet\'a degli atomi nell'interno solare.
+
+Raggio di debye:
+\begin{align}
+&\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\zeta\\
+&\zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}\xrightarrow{FD}\sum_{i}(Z_i^2+\frac{F_{\midfrac{1}{2}}'(\psi)}{F_{\midfrac{1}{2}}(\psi)}Z_i)\frac{\rho X_i}{A_i}
+\end{align}
+
+
+\end{block}
+
+\begin{block}{Opacit\'a $\kappa(T,\rho)$}
+Interazioni radiazione-materia
+\end{block}
+
+\end{frame}
+
+\begin{wordonframe}{Modellizzazione plasma solare}
+
+L'opacit\'a \'e determinata dai processi di assorbimento e scattering dei fotoni quindi dal numero dalla densit\'a di particelle che danno luogo a un determinato fenomeno di assorbimento o scattering e dalla sezione d'urto per singola particella.
+
+\end{wordonframe}
+
+
+\begin{frame}{Reazioni nucleari}
+
+\begin{block}{Fusione idrogeno in elio: catena PP}
+
+\end{block}
+
+\end{frame}
+
+\begin{wordonframe}{Importanza reazioni catena PP}
+
+La funzione $\epsilon(T,\rho,X_i)$ descrive la produzione di energia. Nella fase attuale il Sole produce circa il $99\%$ della luminosit\'a tramite la catena PP e circa $1\%$ tramite ciclo CNO
+
+\end{wordonframe}
+
+
+\section{Costruzione del modello solare}
+
+\begin{frame}{Equazioni della struttura solare}
+
+%Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
+\begin{subequations}\label{subeqn:stellarstructure}
+\begin{align}
+&\TDy{r}{m}=4\pi r^2\rho\\
+&\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\\
+&\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}\\
+&\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
+\end{align}
+\begin{equation}
+\PDy{t}{n_i}+\frac{1}{r^2}\PDof{r}(r^2n_iv_i)=\Dcvar{\PDy{t}{n_i}}{Nucl}\label{eq:difffusionchange}
+\end{equation}
+\end{subequations}
+%con $v_i$ velocit\'a di diffusione specie i. Ottengo il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note la metallicit\'a iniziale Z, l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
+
+\begin{block}{Condizionial bordo}
+\begin{itemize}
+    \item Superficie: $T(r=\rsun{})$, $P(r=\rsun{})$
+    \item Centro: $l(r=0)$, $m(r=0)$.
+\end{itemize}
+\end{block}
+
+\end{frame}
+
 \begin{frame}{Calibrazione modello solare}
 
 \begin{block}{Abbondanze elio iniziale}
@@ -417,12 +483,6 @@ Mixing length $l_m=H_p\alpha$
 
 \end{frame}
 
-
-\section{Input fisici del MSS}
-
-\begin{frame}{}
-
-\end{frame}
 
 % SOS
 \part{SSM (sos)}
