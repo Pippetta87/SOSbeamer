@@ -1,4 +1,4 @@
- \documentclass[11pt,xcolor={usenames},fleqn,mathserif,serif]{beamer}
+ \documentclass[10pt,xcolor={usenames},fleqn,mathserif,serif]{beamer}
 
 %%%Usefull link
 %tikz-equations:
@@ -393,11 +393,34 @@ Il trasporto radiativo nell'interno solare \'e descritto considerando il flusso 
 
 \begin{frame}{Trasporto convettivo}
 
+\begin{align*}
+&\rho\PtwoDy{t}{(\Delta r)}=-g\Delta\rho=-g[\Dcvar{\TDy{r}{\rho}}{e}-\Dcvar{\TDy{r}{\rho}}{amb}]\Delta r=-N^2\Delta r\\
+&N^2=g(\frac{1}{\Gamma_1P}\TDy{r}{P}-\frac{1}{\rho}\TDy{r}{\rho})=g(\frac{1}{\densityscale{}}-\frac{g}{c_s^2})%\label{eq:bvfs}
+\end{align*}
+
+\begin{columns}[t]
+
+\begin{column}{0.6\textwidth}
+
 \begin{figure}[!h]
-    \includegraphics[width=0.9\textwidth,keepaspectratio]{proportionflux}
-    \caption{Da \cite{gou76convection}.}
+    \includegraphics[width=0.95\textwidth,keepaspectratio]{proportionflux}
+    \caption{Da \cite{christensen1997effects}.}
     \label{fluxproportion}
 \end{figure}
+
+\end{column}
+
+\begin{column}{0.4\textwidth}
+
+\begin{align*}
+&F_{con}=\exv{\rho vc_P\Delta T}\\%\label{eq:convectiveflux}
+&\nabla-\nad=\nabla-\nabla'+(\nabla_e-\nad{})
+\end{align*}
+
+
+\end{column}
+
+\end{columns}
 
 \end{frame}
 
@@ -406,20 +429,18 @@ Il trasporto radiativo nell'interno solare \'e descritto considerando il flusso 
 
 \begin{frame}{Modello plasma solare}
 
-\begin{block}{Equazione di stato $P(\rho,T)$}
-Propriet\'a degli atomi nell'interno solare.
+\begin{block}{Popolazione di stati atomici. EOS e grandezze termodinamiche.}
 
-Raggio di debye:
-\begin{align}
-&\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\zeta\\
-&\zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}\xrightarrow{FD}\sum_{i}(Z_i^2+\frac{F_{\midfrac{1}{2}}'(\psi)}{F_{\midfrac{1}{2}}(\psi)}Z_i)\frac{\rho X_i}{A_i}
-\end{align}
-
+Interazioni coulombiane:
+\begin{align*}
+&\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}\\
+%&\zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}\xrightarrow{FD}\sum_{i}(Z_i^2+\frac{F_{\midfrac{1}{2}}'(\psi)}{F_{\midfrac{1}{2}}(\psi)}Z_i)\frac{\rho X_i}{A_i}
+\end{align*}
 
 \end{block}
 
-\begin{block}{Opacit\'a $\kappa(T,\rho)$}
-Interazioni radiazione-materia
+\begin{block}{Interazioni radiazione-materia}
+$\nrad{}$
 \end{block}
 
 \end{frame}
