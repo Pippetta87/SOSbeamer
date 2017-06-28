@@ -40,8 +40,10 @@
 \hypersetup{pdfpagemode=FullScreen}
 
 \addtobeamertemplate{block begin}{%
-  \setlength{\textwidth}{0.9\textwidth}%
+  \setlength{\textwidth}{0.95\textwidth}%
+  \setlength\abovedisplayskip{0pt}%
 }{}
+
 
 \setbeamertemplate{caption}{\insertcaption}
 
@@ -500,42 +502,96 @@ Mixing length $l_m=H_p\alpha$
 
 \section{Modi normali della struttura solare}
 
-\begin{frame}{Modi normali}
-
+\begin{frame}{Modi normali: perturbazioni di una struttura a simmetria sferica}
 \begin{block}{Equazione del moto perturbato linearizzata}
-
-\begin{align}
-&\rho_0\TDof{t}\vec{v}=\rho_0\PtwoDy{t}{\vec{\xi}}=-\nabla P'+\rho_0\vec{g}'+\rho'\vec{g}_0\label{eq:emper}
-\end{align}
-
+\begin{equation*}
+\rho_0\TDof{t}\vec{v}=\rho_0\PtwoDy{t}{\vec{\xi}}=-\nabla P'+\rho_0\vec{g}'+\rho'\vec{g}_0%\label{eq:emper}
+\end{equation*}
 \end{block}
-
 \begin{block}{Equazione di continuit\'a e del moto perturbate}
+\begin{equation*}
+\rho'+\div{(\rho_0\Lvar{\vec{r}})}=0%\label{eq:contper}
+\end{equation*}
+\end{block}
+\begin{block}{Condizione di moto adiabatico}
+\begin{equation*}
+P'+\vec{\xi}\cdot\nabla P_0=\frac{\Gamma_{1,0}P_0}{\rho}(\rho'+\vec{\xi}\cdot\nabla\rho_0)%\label{eq:adper}
+\end{equation*}
+\end{block}
+\end{frame}
 
+\begin{frame}{Modi normali struttura sferica}
+
+\begin{block}{Onde stazionarie}
 \begin{align*}
-&\rho'+\div{(\rho_0\Lvar{\vec{r}})}=0%\label{eq:contper}
+&Y_{lm}(\theta,\phi)=(-)^mc_{lm}P_l^m(\cos{\theta})\exp{im\phi}\\
+&(\rho',P',\Phi')=\exp{i\omega t}[\rho'(r),P'(r),\Phi'(r)]Y_l^m\\
+&\vec{\xi}=\exp{i\omega t}(\xi_r(r),\xi_h(r)\PDof{\theta},\frac{\xi_h(r)}{\sin{\theta}}\PDof{\phi})Y_l^m(\theta,\phi)
 \end{align*}
-
 \end{block}
 
-\begin{block}{Condizione di moto adiabatico}
+\begin{block}{Componente tangenziale dello spostamento perturbato}
 
-\begin{align}
-&P'+\vec{\xi}\cdot\nabla P_0=\frac{\Gamma_{1,0}P_0}{\rho}(\rho'+\vec{\xi}\cdot\nabla\rho_0)\label{eq:adper}
-\end{align}
+\begin{equation*}
+\xi_h(r)=\frac{L}{r\omega^2}(\frac{P'(r)}{\rho_0}+\Phi'(r))
+\end{equation*}
 
 \end{block}
 
 \end{frame}
 
-\begin{frame}{Oscillazioni di equilibrio a simmetria sferica}
 
-\begin{align}
-%&Y_{lm}(\theta,\phi)=(-)^mc_{lm}P_l^m(\cos{\theta})\exp{im\phi}\\
-&(\rho',P',\Phi')=\exp{i\omega t}[\rho'(r),P'(r),\Phi'(r)]Y_l^m\\
-&\vec{\xi}=\exp{i\omega t}(\xi_r(r),\xi_h(r)\PDof{\theta},\frac{\xi_h(r)}{\sin{\theta}}\PDof{\phi})Y_l^m(\theta,\phi)
-\end{align}
+\begin{frame}{Modi normali: equazione fondamentale}
 
+\begin{block}{Modi normali}
+
+\begin{subequations}%\label{eigenomega}
+\begin{align*}
+&\frac{1}{r^2}\TDof{r}(r^2\xi_r)-\frac{\xi_rg}{c^2}+\frac{1}{\rho_0}(\frac{1}{c^2}-\frac{l(l+1)}{r^2\omega^2})P'-\frac{l(l+1)}{r^2\omega^2}\Phi'=0\\
+&\frac{1}{\rho_0}(\TDof{r}+\frac{g}{c^2})P'-(\omega^2-N^2)\xi_r+\TDy{r}{\Phi'}=0\\
+&\frac{1}{r^2}\TDof{r}(r^2\TDy{r}{\Phi'})-\frac{l(l+1)}{r^2}\Phi'-\frac{4\pi G\rho_0}{g}N^2\xi_r-\frac{4\pi G}{c^2}P'=0
+\end{align*}
+\end{subequations}
+
+Condizioni al contorno:
+
+Soluzioni regolari per $r=0$: $P'=0$, $\Phi'=0$.
+
+La condizione di non propagazione oltre la fotosfera: $\Lvar{P}=P'+\xi_r\TDy{r}{P}=0$.
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Spettro dei modi solari}
+
+\begin{figure}[!ht]
+
+
+
+%\includegraphics[keepaspectratio,width=0.95\textwidth]{midlmodes}
+%\caption{I picchi della densit\'a spettrale si dispongono su creste in cui \'e concentrata la potenza in accordo al modello. Determinata usando i primi 144 giorni di osservazione di MDI con $l\leq300$. Da \cite{chr02helioseismology}.}\label{fig:midlmodes}
+
+\includegraphics[keepaspectratio,height=0.95\textheight]{nrmodesLAWE}
+\caption{Modi adiabatici calcolati sulla base di un modello solare. Da \cite{chr02helioseismology}.}\label{fig:nrmodesLAWE}
+
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Osservazione campo di velocit\'a solare}
+
+\begin{figure}[!ht]
+
+
+
+%\includegraphics[keepaspectratio,width=0.95\textwidth]{midlmodes}
+%\caption{I picchi della densit\'a spettrale si dispongono su creste in cui \'e concentrata la potenza in accordo al modello. Determinata usando i primi 144 giorni di osservazione di MDI con $l\leq300$. Da \cite{chr02helioseismology}.}\label{fig:midlmodes}
+
+\includegraphics[keepaspectratio,width=0.95\textwidth]{PSD}
+\caption{Da \cite{houdek2006stochastic06}.}\label{fig:PSD}
+
+\end{figure}
 
 \end{frame}
 
