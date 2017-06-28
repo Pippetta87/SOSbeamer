@@ -196,10 +196,14 @@
 
 Lo studio dei modi adiabatici permette di valutare l'accuratezza del MSS.
 
+\begin{equation*}
+c_s^2=\Gamma_1\frac{P}{\rho}
+\end{equation*}
+
 %\begin{columns}
 %\begin{column}{0.6\textwidth}
 \begin{figure}[!ht]
-\includegraphics[height=0.65\textheight,keepaspectratio]{dsoundspeedduvall} 
+\includegraphics[height=0.45\textheight,keepaspectratio]{dsoundspeedduvall} 
 
 %\end{column}
 %\begin{column}{0.4\textwidth}
@@ -563,6 +567,14 @@ La condizione di non propagazione oltre la fotosfera: $\Lvar{P}=P'+\xi_r\TDy{r}{
 
 \end{frame}
 
+\begin{wordonframe}{Spettro dei modi: frequenze discrete}
+
+Questo \'e il sistema che determina i modi normali: ha soluzioni per $\omega_{nlm}$ discrete. Le condizioni al bordo richiedono regolarit\'a delle perturbazioni in 0 e riflessione totale delle perturbazioni alla superficie solare. $(l,m)$ caratterizzano la dipendenza angolare dei modi mentre n \'e l'ordine radiale che identifica il numero di zeri radiali del vettore spostamento.
+
+L'approssimazione di Cowling, valida per grandi l o n, consiste nel trascurare la perturbazione al potenziale gravitazionale, restringendosi quindi alle prime 2 equazioni.
+
+\end{wordonframe}
+
 \begin{frame}{Spettro dei modi solari}
 
 \begin{figure}[!ht]
@@ -572,10 +584,37 @@ La condizione di non propagazione oltre la fotosfera: $\Lvar{P}=P'+\xi_r\TDy{r}{
 %\includegraphics[keepaspectratio,width=0.95\textwidth]{midlmodes}
 %\caption{I picchi della densit\'a spettrale si dispongono su creste in cui \'e concentrata la potenza in accordo al modello. Determinata usando i primi 144 giorni di osservazione di MDI con $l\leq300$. Da \cite{chr02helioseismology}.}\label{fig:midlmodes}
 
-\includegraphics[keepaspectratio,height=0.95\textheight]{nrmodesLAWE}
+\includegraphics[keepaspectratio,height=0.85\textheight]{nrmodesLAWE}
 \caption{Modi adiabatici calcolati sulla base di un modello solare. Da \cite{chr02helioseismology}.}\label{fig:nrmodesLAWE}
 
 \end{figure}
+
+\end{frame}
+
+\begin{wordonframe}{Spettro dei modi: modi p, modi g, modi f}
+
+La figura mostra le frequenze per cui il sistema dei modi ha soluzione. Le frequenze sono discrete distribuite sulle linee in figura rappresentanti soluzioni con stesso ordine radiale n.
+
+
+\end{wordonframe}
+
+\begin{frame}{Cavit\'a risonanti}
+
+
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[keepaspectratio,width=0.6\textwidth]{raypath-gp}
+\caption{Da\cite{gou91seismic}.}
+\end{figure}
+%$\omega_c=\frac{c_s}{2\densityscale{}}\sqrt{1-2\TDy{r}{\densityscale{}}}\propto T\expy{-\frac{1}{2}}$
+%$S_l^2=\frac{l(l+1)c_s^2}{r^2}$.
+%$N^2=g(\frac{1}{\Gamma_1P}\TDy{r}{P}-\frac{1}{\rho}\TDy{r}{\rho})=g(\frac{1}{\densityscale{}}-\frac{g}{c_s^2})$
+\begin{align*}
+&\omega_A=\frac{c_s}{2\densityscale{}}\sqrt{1-2\TDy{r}{\densityscale{}}}\propto T\expy{-\frac{1}{2}}\\%\label{eq:acusticcutoff} \intxt{quindi ottengo la relazione di dispersione:}
+&k_r^2=\frac{\omega^2-\omega_A^2}{c^2}+S_l\frac{N^2-\omega^2}{c^2\omega^2}\\%\label{eq:localdispersion}\intxt{dove ho definito le frequenze critiche per i modi gravo-acustici}
+&\omega\int_{r_1}^{r_2}\sqrt{1-\frac{\omega_A^2}{\omega^2}-\frac{S_l^2}{\omega^2}(1-\frac{N^2}{\omega^2})}\,\frac{dr}{c}\approx\pi(n-\frac{1}{2})%\label{eq:JWKBmode}
+\end{align*}
 
 \end{frame}
 
@@ -589,7 +628,7 @@ La condizione di non propagazione oltre la fotosfera: $\Lvar{P}=P'+\xi_r\TDy{r}{
 %\caption{I picchi della densit\'a spettrale si dispongono su creste in cui \'e concentrata la potenza in accordo al modello. Determinata usando i primi 144 giorni di osservazione di MDI con $l\leq300$. Da \cite{chr02helioseismology}.}\label{fig:midlmodes}
 
 \includegraphics[keepaspectratio,width=0.95\textwidth]{PSD}
-\caption{Da \cite{houdek2006stochastic06}.}\label{fig:PSD}
+\caption{Da \cite{houdek2006stochastic}.}\label{fig:PSD}
 
 \end{figure}
 
