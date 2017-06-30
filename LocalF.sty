@@ -17,5 +17,5 @@
 \ifx\status\keeptrying
 \newenvironment{wordonframe}[1]{\begin{frame}{#1}}{\end{frame}}
 \else
-\newenvironment{wordonframe}[1]{}{}
+\newenvironment{wordonframe}[1]{\comment}{\endcomment}
 \fi

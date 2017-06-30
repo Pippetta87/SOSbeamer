@@ -1,4 +1,4 @@
- \documentclass[10pt,xcolor={usenames},fleqn,mathserif,serif]{beamer}
+\documentclass[10pt,xcolor={usenames},fleqn,mathserif,serif]{beamer}
 
 %%%Usefull link
 %tikz-equations:
@@ -320,6 +320,16 @@ columns={authors,x, y, z, zx
 
 \end{frame}
 
+\begin{wordonframe}{Composizione solare: righe di assorbimento}
+
+Il metodo pi\'u diretto per determinare la composizione solare \'e l'analisi delle righe di assorbimento nell'atmosfera; inoltre \'e possibile la composizione primordiale del sistema solare analizzando la composizione dei meteoriti CI.
+
+L'incertezza sul contenuto di metalli \'e dovuta alle difficolt\'a insite nella descrizione dell'atmosfera.
+
+Le incertezze nella determinazione dei metalli si ripercuotono soprattutto nell'opacit\'a.
+
+\end{wordonframe}
+
 
 \section{Equilibrio idrostatico e termico}
 
@@ -347,6 +357,14 @@ columns={authors,x, y, z, zx
 \end{block}
 
 \end{frame}
+
+\begin{wordonframe}{Distribuzione di materia}
+
+A livello macroscopico la distribuzione a simmetria sferica del gas \'e determinata dall'equilibrio tra forza di gravit\'a e gradiente di pressione.
+
+A livello microsopico la composizione chimica \'e modificata da processi di diffusione: in condizioni stazionarie la velocit\'a di diffusione di una specie rispetto alle altre \'e determinata dall'equilibrio tra le forze per unit\'a di volume agenti sulla specie e il trasferimento di momento negli urti con le altre specie; inoltre la presenza di un gradiente termico modifica la probabilit\'a di collisione fra particelle provenienti da zone pi\'u calde e pi\'u fredde.
+
+\end{wordonframe}
 
 \begin{frame}{Conservazione energia interna}
 
@@ -391,7 +409,7 @@ Il trasporto radiativo nell'interno solare \'e descritto considerando il flusso 
 
 \end{wordonframe}
 
-\begin{frame}{Trasporto convettivo}
+\begin{frame}{Instabilit\'a convettiva - Gradiente termico nelle regioni convettive}
 
 \begin{align*}
 &\rho\PtwoDy{t}{(\Delta r)}=-g\Delta\rho=-g[\Dcvar{\TDy{r}{\rho}}{e}-\Dcvar{\TDy{r}{\rho}}{amb}]\Delta r=-N^2\Delta r\\
@@ -403,7 +421,7 @@ Il trasporto radiativo nell'interno solare \'e descritto considerando il flusso 
 \begin{column}{0.6\textwidth}
 
 \begin{figure}[!h]
-    \includegraphics[width=0.95\textwidth,keepaspectratio]{proportionflux}
+    \includegraphics[width=0.9\textwidth,keepaspectratio]{proportionflux}
     \caption{Da \cite{christensen1997effects}.}
     \label{fluxproportion}
 \end{figure}
@@ -411,10 +429,11 @@ Il trasporto radiativo nell'interno solare \'e descritto considerando il flusso 
 \end{column}
 
 \begin{column}{0.4\textwidth}
-
+Instabilit\'a convettiva:
 \begin{align*}
+&\nrad{}>\nad{}\\
 &F_{con}=\exv{\rho vc_P\Delta T}\\%\label{eq:convectiveflux}
-&\nabla-\nad=\nabla-\nabla'+(\nabla_e-\nad{})
+&\nabla-\nad=\nabla-\nabla_e+(\nabla_e-\nad{})
 \end{align*}
 
 
@@ -423,6 +442,12 @@ Il trasporto radiativo nell'interno solare \'e descritto considerando il flusso 
 \end{columns}
 
 \end{frame}
+
+\begin{wordonframe}{Instabilit\'a convettiva - Gradiente termico nelle regioni convettive}
+
+La convezione caratterizza le regioni in cui uno spostamento infinitesimo di un blob di gas cresce esponenzialmente a causa della forza di Archimede. Considero il moto del blob in equilibrio di pressione con l'ambiente e uso l'equazione di stato per esprimere la differenza di densit\'a tra blob e ambiente. Considero infine il moto del blob adiabatico ($dq=c_P\,dT-\frac{\delta}{\rho}\,dP$) (e $\nmu{}\approx0$): la condizione di stabilit\'a diventa (criterio di \sch{}) $\nrad{}<\nad{}$
+
+\end{wordonframe}
 
 
 \section{Input fisici del MSS}
@@ -440,7 +465,9 @@ Interazioni coulombiane:
 \end{block}
 
 \begin{block}{Interazioni radiazione-materia}
-$\nrad{}$
+
+Processi di assorbimento atomico e scattering di elettroni
+
 \end{block}
 
 \end{frame}
@@ -454,7 +481,95 @@ L'opacit\'a \'e determinata dai processi di assorbimento e scattering dei fotoni
 
 \begin{frame}{Reazioni nucleari}
 
+\begin{block}{probabilit\'a reazioni di fusione}
+\noindent\begin{align*}
+&\epsilon_{ij}=Q_{ij}\frac{n_in_j}{\rho(1+\delta_{ij})}\lambda_{ij}=\frac{1}{1+\delta_{ij}}Q_{ij}\frac{\rho N_A^2X_jX_k}{{A_jA_k}}\exv{\sigma v}\\%\label{eq:energyrate}
+&E_G=\SI{5.665}{\kilo\ev} A\expy{\frac{1}{3}}T_7\expy{\frac{2}{3}},\ \Delta E=\SI{4.249}{\kilo\ev}W\expy{\frac{1}{6}}T_7\expy{\frac{5}{6}}
+\end{align*}
+
+\end{block}
+
 \begin{block}{Fusione idrogeno in elio: catena PP}
+
+\setmuskip{\thinmuskip}{0mu}\setmuskip{\medmuskip}{0mu}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position .5 with {\arrow{>}}},postaction={decorate}},
+-->/.style={decoration={
+  markings,
+  mark=at position .8 with {\arrow{>}}},postaction={decorate}},
+box/.style={%
+%draw,
+minimum width=25mm,%
+    minimum height=6mm,%
+    align=center}
+}
+
+{\centering
+\begin{tikzpicture}
+
+\begin{scope}[scale=0.6,transform shape]
+\node[box] (pp) at (0,0) {$\Pproton{+}\Pproton{\to}\cel{H}{2}{}{}{+}\Pnue{+}\APelectron$};%%pp
+\node[box,right=2cm of pp]  (pep) {$\Pproton{+}\Pproton{+}\Pelectron{\to}\cel{H}{2}{}{}+\Pnue$};%%pep
+\coordinate[below=0.3cm of pp] (bpp);
+\node[left] at (bpp) {$99.76\%$};
+\coordinate[below=0.3cm of pep] (bpep);
+\node[right] at (bpep) {$0.24\%$};
+
+\coordinate[] (ttriton) at ($(bpp)!0.5!(bpep)$);
+\draw[->-] (pp)--(bpp)--(ttriton);
+\draw[->-] (pep)--(bpep)--(ttriton);
+\node[box,below=0.3cm of ttriton] (triton) {$\Pproton+\cel{H}{2}{}{}\to\cel{He}{3}{}{}+\Pphoton$};%%triton
+\coordinate[below=0.3cm of triton] (btriton);
+\draw[-->] (ttriton)--(triton.north);
+\draw[->-] (triton.south)--(btriton.north);
+\coordinate[left=2.5cm of btriton] (tpp1);
+\node[left] at (tpp1) {$83.3\%$};
+\coordinate[right=2.0cm of btriton] (tberillium7);
+\node[above] at (tberillium7) {$16.7\%$};
+\coordinate[right=6.5cm of btriton] (thep);
+\node[right] at (thep) {$\num{2e-5}\%$};
+
+\draw[] (btriton)--(tpp1);
+\draw[] (btriton)--(tberillium7);
+\draw[] (tberillium7)--(thep);
+\node[box,below=0.5cm of tpp1,label={[xshift=0.1cm, yshift=-1.5cm]PPI}]  (pp1) {$\cel{He}{3}{}{}+\cel{He}{3}{}{}\to\cel{He}{4}{}{}+2\Pproton$};%%pp1
+\node[box,below=0.5cm of tberillium7]  (berillium7) {$\cel{He}{3}{}{}+\cel{He}{4}{}{}\to\cel{Be}{7}{}{}+\Pphoton$};%%berillium7
+\node[box,below=0.5cm of thep,label={[xshift=-0.1cm, yshift=-1.5cm]HEP}]  (hep) {$\cel{He}{3}{}{}+\Pproton\to\cel{He}{4}{}{}+\APelectron+\Pnue$};%%hep
+
+\draw[->-] (tpp1)--(pp1.north);
+\draw[->-] (tberillium7)--(berillium7.north);
+\draw[-->] (thep)--(hep.north);
+
+\coordinate[below=0.3cm of berillium7] (bberillium7);
+\coordinate[left=1.5cm of bberillium7] (tlithium7);
+\node[left] at (tlithium7) {$99.88\%$};
+\coordinate[right=2.0cm of bberillium7] (tboron8);
+\node[right] at (tboron8) {$0.12\%$};
+
+\node[box,below=0.5cm of tlithium7]  (li7) {$\cel{Be}{7}{}{}+\Pelectron\to\cel{Li}{7}{}{}+\Pnue$};%%Li7
+\node[box,below=0.5cm of li7,label={[xshift=0.1cm, yshift=-1.5cm]PPII}] (pp2) {$\cel{Li}{7}{}{}+\Pproton\to2\cel{He}{4}{}{}$};%% PP2
+
+\node[box,below=0.5cm of tboron8]  (b8) {$\cel{Be}{7}{}{}+\Pproton\to\cel{B}{8}{}{}+\Pphoton$};%%B8
+\node[box,below=0.25cm of b8]  (be7) {$\cel{B}{8}{}{}\to\cel{Be}{8}{}{}^*+\APelectron+\Pnue$};%%Be8*
+\node[box,below=0.25cm of be7,label={[xshift=0.1cm, yshift=-1.5cm]PPIII}]  (pp3) {$\cel{Be}{8}{}{}^*\to2\cel{He}{4}{}{}$};%%pp3
+
+\draw[->-] (berillium7.south)--(bberillium7);
+\draw[] (bberillium7)--(tlithium7);
+\draw[] (bberillium7)--(tboron8);
+
+\draw[->-] (tlithium7)--(li7.north);
+\draw[->-] (li7.south)--(pp2.north);
+
+\draw[->-] (tboron8.south)--(b8.north);
+\draw[->-] (b8.south)--(be7.north);
+\draw[->-] (be7.south)--(pp3.north);
+\end{scope}
+
+\node[anchor=north ]  at (2,-3.5) {\parbox{0.4\textwidth}{\captionof{figure}{Da \cite{adelberger2011solar}.}}};
+
+\end{tikzpicture}
+}
 
 \end{block}
 
@@ -510,10 +625,28 @@ Mixing length $l_m=H_p\alpha$
 
 \end{frame}
 
+\begin{frame}{Struttura del MSS}
 
-% SOS
-\part{SSM (sos)}
-\input{MSS}
+\begin{figure}[!h]
+\includegraphics[width=0.75\textwidth,trim=4 4 4 4,clip]{BP00-SSM-R}
+\caption{Profilo radiale della densit\'a, abbondanza di idrogeno, luminosit\'a e temperatura; sono indicati i valori centrali e alla base della zona convettiva. Dati da \cite{BP2000}.}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Caratteristiche zona convettiva}
+
+\begin{figure}[!ht]
+        \includegraphics[width=0.5\textwidth,keepaspectratio]{WrbczHHeioniz}
+        \caption{Profilo di W calcolato da un modello solare. Da \cite{basu2008helioseismology}.}\label{fig:dlessc}
+    
+\end{figure}
+
+\begin{equation}
+W=\frac{1}{g}\TDy{r}{c^2}%=\Gamma_1(\invers{\PDly{\rho}{P}}-1)
+\end{equation}
+
+\end{frame}
 
 \part{Oscillazioni della fotosfera con grande coerenza spaziale e temporale - Modi normali di cavit\'a risonanti dell'interno solare}\label{part:oscillations}
 
@@ -550,16 +683,16 @@ P'+\vec{\xi}\cdot\nabla P_0=\frac{\Gamma_{1,0}P_0}{\rho}(\rho'+\vec{\xi}\cdot\na
 \begin{block}{Onde stazionarie}
 \begin{align*}
 &Y_{lm}(\theta,\phi)=(-)^mc_{lm}P_l^m(\cos{\theta})\exp{im\phi}\\
-&(\rho',P',\Phi')=\exp{i\omega t}[\rho'(r),P'(r),\Phi'(r)]Y_l^m\\
-&\vec{\xi}=\exp{i\omega t}(\xi_r(r),\xi_h(r)\PDof{\theta},\frac{\xi_h(r)}{\sin{\theta}}\PDof{\phi})Y_l^m(\theta,\phi)
+&(\rho',P',\Phi')=\exp{i\omega t}[\rho'(r),P'(r),\Phi'(r)]Y_l^m
 \end{align*}
 \end{block}
 
 \begin{block}{Componente tangenziale dello spostamento perturbato}
 
-\begin{equation*}
-\xi_h(r)=\frac{L}{r\omega^2}(\frac{P'(r)}{\rho_0}+\Phi'(r))
-\end{equation*}
+\begin{align*}
+&\vec{\xi}=\exp{i\omega t}(\xi_r(r),\xi_h(r)\PDof{\theta},\frac{\xi_h(r)}{\sin{\theta}}\PDof{\phi})Y_l^m(\theta,\phi)\\
+&\xi_h(r)=\frac{L}{r\omega^2}(\frac{P'(r)}{\rho_0}+\Phi'(r))
+\end{align*}
 
 \end{block}
 
@@ -639,11 +772,50 @@ La figura mostra le frequenze per cui il sistema dei modi ha soluzione. Le frequ
 
 \end{frame}
 
-\begin{frame}{Osservazione campo di velocit\'a solare}
+\begin{frame}{Modello dell'ampiezza superficiale delle oscillazioni}
+
+\begin{columns}
+
+\begin{column}{0.4\textwidth}
 
 \begin{figure}[!ht]
+\centering
+\includegraphics[keepaspectratio,width=0.85\textwidth]{modespheomenology}
+\caption{Da \cite{libbrecht1988solar}.}\label{fig:Powerspectraldensity}
+\end{figure}
+
+\end{column}
+
+\begin{column}{0.6\textwidth}
+
+\begin{equation*}
+I_{nl}[\TtwoDy{t}{A_{nl}}+\Gamma_{nl}\TDy{t}{A_{nl}}+\omega_0^2A_{nl}]=f(t)
+\end{equation*}
+
+Per $\omega_{nl}\gg\Gamma_{nl}$%, cio\'e gli scambi di energia tra i modi e la turbolenza hanno tempo caratteristico $\tau_{nad}\gg\Pi_{osc}$, lo spettro in frequenza dell'oscillatore $P(\omega)=\exv{|\xi_{nl}(\omega)|^2}$,vicino a $\omega_0$ \'e della forma:
+\begin{equation*}
+P(\omega)\propto P_LP_f=\frac{\midfrac{\Gamma_{nl}}{2\pi}}{(\omega-\omega_0)^2+\midfrac{\Gamma_{nl}}{4}}P_f
+\end{equation*}
+
+L'energia dell'oscillatore varia su tempi scala proporzionali a $\invers{\Gamma}_{nl}$ attorno al valor medio $\bar{E}_{nl}$:
+\begin{align*}
+&\TDy{t}{E_{nl}}+\Gamma_{nl}E_{nl}=\exv{\dvec{\xi}_{nl}\cdot\vec{F}}\\
+&\bar{E}_{nl}=\frac{\exv{\dvec{\xi}_{nl}\cdot\vec{F}}}{\Gamma_{nl}}\\
+&\bar{E}_{nl}=I_{nl}\exv{V_{nl}^2}=I_{nl}\frac{1}{T_{obs}}\int_{-\infty}^{\infty}|V(\nu)|^2\,d\nu\propto I_{nl}\Gamma_{nl}A_{nl}
+\end{align*}
+%dove $\exv{\dvec{\xi}_{nl}\cdot\vec{F}}$ \'e il lavoro della forzante mediato su un periodo.
 
 
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Spettro delle oscillazioni}
+
+\begin{figure}[!ht]
 
 %\includegraphics[keepaspectratio,width=0.95\textwidth]{midlmodes}
 %\caption{I picchi della densit\'a spettrale si dispongono su creste in cui \'e concentrata la potenza in accordo al modello. Determinata usando i primi 144 giorni di osservazione di MDI con $l\leq300$. Da \cite{chr02helioseismology}.}\label{fig:midlmodes}
@@ -653,11 +825,20 @@ La figura mostra le frequenze per cui il sistema dei modi ha soluzione. Le frequ
 
 \end{figure}
 
+\begin{equation}
+P_x(\nu)=\sum_i\frac{AB_i\midfrac{\Gamma^2}{4}}{(\nu-\nu_0-\Delta\nu_i)^2+\midfrac{\Gamma^2}{4}}+P_n(\nu)
+\end{equation}
+
 \end{frame}
 
-%%% SOS
-\part{OSCILLAZIONI SOS}
-\input{modi}
+\begin{wordonframe}{Forma dei picchi nella PSD}
+
+Le frequenze dei modi sono determinate principalmente misurando lo spostamento doppler di opportune righe di assorbimento in atmosfera ($Ca \lambda=6439 A 129 Km$, $K: 7699 A, 250Km$, $Ni I: 6708 A,300 Km$, $Na D1/D2: 5690 A, 500 Km$). Per identificare modi con $l>2$ \'e necessaria risolouzione spaziale e la proiezione di un'opportuna maschera $W_{l_0m_0}$ isoler\'a il modo con dipendenza spaziale descritta da $Y_{l_0m_0}$. La serie temporale del segnale doppler viene analizzata in termini di componenti armoniche. Le frequenze sono quindi determinate fittando i picchi dello spettro secondo una forma lorentziana  giustificata assumendo che l'ampiezza superficiale dei modi obbedisca all'equazione del moto di un'oscillatore armonico smorzato di frequenza naturale data dalla frequenza del modo e forzante stocastica.
+
+La PSD $P_T(\nu)=\frac{1}{T_{obs}}|X_T(\nu)|^2$ contiene oltre al picco principale (lorentziano) picchi parassiti dovuti a gap nella serie temporale e il contributo del rumore solare.
+
+\end{wordonframe}
+
 
 \part{Tecniche e risultati di inversione}\label{part:inverseproblem}
 
@@ -669,9 +850,50 @@ La figura mostra le frequenze per cui il sistema dei modi ha soluzione. Le frequ
   % You might wish to add the option [pausesections]
 \end{frame}
 
-\part{INVERSIONE SOS}
+\section{Principio variazionale}
 
-\input{inversione}
+\begin{frame}{Effetto di perturbazioni nell'equazione del moto sulle frequenze}
+
+
+\begin{equation}
+=\frac{1}{\rho_0}\nabla p'-\vec{g}'-\frac{\rho'}{\rho_0}\vec{g}_0=L(\vec{\xi})\label{eq:eigenhermitian}
+\end{equation}
+
+\begin{equation}
+(L+\Lvar{L})(\xi+\Lvar{\xi})=-(\omega+\Lvar{\omega})^2(\xi+\Lvar{\xi})\label{eq:EMvar}
+\end{equation}
+quindi considerando i termini lineari nelle variazioni e dato che le frequenze caratteristiche sono stazionarie per variazioni di $\xi$ si ha la relazione:
+\begin{equation}\label{eq:variational}
+\frac{\Lvar{\omega}}{\omega}=-\frac{\int_V\rho\vec{\xi}\Lvar{L}\vec{\xi}\,d^3x}{2\omega^2\int_V\rho\scap{\xi}{\xi}d^3x}
+\end{equation}
+
+\end{frame}
+
+\begin{frame}{Correzioni struttura idrostatica e composizione}
+
+\begin{equation}\label{eq:EOMrhoc}%Unno89
+-\omega^2\rho_0\xi=\nabla(c_s^2\rho\scap{\nabla}{\xi}+\nabla P\cdot\vec{\xi})-\vec{g}_0\nabla\cdot(\rho_0\vec{\xi})-G\rho_0\nabla(\int_V\frac{\nabla\cdot(\rho_0\vec{\xi})\,d^3r'}{|\vec{r}-\vec{r}'|})
+\end{equation}
+
+Per investigare la composizione \'e necessario usare l'equazione di stato per esplicitare $\Gamma_1(P,\rho,X_i)$ riscrivendo \eqref{eq:hydroefdiff} nella forma:
+\begin{align*}
+&\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^R[K^{nl}_{\Gamma_1,\rho}(r)\frac{\delta_r\Gamma_1}{\Gamma_1}(r)+K^{nl}_{\rho,\Gamma_1}(r)\frac{\delta_r\rho}{\rho}(r)]\,dr+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})\\
+&\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^RK^{nl}_{u,Y}(r)\frac{\delta_ru}{u}(r)\,dr+\int K^{nl}_{Y,u}(r)\delta_rY\,dr+\int_0^RK^{nl}_{c^2,\rho}(r)(\frac{\delta\Gamma_1}{\Gamma_1})_{int}\,dr+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})
+\end{align*}
+dove $(\delta\Gamma_1)_{int}$ \'e la variazione all'equazione di stato a $(P,\rho,Y)$ fissati.
+\end{frame}
+
+% SOS
+%\part{SSM (sos)}
+%\input{MSS}
+
+%%% SOS
+%\part{OSCILLAZIONI SOS}
+%\input{modi}
+
+%%% SOS
+%\part{INVERSIONE SOS}
+%\input{inversione}
 
 
 \end{document}
