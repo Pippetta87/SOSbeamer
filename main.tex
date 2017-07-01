@@ -229,115 +229,24 @@ Le piccol differenz nel profilo radiale della velocit\'a del suono ricavato dall
 \part{Modello solare e osservabili sismologiche}\label{part:MSS}
 \frame{\partpage}
 
-\begin{frame}{Argomenti}
-  \tableofcontents[part=1,hideallsubsections%,pausesections
-  ]
-  % You might wish to add the option [pausesections]
-\end{frame}
-
-\section{Modello solare}
-
-\begin{frame}{Dati osservativi}%<handout:0 beamer:0>
-
-\begin{block}{Et\'a, luminosit\'a, massa, raggio solari}
-\begin{tabular}{l|c}
-\hline
-$\agesun{}$&\SI[separate-uncertainty=true]{4.57\pm0.02e9}{\year}\\
-\hline
-$\rsun{}$&\SI{695658+-140}{\kilo\meter}\\
-\hline
-$G\msun$&\num{132712440018+-8}\SI{e9}{\cubic\meter\per\square\second}\\
-\hline
-$\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
-\hline
-\end{tabular}
-%\caption[Osservabili solari principali.]{Osservabili solari principali. \cite{haberreiter2008solving}.}
-\label{tab:sunO}
-\end{block}
-
-\begin{block}{Simmetria sferica}
-Deviazioni da forma sferica trascurabili (campi magnetici, rotazione)
-\end{block}
+%\begin{frame}{Argomenti}
+%  \tableofcontents[part=1,hideallsubsections%,pausesections
+%  ]
+%  % You might wish to add the option [pausesections]
+%\end{frame}
 
 
-\end{frame}
-
-\begin{wordonframe}{Ipotesi e giustificazione struttura equilibrio idrostatico}
-
-La costruzione di un modello solare \'e molto meno incerta rispetto a una stella qualsiasi poich\'e \'e nota la distanza tramite lo studio delle orbite dei corpi celesti attorno al Sole, l'et\'a di formazione del sistema solare tramite studio dei meteoriti, la luminosit\'a, e il raggio tramite la misura delle dimensioni apparenti del disco solare.
-
-Il modello solare s
-
-\end{wordonframe}
-
-\begin{frame}{Dati osservativi}
-
-\begin{block}{Composizione chimica}
-
-%\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-Righe di assorbimento della fotosfera.
-
-Meteoriti CI: primordiale (refrattari).
-
-\end{block}
-
-
-\begin{table}[]
-
-\pgfplotstabletypeset[
-every head row/.style={
- before row={\toprule &\multicolumn{4}{c|}{Attuale}
- %&\multicolumn{4}{c|}{Primordiale}
- \\\midrule},
- every last row/.style={after row=\bottomrule},
- after row={\midrule}
-},
-every nth row={2}{before row=\midrule},every last row/.style={after row=\bottomrule},
-every first column/.style={column type/.add={|}{}},
-every last column/.style={column type/.add={}{|}},
-columns/x/.style = {column type/.add={|}{}},
-columns/xi/.style = {column type/.add={|}{}},
-display columns/0/.style={column name={}},
-display columns/1/.style={column name={$X$}},
-display columns/2/.style={column name={$Y$}},
-display columns/3/.style={column name={$Z$}},
-display columns/4/.style={column name={$\frac{Z}{X}$}},
-%display columns/5/.style={column name={$X$}},
-%display columns/6/.style={column name={$Y$}},
-%display columns/7/.style={column name={$Z$}},
-%display columns/8/.style={column name={$\frac{Z}{X}$}},
-create on use/authors/.style={create col/set list={
-%Anders \& Grevesse (1989),Grevesse \& Noels (1993),
-Grevesse et al. (1998),Lodders (2003),Asplund et al. (2005),Lodders et al. (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
-columns/authors/.style={string type},
-columns={authors,x, y, z, zx
-%,xi,yi,zi, zxi
-},
-/pgf/number format/precision=4
-     ]{asplund.txt} %%%
-\captionof{table}{Metallicit\'a attuale determinata da varii autori.}\label{tab:Zhistory}
-\end{table}
-
-\end{frame}
-
-\begin{wordonframe}{Composizione solare: righe di assorbimento}
-
-Il metodo pi\'u diretto per determinare la composizione solare \'e l'analisi delle righe di assorbimento nell'atmosfera; inoltre \'e possibile la composizione primordiale del sistema solare analizzando la composizione dei meteoriti CI.
-
-L'incertezza sul contenuto di metalli \'e dovuta alle difficolt\'a insite nella descrizione dell'atmosfera.
-
-Le incertezze nella determinazione dei metalli si ripercuotono soprattutto nell'opacit\'a.
-
-\end{wordonframe}
-
-
-\section{Equilibrio idrostatico e termico}
+%\section{Equilibrio idrostatico}
 
 \begin{frame}{Equilibrio idrostatico}
 
 %\begin{equation*}
 %\tau_{idro}^{\odot}= \sqrt{\frac{R^3}{GM}}\approx\frac{1}{2}(G\overline{\rho})\expy{-\frac{1}{2}}\approx\SI{27}{\minute}
 %\end{equation*}
+
+\begin{block}{Simmetria sferica}
+Deviazioni da forma sferica trascurabili (campi magnetici, rotazione)
+\end{block}
 
 
 \begin{block}{Conservazione momento (Macroscopico)}
@@ -377,7 +286,7 @@ A livello microsopico la composizione chimica \'e modificata da processi di diff
 \end{frame}
 
 
-\section{Meccanismi di trasporto dell'energia}
+%\section{Meccanismi di trasporto dell'energia}
 
 \begin{frame}{Trasporto radiativo}
 
@@ -450,7 +359,7 @@ La convezione caratterizza le regioni in cui uno spostamento infinitesimo di un 
 \end{wordonframe}
 
 
-\section{Input fisici del MSS}
+%\section{Costruzione modello solare}
 
 \begin{frame}{Modello plasma solare}
 
@@ -581,8 +490,96 @@ La funzione $\epsilon(T,\rho,X_i)$ descrive la produzione di energia. Nella fase
 
 \end{wordonframe}
 
+%\section{Equazioni struttura stellare}
 
-\section{Costruzione del modello solare}
+\begin{frame}{Costruzione modello solare}%<handout:0 beamer:0>
+
+\begin{block}{Et\'a, luminosit\'a, massa, raggio solari}
+\begin{tabular}{l|c}
+\hline
+$\agesun{}$&\SI[separate-uncertainty=true]{4.57\pm0.02e9}{\year}\\
+\hline
+$\rsun{}$&\SI{695658+-140}{\kilo\meter}\\
+\hline
+$G\msun$&\num{132712440018+-8}\SI{e9}{\cubic\meter\per\square\second}\\
+\hline
+$\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
+\hline
+\end{tabular}
+%\caption[Osservabili solari principali.]{Osservabili solari principali. \cite{haberreiter2008solving}.}
+\label{tab:sunO}
+\end{block}
+
+
+\end{frame}
+
+\begin{wordonframe}{Ipotesi e giustificazione struttura equilibrio idrostatico}
+
+La costruzione di un modello solare \'e molto meno incerta rispetto a una stella qualsiasi poich\'e \'e nota la distanza tramite lo studio delle orbite dei corpi celesti attorno al Sole, l'et\'a di formazione del sistema solare tramite studio dei meteoriti, la luminosit\'a, e il raggio tramite la misura delle dimensioni apparenti del disco solare.
+
+Il modello solare s
+
+\end{wordonframe}
+
+\begin{frame}{Dati osservativi}
+
+\begin{block}{Composizione chimica}
+
+%\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+Righe di assorbimento della fotosfera.
+
+Meteoriti CI: primordiale (refrattari).
+
+\end{block}
+
+
+\begin{table}[]
+
+\pgfplotstabletypeset[
+every head row/.style={
+ before row={\toprule &\multicolumn{4}{c|}{Attuale}
+ %&\multicolumn{4}{c|}{Primordiale}
+ \\\midrule},
+ every last row/.style={after row=\bottomrule},
+ after row={\midrule}
+},
+every nth row={2}{before row=\midrule},every last row/.style={after row=\bottomrule},
+every first column/.style={column type/.add={|}{}},
+every last column/.style={column type/.add={}{|}},
+columns/x/.style = {column type/.add={|}{}},
+columns/xi/.style = {column type/.add={|}{}},
+display columns/0/.style={column name={}},
+display columns/1/.style={column name={$X$}},
+display columns/2/.style={column name={$Y$}},
+display columns/3/.style={column name={$Z$}},
+display columns/4/.style={column name={$\frac{Z}{X}$}},
+%display columns/5/.style={column name={$X$}},
+%display columns/6/.style={column name={$Y$}},
+%display columns/7/.style={column name={$Z$}},
+%display columns/8/.style={column name={$\frac{Z}{X}$}},
+create on use/authors/.style={create col/set list={
+%Anders \& Grevesse (1989),Grevesse \& Noels (1993),
+Grevesse et al. (1998),Lodders (2003),Asplund et al. (2005),Lodders et al. (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
+columns/authors/.style={string type},
+columns={authors,x, y, z, zx
+%,xi,yi,zi, zxi
+},
+/pgf/number format/precision=4
+     ]{asplund.txt} %%%
+\captionof{table}{Metallicit\'a attuale determinata da varii autori.}\label{tab:Zhistory}
+\end{table}
+
+\end{frame}
+
+\begin{wordonframe}{Composizione solare: righe di assorbimento}
+
+Il metodo pi\'u diretto per determinare la composizione solare \'e l'analisi delle righe di assorbimento nell'atmosfera; inoltre \'e possibile la composizione primordiale del sistema solare analizzando la composizione dei meteoriti CI.
+
+L'incertezza sul contenuto di metalli \'e dovuta alle difficolt\'a insite nella descrizione dell'atmosfera.
+
+Le incertezze nella determinazione dei metalli si ripercuotono soprattutto nell'opacit\'a.
+
+\end{wordonframe}
 
 \begin{frame}{Equazioni della struttura solare}
 
@@ -719,11 +716,17 @@ La condizione di non propagazione oltre la fotosfera: $\Lvar{P}=P'+\xi_r\TDy{r}{
 
 \end{block}
 
+\begin{block}{Approssimazione di Cowling}
+
+\end{block}
+
 \end{frame}
 
 \begin{wordonframe}{Spettro dei modi: frequenze discrete}
 
 Questo \'e il sistema che determina i modi normali: ha soluzioni per $\omega_{nlm}$ discrete. Le condizioni al bordo richiedono regolarit\'a delle perturbazioni in 0 e riflessione totale delle perturbazioni alla superficie solare. $(l,m)$ caratterizzano la dipendenza angolare dei modi mentre n \'e l'ordine radiale che identifica il numero di zeri radiali del vettore spostamento.
+
+Le frequenze sono $2l+1$ degeneri perch\'e il sistema non dipende da m.
 
 L'approssimazione di Cowling, valida per grandi l o n, consiste nel trascurare la perturbazione al potenziale gravitazionale, restringendosi quindi alle prime 2 equazioni.
 
@@ -731,9 +734,12 @@ L'approssimazione di Cowling, valida per grandi l o n, consiste nel trascurare l
 
 \begin{frame}{Spettro dei modi solari}
 
+
+\begin{columns}
+
+\begin{column}{0.45\textwidth}
+
 \begin{figure}[!ht]
-
-
 
 %\includegraphics[keepaspectratio,width=0.95\textwidth]{midlmodes}
 %\caption{I picchi della densit\'a spettrale si dispongono su creste in cui \'e concentrata la potenza in accordo al modello. Determinata usando i primi 144 giorni di osservazione di MDI con $l\leq300$. Da \cite{chr02helioseismology}.}\label{fig:midlmodes}
@@ -743,12 +749,21 @@ L'approssimazione di Cowling, valida per grandi l o n, consiste nel trascurare l
 
 \end{figure}
 
+\end{column}
+
+\begin{column}{0.45\textwidth}
+\captionof{figure}{In alto: differenze tra frequenze dei modi teoriche e osservate. In basso: differenze moltiplicata per $Q_{nl}$.}
+
+\end{column}
+
+\end{columns}
+
+
 \end{frame}
 
 \begin{wordonframe}{Spettro dei modi: modi p, modi g, modi f}
 
-La figura mostra le frequenze per cui il sistema dei modi ha soluzione. Le frequenze sono discrete distribuite sulle linee in figura rappresentanti soluzioni con stesso ordine radiale n.
-
+La figura mostra lo spettro delle frequenze discrete per cui il sistema dei modi ha soluzione in funzione del grado angolare l. I modi con stesso ordine radiale sono uniti da una linea: nella parte ad alte frequenze abbiamo i modi p, di natura acustica, nella parte a basse frequenze modi g, che sono onde di gravit\'a, e modi f, confinati in uno strato superficiale e dovuti alla rapida variazione di densit\'a in superficie ($\div{\vec{\xi}}\approx0$, $\omega^2=gk_h$). Il comportamento di $\xi_r$ \'e determinato dalle propriet\'a del gas, in particolare come vedremo pi\'u avanti, dall'andamento della velocit\'a del suono e delle frequenze critiche
 
 \end{wordonframe}
 
