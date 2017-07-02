@@ -258,6 +258,14 @@ Deviazioni da forma sferica trascurabili (campi magnetici, rotazione)
 \end{block}
 
 
+\begin{block}{Conservazione energia interna}
+
+\begin{align*}
+&\TDy{t}{q}=\epsilon-\frac{1}{\rho}\nabla\cdot\vec{F}%\label{eq:heatgl}
+%&\TDy{r}{L}=4\pi r^2[\rho\epsilon-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]%\label{eq:fenergyconservation}
+\end{align*}
+
+\end{block}
 
 \end{frame}
 
@@ -268,16 +276,6 @@ A livello macroscopico la distribuzione a simmetria sferica del gas \'e determin
 A livello microsopico la composizione chimica \'e modificata da processi di diffusione: in condizioni stazionarie la velocit\'a di diffusione di una specie rispetto alle altre \'e determinata dall'equilibrio tra le forze per unit\'a di volume agenti sulla specie e il trasferimento di momento negli urti con le altre specie; inoltre la presenza di un gradiente termico modifica la probabilit\'a di collisione fra particelle provenienti da zone pi\'u calde e pi\'u fredde.
 
 \end{wordonframe}
-
-\begin{frame}{Conservazione energia interna}
-
-\begin{align*}
-&\TDy{t}{q}=\epsilon-\frac{1}{\rho}\nabla\cdot\vec{F}\\%\label{eq:heatgl}
-&\TDy{r}{L}=4\pi r^2[\rho\epsilon-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]%\label{eq:fenergyconservation}
-\end{align*}
-
-
-\end{frame}
 
 
 %\section{Meccanismi di trasporto dell'energia}
@@ -360,10 +358,10 @@ La convezione caratterizza le regioni in cui uno spostamento infinitesimo di un 
 \begin{block}{Popolazione di stati atomici. EOS e grandezze termodinamiche.}
 
 Interazioni coulombiane:
-\begin{align*}
-&\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}\\
+\begin{equation*}
+\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum_Z Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}
 %&\zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}\xrightarrow{FD}\sum_{i}(Z_i^2+\frac{F_{\midfrac{1}{2}}'(\psi)}{F_{\midfrac{1}{2}}(\psi)}Z_i)\frac{\rho X_i}{A_i}
-\end{align*}
+\end{equation*}
 
 \end{block}
 
@@ -375,8 +373,8 @@ Processi di assorbimento atomico e scattering di elettroni
 
 \begin{block}{Conservazione momento (microscopico)}
 \begin{align*}
-&\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})\\
-&=\sum_{i\neq j}\vec{R}_{ij}
+&\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})=\sum_{i\neq j}\vec{R}_{ij}\\
+&\vec{R}_{ij}=n_in_j\mu_{ij}\alpha_{ij}\vec{V}_{ij}%\label{eq:resistance}
 \end{align*}
 
 \end{block}
@@ -494,7 +492,12 @@ La funzione $\epsilon(T,\rho,X_i)$ descrive la produzione di energia. Nella fase
 
 %\section{Equazioni struttura stellare}
 
-\begin{frame}{Costruzione modello solare}%<handout:0 beamer:0>
+
+\begin{frame}{Dati osservativi}
+
+\begin{columns}
+
+\begin{column}{0.5\textwidth}
 
 \begin{block}{Et\'a, luminosit\'a, massa, raggio solari}
 \begin{tabular}{l|c}
@@ -512,18 +515,9 @@ $\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
 \label{tab:sunO}
 \end{block}
 
+\end{column}
 
-\end{frame}
-
-\begin{wordonframe}{Ipotesi e giustificazione struttura equilibrio idrostatico}
-
-La costruzione di un modello solare \'e molto meno incerta rispetto a una stella qualsiasi poich\'e \'e nota la distanza tramite lo studio delle orbite dei corpi celesti attorno al Sole, l'et\'a di formazione del sistema solare tramite studio dei meteoriti, la luminosit\'a, e il raggio tramite la misura delle dimensioni apparenti del disco solare.
-
-Il modello solare s
-
-\end{wordonframe}
-
-\begin{frame}{Dati osservativi}
+\begin{column}{0.5\textwidth}
 
 \begin{block}{Composizione chimica}
 
@@ -532,29 +526,24 @@ Righe di assorbimento della fotosfera.
 
 Meteoriti CI: primordiale (refrattari).
 
-\end{block}
 
 
 \begin{table}[]
 
 \pgfplotstabletypeset[
 every head row/.style={
- before row={\toprule &\parbox{0.3\textwidth}{Attuale}
- %&\multicolumn{4}{c|}{Primordiale}
- \\\midrule},
- every last row/.style={after row=\bottomrule},
- after row={\midrule}
-},
+before row={\toprule},
+after row={\midrule}},
 every nth row={2}{before row=\midrule},every last row/.style={after row=\bottomrule},
 every first column/.style={column type/.add={|}{}},
 every last column/.style={column type/.add={}{|}},
 %columns/x/.style = {column type/.add={|}{}},
-%columns/xi/.style = {column type/.add={|}{}},
+columns/zx/.style = {column type/.add={|}{}},
 display columns/0/.style={column name={}},
 %display columns/1/.style={column name={$X$}},
 %display columns/2/.style={column name={$Y$}},
 %display columns/3/.style={column name={$Z$}},
-display columns/1/.style={column name={$\frac{Z}{X}$}},
+display columns/1/.style={column name={$\left(\frac{Z}{X}\right)_{ph}$}},
 %display columns/5/.style={column name={$X$}},
 %display columns/6/.style={column name={$Y$}},
 %display columns/7/.style={column name={$Z$}},
@@ -563,17 +552,25 @@ create on use/authors/.style={create col/set list={
 %Anders \& Grevesse (1989),Grevesse \& Noels (1993),
 Grevesse et al. (1998),Lodders (2003),Asplund et al. (2005),Lodders et al. (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
 columns/authors/.style={string type},
-columns={authors,zx
-%,xi,yi,zi, zxi
-},
+columns={authors,zx},
 /pgf/number format/precision=4
      ]{asplund.txt} %%%
 \captionof{table}{Metallicit\'a attuale determinata da varii autori.}\label{tab:Zhistory}
 \end{table}
 
+\end{block}
+
+\end{column}
+
+\end{columns}
+
 \end{frame}
 
-\begin{wordonframe}{Composizione solare: righe di assorbimento}
+\begin{wordonframe}{Costruzione del MSS e vincoli}
+
+La costruzione di un modello solare \'e molto meno incerta rispetto a una stella qualsiasi poich\'e \'e nota la distanza tramite lo studio delle orbite dei corpi celesti attorno al Sole, l'et\'a di formazione del sistema solare tramite studio dei meteoriti, la luminosit\'a, e il raggio tramite la misura delle dimensioni apparenti del disco solare.
+
+Il modello solare s
 
 Il metodo pi\'u diretto per determinare la composizione solare \'e l'analisi delle righe di assorbimento nell'atmosfera; inoltre \'e possibile la composizione primordiale del sistema solare analizzando la composizione dei meteoriti CI.
 
@@ -651,13 +648,13 @@ W=\frac{1}{g}\TDy{r}{c^2}%=\Gamma_1(\invers{\PDly{\rho}{P}}-1)
 
 \frame{\partpage}
 
-\begin{frame}{Argomenti}
-  \tableofcontents[part=2,hideallsubsections%,pausesections
-  ]
+%\begin{frame}{Argomenti}
+%  \tableofcontents[part=2,hideallsubsections%,pausesections
+%  ]
   % You might wish to add the option [pausesections]
-\end{frame}
+%\end{frame}
 
-\section{Modi normali della struttura solare}
+%\section{Modi normali della struttura solare}
 
 \begin{frame}{Modi normali: perturbazioni di una struttura a simmetria sferica}
 \begin{block}{Equazione del moto perturbato linearizzata}
@@ -689,7 +686,7 @@ P'+\vec{\xi}\cdot\nabla P_0=\frac{\Gamma_{1,0}P_0}{\rho}(\rho'+\vec{\xi}\cdot\na
 \begin{block}{Componente tangenziale dello spostamento perturbato}
 
 \begin{align*}
-&\vec{\xi}=\exp{i\omega t}(\xi_r(r),\xi_h(r)\PDof{\theta},\frac{\xi_h(r)}{\sin{\theta}}\PDof{\phi})Y_l^m(\theta,\phi)\\
+&\vec{\xi}=\exp{i\omega t}(\xi_r(r),\frac{\xi_h(r)}{L}\PDof{\theta},\frac{\xi_h(r)}{L\sin{\theta}}\PDof{\phi})Y_l^m(\theta,\phi)\\
 &\xi_h(r)=\frac{L}{r\omega^2}(\frac{P'(r)}{\rho_0}+\Phi'(r))
 \end{align*}
 
@@ -698,9 +695,9 @@ P'+\vec{\xi}\cdot\nabla P_0=\frac{\Gamma_{1,0}P_0}{\rho}(\rho'+\vec{\xi}\cdot\na
 \end{frame}
 
 
-\begin{frame}{Modi normali: equazione fondamentale}
+\begin{frame}{Modi normali: sistema equazioni fondamentale}
 
-\begin{block}{Modi normali}
+\begin{block}{Modi normali: frequenze discrete dei modi}
 
 \begin{subequations}%\label{eigenomega}
 \begin{align*}
@@ -828,7 +825,7 @@ L'energia dell'oscillatore varia su tempi scala proporzionali a $\invers{\Gamma}
 
 \end{frame}
 
-\begin{frame}{Spettro delle oscillazioni}
+\begin{frame}{Osservazione delle oscillazioni della fotosfera}
 
 \begin{figure}[!ht]
 
@@ -859,36 +856,35 @@ La PSD $P_T(\nu)=\frac{1}{T_{obs}}|X_T(\nu)|^2$ contiene oltre al picco principa
 
 \frame{\partpage}
 
-\begin{frame}{Argomenti}
-  \tableofcontents[part=3,hideallsubsections%,pausesections
-  ]
-  % You might wish to add the option [pausesections]
-\end{frame}
+%\begin{frame}{Argomenti}
+%  \tableofcontents[part=3,hideallsubsections%,pausesections
+%  ]
+% You might wish to add the option [pausesections]
+%\end{frame}
 
-\section{Principio variazionale}
+%\section{Principio variazionale}
 
 \begin{frame}{Effetto di perturbazioni nell'equazione del moto sulle frequenze}
 
+\begin{equation*}
+L(\vec{\xi})=\frac{1}{\rho_0}\nabla p'-\vec{g}'-\frac{\rho'}{\rho_0}\vec{g}_0%\label{eq:eigenhermitian}
+\end{equation*}
 
-\begin{equation}
-=\frac{1}{\rho_0}\nabla p'-\vec{g}'-\frac{\rho'}{\rho_0}\vec{g}_0=L(\vec{\xi})\label{eq:eigenhermitian}
-\end{equation}
-
-\begin{equation}
+\begin{equation*}
 (L+\Lvar{L})(\xi+\Lvar{\xi})=-(\omega+\Lvar{\omega})^2(\xi+\Lvar{\xi})\label{eq:EMvar}
-\end{equation}
+\end{equation*}
 quindi considerando i termini lineari nelle variazioni e dato che le frequenze caratteristiche sono stazionarie per variazioni di $\xi$ si ha la relazione:
-\begin{equation}\label{eq:variational}
+\begin{equation*}%\label{eq:variational}
 \frac{\Lvar{\omega}}{\omega}=-\frac{\int_V\rho\vec{\xi}\Lvar{L}\vec{\xi}\,d^3x}{2\omega^2\int_V\rho\scap{\xi}{\xi}d^3x}
-\end{equation}
+\end{equation*}
 
 \end{frame}
 
 \begin{frame}{Correzioni struttura idrostatica e composizione}
 
-\begin{equation}\label{eq:EOMrhoc}%Unno89
+\begin{equation*}%\label{eq:EOMrhoc}%Unno89
 -\omega^2\rho_0\xi=\nabla(c_s^2\rho\scap{\nabla}{\xi}+\nabla P\cdot\vec{\xi})-\vec{g}_0\nabla\cdot(\rho_0\vec{\xi})-G\rho_0\nabla(\int_V\frac{\nabla\cdot(\rho_0\vec{\xi})\,d^3r'}{|\vec{r}-\vec{r}'|})
-\end{equation}
+\end{equation*}
 
 Per investigare la composizione \'e necessario usare l'equazione di stato per esplicitare $\Gamma_1(P,\rho,X_i)$ riscrivendo \eqref{eq:hydroefdiff} nella forma:
 \begin{align*}
@@ -896,6 +892,61 @@ Per investigare la composizione \'e necessario usare l'equazione di stato per es
 &\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^RK^{nl}_{u,Y}(r)\frac{\delta_ru}{u}(r)\,dr+\int K^{nl}_{Y,u}(r)\delta_rY\,dr+\int_0^RK^{nl}_{c^2,\rho}(r)(\frac{\delta\Gamma_1}{\Gamma_1})_{int}\,dr+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})
 \end{align*}
 dove $(\delta\Gamma_1)_{int}$ \'e la variazione all'equazione di stato a $(P,\rho,Y)$ fissati.
+
+\end{frame}
+
+\begin{frame}{Inversione profilo radiale velocit\'a del suono}
+
+\begin{figure}[!ht]%{r}{0.5\textwidth}
+        \includegraphics[width=0.8\textwidth,keepaspectratio]{deltacwu}
+        \caption{Differenza relativa nel profilo di $c_s$ risultanei dall'inversione delle differenze in frequenza tra Sole e modello: la linea chiara si riferisce alle frequenze di un modello con composzione GS98, la linea scura a composizione AGSS09. La banda chiara mostra l'errore inerente l'inversione eliosismologica, la banda scura l'incertezza a $1\sigma$ sul profilo di $c_s$ predetto dal modello. Da \cite{villante2014chemical}.}\label{fig:deltacwu}
+\end{figure}
+
+\end{frame}
+
+\begin{frame}{Determinazione caratteristiche zona convettiva}
+
+\begin{table}[!ht]%{r}{0.7\textwidth}
+
+\pgfplotstabletypeset[
+math/.style={%
+        preproc cell content/.append style={/pgfplots/table/@cell content/.add={$}{$}},
+    },
+every head row/.style={
+ before row={\toprule
+ %&\multicolumn{4}{c|}{Primordiale}
+ },
+ every last row/.style={after row=\bottomrule},
+ after row={\midrule}
+},
+every last row/.style={after row=\bottomrule},
+every first column/.style={column type/.add={|}{}},
+every last column/.style={column type/.add={}{|}},
+%columns/0/.style = {column type/.add={|}{}},
+display columns/0/.style={column name={Composizione}},
+display columns/1/.style={column name={$Z/X$}},
+display columns/2/.style={column name={$R_{CZ}$}},
+display columns/3/.style={column name={$Y_{CZ}$}},
+display columns/4/.style={column name={$Y_0$}},
+create on use/comp/.style={create col/set list={
+inversione,GS98,AGS05,AGSS09,C+11}},
+columns/comp/.style = {column type/.add={|}{}},
+columns/comp/.style={string type},
+columns/ZX/.style={string type},
+columns/ZX/.append style={math},
+columns/RCZ/.style={string type},
+columns/RCZ/.append style={math},
+columns/YCZ/.style={string type},
+columns/YCZ/.append style={math},
+columns/Y0/.style={string type},
+columns/Y0/.append style={math},
+columns={comp,ZX,RCZ,YCZ,Y0},
+%/pgf/number format/precision=4
+     ]{CZvsZ.txt} %%%
+     \caption{Caratteristiche della zona convettiva: confronto tra valore eliosismologico e valore ricavato da modello solare con diverse metallicit\'a del raggio della base della zona convettiva $R_{CZ}$, dell'abbondanza di elio superficiale $Y_{CZ}$ e dell'abbondanza di elio primordiale. Da \cite{basu2016global}.}
+\label{tab:CZZvar}
+\end{table}
+
 \end{frame}
 
 % SOS
