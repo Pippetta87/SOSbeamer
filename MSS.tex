@@ -33,46 +33,6 @@ Deviazioni da forma sferica trascurabili (campi magnetici, rotazione)
 
 \end{frame}
 
-\begin{frame}{Dati osservativi}
-
-\begin{table}[]
-
-\pgfplotstabletypeset[
-every head row/.style={
- before row={\toprule &\multicolumn{4}{c|}{Attuale}
- %&\multicolumn{4}{c|}{Primordiale}
- \\\midrule},
- every last row/.style={after row=\bottomrule},
- after row={\midrule}
-},
-every nth row={2}{before row=\midrule},every last row/.style={after row=\bottomrule},
-every first column/.style={column type/.add={|}{}},
-every last column/.style={column type/.add={}{|}},
-columns/x/.style = {column type/.add={|}{}},
-columns/xi/.style = {column type/.add={|}{}},
-display columns/0/.style={column name={}},
-display columns/1/.style={column name={$X$}},
-display columns/2/.style={column name={$Y$}},
-display columns/3/.style={column name={$Z$}},
-display columns/4/.style={column name={$\frac{Z}{X}$}},
-%display columns/5/.style={column name={$X$}},
-%display columns/6/.style={column name={$Y$}},
-%display columns/7/.style={column name={$Z$}},
-%display columns/8/.style={column name={$\frac{Z}{X}$}},
-create on use/authors/.style={create col/set list={
-%Anders \& Grevesse (1989),Grevesse \& Noels (1993),
-Grevesse et al. (1998),Lodders (2003),Asplund et al. (2005),Lodders et al. (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
-columns/authors/.style={string type},
-columns={authors,x, y, z, zx
-%,xi,yi,zi, zxi
-},
-/pgf/number format/precision=4
-     ]{asplund.txt} %%%
-\captionof{table}{Metallicit\'a attuale determinata da varii autori.}\label{tab:Zhistory}
-\end{table}
-
-\end{frame}
-
 \section{Modello solare standard}
 
 \begin{frame}{Equazioni della struttura solare}
