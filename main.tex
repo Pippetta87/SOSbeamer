@@ -78,7 +78,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Funzioni per questo file main
 \usepackage{mathOp}
 
-\def\status{sxill}
+\def\status{keeptrying}
 \def\keeptrying{keeptrying}
 \usepackage{LocalF}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -231,10 +231,9 @@ Da \cite{christensen1985speed}.}
 
 \begin{wordonframe}{Intro modi gravo-acustici-risonanza-MSS}
 
-L'eliosismologia nasce all'inizio degli anni '60 quando Leighton e collaboratori osservarono un comportamento periodico nell'atmosfera solare dovuto a modi gravo-acustici, cio\'e onde gravo-acustiche confinate in gusci sferici di diversa profondit\'a che interferiscono costruttuvamente. %La condizione di risonanza radiale, cio\'e che la cavi\'a contenga un numero intero di lunghezze d'onda e tenendo conto di uno sfasamento ai bordi della cavit\'a, permette
-Le frequenze osservate compongono la parte ad alte frequenze dello spettro dei modi solari, cio\'e onde acustiche la cui forza di richiamo \'e la perturbazione della pressione, e usando la condizione di risonanza radiale (la cavit\'a contiene un numero intero di lunghezze d'onda e un fattore di fase che tiene conto della riflessione in superficie) \'e possibile ricavare il profilo radiale della velocit\'a del suono all'interno del Sole.
+L'eliosismologia nasce all'inizio degli anni '60 quando Leighton e collaboratori osservarono un comportamento oscillatorio nell'atmosfera solare con periodo attorno ai 5 minuti.
 
-Le piccol differenz nel profilo radiale della velocit\'a del suono ricavato dalle frequenze osservate e quello calcolato tramite un modello solare supporta il modello proposto per spiegare il fenomeno oscillatoria e supporta inoltre il modello solare standard. Descrivo le caratteristiche fondamentali del Sole.
+Interferenza costruttiva
 
 
 \end{wordonframe}
@@ -257,24 +256,27 @@ Le piccol differenz nel profilo radiale della velocit\'a del suono ricavato dall
 %\tau_{idro}^{\odot}= \sqrt{\frac{R^3}{GM}}\approx\frac{1}{2}(G\overline{\rho})\expy{-\frac{1}{2}}\approx\SI{27}{\minute}
 %\end{equation*}
 
+\begin{block}{Simmetria sferica}
+Deviazioni da forma sferica trascurabili (campi magnetici, rotazione)
+\end{block}
 
 \begin{block}{Conservazione della massa}
 
 \begin{equation*}
-\TDy{t}{\rho}+\nabla\cdot(\rho\vec{v})=0
+%\TDy{t}{\rho}+\nabla\cdot(\rho\vec{v})=0
+\TDy{r}{m}=4\pi r^2\rho
 \end{equation*}
 
 \end{block}
 
-\begin{block}{Conservazione momento (Macroscopico)}
+\begin{block}{Equilibrio idrostatico}
 
 \begin{equation*}
-\rho\dvec{v}=-\nabla P+\rho\vec{g}
+0=-\nabla P+\rho\vec{g}
 %\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}%\label{eq:fidroequilibrio}
 \end{equation*}
 
 \end{block}
-
 
 \begin{block}{Conservazione energia interna}
 
@@ -333,6 +335,10 @@ Il trasporto radiativo nell'interno solare \'e descritto considerando il flusso 
 &N^2=g(\frac{1}{\Gamma_1P}\TDy{r}{P}-\frac{1}{\rho}\TDy{r}{\rho})=g(\frac{1}{\densityscale{}}-\frac{g}{c_s^2})%\label{eq:bvfs}
 \end{align*}
 
+\begin{columns}
+
+\begin{column}{0.5\textwidth}
+
 \begin{block}{Instabilit\'a convettiva}
 \begin{align*}
 &\nrad{}>\nad{}\\
@@ -349,6 +355,20 @@ Il trasporto radiativo nell'interno solare \'e descritto considerando il flusso 
 \end{align*}
 
 \end{block}
+
+\end{column}
+
+\begin{column}{0.5\textwidth}
+
+\begin{figure}[!h]
+    \includegraphics[width=0.9\textwidth,keepaspectratio]{proportionflux}
+    \caption{Da \cite{christensen1997effects}.}
+\end{figure}
+
+
+\end{column}
+
+\end{columns}
 
 \end{frame}
 
@@ -398,11 +418,13 @@ Processi di assorbimento atomico e scattering di elettroni
 \end{frame}
 
 \begin{wordonframe}{Modellizzazione plasma solare}
+
 {\small Per risolvere le equazioni della struttra stellare \'e necessario conoscere le propriet\'a termodinamiche del gas, in particolare l'equazione di stato $P(\rho,T)$. Nel caso solare l'equazione dei gas perfetti \'e una prima approssimazione poich\'e gli effetti della degenerazione elettronica e delle interazioni coulombiane sono piccoli. Gli approcci pi\'u usati per ricavare un'equazione di stato accurata per il plasma stellare considerano le propriet\'a statistiche di un gas di nuclei ed elettroni oppure di un gas di atomi: nel secondo caso sono necessarie ipotesi ad hoc per tener conto delle perturbazioni ai livelli atomici causati dalle particelle vicine. La principale correzione che tiene conto della natura non punjtiforme delle interazioni tiene conto delle interazioni coulombiane: le interazioni elettriche modificano la distribuzione delle cariche nel plasma neutro su distanze maggiori di $R_D$ (???cariche su sfera di raggio $R_D$ attorno a ione hanno energia coulombiana e termica paragonabili????).
 
 L'interazione radiazione-materia determina il gradiente termico della regione radiativa e nel caso solare la posizione della base della zona convettiva. L'opacit\'a \'e dovuta ai processi di assorbimento e scattering dei fotoni e dipende dal numero dalla densit\'a di particelle che danno luogo a un determinato fenomeno di assorbimento o scattering e dalla sezione d'urto per singola particella.
 
 La presenza di gradienti di concentrazione, di pressione e termici causano fenomeni di diffusione. La velocit\'a di diffusione \'e determinata supponendo il processo stazionario cio\'e la forza per unit\'a di volume agente sulla specie i \'e bilanciata dal trasperimento di impulso negli urti con le altre specie.
+
 }
 
 \end{wordonframe}
@@ -469,10 +491,6 @@ $\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
 \end{tabular}
 %\caption[Osservabili solari principali.]{Osservabili solari principali. \cite{haberreiter2008solving}.}
 \label{tab:sunO}
-\end{block}
-
-\begin{block}{Simmetria sferica}
-Deviazioni da forma sferica trascurabili (campi magnetici, rotazione)
 \end{block}
 
 \end{column}
@@ -553,7 +571,7 @@ L'incertezza sul contenuto di metalli \'e dovuta alle difficolt\'a insite nella 
 
 \begin{block}{Condizionial bordo}
 \begin{itemize}
-    \item Superficie: $T(r=\rsun{})$, $P(r=\rsun{})$
+    \item Superficie: $T_e$, $P_{atm}$
     \item Centro: $l(r=0)$, $m(r=0)$.
 \end{itemize}
 \end{block}
@@ -586,24 +604,9 @@ Il modello evoluto a $\agesun{}$ riproduce la luminosit\'a attuale $\lsun{}$
 
 \begin{block}{Efficienza convezione}
 
-\begin{columns}
-\begin{column}{0.5\textwidth}
-
 Mixing length $l_m=H_p\alpha$.
 
 Il modello evoluto a $\agesun{}$ riproduce la luminosit\'a attuale $\lsun{}$
-
-\end{column}
-
-\begin{column}{0.5\textwidth}
-\begin{figure}[!h]
-    \includegraphics[width=0.9\textwidth,keepaspectratio]{proportionflux}
-    \caption{Da \cite{christensen1997effects}.}
-    \label{fluxproportion}
-\end{figure}
-
-\end{column}
-\end{columns}
 
 \end{block}
 
@@ -908,7 +911,7 @@ Buon accordo con frequenze osservate: differenze dovute a effetti non adiabatici
 \begin{column}{0.4\textwidth}
 Onde acustiche:\[k_r^2=\frac{\omega^2}{c_s^2}(\frac{S_l^2}{\omega^2}-1)\]
 Raggio di inversione del moto:\[\frac{k_h}{\omega}=c_s\]
-Onde acustiche:\[k_r^2=\frac{S_l^2}{c_s^2}(\frac{N^2}{\omega^2}-1)\]
+Onde di gravit\'a:\[k_r^2=\frac{S_l^2}{c_s^2}(\frac{N^2}{\omega^2}-1)\]
 
 \end{column}
 
@@ -940,14 +943,19 @@ Onde acustiche:\[k_r^2=\frac{S_l^2}{c_s^2}(\frac{N^2}{\omega^2}-1)\]
 \end{figure}
 
 \begin{align*}
-%&\omega_A=\frac{c_s}{2\densityscale{}}\sqrt{1-2\TDy{r}{\densityscale{}}}\propto T\expy{-\frac{1}{2}}\\%\label{eq:acusticcutoff} \intxt{quindi ottengo la relazione di dispersione:}
-&\vec{\xi}\propto\exp{i\scap{k}{r}}\\
-&k_r^2=\frac{\omega^2-\omega_A^2}{c_s^2}+S_l\frac{N^2-\omega^2}{c_s^2\omega^2}\\%\label{eq:localdispersion}\intxt{dove ho definito le frequenze critiche per i modi gravo-acustici}
-&\omega\int_{r_1}^{r_2}\sqrt{1-\frac{\omega_A^2}{\omega^2}-\frac{S_l^2}{\omega^2}(1-\frac{N^2}{\omega^2})}\,\frac{dr}{c_s}\approx\pi(n-\frac{1}{2})%\label{eq:JWKBmode}
+&(n+\alpha)\pi\approx\int_{r_t}^Rk_r\,dr\\
+&(n+\alpha)\pi\approx\int_{r_t}^R\frac{\omega}{c_s}\sqrt{1-\frac{S_l^2}{\omega^2}}\,dr\\
+&\frac{(n+\alpha_g)\pi}{L}\approx\int_{r_1}^{r_2}(\frac{N^2}{\omega^2}-1)\expy{\frac{1}{2}}\,d\ln{r}
 \end{align*}
 
 
 \end{frame}
+
+\begin{wordonframe}{Condizione di risonanza radiale}
+
+La condizione di risonanza radiale \'e nota come legge di Duvall per modi p
+
+\end{wordonframe}
 
 \begin{frame}{Modello dell'ampiezza superficiale delle oscillazioni}
 
@@ -1033,10 +1041,6 @@ La PSD $P_T(\nu)=\frac{1}{T_{obs}}|X_T(\nu)|^2$ contiene oltre al picco principa
 
 \[L(\vec{\xi})=\frac{1}{\rho_0}\nabla p'-\vec{g}'-\frac{\rho'}{\rho_0}\vec{g}_0\]
 
-\[L(\vec{\xi})=-\omega^2\vec{\xi}\]
-
-\[(L+\Lvar{L})(\xi+\Lvar{\xi})=-(\omega+\Lvar{\omega})^2(\xi+\Lvar{\xi})\]
-
 \[\frac{\Lvar{\omega}}{\omega}=-\frac{\int_V\rho\vec{\xi}\Lvar{L}\vec{\xi}\,d^3x}{2\omega^2\int_V\rho\scap{\xi}{\xi}d^3x}\]
 
 \end{frame}
@@ -1053,21 +1057,27 @@ Considero gli effetti di una variazione piccola di L, cio\'e una variazione dell
 
 \begin{frame}{Correzioni struttura idrostatica e composizione}
 
+\begin{block}{Equazione del moto perturbato}
+
 \begin{equation*}%\label{eq:EOMrhoc}%Unno89
 -\omega^2\rho_0\xi=\nabla(c_s^2\rho\scap{\nabla}{\xi}+\nabla P\cdot\vec{\xi})-\vec{g}_0\nabla\cdot(\rho_0\vec{\xi})-G\rho_0\nabla(\int_V\frac{\nabla\cdot(\rho_0\vec{\xi})\,d^3r'}{|\vec{r}-\vec{r}'|})
 \end{equation*}
 
-Per investigare la composizione \'e necessario usare l'equazione di stato per esplicitare $\Gamma_1(P,\rho,X_i)$ riscrivendo \eqref{eq:hydroefdiff} nella forma:
+\end{block}
+
+\begin{block}{Variazione nei modi per variazione in struttura, equazione di stato e composizione}
+
 \begin{align*}
-&\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^R[K^{nl}_{\Gamma_1,\rho}(r)\frac{\delta_r\Gamma_1}{\Gamma_1}(r)+K^{nl}_{\rho,\Gamma_1}(r)\frac{\delta_r\rho}{\rho}(r)]\,dr+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})\\
+&\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^R[K^{nl}_{c^2,\rho}(r)\frac{\delta_rc^2}{c^2}(r)+K^{nl}_{\rho,c^2}(r)\frac{\delta_r\rho}{\rho}(r)]\,dr+M_{nl}\expy{-1}F_{Surf}\\
 &\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^RK^{nl}_{u,Y}(r)\frac{\delta_ru}{u}(r)\,dr+\int K^{nl}_{Y,u}(r)\delta_rY\,dr+\int_0^RK^{nl}_{c^2,\rho}(r)(\frac{\delta\Gamma_1}{\Gamma_1})_{int}\,dr\\
 &+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})
 \end{align*}
-dove $(\delta\Gamma_1)_{int}$ \'e la variazione all'equazione di stato a $(P,\rho,Y)$ fissati.
+
+\end{block}
 
 \end{frame}
 
-\begin{frame}{Inversione profilo radiale velocit\'a del suono}
+\begin{frame}{Accuratezza profilo radiale della velocit\'a del suono}
 
 \begin{figure}[!ht]%{r}{0.5\textwidth}
         \includegraphics[width=0.8\textwidth,keepaspectratio]{deltacwu}
@@ -1076,7 +1086,12 @@ dove $(\delta\Gamma_1)_{int}$ \'e la variazione all'equazione di stato a $(P,\rh
 
 \end{frame}
 
-\begin{frame}{Determinazione caratteristiche zona convettiva}
+\begin{wordonframe}{Accuratezza profilo radiale della velocit\'a del suono}
+
+
+\end{wordonframe}
+
+\begin{frame}{Accuratezza posizione base zona convettiva e abbondanza elio}
 
 \begin{table}[!ht]%{r}{0.7\textwidth}
 
@@ -1120,6 +1135,11 @@ columns={comp,ZX,RCZ,YCZ,Y0},
 \end{table}
 
 \end{frame}
+
+\begin{wordonframe}{Accuratezza posizione base zona convettiva e abbondanza elio}
+
+
+\end{wordonframe}
 
 % SOS
 %\part{SSM (sos)}
