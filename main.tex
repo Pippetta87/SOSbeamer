@@ -200,6 +200,12 @@
   \titlepage
 \end{frame}
 
+\begin{wordonframe}{Intro MSS e i suoi modi}
+
+In questa tesina mi sono accupato dei modi normali gravo-acustici solari. Le frequenze dei modi normali sono determinati dal profilo radiale della densit\'a e velocit\'a del suono quindi l'osservazione di un gran numero di frequenze impone vincoli stringenti al modello solare, determinato in maniera da riprodurre $T_e$ e luminosit\'a.
+
+\end{wordonframe}
+
 
 % Section and subsections will appear in the presentation overview
 % and table of contents.
@@ -233,8 +239,13 @@ Da \cite{christensen1985speed}.}
 
 L'eliosismologia nasce all'inizio degli anni '60 quando Leighton e collaboratori osservarono un comportamento oscillatorio nell'atmosfera solare con periodo attorno ai 5 minuti.
 
-Interferenza costruttiva
+I modi hanno natura prevalentemente acustica e la relazione di dispersione per onde acustiche determina regioni di diversa profondit\'a al di sotto della superficie solare nelle quali sono confinati onde con diverso vettore d'onda orizzontale. Le frequenze dei modi sono determinate dalla velocit\'a del suono in queste regioni imponendo che  la cavit\'a contenga radialmente un numero semi-intero di lunghezze d'onda. \'E possibile quindi determinare il profilo radiale della velocit\'a del suono dalle frequenze dei modi osservate.
 
+Il profilo radiale della velocit\'a del suono risultante  mostra la validit\'a del modello solare (detto standard per contrasto con i modelli pensati per risolvere il problema dei neutrini solari.)
+
+(Errore sistematico dovuto alle approssimazione di Cowling intorno al $2.5\%$)
+
+Il modello MSS si basa su leggi di conservazione, valide per qualsiasi stella: le prime 3 equazioni usate per determinare la struttura stellare ...
 
 \end{wordonframe}
 
@@ -272,7 +283,7 @@ Deviazioni da forma sferica trascurabili (campi magnetici, rotazione)
 \begin{block}{Equilibrio idrostatico}
 
 \begin{equation*}
-0=-\nabla P+\rho\vec{g}
+0=-\nabla P(\rho,T)+\rho\vec{g}
 %\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}%\label{eq:fidroequilibrio}
 \end{equation*}
 
@@ -281,17 +292,33 @@ Deviazioni da forma sferica trascurabili (campi magnetici, rotazione)
 \begin{block}{Conservazione energia interna}
 
 \begin{equation*}
-\TDy{t}{q}=\epsilon-\frac{1}{\rho}\nabla\cdot\vec{F}=\TDy{t}{u}+P\TDof{t}(\frac{1}{\rho})%\label{eq:heatgl}
+0=\TDy{t}{q}=\epsilon(\rho,T,X_i)-\frac{1}{\rho}\nabla\cdot\vec{F}=\TDy{t}{u}+P\TDof{t}(\frac{1}{\rho})%\label{eq:heatgl}
 %&\TDy{r}{L}=4\pi r^2[\rho\epsilon-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]%\label{eq:fenergyconservation}
 \end{equation*}
 
+\end{block}
+
+\begin{block}{Gradiente termico}
+\begin{equation*}
+\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}
+\end{equation*}
 \end{block}
 
 \end{frame}
 
 \begin{wordonframe}{Leggi di conservazione applicate alla struttura stellare}
 
-La struttura di un modello stellare \'e determinato dalla conservazione della massa, dell'impulso, dell'energia interna e dalle specificit\'a del trasporto di energia verso la superficie che determina il gradiente termico. La struttura stellare obbedisce alla conservazione della massa da cui risulta l'equazione di continuit\'a $\TDy{t}{\rho}+\nabla\cdot(\rho\vec{v})=0$. Obbedisce alla conservazione della quantit'a di moto; e nella maggior parte della vita delle stelle i tempi scala dei processi di produzione e trasporto di energia sono lunghi rispetto ai tempi dinamici quindi \'e giustificata l'ipotesi di equilibrio tra gradiente di pressione e forza di gravit\'a. Obbedisce alla legge di conservazione dell'energia interna che mette in relazione il bilancio di calore tra flusso uscente e energia prodotta dalle reazioni nucleari $\epsilon$ per grammo per secondo con la variazione di energia interna e lavoro fatto/subito dal gas.
+Il modello MSS si basa su leggi di conservazione, valide per qualsiasi stella: le prime 3 equazioni usate per determinare la struttura stellare ... sono un caso particolare della conservazione della massa, dell'impulso, dell'energia interna. I tempi scala di evoluzione nucleare sono molto maggiori dei tempi caratteristici dinamici e termici quindi si assume equilibrio idrostatico e che calore netto trasferito per uni\'a di massa sia nullo. Considero le deviazioni dalla simmetria sferica (rotazione campo magnetico) come perturbazioni, quindi le trascuro nella descrizione della struttura di equilibrio. Le prime 3 equazioni della struttura solare quindi
+
+\begin{align*}
+&\TDy{r}{m}=4\pi r^2\rho\\
+&\nabla P=\rho\vec{g}\\
+&\TDy{r}{L}=4\pi r^2\rho\epsilon
+\end{align*}
+
+%obbedisce alla conservazione della massa da cui risulta l'equazione di continuit\'a $\TDy{t}{\rho}+\nabla\cdot(\rho\vec{v})=0$. Obbedisce alla conservazione della quantit'a di moto; e nella maggior parte della vita delle stelle i tempi scala dei processi di produzione e trasporto di energia sono lunghi rispetto ai tempi dinamici quindi \'e giustificata l'ipotesi di equilibrio tra gradiente di pressione e forza di gravit\'a. Obbedisce alla legge di conservazione dell'energia interna che mette in relazione il bilancio di calore tra flusso uscente e energia prodotta dalle reazioni nucleari $\epsilon$ per grammo per secondo con la variazione di energia interna e lavoro fatto/subito dal gas.
+
+Per determinare il gradiente termico considero il flusso di energia dalle regioni pi\'u calde alla superficie: oltre al trasporto radiativo devo considerare la convezione presente nella regione esterna per stelle con $M<1.1\msun{}$.
 
 \end{wordonframe}
 
@@ -300,16 +327,48 @@ La struttura di un modello stellare \'e determinato dalla conservazione della ma
 
 \begin{frame}{Trasporto radiativo}
 
+\begin{columns}
+
+\begin{column}{0.5\textwidth}
+
+\begin{block}{Equazione del Trasporto radiativo}
+\begin{align*}
+%P_{rad}=\int\,d\nu\frac{4\pi}{3c}B_{\nu}=\frac{1}{3}aT^4\\
+%\vec{F}=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{c}{\kappa\rho}\nabla P_{rad}\\
+\frac{dI_{\nu}}{\rho\,ds}=j_{\nu}-\kappa_{\nu}I_{\nu}\\
+\end{align*}
+\end{block}
+
+\end{column}
+
+\begin{column}{0.5\textwidth}
+
 \begin{block}{Equilibrio termodinamico locale}
+
+\begin{align*}
+&4\pi j_{\nu}=\kappa_{\nu a}cu(\nu)\\
+&B(\nu,T)=\frac{2h\nu^3}{c^2}\frac{1}{\exp{\midfrac{h\nu}{KT}}-1}
+\end{align*}
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\begin{block}{Relazione tra flusso radiativo e gradiente termico negli interni stellari}
+
 %Il flusso di energia verso la superficie \'e generato da una piccola anisotropia nell'intensit\'a descritta al prim'ordine tramite:
 \begin{align*}
 %&I_{\nu}=B(\nu,T)-\frac{1}{\kappa_{\nu}'\rho}\nabla_s B(\nu,T)\\
 %P_{rad}=\int\,d\nu\frac{4\pi}{3c}B_{\nu}=\frac{1}{3}aT^4\\
 %\vec{F}=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{c}{\kappa\rho}\nabla P_{rad}\\
-&\frac{dI_{\nu}}{\rho\,ds}=\kappa_{\nu}B_{\nu}(T)-\kappa_{\nu}I_{\nu}\\
+%&\frac{dI_{\nu}}{\rho\,ds}=\kappa_{a\nu}B_{\nu}(T)-\kappa_{\nu}I_{\nu}\\
+&I_{\nu}=B(\nu,T)-\frac{1}{\kappa_{\nu}\rho}\nabla_s B(\nu,T)\\
 %\frac{1}{\kappa}=(\frac{acT^3}{\pi})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\label{eq:rosselandopacity}
 &\vec{F}=-[\frac{4\pi}{3\rho}\intzi{}\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\,d\nu]\nabla T%=-\frac{c}{\kappa\rho}\nabla P_{rad}
 \end{align*}
+
 \end{block}
 
 \begin{block}{Gradiente radiativo}
@@ -322,9 +381,64 @@ La struttura di un modello stellare \'e determinato dalla conservazione della ma
 
 \end{frame}
 
-\begin{wordonframe}{Trasporto radiativo}
+\begin{wordonframe}{Relation between energy density u, energy flus in polar direction F and radiation pressure $P_r$ are related to 3 moments of radiation field $I(\theta)$}
 
-Il trasporto radiativo nell'interno solare \'e descritto considerando il flusso di fotoni  dalle regioni interne pi\'u calde alla superficie come un processo diffusivo e poich\'e il cammino libero medio di un fotone $\invers{\kappa\rho}$ \'e molto piccolo. Posso quindi considerare la radiazione localmente in equilibrio con la materia cio\'e emissione di corpo nero descritta dalla funzione di Plank $B_{\nu}(T)$ (emissivit\'a per unit\'a di frequenza:$B(T)=\frac{ac}{4\pi}T^4$). La soluzione dell'equazione del trasporto radiativo \'e la somma di tutti i contributi $B_{\nu}(-\tau_{\nu})$ pesati dall'esponenziale che descrive l'assorbimento del plasma solare. In condizioni tipiche degli interni stellari si pu\'o esprimere l'intensit\'a specifica di radiazione nella direzione $\hat{s}$ come somma del termine isotropo $B_{\nu}(T)$ e del termine lineare nel cammino libero medio del fotone di frequenza $\nu$ che tiene conto della piccola anisotropia nell'intensit\'a specifica tramite $\nabla B_{\nu}(T)$. L'integrale su tutte le direzioni e su tutte le frequenze  determina la relazione tra flusso radiativo e gradiente termico. La quantit\'a $\frac{1}{\kappa_{\nu}}\PDy{T}{B_{\nu}(T)}$ \'e l'opacit\'a media di Rosseland. Nel calcolo della struttura stellare si usa il gradiente termico espresso in termini della derivata logaritmica della pressione: ho usato la definizione di luminosit\'a e la condizione di equilibrio idrostatico.
+\begin{align*}
+&I(\theta)=I_0+I_1\cos{\theta}+\ldots\\
+&u=\frac{1}{c}\int I(\theta)\,d\Omega=\frac{2\pi}{c}\int_0^{\pi} I(\theta)\sin{\theta}\,d\theta=\frac{4\pi}{c}I_0\\
+&F=\int I(\theta)\cos{\theta}\,d\Omega=2\pi\int_0^{\pi} I(\theta)\cos{\theta}\sin{\theta}\,d\theta=\frac{4\pi}{3}I_1\\
+&P_r=\frac{1}{c}\int I(\theta)\cos{\theta}^2\,d\Omega=\frac{2\pi}{c}\int_0^{\pi} I(\theta)\cos{\theta}^2\sin{\theta}\,d\theta=\frac{4\pi}{3c}I_0
+\end{align*}
+
+\end{wordonframe}
+
+\begin{wordonframe}{Densit\'a di energia fotoni per unit\'a di volume e equilibrio termodinamico radiazione-materia}
+
+Per determinare il gradiente termico considero il flusso di energia dalle regioni pi\'u calde alla superficie: oltre al trasporto radiativo devo considerare la convezione presente nella regione esterna per stelle con $M<1.1\msun{}$.
+
+Il cammino libero medio nell'interno solare \'e molto breve quindi considero la radiazione in equilibro con la materia. La densit\'a di energia dei fotoni per unit\'a di frequenza \'e
+\begin{align*}
+&u(\nu)=\frac{8\pi h\nu^3}{c^3}\frac{1}{\exp{\midfrac{h\nu}{KT}}-1}\\
+&u=aT^4\\
+&I(\nu)=\frac{u(\nu)c}{4\pi}
+\end{align*}
+
+Equilibrio termodinamico locale (Emissione=assorbimento): opacit\'a dovuta a processi di assorbimento.
+\begin{align*}
+&4\pi j_{\nu}=\kappa_{\nu a}cu(\nu)\\
+&B(\nu,T)=\frac{2h\nu^3}{c^2}\frac{1}{\exp{\midfrac{h\nu}{KT}}-1}
+\end{align*}
+
+\end{wordonframe}
+
+\begin{wordonframe}{Emissione spontanea/Indotta}
+
+In realt\'a devo tener conto del\[\frac{\text{Spontaneous emission}}{\text{Total emission}}=1-\exp{-\midfrac{h\nu}{KT}}\]
+
+\[j_{\nu}(\theta)=\kappa_{a,\nu}(1-\exp{-\midfrac{h\nu}{KT}})B_{\nu}(T)+\exp{-\midfrac{h\nu}{KT}})I_{\nu}(T)\]
+
+In LTE si riduce alla legge di Kirkoff.
+
+\end{wordonframe}
+
+\begin{wordonframe}{Trasporto radiativo negli interni stellari: equilibrio termodinamico locale ed espansione $B_{\nu}(-\tau_{\nu})$ al prim'ordine in $\tau_{\nu}$.}
+
+{\small
+
+Per determinare il gradiente termico considero il flusso di energia dalle regioni pi\'u calde alla superficie: oltre al trasporto radiativo devo considerare la convezione presente nella regione esterna per stelle con $M<1.1\msun{}$...
+
+Per quanto rigurda il trasporto radiativo la soluzione per l'intensit\'a al raggio r in direzione $\hat{s}$ in condizioni di equilibrio termodinamico locale pu\'o essere approssimata come somma (integrale) dei contributi all'intensit\'a  degli strati sottostanti diminuiti a causa dell'opacit\'a con il termine $\exp{\tau_{\nu}}$.
+
+Poich\'e negli interni stellari il cammino libero medio di un fotone \'e piccolo (per condizioni solari $\invers{(\kappa\rho)}$) considero l'espansione di $B_{\nu}(-\tau_{\nu})$ al prim'ordine
+
+%(emissivit\'a per unit\'a di frequenza:$B(T)=\frac{ac}{4\pi}T^4$). La soluzione dell'equazione del trasporto radiativo \'e la somma di tutti i contributi $B_{\nu}(-\tau_{\nu})$ pesati dall'esponenziale che descrive l'assorbimento del plasma solare.
+In condizioni tipiche degli interni stellari si pu\'o esprimere l'intensit\'a specifica di radiazione nella direzione $\hat{s}$ come somma del termine isotropo $B_{\nu}(T)$ e del termine lineare nel cammino libero medio del fotone di frequenza $\nu$ che tiene conto della piccola anisotropia nell'intensit\'a specifica tramite $\nabla B_{\nu}(T)$.
+
+Integrando sulle direzioni uscenti e su tutte le frequenze si ottiene la relazione tra flusso radiativo e gradiente termico.
+
+La quantit\'a $\frac{1}{\kappa_{\nu}}\PDy{T}{B_{\nu}(T)}$ \'e l'opacit\'a media di Rosseland. Nel calcolo della struttura stellare si usa il gradiente termico espresso in termini della derivata logaritmica della pressione: ho usato la definizione di luminosit\'a e la condizione di equilibrio idrostatico.
+
+}
 
 \end{wordonframe}
 
@@ -337,7 +451,7 @@ Il trasporto radiativo nell'interno solare \'e descritto considerando il flusso 
 
 \begin{columns}
 
-\begin{column}{0.5\textwidth}
+\begin{column}{0.45\textwidth}
 
 \begin{block}{Instabilit\'a convettiva}
 \begin{align*}
@@ -347,21 +461,22 @@ Il trasporto radiativo nell'interno solare \'e descritto considerando il flusso 
 
 \end{block}
 
-\begin{block}{Teoria della mixing-length}
+\begin{block}{Trasporto convettivo}
 
 \begin{align*}
-&l_m=\alpha H_P\\
-&F_{con}=\exv{\rho vc_P\Delta T}%\label{eq:convectiveflux}
+&F=F_c+F_r\\
+&F_{con}=\exv{\rho vc_P\Delta T}\\
+&l_m=\alpha H_P
 \end{align*}
 
 \end{block}
 
 \end{column}
 
-\begin{column}{0.5\textwidth}
+\begin{column}{0.55\textwidth}
 
 \begin{figure}[!h]
-    \includegraphics[width=0.9\textwidth,keepaspectratio]{proportionflux}
+    \includegraphics[width=0.99\textwidth,keepaspectratio]{proportionflux}
     \caption{Da \cite{christensen1997effects}.}
 \end{figure}
 
@@ -374,7 +489,15 @@ Il trasporto radiativo nell'interno solare \'e descritto considerando il flusso 
 
 \begin{wordonframe}{Instabilit\'a convettiva - Gradiente termico nelle regioni convettive}
 
-La convezione caratterizza le regioni in cui uno spostamento infinitesimo di un blob di gas cresce esponenzialmente a causa della forza di Archimede. Considero il moto del blob in equilibrio di pressione con l'ambiente e uso l'equazione di stato per esprimere la differenza di densit\'a tra blob e ambiente. Considero in prima approssimazione il moto del blob adiabatico ($dq=c_P\,dT-\frac{\delta}{\rho}\,dP$) (e $\nmu{}\approx0$). Le regioni conv. stabili sono quelle dove $N^2>0$ oppure esprimendo i gradienti di densit\'a in funzione dei gradienti di temperature $\nrad{}<\nad{}$ (criterio di \sch{}) $\nrad{}<\nad{}$. Per determinare il gradiente ambientale nelle regioni convettive esterne, che caratterizzano stelle $M\leq1.1\msun{}$ \'e pratico usare la teoria della ML. Questa considera l'eccesso di calore trasportato dal moto di blob di gas adiabatico e in equilibrio di pressione con l'ambiente che si dissolve nell'ambiente dopo aver percorso una lunghezza caratteristica $l_m=\alpha H_P$.
+La convezione caratterizza le regioni in cui uno spostamento infinitesimo di un blob di gas cresce esponenzialmente a causa della forza di Archimede. 
+
+Considero il moto del blob in equilibrio di pressione con l'ambiente: esprimo l'equazione del moto dell'elemento in funzione della frequenza di \bv{} $N^2$. Le regioni stabili, in cui l'equazione del moto descrive un comportamento oscillatorio, sono per $N^2>0$  oppure usando l'equazione di stato per esprimere i gradienti di densit\'a in funzione dei gradienti di temperatura $\nrad{}<\nad{}$.
+
+% e uso l'equazione di stato per esprimere la differenza di densit\'a tra blob e ambiente. Considero in prima approssimazione il moto del blob adiabatico ($dq=c_P\,dT-\frac{\delta}{\rho}\,dP$) (e $\nmu{}\approx0$).
+Per determinare il gradiente ambientale nelle regioni convettive esterne, che caratterizzano stelle $M\leq1.1\msun{}$ \'e pratico usare la teoria della ML. Questa considera l'eccesso di calore trasportato dal moto dell'elemento di gas in equilibrio di pressione con l'ambiente che rilasci il calore dopo aver percorso una lunghezza caratteristica $l_m=\alpha H_P$.
+
+L'efficienza delle regioni convettive esterne \'e quindi un parametro libero determinato tramite calibrazione del modello stellare per riprodurre $T_e$.
+
 \end{wordonframe}
 
 
@@ -382,36 +505,36 @@ La convezione caratterizza le regioni in cui uno spostamento infinitesimo di un 
 
 \begin{frame}{Modello plasma solare}
 
-\begin{block}{Equazione di stato gas ideale}
-
-\begin{align*}
-&P=P_r+P_G=\frac{1}{3}aT^4+\frac{\rho}{\mu}\gasconstant{}T\\
-&u=\frac{1}{\rho}\sum_i\int f^{(0)}(\vec{p}_i)\frac{p^2_i}{2m_i}\,d^3p_i=\frac{3}{2}\frac{P}{\rho}=\frac{3}{2}\frac{\gasconstant{}T}{\mu}
-\end{align*}
-
-\end{block}
-
 \begin{block}{Popolazione di stati atomici. EOS e grandezze termodinamiche.}
 
-Interazioni coulombiane:
-\begin{equation*}
-\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum_Z Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}
-%&\zeta=\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}\xrightarrow{FD}\sum_{i}(Z_i^2+\frac{F_{\midfrac{1}{2}}'(\psi)}{F_{\midfrac{1}{2}}(\psi)}Z_i)\frac{\rho X_i}{A_i}
-\end{equation*}
+\begin{columns}
 
-\end{block}
+\begin{column}{0.5\textwidth}
 
-\begin{block}{Interazioni radiazione-materia}
+\begin{figure}[!ht]
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{ionfraction}
+        \caption{Da \cite{basu2008helioseismology}.}
+\end{figure}%
 
-Processi di assorbimento atomico e scattering di elettroni
 
-\end{block}
+\end{column}
 
-\begin{block}{Conservazione momento (microscopico)}
-\begin{align*}
-&\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})=\sum_{i\neq j}\vec{R}_{ij}\\
-&\vec{R}_{ij}=n_in_j\mu_{ij}\alpha_{ij}\vec{V}_{ij}%\label{eq:resistance}
-\end{align*}
+\begin{column}{0.5\textwidth}
+
+%Interazioni coulombiane:
+%\begin{equation*}
+%\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum_Z Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}
+%\end{equation*}
+\[\Gamma_1=\left(\TDly{\rho}{P}\right)_{Ad}\]
+
+\begin{figure}[!ht]
+        \includegraphics[width=0.9\textwidth,keepaspectratio]{gamma1eos}
+        \caption{Da \cite{trampedach2006synoptic}.}
+\end{figure}
+
+\end{column}
+
+\end{columns}
 
 \end{block}
 
@@ -419,227 +542,110 @@ Processi di assorbimento atomico e scattering di elettroni
 
 \begin{wordonframe}{Modellizzazione plasma solare}
 
-{\small Per risolvere le equazioni della struttra stellare \'e necessario conoscere le propriet\'a termodinamiche del gas, in particolare l'equazione di stato $P(\rho,T)$. Nel caso solare l'equazione dei gas perfetti \'e una prima approssimazione poich\'e gli effetti della degenerazione elettronica e delle interazioni coulombiane sono piccoli. Gli approcci pi\'u usati per ricavare un'equazione di stato accurata per il plasma stellare considerano le propriet\'a statistiche di un gas di nuclei ed elettroni oppure di un gas di atomi: nel secondo caso sono necessarie ipotesi ad hoc per tener conto delle perturbazioni ai livelli atomici causati dalle particelle vicine. La principale correzione che tiene conto della natura non punjtiforme delle interazioni tiene conto delle interazioni coulombiane: le interazioni elettriche modificano la distribuzione delle cariche nel plasma neutro su distanze maggiori di $R_D$ (???cariche su sfera di raggio $R_D$ attorno a ione hanno energia coulombiana e termica paragonabili????).
+{\small Per risolvere le equazioni della struttra stellare \'e necessario conoscere le propriet\'a termodinamiche del gas, in particolare l'equazione di stato $P(\rho,T)$.
 
-L'interazione radiazione-materia determina il gradiente termico della regione radiativa e nel caso solare la posizione della base della zona convettiva. L'opacit\'a \'e dovuta ai processi di assorbimento e scattering dei fotoni e dipende dal numero dalla densit\'a di particelle che danno luogo a un determinato fenomeno di assorbimento o scattering e dalla sezione d'urto per singola particella.
+Nel caso solare l'equazione dei gas perfetti \'e una prima approssimazione poich\'e gli effetti della degenerazione elettronica e delle interazioni coulombiane sono piccoli.
+%Gli approcci pi\'u usati per ricavare un'equazione di stato accurata per il plasma stellare considerano le propriet\'a statistiche di un gas di nuclei ed elettroni oppure di un gas di atomi: nel secondo caso sono necessarie ipotesi ad hoc per tener conto delle perturbazioni ai livelli atomici causati dalle particelle vicine.
+\begin{align*}
+&P=P_r+P_G=\frac{1}{3}aT^4+\frac{\rho}{\mu}\gasconstant{}T\\
+&u=\frac{1}{\rho}\sum_i\int f^{(0)}(\vec{p}_i)\frac{p^2_i}{2m_i}\,d^3p_i=\frac{3}{2}\frac{P}{\rho}%=\frac{3}{2}\frac{\gasconstant{}T}{\mu}
+\end{align*}
 
-La presenza di gradienti di concentrazione, di pressione e termici causano fenomeni di diffusione. La velocit\'a di diffusione \'e determinata supponendo il processo stazionario cio\'e la forza per unit\'a di volume agente sulla specie i \'e bilanciata dal trasperimento di impulso negli urti con le altre specie.
+La principale correzione che tiene conto della natura non puntiforme delle interazioni \'e la correzione coulombiana: le interazioni elettriche modificano la distribuzione delle cariche nel plasma neutro su distanze maggiori di $R_D$ (???cariche su sfera di raggio $R_D$ attorno a ione hanno energia coulombiana e termica paragonabili????).
+
+Una determinazione accurata delle caratteristiche del plasma solare, in particolare dell'esponente adiabatico $\Gamma_1$, permette di investigare la composizione solare poich\'e nelle regioni di ionizzazione degli elementi pi\'u abbondanti si hanno variazioni dal valore $\Gamma_1=\frac{5}{3}$
 
 }
 
 \end{wordonframe}
 
+\begin{frame}{Modello plasma solare}
 
-\begin{frame}{Reazioni nucleari}
+\begin{block}{Interazioni radiazione-materia}
 
-\begin{block}{Probabilit\'a reazioni di fusione}
-
-Il rate locale per reazioni non risonanti si scrive approssimativamente come:
-\begin{align*}
-&\exv{\sigma v}=\num{1.3005e-15}[\frac{Z_1Z_2}{AT_6^2}]\expy{\frac{1}{3}}fS_{eff}\exp{-\tau}\si{\cubic\cm\per\second}\\
-&\tau=\frac{3E_G}{kT}\approx\num{42.487}(Z_1^2Z_2^2AT_6\expy{-1})\expy{\frac{1}{3}}\\
-&E_G=A\expy{\frac{1}{3}}T_7\expy{\frac{2}{3}}\SI{5.665}{\kilo\ev},\ \Delta E_G=W\expy{\frac{1}{6}}T_7\expy{\frac{5}{6}}\SI{4.249}{\kilo\ev}
-\end{align*}
-
-\end{block}
-
-
-\begin{block}{Produzione di energia}
-\noindent\begin{align*}
-&\epsilon_{ij}=\frac{1}{1+\delta_{ij}}Q_{ij}\frac{\rho N_A^2X_jX_k}{{A_jA_k}}\exv{\sigma v}%\label{eq:energyrate}
-\end{align*}
-\end{block}
-
-\begin{block}{Sequenza principale}
-\[4\cel{H}{1}{}{}\to\cel{He}{4}{}{}+2\APelectron+2\Pnue\]
-\[Q_e=\SI{28.6}{\mega\ev}-\exv{\nu}\]
-\end{block}
-
-\end{frame}
-
-\begin{wordonframe}{Importanza reazioni catena PP}
-
-Le reazioni nucleari generano la luminosit\'a stellare nella maggior parte della vita di una stella e ne determinano l'evoluzione chimica.
-
-La probabilit\'a di reazione per coppia di particelle $\exv{\sigma v}$ \'e la media sulla DMB della sezione d'urto; lo schermaggio elettronico aumenta la probabilit\'a di penetrare la barriera coulombiana.
-
-La sezione d'urto di fusione contiene il termine cinetico $\pi\lambdabar^2\propto\frac{1}{E}$ (contributo alla sezione d'urto in onda S: $\hbar l\leq pb$),  la probabilit\'a di attraversamento della barriera coulombiana $P_0=\exp{-2\pi\eta}$ e il contributo delle funzoni d'onda nucleari.
-
-La funzione $\epsilon(T,\rho,X_i)$ descrive la produzione di energia: nella fase di sequenza principale la reazione efficace \'e la conversione di 4 nuclei di idrogeno in elio + 2 positroni e 2 neutrini.
-
-\end{wordonframe}
-
-%\section{Equazioni struttura stellare}
-
-\begin{frame}{Dati osservativi}
-
-\begin{columns}
-
-\begin{column}{0.5\textwidth}
-
-\begin{block}{Et\'a, luminosit\'a, massa, raggio solari}
-\begin{tabular}{l|c}
-\hline
-$\agesun{}$&\SI[separate-uncertainty=true]{4.57\pm0.02e9}{\year}\\
-\hline
-$\rsun{}$&\SI{695658+-140}{\kilo\meter}\\
-\hline
-$G\msun$&\num{132712440018+-8}\SI{e9}{\cubic\meter\per\square\second}\\
-\hline
-$\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
-\hline
-\end{tabular}
-%\caption[Osservabili solari principali.]{Osservabili solari principali. \cite{haberreiter2008solving}.}
-\label{tab:sunO}
-\end{block}
-
-\end{column}
-
-\begin{column}{0.5\textwidth}
-
-\begin{block}{Composizione chimica}
-
-%\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-Righe di assorbimento della fotosfera.
-
-Meteoriti CI: primordiale (refrattari).
-
-
-
-\begin{table}[]
-
-\pgfplotstabletypeset[
-every head row/.style={
-before row={\toprule},
-after row={\midrule}},
-every nth row={2}{before row=\midrule},every last row/.style={after row=\bottomrule},
-every first column/.style={column type/.add={|}{}},
-every last column/.style={column type/.add={}{|}},
-%columns/x/.style = {column type/.add={|}{}},
-columns/zx/.style = {column type/.add={|}{}},
-display columns/0/.style={column name={}},
-%display columns/1/.style={column name={$X$}},
-%display columns/2/.style={column name={$Y$}},
-%display columns/3/.style={column name={$Z$}},
-display columns/1/.style={column name={$\left(\frac{Z}{X}\right)_{ph}$}},
-%display columns/5/.style={column name={$X$}},
-%display columns/6/.style={column name={$Y$}},
-%display columns/7/.style={column name={$Z$}},
-%display columns/8/.style={column name={$\frac{Z}{X}$}},
-create on use/authors/.style={create col/set list={
-%Anders \& Grevesse (1989),Grevesse \& Noels (1993),
-Grevesse et al. (1998),Lodders (2003),Asplund et al. (2005),Lodders et al. (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
-columns/authors/.style={string type},
-columns={authors,zx},
-/pgf/number format/precision=4
-     ]{asplund.txt} %%%
-\captionof{table}{Metallicit\'a attuale determinata da varii autori.}\label{tab:Zhistory}
-\end{table}
-
-\end{block}
-
-\end{column}
-
-\end{columns}
-
-\end{frame}
-
-\begin{wordonframe}{Costruzione del MSS e vincoli}
-
-La costruzione di un modello solare \'e molto meno incerta rispetto a un modello di una stella generica data lo mole di informazioni disponibili: la distanza tramite lo studio delle orbite dei corpi celesti attorno al Sole, l'et\'a di formazione del sistema solare tramite studio dei meteoriti, la luminosit\'a, e il raggio tramite la misura delle dimensioni apparenti del disco solare.
-
-Il metodo pi\'u diretto per determinare la composizione solare \'e l'analisi delle righe di assorbimento nell'atmosfera; inoltre \'e possibile la composizione primordiale del sistema solare analizzando la composizione dei meteoriti CI.
-
-Le righe di assorbimento dell'elio si formano nelle regioni pi\'u esterne dell'atmosfera dove non \'e ovvia la relazione con la composizione della fotosfera quindi il metodo pi\'u accurato per determinare l'abbondanza di elio \'e tramite calibrazione del modello solare.
-
-L'incertezza sul contenuto di metalli \'e dovuta alle difficolt\'a insite nella descrizione dell'atmosfera e si ripercuotono soprattutto nell'opacit\'a.
-
-\end{wordonframe}
-
-\begin{frame}{Equazioni della struttura solare}
-
-%Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
-\begin{subequations}%\label{subeqn:stellarstructure}
-\begin{align*}
-&\TDy{r}{m}=4\pi r^2\rho\\
-&\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\\
-&\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}\\
-&\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
-\end{align*}
-\end{subequations}
-%con $v_i$ velocit\'a di diffusione specie i. Ottengo il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note la metallicit\'a iniziale Z, l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
-
-\begin{block}{Condizionial bordo}
-\begin{itemize}
-    \item Superficie: $T_e$, $P_{atm}$
-    \item Centro: $l(r=0)$, $m(r=0)$.
-\end{itemize}
-\end{block}
-
-\begin{block}{Evoluzione chimica}
-
+Processi di assorbimento atomico e scattering di elettroni
 \begin{equation*}
-\PDy{t}{n_i}+\frac{1}{r^2}\PDof{r}(r^2n_iv_i)=\Dcvar{\PDy{t}{n_i}}{Nucl}%\label{eq:difffusionchange}
+\frac{1}{\kappa}=\invers{(4aT^3)}\int_0^{+\infty}\frac{\PDy{T}{B_{\nu}(T)}}{(\kappa_{bb}(\nu)+\kappa_{bf}(\nu)+\kappa_{ff}(\nu))[1-\exp{-\midfrac{h\nu}{KT}}]+\kappa_{\nu s}}\,d\nu
 \end{equation*}
 
 \end{block}
 
 \end{frame}
 
-\begin{wordonframe}{Soluzione equazioni modello solare}
+\begin{wordonframe}{Interazioni radiazione-materia}
 
-Integro numericamente il sistema di equazioni con 2 condizioni in superficie per $T_e$ e $P$ e due condizioni al centro per $l$ e $m$ con metallicit\'a e abbondanza di elio da determinare.
+L'interazione radiazione-materia determina il gradiente termico della regione radiativa e nel caso solare la posizione della base della zona convettiva. L'opacit\'a \'e dovuta ai processi di assorbimento e scattering dei fotoni e dipende dal numero dalla densit\'a di particelle che danno luogo a un determinato fenomeno di assorbimento o scattering e dalla sezione d'urto per singola particella.
 
-L'evoluzione chimica del core di fusione comporta un aumento di temperatura che avviene su tempi-scala molto maggiori dei tempi caratteristici per trasporto radiativo quindi la struttura del modello solare \'e stazionaria.
+L'opacit\'a media per grammo () \'e determinata mediando l'opacit\'a a data lunghezza d'onda rispetto a $\PDy{T}{B_{\nu}(T)}$. L'opacit\'a a data frequenza \'e somma dei contributi da parte dei processi di assorbimento (bb, bf, ff) e scattering.
 
 \end{wordonframe}
 
-\begin{frame}{Calibrazione modello solare}
 
-\begin{block}{Abbondanza iniziale di elio}
+\begin{frame}{Evoluzione chimica: reazioni nucelari e diffusione.}
 
-Il modello evoluto a $\agesun{}$ riproduce la luminosit\'a attuale $\lsun{}$
+\begin{block}{Probabilit\'a reazioni di fusione}
+
+\begin{align*}
+&\sigma=\pi\lambdabar^2\Exp{-\dfrac{2\pi Z_1Z_2e^2}{\hbar v}}S(E)\\
+&\exv{\sigma v}=\num{1.3005e-15}[\frac{Z_1Z_2}{AT_6^2}]\expy{\frac{1}{3}}fS_{eff}\exp{-\tau}\si{\cubic\cm\per\second}\\
+&\tau=\frac{3E_G}{kT}\approx\num{42.487}(Z_1^2Z_2^2AT_6\expy{-1})\expy{\frac{1}{3}}\\
+&E_G=A\expy{\frac{1}{3}}T_7\expy{\frac{2}{3}}\SI{5.665}{\kilo\ev}
+\end{align*}
 
 \end{block}
 
-\begin{block}{Efficienza convezione}
 
-Mixing length $l_m=H_p\alpha$.
+\begin{block}{Contributo della fusione di nuclei $(i,j)$ alla produzione di energia per grammo}
 
-Il modello evoluto a $\agesun{}$ riproduce la luminosit\'a attuale $\lsun{}$
+\begin{align*}
+&\epsilon_{ij}=\frac{1}{1+\delta_{ij}}Q_{ij}\frac{\rho N_A^2X_iX_j}{{A_iA_j}}\exv{\sigma v}_{ij}%\label{eq:energyrate}
+\end{align*}
+\end{block}
+
+\begin{block}{Diffusione}
+
+\begin{equation*}
+\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})=\sum_{i\neq j}\int m_{ij}\vec{v}_{ij}C(f_i,f_j)\,d^3v_i%
+\end{equation*}
 
 \end{block}
 
 \end{frame}
 
-\begin{wordonframe}{Abbondanza di elio attuale e diffusione - mixing length}
+\begin{comment}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\end{column}
+\begin{column}{0.5\textwidth}
+\end{column}
+\end{columns}
+\end{comment}
 
-Vario il valore primordiale di Y finoch\'e il modello evoluto all'et\'a attuale riproduce la luminosit\'a osservata. L'abbondanza di elio determinata tramite calibrazione \'e afflitta dalle incertezze su l'efficienza della fusione, l'et\'a del Sole, la luminosit\'a attuale, l'opacit\'a.
+\begin{wordonframe}{Evoluzione chimica: reazioni di fusione e diffusione}
 
-La metallicit\'a primordiale \'e determinata dalla metallicit\'a attuale tenendo conto della diffusione.
+Le reazioni nucleari generano la luminosit\'a stellare nella maggior parte della vita di una stella e ne determinano l'evoluzione chimica.
 
-L'efficienza della convezione determina il gradiente nella regione convettiva esterna per riprodurre $T_e$ attuale.
+La sezione d'urto di fusione contiene il termine geometrico $\pi\lambdabar^2\propto\frac{1}{E}$ (contributo alla sezione d'urto in onda S: $b=l\lambdabar$),  la probabilit\'a di attraversamento della barriera coulombiana $P_0=\exp{-2\pi\eta}$ e il contributo delle funzoni d'onda nucleari.
 
-\end{wordonframe}
+Lo schermaggio elettronico aumenta la probabilit\'a di penetrare la barriera coulombiana.
 
-\begin{frame}{Struttura del MSS}
+La funzione $\epsilon(T,\rho,X_i)$ descrive la produzione di energia.
 
-\begin{figure}[!h]
-\includegraphics[width=0.75\textwidth,trim=4 4 4 4,clip]{BP00-SSM-R}
-\caption{Profilo radiale della densit\'a, abbondanza di idrogeno, luminosit\'a e temperatura; sono indicati i valori centrali e alla base della zona convettiva. Dati da \cite{BP2000}.}
-\end{figure}
-
-\end{frame}
-
-\begin{wordonframe}{Struttura del modello solare - Grandezze sismologiche}
-
-I grafici mostrano il profilo radiale della densit\'a, abbondanza di idrogeno, temperatura e luminosit\'a.
-
-La discontinuit\'a nel gradiente termico alla base della zona convettiva \'e evidente nel grafico del profilo termico.
+La forza per unit\'a di volume agente sulle particelle di specie i (trascurando il gradiente termico) \'e
+e in condizioni stazionarie il momento trasferito tramite urti con le altre specie \'e uguale alla forza per unit\'a di volume:
 
 \end{wordonframe}
 
-\begin{frame}{Focus catena PP}
+\begin{frame}{Catena PP}
+
+\begin{columns}
+
+\begin{column}{0.7\textwidth}
+
+\begin{block}{Sequenza principale}
+\[4\cel{H}{1}{}{}\to\cel{He}{4}{}{}+2\APelectron+2\Pnue\]
+\[Q_e=\SI{28.6}{\mega\ev}-\exv{\nu}\]
+\end{block}
 
 \begin{block}{Fusione idrogeno in elio: catena PP}
 
@@ -718,40 +724,252 @@ minimum width=25mm,%
 \draw[->-] (be7.south)--(pp3.north);
 \end{scope}
 
-\node[] at (2,-4.5) {\parbox{0.4\textwidth}{\captionof{figure}{Da \cite{adelberger2011solar}.}}};
+\node[] at (2,-4.5) {\parbox{0.8\textwidth}{\captionof{figure}{Da \cite{adelberger2011solar}.}}};
 
 \end{tikzpicture}
 
 \end{block}
 
-\begin{block}{Tempi reazione e energia efficace prodotta}
+\end{column}
 
-\begin{tabular}{c|c|}
-\hline
-Reazione & $t_r$ \\
-\hline
-$^1H+^1H\to^2H+\APelectron+\Pnue$ & $7*10^9\,yr$\\
-$^2H+^1H\to ^3He+\gamma$ & $4 s$\\
-$^3He+^3He\to^4He+2^1H$ & $4*10^5\,yr$\\
-\hline
+\begin{column}{0.3\textwidth}
+
+\begin{block}{Perdite in neutrini (Sole)}
+\begin{tabular}{cc}
+Ramo&$Q_{eff} (MeV)$\\
+PP1&$26.2 (2\%)$\\
+PP2&$25.66  (4\%)$\\
+PP3 &$19.17 (28\%)$\\
 \end{tabular}
 
-\begin{align*}
-Q_{eff}&=Q-\exv{E_{\nu}}(MeV)\quad&\text{Perdita in neutrini}&\intertext{PP1}\\
-&=26.2 &2\%&\intertext{PP2}\\
-&=25.66  & 4\%&\intertext{PP3}\\
-&=19.17  & 28\%
-\end{align*}
+\end{block}
+
+\begin{block}{Tempo di vita}
+
+{\small\begin{tabular}{cc}
+&$\tau(\si{\year})$\\
+$\cel{B}{8}{}{}\cel{Be}{8}{}{}^*\cel{He}{4}{}{}$&\num{3e-8}\\
+
+\end{tabular}
+}
 
 \end{block}
+
+\end{column}
+
+\end{columns}
+
+%\begin{block}{Tempi reazione e energia efficace prodotta}
+%\begin{tabular}{c|c|}
+%\hline
+%Reazione & $t_r$ \\
+%\hline
+%$^1H+^1H\to^2H+\APelectron+\Pnue$ & $7*10^9\,yr$\\
+%$^2H+^1H\to ^3He+\gamma$ & $4 s$\\
+%$^3He+^3He\to^4He+2^1H$ & $4*10^5\,yr$\\
+%\hline
+%\end{tabular}
+%\end{block}
 
 \end{frame}
 
 \begin{wordonframe}{Catena PP}
 
-Le incertezze sull'efficienza delle reazioni di fusione \'e collegata all'incertezza sull'abbondanza di elio (e anche su $T_c$).
+nella fase di sequenza principale la reazione efficace \'e la conversione di 4 nuclei di idrogeno in elio + 2 positroni e 2 neutrini.
 
-Flusso di neutrini.
+Nel centro solare circa il $99\%$ della di $\epsilon$ \'e prodotto dalla catena PP.
+Questa figura descrive le reazioni nucleari per condizioni del centro solare. 
+
+\end{wordonframe}
+
+%\section{Equazioni struttura stellare}
+
+\begin{frame}{Dati osservativi}
+
+\begin{columns}
+
+\begin{column}{0.5\textwidth}
+
+\begin{block}{Et\'a, luminosit\'a, massa, raggio solari}
+\begin{tabular}{l|c}
+\hline
+$\agesun{}$&\SI[separate-uncertainty=true]{4.57\pm0.02e9}{\year}\\
+\hline
+$\rsun{}$&\SI{695658+-140}{\kilo\meter}\\
+\hline
+$G\msun$&\num{132712440018+-8}\SI{e9}{\cubic\meter\per\square\second}\\
+\hline
+$\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
+\hline
+\end{tabular}
+%\caption[Osservabili solari principali.]{Osservabili solari principali. \cite{haberreiter2008solving}.}
+\label{tab:sunO}
+\end{block}
+
+\end{column}
+
+\begin{column}{0.5\textwidth}
+
+\begin{block}{Composizione chimica}
+
+%\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
+Righe di assorbimento della fotosfera.
+
+\begin{table}[]
+
+\pgfplotstabletypeset[
+every head row/.style={
+before row={\toprule},
+after row={\midrule}},
+every nth row={2}{before row=\midrule},every last row/.style={after row=\bottomrule},
+every first column/.style={column type/.add={|}{}},
+every last column/.style={column type/.add={}{|}},
+%columns/x/.style = {column type/.add={|}{}},
+columns/zx/.style = {column type/.add={|}{}},
+display columns/0/.style={column name={}},
+%display columns/1/.style={column name={$X$}},
+%display columns/2/.style={column name={$Y$}},
+%display columns/3/.style={column name={$Z$}},
+display columns/1/.style={column name={$\left(\frac{Z}{X}\right)_{ph}$}},
+%display columns/5/.style={column name={$X$}},
+%display columns/6/.style={column name={$Y$}},
+%display columns/7/.style={column name={$Z$}},
+%display columns/8/.style={column name={$\frac{Z}{X}$}},
+create on use/authors/.style={create col/set list={
+%Anders \& Grevesse (1989),Grevesse \& Noels (1993),
+Grevesse et al. (1998),Lodders (2003),Asplund et al. (2005),Lodders et al. (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
+columns/authors/.style={string type},
+columns={authors,zx},
+/pgf/number format/precision=4
+     ]{asplund.txt} %%%
+\captionof{table}{Metallicit\'a attuale determinata da varii autori.}\label{tab:Zhistory}
+\end{table}
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+\begin{wordonframe}{Costruzione del MSS e vincoli}
+
+La costruzione di un modello solare \'e molto meno incerta rispetto a un modello di una stella generica data la mole di informazioni disponibili. Conosciamo con grande accuratezza la distanza tramite lo studio delle orbite dei corpi celesti attorno al Sole, l'et\'a di formazione del sistema solare tramite studio dei meteoriti, la luminosit\'a, e il raggio tramite la misura delle dimensioni apparenti del disco solare.
+
+Inoltre \'e possibile determinare la composizione solare della fotosfera supposta identica a quella della zona convettiva tramite l'analisi delle righe di assorbimento nell'atmosfera.
+
+Le righe di assorbimento dell'elio si formano nelle regioni pi\'u esterne dell'atmosfera dove non \'e ovvia la relazione con la composizione della fotosfera quindi il metodo pi\'u accurato per determinare l'abbondanza di elio \'e tramite calibrazione del modello solare.
+
+L'incertezza sul contenuto di metalli \'e dovuta alle difficolt\'a insite nella descrizione dell'atmosfera: come si vede dalla tabella a destra la disponibilit\'a di modelli pi\'u accurati nelle assunzioni fisiche ha portato a un'abbassamento della metallicit\'a. 
+
+\end{wordonframe}
+
+\begin{frame}{Equazioni della struttura solare}
+
+%Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
+\begin{subequations}%\label{subeqn:stellarstructure}
+\begin{align*}
+&\TDy{r}{m}=4\pi r^2\rho\\
+&\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\\
+&\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}\\
+&\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
+\end{align*}
+\end{subequations}
+%con $v_i$ velocit\'a di diffusione specie i. Ottengo il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note la metallicit\'a iniziale Z, l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
+
+\begin{columns}
+
+\begin{column}{0.3\textwidth}
+Condizioni al bordo:
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+    \item Superficie: $T_e$, $P_{atm}$
+    \item Centro: $l(r=0)$, $m(r=0)$.
+\end{itemize}
+
+\end{column}
+
+\end{columns}
+
+\begin{block}{Evoluzione del modello solare}
+
+\begin{equation*}
+\PDy{t}{n_i}+\frac{1}{r^2}\PDof{r}(r^2n_iv_i)=\Dcvar{\PDy{t}{n_i}}{Nucl}%\label{eq:difffusionchange}
+\end{equation*}
+
+\end{block}
+
+\end{frame}
+
+\begin{wordonframe}{Soluzione equazioni modello solare}
+
+Integro numericamente per la struttura solare con 2 condizioni in superficie per $T_e$ e $P$ e due condizioni al centro per $l$ e $m$ con metallicit\'a e abbondanza di elio da determinare.
+
+L'evoluzione chimica del core di fusione comporta un aumento di temperatura che avviene su tempi-scala molto maggiori dei tempi caratteristici per trasporto radiativo quindi la struttura del modello solare \'e stazionaria.
+
+La presenza di gradienti di concentrazione, di pressione e termici causano fenomeni di diffusione. La velocit\'a di diffusione \'e determinata supponendo il processo stazionario cio\'e la forza per unit\'a di volume agente sulla specie i \'e bilanciata dal trasperimento di impulso negli urti con le altre specie.
+
+\end{wordonframe}
+
+\begin{wordonframe}{Abbondanza di elio attuale e diffusione - mixing length}
+
+Vario il valore primordiale di Y finoch\'e il modello evoluto all'et\'a attuale riproduce la luminosit\'a osservata. L'abbondanza di elio determinata tramite calibrazione \'e afflitta dalle incertezze su l'efficienza della fusione, l'et\'a del Sole, la luminosit\'a attuale, l'opacit\'a.
+
+La metallicit\'a primordiale \'e determinata dalla metallicit\'a attuale tenendo conto della diffusione.
+
+L'efficienza della convezione determina il gradiente nella regione convettiva esterna per riprodurre $T_e$ attuale.
+
+Determino i due parametri Y e $\alpha$ (efficienza trasporto convettivo) in modo che il modello riproduca a $\agesun{}$ la luminosit\'a attuale e la temperatura efficace attuale.
+
+\begin{block}{Abbondanza iniziale di elio}
+
+Il modello evoluto a $\agesun{}$ riproduce la luminosit\'a attuale $\lsun{}$
+
+\end{block}
+
+\begin{block}{Efficienza convezione}
+
+Mixing length $l_m=H_p\alpha$.
+
+Il modello evoluto a $\agesun{}$ riproduce la temperatura effettiva attuale $T_e$
+
+\end{block}
+
+\end{wordonframe}
+
+\begin{frame}{Struttura del MSS}
+
+\begin{figure}[!h]
+\includegraphics[width=0.75\textwidth,trim=4 4 4 4,clip]{BP00-SSM-R}
+\caption{Dati da \cite{BP2000}.}
+\end{figure}
+
+\end{frame}
+
+\begin{wordonframe}{Struttura del modello solare - Grandezze sismologiche}
+
+I grafici mostrano il profilo radiale della densit\'a, abbondanza di idrogeno, temperatura e luminosit\'a.
+
+Il profilo dell'abbondanza di idrogeno \'e determinato dalle reazioni di fusione e dalla diffusione, si assume che i moti convettivi rendano la regione convettiva chimicamente omogenea.
+
+La discontinuit\'a nel gradiente termico alla base della zona convettiva \'e evidente nel grafico del profilo termico.
+
+\end{wordonframe}
+
+\begin{frame}{Velocit\'a del suono}
+
+\begin{figure}[!ht]
+\includegraphics[width=0.9\textwidth]{BP00-cs}
+\end{figure}
+
+\end{frame}
+
+\begin{wordonframe}{Profilo radiale della velocit\'a del suono determinato tramite MSS}
+
+In figura abbiamo il profilo della velocit\'a del suono del modello solare precedente.
 
 \end{wordonframe}
 
@@ -781,14 +999,19 @@ Flusso di neutrini.
 \end{block}
 \begin{block}{Condizione di moto adiabatico}
 \begin{equation*}
-P'+\vec{\xi}\cdot\nabla P_0=\frac{\Gamma_{1,0}P_0}{\rho}(\rho'+\vec{\xi}\cdot\nabla\rho_0)%\label{eq:adper}
+P'+\vec{\xi}\cdot\nabla P_0=\frac{\Gamma_{1,0}P_0}{\rho_0}(\rho'+\vec{\xi}\cdot\nabla\rho_0)%\label{eq:adper}
 \end{equation*}
 \end{block}
 \end{frame}
 
 \begin{wordonframe}{Determinazione del moto perturbato}
 
-Discuto le equazioni che determinano i modi di oscillazione adiabatici di una struttura sferica. Considero lo spostamento dalla posizione di equilibrio $\vec{\xi}$ di un elemento di gas e le conseguenti perturbazioni di pressione e densit\'a. L'equazione del moto nel SR solidale con l'elemento di gas linearizzata nella perturbazione insieme alla condizione di adiabaticit\'a del moto e lacontinuit\'a della massa, al termine lineare nella perturbazione, sono un sistema di 5 equazioni in 5 incognite che con le opportune condizioni al bordo determina i modi di oscillazione adiabatici della struttura solare.
+L'equazione del moto nel SR solidale con l'elemento di gas linearizzata nella perturbazione insieme alla condizione di adiabaticit\'a del moto e la continuit\'a della massa, sempre al termine lineare nella perturbazione, sono un sistema di 5 equazioni in 5 incognite che con le opportune condizioni al bordo determina i modi di oscillazione adiabatici della struttura solare.
+Considero uno spostamento infinitesimo $\vec{\xi}$ dalla posizione di equilibrio di un elemento di gas: la forza agente sull'elemento \'e determinata da pressione densit\'a e accelerazione di gravit\'a a $\vec{r}+\vec{\xi}$. Ottengo l'equazione del moto perturbata al prim'ordine nelle perturbazioni.
+
+Le quantit\'a primate sono perturbazioni euleriane e $\vec{g}'=-\nabla\Phi'$ e $\nabla^2\Phi'=4\pi G\rho'$.
+
+Completo il sistema con l'equazione di continuit\'a e la condizione di moto adiabatico. La condizione di adiabaticit\'a \'e giustificata perch\'e il periodo dei modi \'e molto minore del tempo di rilassamento radiativo e dei tempi scala di generazione di energia.
 
 \end{wordonframe}
 
@@ -814,7 +1037,9 @@ Discuto le equazioni che determinano i modi di oscillazione adiabatici di una st
 
 \begin{wordonframe}{Onde stazionarie simmetria sferica}
 
-Cerco soluzioni della forma di onde stazionarie per le perturbazioni scalari e data la simmetria sferica con dipendenza spaziale descritta tramite armoniche sferiche. Utilizzo l'equazione del moto perturbato per mostrare che $\rot{\vec{\xi}}$ non ha componenti radiali: la dipendenza spaziale di \'e determinata da un'ampiezza per lo spostamento radiale e un'ampiezza per lo spostamento tangenziale.
+Cerco soluzioni della forma di onde stazionarie per le perturbazioni scalari e data la simmetria sferica con dipendenza spaziale descritta tramite armoniche sferiche. Utilizzo l'equazione del moto perturbato per mostrare che $\rot{\vec{\xi}}$ non ha componenti radiali: la dipendenza spaziale \'e determinata da un'ampiezza per lo spostamento radiale e un'ampiezza per lo spostamento tangenziale. Applicando la componente tangenziale dell'operatore divergenza all'equazione del moto si trova l'ampiezza tangenziale. 
+
+Questo \'e il sistema che determina i modi normali con le opportune condizioni al bordo: ha soluzioni per $\omega_{nlm}$ discrete.
 
 \end{wordonframe}
 
@@ -838,7 +1063,7 @@ La condizione di non propagazione oltre la fotosfera: $\Lvar{P}=P'+\xi_r\TDy{r}{
 
 \end{block}
 
-\begin{block}{Approssimazione di Cowling}
+\begin{block}{Approssimazione di Cowling.}
 \[\Phi'=0\]
 \end{block}
 
@@ -850,7 +1075,7 @@ Questo \'e il sistema che determina i modi normali: ha soluzioni per $\omega_{nl
 
 Le frequenze sono $2l+1$ degeneri perch\'e il sistema non dipende da m.
 
-L'approssimazione di Cowling, valida per grandi l o n, consiste nel trascurare la perturbazione al potenziale gravitazionale, restringendosi quindi alle prime 2 equazioni.
+L'approssimazione di Cowling, valida per grandi l o n (uso la soluzione dell'equazione di Poisson per $\Phi'$), consiste nel trascurare la perturbazione al potenziale gravitazionale, restringendosi quindi alle prime 2 equazioni.
 
 \end{wordonframe}
 
@@ -860,24 +1085,31 @@ L'approssimazione di Cowling, valida per grandi l o n, consiste nel trascurare l
 \begin{columns}
 
 \begin{column}{0.5\textwidth}
-\begin{figure}
-\includegraphics[keepaspectratio,width=0.7\textwidth]{domega}
-\captionof{figure}{Da \cite{rhodesmeasurements}.}
-\end{figure}
-
+\begin{tikzpicture}
+\node (inertia) at (0,0) {\includegraphics[keepaspectratio,width=0.9\textwidth]{Inertianl}};
+\node [below=2mm of inertia.south] {\parbox{0.85\textwidth}{\captionof{figure}{Da \cite{dal03notes}.}}};
+\node [left=2mm of inertia.west,rotate=90] {$I_{nl}$};
+\end{tikzpicture}
 \begin{align*}
-&\omega_A=\frac{c_s}{2\densityscale{}}\sqrt{1-2\TDy{r}{\densityscale{}}}\propto T\expy{-\frac{1}{2}}
+%&E_k^{nl}=\frac{1}{2}\int_V|\vec{v}|^2\rho_0\,dV=\frac{\omega_{nl}^2}{2}\int_V|\vec{\xi}_{nl}|^2\rho_0\,dV\\
+&\bar{E_k^{nl}}=\frac{1}{\Pi}\int_0^{\Pi}\int\frac{1}{2}\rho_0|\dvec{\xi}_{nl}|^2\,d^3x\,dt=\frac{1}{2}M_{\odot}I_{nl}V_{nl}^2\\
+&I_{nl}=\frac{1}{\msun{}A_{nl}^2}\int_V\,d^3x\rho_0\vec{\xi}_{nl}\vec{\xi}_{nl}^*%\label{eq:normalizedinertia}\\
+%&\exv{\vec{\xi}(R)\vec{\xi}^*(R)}
+%&M_{nl}=I_{nl}\msun{}\intxt{inoltre ho introdotto lo spostamento quadratico medio superficiale}
+%&A_{nl}^2=\delta r|_{rms}^2+\delta h_{rms}^2\intxt{con}
+%&\delta r|_{rms}^2=\frac{1}{\Pi}\int_0^{\pi}\,dt\frac{1}{4\pi}\oint\Re{[\xi_rY_{l,m}(\theta,\phi)\exp{-i\omega t}]}^2\,d\Omega=\frac{1}{2}|\xi_r|^2\\
+%&\delta h_{rms}^2=\frac{1}{2}l(l+1)|\xi_h(r)|^2%=\frac{\delta h|_{rms}}{\delta r|_{rms}}=\frac{\sqrt{l(l+1)}}{\sigma}
 \end{align*}
-
 \end{column}
 
 \begin{column}{0.5\textwidth}
 \begin{figure}[!ht]
 %\includegraphics[keepaspectratio,width=0.95\textwidth]{midlmodes}
 %\caption{I picchi della densit\'a spettrale si dispongono su creste in cui \'e concentrata la potenza in accordo al modello. Determinata usando i primi 144 giorni di osservazione di MDI con $l\leq300$. Da \cite{chr02helioseismology}.}\label{fig:midlmodes}
-\includegraphics[keepaspectratio,height=0.7\textheight]{nrmodesLAWE}
-\caption{Da \cite{chr02helioseismology}.}\label{fig:nrmodesLAWE}
+\includegraphics[keepaspectratio,width=0.9\textwidth]{nrmodesLAWE}
+\caption{Da \cite{chr02helioseismology}.}%\label{fig:nrmodesLAWE}
 \end{figure}
+
 \end{column}
 
 \end{columns}
@@ -886,23 +1118,58 @@ L'approssimazione di Cowling, valida per grandi l o n, consiste nel trascurare l
 
 \begin{wordonframe}{Spettro dei modi: modi p, modi g, modi f}
 
-La figura mostra lo spettro delle frequenze discrete per cui il sistema dei modi ha soluzione in funzione del grado angolare l. I modi con stesso ordine radiale sono uniti da una linea: nella parte ad alte frequenze abbiamo i modi p, di natura acustica, nella parte a basse frequenze modi g, che sono onde di gravit\'a, e modi f, confinati in uno strato superficiale e dovuti alla rapida variazione di densit\'a in superficie ($\div{\vec{\xi}}\approx0$, $\omega^2=gk_h$). Il comportamento di $\xi_r$ \'e determinato dalle propriet\'a del gas, in particolare come vedremo pi\'u avanti, dall'andamento della velocit\'a del suono e delle frequenze critiche.
+La figura mostra lo spettro delle frequenze discrete per cui il sistema dei modi ha soluzione in funzione del grado angolare l. I modi con stesso ordine radiale sono uniti da una linea: nella parte ad alte frequenze abbiamo i modi p, di natura acustica, nella parte a basse frequenze modi g, che sono onde di gravit\'a, e modi f, modi di superficie ($\div{\vec{\xi}}\approx0$, $\omega^2=gk_h$). 
 
-Buon accordo con frequenze osservate: differenze dovute a effetti non adiabatici in superficie maggiori per l maggiori perche confinati in guscio sottile e maggiori ad alte frequenze perch\'e punto di inversione pi\'u in alto.
+L'energia cinetica del modo $(n,l)$ mediata su un periodo \'e la media temporale dell'integrale della densit\'a di energia sul volume solare: \'e utile introdurre l'inerzia normalizzata all'ampiezza superficiale.
 
 \end{wordonframe}
 
 
+\begin{frame}{Effetti delle regioni superficiali sulle frequenze dei modi}
+
+\begin{columns}
+
+\begin{column}{0.5\textwidth}
+
+\begin{figure}
+\includegraphics[keepaspectratio,width=0.7\textwidth]{domega}
+\captionof{figure}{Da \cite{rhodesmeasurements}.}
+\end{figure}
+
+\end{column}
+
+\begin{column}{0.5\textwidth}
+%\begin{figure}[!ht]
+%\includegraphics[keepaspectratio,width=0.95\textwidth]{midlmodes}
+%\caption{I picchi della densit\'a spettrale si dispongono su creste in cui \'e concentrata la potenza in accordo al modello. Determinata usando i primi 144 giorni di osservazione di MDI con $l\leq300$. Da \cite{chr02helioseismology}.}\label{fig:midlmodes}
+%
+\begin{align*}
+&\omega_A=\frac{c_s}{2\densityscale{}}\sqrt{1-2\TDy{r}{\densityscale{}}}\propto T\expy{-\frac{1}{2}}
+\end{align*}
+
+
+%\end{figure}
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+\begin{wordonframe}{Effetti delle regioni superficiali sulle frequenze dei modi}
+
+Contributo non-adiabatico ($\alpha(\omega)$): differenze dovute a effetti non adiabatici in superficie maggiori per l maggiori perche confinati in guscio sottile e maggiori ad alte frequenze perch\'e punto di inversione pi\'u in alto.
+
+\end{wordonframe}
 %$\omega_c=\frac{c_s}{2\densityscale{}}\sqrt{1-2\TDy{r}{\densityscale{}}}\propto T\expy{-\frac{1}{2}}$
 %$S_l^2=\frac{l(l+1)c_s^2}{r^2}$.
 %$N^2=g(\frac{1}{\Gamma_1P}\TDy{r}{P}-\frac{1}{\rho}\TDy{r}{\rho})=g(\frac{1}{\densityscale{}}-\frac{g}{c_s^2})$
 
-\begin{frame}{Relazione di dispersione per onde gravo-acustiche}
+\begin{frame}{Relazione di dispersione per onde gravo-acustiche: cavit\'a risonanti.}
 
 
 \begin{align*}
 %&\omega_A=\frac{c_s}{2\densityscale{}}\sqrt{1-2\TDy{r}{\densityscale{}}}\propto T\expy{-\frac{1}{2}}\\%\label{eq:acusticcutoff} \intxt{quindi ottengo la relazione di dispersione:}
-&\vec{\xi}\propto\exp{i\scap{k}{r}}\\
+%&\vec{\xi}\propto\exp{i\scap{k}{r}}\\
 &\TtwoDy{r}{\xi_r}=\frac{\omega^2}{c_s^2}(1-\frac{N^2}{\omega^2})(\frac{S_l^2}{\omega^2}-1)\xi_r=-k_r^2\xi_r
 \end{align*}
 
@@ -910,7 +1177,7 @@ Buon accordo con frequenze osservate: differenze dovute a effetti non adiabatici
 
 \begin{column}{0.4\textwidth}
 Onde acustiche:\[k_r^2=\frac{\omega^2}{c_s^2}(\frac{S_l^2}{\omega^2}-1)\]
-Raggio di inversione del moto:\[\frac{k_h}{\omega}=c_s\]
+Raggio di inversione del moto:\[\frac{k_h^2}{\omega^2}=c_s^2\]
 Onde di gravit\'a:\[k_r^2=\frac{S_l^2}{c_s^2}(\frac{N^2}{\omega^2}-1)\]
 
 \end{column}
@@ -943,17 +1210,61 @@ Onde di gravit\'a:\[k_r^2=\frac{S_l^2}{c_s^2}(\frac{N^2}{\omega^2}-1)\]
 \end{figure}
 
 \begin{align*}
-&(n+\alpha)\pi\approx\int_{r_t}^Rk_r\,dr\\
-&(n+\alpha)\pi\approx\int_{r_t}^R\frac{\omega}{c_s}\sqrt{1-\frac{S_l^2}{\omega^2}}\,dr\\
-&\frac{(n+\alpha_g)\pi}{L}\approx\int_{r_1}^{r_2}(\frac{N^2}{\omega^2}-1)\expy{\frac{1}{2}}\,d\ln{r}
+%&(n+\alpha)\pi\approx\int_{r_t}^Rk_r\,dr\\
+&(n+\alpha)\pi\approx\int_{r_t}^R\frac{\omega}{c_s}\sqrt{1-\frac{S_l^2}{\omega^2}}\,dr
+\quad
+\frac{(n+\alpha_g)\pi}{L}\approx\int_{r_1}^{r_2}(\frac{N^2}{\omega^2}-1)\expy{\frac{1}{2}}\,d\ln{r}
 \end{align*}
-
 
 \end{frame}
 
 \begin{wordonframe}{Condizione di risonanza radiale}
 
 La condizione di risonanza radiale \'e nota come legge di Duvall per modi p
+
+\end{wordonframe}
+
+\begin{frame}{Espressioni asintotiche per le frequenze}
+
+\begin{columns}
+
+\begin{column}{0.5\textwidth}
+
+\begin{block}{Modi p con l grande}
+\begin{equation*}
+\omega_{nl}^2=\frac{2}{\mu_p}\frac{g}{\rsun{}}(n+\alpha)L
+\end{equation*}
+\end{block}
+
+\end{column}
+
+\begin{column}{0.5\textwidth}
+
+\begin{block}{Modi p con l piccolo}
+
+\begin{equation*}
+\nu_{nl}=\frac{\omega_{nl}}{2\pi}\approx(n+\frac{l}{2}+\frac{1}{4}+\alpha)\Delta\nu*\label{eq:freqequi}
+\end{equation*}
+\[\Delta\nu=[2\int_0^R\frac{dr}{c}]\expy{-1}\approx\SI{136}{\micro\hertz}\]
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\begin{block}{Modi g di alto n e basso l}
+
+\begin{equation*}
+\omega=\frac{L\int_{r_1}^{r_2}N\frac{dr}{r}}{\pi(n+\frac{l}{2}+\alpha_g)}
+\end{equation*}
+ $\lim_{n\to\infty}{\alpha_g}\approx-\midfrac{1}{6}$
+
+\end{block}
+
+\end{frame}
+
+\begin{wordonframe}{Espressioni asintotiche per le frequenze}
 
 \end{wordonframe}
 
@@ -973,30 +1284,26 @@ La condizione di risonanza radiale \'e nota come legge di Duvall per modi p
 
 \begin{column}{0.6\textwidth}
 
-\begin{equation*}
-I_{nl}[\TtwoDy{t}{A_{nl}}+\Gamma_{nl}\TDy{t}{A_{nl}}+\omega_0^2A_{nl}]=f(t)
-\end{equation*}
-
-Per $\omega_{nl}\gg\Gamma_{nl}$%, cio\'e gli scambi di energia tra i modi e la turbolenza hanno tempo caratteristico $\tau_{nad}\gg\Pi_{osc}$, lo spettro in frequenza dell'oscillatore $P(\omega)=\exv{|\xi_{nl}(\omega)|^2}$,vicino a $\omega_0$ \'e della forma:
-\begin{equation*}
-P(\omega)\propto P_LP_f=\frac{\midfrac{\Gamma_{nl}}{2\pi}}{(\omega-\omega_0)^2+\midfrac{\Gamma_{nl}}{4}}P_f
-\end{equation*}
-
-L'energia dell'oscillatore varia su tempi scala proporzionali a $\invers{\Gamma}_{nl}$ attorno al valor medio $\bar{E}_{nl}$:
 \begin{align*}
+&I_{nl}[\TtwoDy{t}{A_{nl}}+\Gamma_{nl}\TDy{t}{A_{nl}}+\omega_0^2A_{nl}]=f(t)\\
+&P(\omega)\propto P_LP_f=\frac{\midfrac{\Gamma_{nl}}{2\pi}}{(\omega-\omega_0)^2+\midfrac{\Gamma_{nl}}{4}}P_f\\
+&\bar{E}_{nl}=I_{nl}\exv{V_{nl}^2}=I_{nl}\frac{1}{T_{obs}}\int_{-\infty}^{\infty}|V(\nu)|^2\,d\nu\propto I_{nl}\Gamma_{nl}A_{nl}\\
 &\TDy{t}{E_{nl}}+\Gamma_{nl}E_{nl}=\exv{\dvec{\xi}_{nl}\cdot\vec{F}}\\
-&\bar{E}_{nl}=\frac{\exv{\dvec{\xi}_{nl}\cdot\vec{F}}}{\Gamma_{nl}}\\
-&\bar{E}_{nl}=I_{nl}\exv{V_{nl}^2}=I_{nl}\frac{1}{T_{obs}}\int_{-\infty}^{\infty}|V(\nu)|^2\,d\nu\propto I_{nl}\Gamma_{nl}A_{nl}
+&\bar{E}_{nl}=\frac{\exv{\dvec{\xi}_{nl}\cdot\vec{F}}}{\Gamma_{nl}}
 \end{align*}
 %dove $\exv{\dvec{\xi}_{nl}\cdot\vec{F}}$ \'e il lavoro della forzante mediato su un periodo.
-
-
 
 \end{column}
 
 \end{columns}
 
 \end{frame}
+
+\begin{wordonframe}{Ampiezza delle oscillazioni}
+
+L'energia dell'oscillatore varia su tempi scala proporzionali a $\invers{\Gamma}_{nl}$ attorno al valor medio $\bar{E}_{nl}$:
+
+\end{wordonframe}
 
 \begin{frame}{Osservazione delle oscillazioni della fotosfera}
 
@@ -1010,9 +1317,9 @@ L'energia dell'oscillatore varia su tempi scala proporzionali a $\invers{\Gamma}
 
 \end{figure}
 
-\begin{equation}
-P_x(\nu)=\sum_i\frac{AB_i\midfrac{\Gamma^2}{4}}{(\nu-\nu_0-\Delta\nu_i)^2+\midfrac{\Gamma^2}{4}}+P_n(\nu)
-\end{equation}
+\begin{align*}
+&P_x(\nu)=\sum_i\frac{AB_i\midfrac{\Gamma^2}{4}}{(\nu-\nu_0-\Delta\nu_i)^2+\midfrac{\Gamma^2}{4}}+P_n(\nu)
+\end{align*}
 
 \end{frame}
 
@@ -1039,9 +1346,21 @@ La PSD $P_T(\nu)=\frac{1}{T_{obs}}|X_T(\nu)|^2$ contiene oltre al picco principa
 
 \begin{frame}{Effetto di perturbazioni nell'equazione del moto sulle frequenze}
 
-\[L(\vec{\xi})=\frac{1}{\rho_0}\nabla p'-\vec{g}'-\frac{\rho'}{\rho_0}\vec{g}_0\]
+\begin{block}{Equazione del moto perturbato e variazioni nella struttura di equilibrio}
+
+\begin{align*}%\label{eq:EOMrhoc}%Unno89
+&L(\vec{\xi})=\frac{1}{\rho_0}\nabla p'-\vec{g}'-\frac{\rho'}{\rho_0}\vec{g}_0\\
+&\rho_0L(\xi)=\nabla(c_s^2\rho\scap{\nabla}{\xi}+\nabla P\cdot\vec{\xi})-\vec{g}_0\nabla\cdot(\rho_0\vec{\xi})-G\rho_0\nabla(\int_V\frac{\nabla\cdot(\rho_0\vec{\xi})\,d^3r'}{|\vec{r}-\vec{r}'|})\\
+&(L+\Lvar{L})(\xi+\Lvar{\xi})=-(\omega+\Lvar{\omega})^2(\xi+\Lvar{\xi})&\label{eq:EMvar}
+\end{align*}
+
+\end{block}
+
+\begin{block}{Variazioni nelle frequenze}
 
 \[\frac{\Lvar{\omega}}{\omega}=-\frac{\int_V\rho\vec{\xi}\Lvar{L}\vec{\xi}\,d^3x}{2\omega^2\int_V\rho\scap{\xi}{\xi}d^3x}\]
+
+\end{block}
 
 \end{frame}
 
@@ -1055,27 +1374,75 @@ Considero gli effetti di una variazione piccola di L, cio\'e una variazione dell
 
 \end{wordonframe}
 
-\begin{frame}{Correzioni struttura idrostatica e composizione}
+\begin{frame}{Variazione nei modi per variazione in struttura, equazione di stato e composizione}
 
-\begin{block}{Equazione del moto perturbato}
+\begin{block}{Inversione per $(c^2,\rho)$}
 
-\begin{equation*}%\label{eq:EOMrhoc}%Unno89
--\omega^2\rho_0\xi=\nabla(c_s^2\rho\scap{\nabla}{\xi}+\nabla P\cdot\vec{\xi})-\vec{g}_0\nabla\cdot(\rho_0\vec{\xi})-G\rho_0\nabla(\int_V\frac{\nabla\cdot(\rho_0\vec{\xi})\,d^3r'}{|\vec{r}-\vec{r}'|})
+\begin{equation*}
+\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^R[K^{nl}_{c^2,\rho}(r)\frac{\delta_rc^2}{c^2}(r)+K^{nl}_{\rho,c^2}(r)\frac{\delta_r\rho}{\rho}(r)]\,dr+I_{nl}\expy{-1}F_{Surf}
 \end{equation*}
 
 \end{block}
 
-\begin{block}{Variazione nei modi per variazione in struttura, equazione di stato e composizione}
+\begin{block}{Inversione per $(u,Y)$}
 
-\begin{align*}
-&\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^R[K^{nl}_{c^2,\rho}(r)\frac{\delta_rc^2}{c^2}(r)+K^{nl}_{\rho,c^2}(r)\frac{\delta_r\rho}{\rho}(r)]\,dr+M_{nl}\expy{-1}F_{Surf}\\
-&\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^RK^{nl}_{u,Y}(r)\frac{\delta_ru}{u}(r)\,dr+\int K^{nl}_{Y,u}(r)\delta_rY\,dr+\int_0^RK^{nl}_{c^2,\rho}(r)(\frac{\delta\Gamma_1}{\Gamma_1})_{int}\,dr\\
-&+I_{nl}\expy{-1}F_{Surf}(\omega_{nl})
-\end{align*}
+\begin{equation*}
+\frac{\delta\omega_{nl}}{\omega_{nl}}=\int_0^RK^{nl}_{u,Y}(r)\frac{\delta_ru}{u}(r)\,dr+\int K^{nl}_{Y,u}(r)\delta_rY\,dr+I_{nl}\expy{-1}F_{Surf}
+\end{equation*}
 
 \end{block}
 
 \end{frame}
+
+\begin{frame}{Tecniche d'inversione}
+
+\begin{block}{RLS}
+
+\begin{equation*}
+Y=\sum_{\alpha=1}^N(\frac{\delta\omega_{obs}-\delta\omega_{fit}}{\sigma})^2_{\alpha}+\alpha N\int_0^1(x\TDof{x}\frac{\Delta f}{f})^2\,dx
+\end{equation*}
+
+\end{block}
+
+\begin{block}{Subtractive Optimally Localized Averaging.}
+
+\begin{equation*}
+\sum_ic_i(r_0)\frac{\delta\omega_i}{\omega_i}=\int_0^R\sum_ic_i(r_0)K^i(r)\frac{\delta f(r)}{f(r)}\,dr=\exv{\frac{\delta f(r_0)}{f(r_0)}}
+\end{equation*}
+
+I coefficienti $c_i(r_0)$ sono determina minimizzando la funzione
+\begin{equation*}
+\int_0^R[\mathcal{K}(r_0,r)-\mathcal{T}(r_0,r)]^2\,dr+\mu\sum_{ij}E_{ij}c_i(r_0)c_j(r_0)
+\end{equation*}
+
+\end{block}
+
+\end{frame}
+
+\begin{wordonframe}{Tecniche d'inversione}
+
+Usando la tecnica del minimo $\chi^2$ regolarizzato si parametrizza la funzione incognita $\frac{\delta f}{f}$, tramite funzioni di base opportune, determinata minimizzando:
+
+N indica il numero totale di modi $\alpha$, $N_p$ il numero di parametri da determinare, $\Delta\omega_{fit}$, ricavato tramite eq:variational, contiene la funzione incognita; il secondo addendo del lato destro di eq:minimizerls \'e introdotto per ridurre oscillazioni indesiderate nel risultato dell'inverisone con $\alpha$ parametro di regolarizzazione.
+
+Determino dei coefficienti $c_i(r_0)$ tali che \[\sum c_i(r_0)\frac{\delta\omega_i}{\omega_i}\] fornisca una media del valore di $\frac{\delta f(r)}{f(r)}$ in $r=r_0$:
+
+La larghezza finita di $\mathcal{K}(r_0,r)$ determina il valor medio di $\frac{\delta f}{f}$ in intorno di $r_0$ e ci\'o causa una differenza sistematica  dal valore effettivo in $r_0$: per $c_s$ l'errore \'e minore del $0.03\%$ e le regioni pi\'u afflitte sono la base della zona convettiva, per la rapida variazione di $\frac{\delta c_s}{c_s}$ e la regione centrale, per il ridotto numero di modi che penetrano in questar zona.
+
+Illustro la tecnica SOLA per determinare $\frac{\delta_rc^2}{c^2}$: si formano delle combinazioni lineari di $\frac{\Lvar{\omega_i}}{\omega_i}$ pesate da coefficienti $c_i(r_0)$ tali che $\frac{\Lvar{c^2}}{c^2}$ sia centrato attorno $r_0$ e che gli altri termini in \eqref{eq:invstructure} siano soppressi, queste compongo un averaging kernel $\mathcal{K}_{c^2,\rho}(r_0,r)=\sum_ic_i(r_0)K_{c^2,\rho}^i(r)$, con $\int_0^R\mathcal{K}(r_0,r)\,dr=1$.
+
+
+Determino i coefficienti minimizzando l'espressione
+\begin{equation}
+\int_0^R[\mathcal{K}_{c^2,\rho}(r_0,r)-\mathcal{T}(r_0,r)]^2\,dr+\beta\int_0^R\mathcal{L}_{\rho,c^2}(r_0,r)\,dr+\mu\sum_i\sigma_ic_i(r_0)c_j(r_0)
+\end{equation}
+dove il kernel cross-term
+\begin{equation}
+\mathcal{L}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)
+\end{equation}
+controlla i contributi indesiderati di $\frac{\delta_r\rho}{\rho}$.
+
+\end{wordonframe}
 
 \begin{frame}{Accuratezza profilo radiale della velocit\'a del suono}
 
@@ -1088,6 +1455,7 @@ Considero gli effetti di una variazione piccola di L, cio\'e una variazione dell
 
 \begin{wordonframe}{Accuratezza profilo radiale della velocit\'a del suono}
 
+Confronto tra differenze relative nella velocit\'a del suono tra un modello con composizione $\midfrac{Z}{X}=0.023$ (GS98), linea nera, e uno con $\midfrac{Z}{X}=0.018$ (AGSS09), linea rossa. La banda rossa intorno allo zero indica l'errore dovuto alle tecniche di inversione, alle incertezze sulle frequenze e alla residua dipendenza dell'inversione dal modello solare.
 
 \end{wordonframe}
 
@@ -1138,6 +1506,7 @@ columns={comp,ZX,RCZ,YCZ,Y0},
 
 \begin{wordonframe}{Accuratezza posizione base zona convettiva e abbondanza elio}
 
+Riassumo le caratteristiche della zona convettiva, ricavati tramite inversione e le confronto con quelle di modelli con diversa composizione. Le differenze nel profilo della velocit\'a del suono sono  correlate con la posizione della zona convettiva poich\'e il modello non riproduce correttamente il gradiente termico.
 
 \end{wordonframe}
 
