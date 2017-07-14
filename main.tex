@@ -202,7 +202,7 @@
 
 \begin{wordonframe}{Intro MSS e i suoi modi}
 
-In questa tesina mi sono accupato dei modi normali gravo-acustici solari. Le frequenze dei modi normali sono determinati dal profilo radiale della densit\'a e velocit\'a del suono quindi l'osservazione di un gran numero di frequenze impone vincoli stringenti al modello solare, determinato in maniera da riprodurre $T_e$ e luminosit\'a.
+In questa tesina mi sono occupato dei modi normali gravo-acustici solari. Le frequenze dei modi normali sono determinati dal profilo radiale della densit\'a e velocit\'a del suono quindi l'osservazione di un gran numero di frequenze impone vincoli stringenti al modello solare, determinato in maniera da riprodurre $T_e$ e luminosit\'a poich\'e i modi hanno un comportamento spaziale distinto.
 
 \end{wordonframe}
 
@@ -237,9 +237,9 @@ Da \cite{christensen1985speed}.}
 
 \begin{wordonframe}{Intro modi gravo-acustici-risonanza-MSS}
 
-L'eliosismologia nasce all'inizio degli anni ''60 quando Leighton e collaboratori osservarono un comportamento oscillatorio nell'atmosfera solare con periodo attorno ai 5 minuti.
+Lo studio delle oscillazioni solari come disciplina \'e l'eliosismologia. L'eliosismologia nasce all'inizio degli anni ''60 quando Leighton e collaboratori osservarono un comportamento oscillatorio nell'atmosfera solare con periodo attorno ai 5 minuti.
 
-I modi hanno natura prevalentemente acustica e la relazione di dispersione per onde acustiche determina regioni di diversa profondit\'a al di sotto della superficie solare nelle quali sono confinati onde con diverso vettore d'onda orizzontale. Le frequenze dei modi sono determinate dalla velocit\'a del suono in queste regioni imponendo che  la cavit\'a contenga radialmente un numero semi-intero di lunghezze d'onda. \'E possibile quindi determinare il profilo radiale della velocit\'a del suono dalle frequenze dei modi osservate.
+Questo comportamento \'e dovuto alla sovrapposizione di onde acustiche instappolate in cavit\'a risonanti a diversa profondit\'a a seconda delle grandezze caratteristiche orizzontale. Le frequenze dei modi sono determinate dalla velocit\'a del suono in queste regioni imponendo che  la cavit\'a contenga radialmente un numero semi-intero di lunghezze d'onda. \'E possibile quindi determinare il profilo radiale della velocit\'a del suono dalle frequenze dei modi osservate.
 
 Il profilo radiale della velocit\'a del suono risultante  mostra la validit\'a del modello solare (detto standard per contrasto con i modelli pensati per risolvere il problema dei neutrini solari.)
 
@@ -640,7 +640,7 @@ e in condizioni stazionarie il momento trasferito tramite urti con le altre spec
 
 \begin{columns}
 
-\begin{column}{0.7\textwidth}
+\begin{column}{0.65\textwidth}
 
 \begin{block}{Sequenza principale}
 \[4\cel{H}{1}{}{}\to\cel{He}{4}{}{}+2\APelectron+2\Pnue\]
@@ -732,7 +732,7 @@ minimum width=25mm,%
 
 \end{column}
 
-\begin{column}{0.3\textwidth}
+\begin{column}{0.35\textwidth}
 
 \begin{block}{Perdite in neutrini (Sole)}
 \begin{tabular}{cc}
@@ -748,7 +748,10 @@ PP3 &$19.17 (28\%)$\\
 
 {\small\begin{tabular}{cc}
 &$\tau(\si{\year})$\\
-$\cel{B}{8}{}{}\cel{Be}{8}{}{}^*\cel{He}{4}{}{}$&\num{3e-8}\\
+$\cel{H}{1}{}{}(p,e^+\Pnue)\cel{D}{2}{}{}$&\num{8e9}\\
+$\cel{D}{2}{}{}(p,\gamma)\cel{He}{3}{}{}$&\num{4.4e-8}\\
+$\cel{He}{3}{}{}(\cel{He}{3}{}{},2p)\cel{He}{4}{}{}$&\num{2.4e5}\\
+%$\cel{B}{8}{}{}\cel{Be}{8}{}{}^*\cel{He}{4}{}{}$&\num{3e-8}\\
 
 \end{tabular}
 }
@@ -959,7 +962,7 @@ La discontinuit\'a nel gradiente termico alla base della zona convettiva \'e evi
 
 \end{wordonframe}
 
-\begin{frame}{Velocit\'a del suono}
+\begin{frame}{Velocit\'a del suono calcolato tramite MSS}
 
 \begin{figure}[!ht]
 \includegraphics[width=0.9\textwidth]{BP00-cs}
@@ -1124,6 +1127,42 @@ L'energia cinetica del modo $(n,l)$ mediata su un periodo \'e la media temporale
 
 \end{wordonframe}
 
+\begin{frame}{Modello dell'ampiezza superficiale delle oscillazioni}
+
+\begin{columns}
+
+\begin{column}{0.4\textwidth}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[keepaspectratio,width=0.85\textwidth]{modespheomenology}
+\caption{Da \cite{libbrecht1988solar}.}\label{fig:Powerspectraldensity}
+\end{figure}
+
+\end{column}
+
+\begin{column}{0.6\textwidth}
+
+\begin{align*}
+&I_{nl}[\TtwoDy{t}{A_{nl}}+\Gamma_{nl}\TDy{t}{A_{nl}}+\omega_0^2A_{nl}]=f(t)\\
+&P(\omega)\propto P_LP_f=\frac{\midfrac{\Gamma_{nl}}{2\pi}}{(\omega-\omega_0)^2+\midfrac{\Gamma_{nl}}{4}}P_f\\
+&\bar{E}_{nl}=I_{nl}\exv{V_{nl}^2}=I_{nl}\frac{1}{T_{obs}}\int_{-\infty}^{\infty}|V(\nu)|^2\,d\nu\propto I_{nl}\Gamma_{nl}A_{nl}\\
+&\TDy{t}{E_{nl}}+\Gamma_{nl}E_{nl}=\exv{\dvec{\xi}_{nl}\cdot\vec{F}}\\
+&\bar{E}_{nl}=\frac{\exv{\dvec{\xi}_{nl}\cdot\vec{F}}}{\Gamma_{nl}}
+\end{align*}
+%dove $\exv{\dvec{\xi}_{nl}\cdot\vec{F}}$ \'e il lavoro della forzante mediato su un periodo.
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+\begin{wordonframe}{Ampiezza delle oscillazioni}
+
+L'energia dell'oscillatore varia su tempi scala proporzionali a $\invers{\Gamma}_{nl}$ attorno al valor medio $\bar{E}_{nl}$:
+
+\end{wordonframe}
 
 \begin{frame}{Effetti delle regioni superficiali sulle frequenze dei modi}
 
@@ -1268,42 +1307,7 @@ La condizione di risonanza radiale \'e nota come legge di Duvall per modi p
 
 \end{wordonframe}
 
-\begin{frame}{Modello dell'ampiezza superficiale delle oscillazioni}
 
-\begin{columns}
-
-\begin{column}{0.4\textwidth}
-
-\begin{figure}[!ht]
-\centering
-\includegraphics[keepaspectratio,width=0.85\textwidth]{modespheomenology}
-\caption{Da \cite{libbrecht1988solar}.}\label{fig:Powerspectraldensity}
-\end{figure}
-
-\end{column}
-
-\begin{column}{0.6\textwidth}
-
-\begin{align*}
-&I_{nl}[\TtwoDy{t}{A_{nl}}+\Gamma_{nl}\TDy{t}{A_{nl}}+\omega_0^2A_{nl}]=f(t)\\
-&P(\omega)\propto P_LP_f=\frac{\midfrac{\Gamma_{nl}}{2\pi}}{(\omega-\omega_0)^2+\midfrac{\Gamma_{nl}}{4}}P_f\\
-&\bar{E}_{nl}=I_{nl}\exv{V_{nl}^2}=I_{nl}\frac{1}{T_{obs}}\int_{-\infty}^{\infty}|V(\nu)|^2\,d\nu\propto I_{nl}\Gamma_{nl}A_{nl}\\
-&\TDy{t}{E_{nl}}+\Gamma_{nl}E_{nl}=\exv{\dvec{\xi}_{nl}\cdot\vec{F}}\\
-&\bar{E}_{nl}=\frac{\exv{\dvec{\xi}_{nl}\cdot\vec{F}}}{\Gamma_{nl}}
-\end{align*}
-%dove $\exv{\dvec{\xi}_{nl}\cdot\vec{F}}$ \'e il lavoro della forzante mediato su un periodo.
-
-\end{column}
-
-\end{columns}
-
-\end{frame}
-
-\begin{wordonframe}{Ampiezza delle oscillazioni}
-
-L'energia dell'oscillatore varia su tempi scala proporzionali a $\invers{\Gamma}_{nl}$ attorno al valor medio $\bar{E}_{nl}$:
-
-\end{wordonframe}
 
 \begin{frame}{Osservazione delle oscillazioni della fotosfera}
 
@@ -1324,6 +1328,8 @@ L'energia dell'oscillatore varia su tempi scala proporzionali a $\invers{\Gamma}
 \end{frame}
 
 \begin{wordonframe}{Forma dei picchi nella PSD}
+
+(modi basso l: N=13, n=21)
 
 Le frequenze dei modi sono determinate principalmente misurando lo spostamento doppler di opportune righe di assorbimento in atmosfera ($Ca \lambda=6439 A 129 Km$, $K: 7699 A, 250Km$, $Ni I: 6708 A,300 Km$, $Na D1/D2: 5690 A, 500 Km$). Per identificare modi con $l>2$ \'e necessaria risolouzione spaziale e la proiezione di un'opportuna maschera $W_{l_0m_0}$ isoler\'a il modo con dipendenza spaziale descritta da $Y_{l_0m_0}$. La serie temporale del segnale doppler viene analizzata in termini di componenti armoniche. Le frequenze sono quindi determinate fittando i picchi dello spettro secondo una forma lorentziana  giustificata assumendo che l'ampiezza superficiale dei modi obbedisca all'equazione del moto di un'oscillatore armonico smorzato di frequenza naturale data dalla frequenza del modo e forzante stocastica.
 
@@ -1346,13 +1352,21 @@ La PSD $P_T(\nu)=\frac{1}{T_{obs}}|X_T(\nu)|^2$ contiene oltre al picco principa
 
 \begin{frame}{Effetto di perturbazioni nell'equazione del moto sulle frequenze}
 
-\begin{block}{Equazione del moto perturbato e variazioni nella struttura di equilibrio}
+\begin{block}{Problema agli autovalori hermitiano}
 
 \begin{align*}%\label{eq:EOMrhoc}%Unno89
 &L(\vec{\xi})=\frac{1}{\rho_0}\nabla p'-\vec{g}'-\frac{\rho'}{\rho_0}\vec{g}_0\\
 &\rho_0L(\xi)=\nabla(c_s^2\rho\scap{\nabla}{\xi}+\nabla P\cdot\vec{\xi})-\vec{g}_0\nabla\cdot(\rho_0\vec{\xi})-G\rho_0\nabla(\int_V\frac{\nabla\cdot(\rho_0\vec{\xi})\,d^3r'}{|\vec{r}-\vec{r}'|})\\
-&(L+\Lvar{L})(\xi+\Lvar{\xi})=-(\omega+\Lvar{\omega})^2(\xi+\Lvar{\xi})&\label{eq:EMvar}
+&L(\xi)=-\omega^2\xi
 \end{align*}
+
+\end{block}
+
+\begin{block}{Variazioni nell'equazione del moto perturbato}
+
+\begin{equation*}
+(L+\Lvar{L})(\xi+\Lvar{\xi})=-(\omega+\Lvar{\omega})^2(\xi+\Lvar{\xi})%&\label{eq:EMvar}
+\end{equation*}
 
 \end{block}
 
@@ -1366,7 +1380,7 @@ La PSD $P_T(\nu)=\frac{1}{T_{obs}}|X_T(\nu)|^2$ contiene oltre al picco principa
 
 \begin{wordonframe}{Principio variazionale}
 
-Definisco l'operatore lineare L che ogisce sullo spostamento perturbato $\xi$ definito dall'equazione del moto perturbato.
+Definisco l'operatore lineare L riscrivendo l'equazione del moto perturbato in termini di $\vec{\xi}$ e delle grandezze di equilibrio. 
 
 Chandrasekhar ha dimostrato che L definisce un problema agli autovalori hermitiano per condizioni alla superfice stellare di pressione e densit\'a nulle.
 
@@ -1394,10 +1408,19 @@ Considero gli effetti di una variazione piccola di L, cio\'e una variazione dell
 
 \end{frame}
 
+\begin{wordonframe}{Variazioni delle grandezze d'equilibrio $(c^2,\rho)$ e $(u,Y)$}
+
+Considero variazioni nel profilo radiale di $(c^2,\rho)$: posso esprimere la variazione nelle frequenze dei modi usando il principio variazionale in termini delle variazioni in densit\'a e pressione tramite le funzioni kernel dipendenti dalle autofunzioni dei modi.
+
+Analogamente  esprimo le differenze nelle frequenze dei modi in termini di variazioni al profilo radiale di $(u,Y)$ ma devo esplicitare la dipendenza di $\Gamma_1$ da Y usando l'equazione di stato.
+
+\end{wordonframe}
+
 \begin{frame}{Tecniche d'inversione}
 
 \begin{block}{RLS}
 
+I parametri sono determinati minimizzando:
 \begin{equation*}
 Y=\sum_{\alpha=1}^N(\frac{\delta\omega_{obs}-\delta\omega_{fit}}{\sigma})^2_{\alpha}+\alpha N\int_0^1(x\TDof{x}\frac{\Delta f}{f})^2\,dx
 \end{equation*}
@@ -1441,21 +1464,6 @@ dove il kernel cross-term
 \mathcal{L}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)
 \end{equation}
 controlla i contributi indesiderati di $\frac{\delta_r\rho}{\rho}$.
-
-\end{wordonframe}
-
-\begin{frame}{Accuratezza profilo radiale della velocit\'a del suono}
-
-\begin{figure}[!ht]%{r}{0.5\textwidth}
-        \includegraphics[width=0.8\textwidth,keepaspectratio]{deltacwu}
-        \caption{Da \cite{villante2014chemical}.}\label{fig:deltacwu}
-\end{figure}
-
-\end{frame}
-
-\begin{wordonframe}{Accuratezza profilo radiale della velocit\'a del suono}
-
-Confronto tra differenze relative nella velocit\'a del suono tra un modello con composizione $\midfrac{Z}{X}=0.023$ (GS98), linea nera, e uno con $\midfrac{Z}{X}=0.018$ (AGSS09), linea rossa. La banda rossa intorno allo zero indica l'errore dovuto alle tecniche di inversione, alle incertezze sulle frequenze e alla residua dipendenza dell'inversione dal modello solare.
 
 \end{wordonframe}
 
@@ -1506,9 +1514,33 @@ columns={comp,ZX,RCZ,YCZ,Y0},
 
 \begin{wordonframe}{Accuratezza posizione base zona convettiva e abbondanza elio}
 
-Riassumo le caratteristiche della zona convettiva, ricavati tramite inversione e le confronto con quelle di modelli con diversa composizione. Le differenze nel profilo della velocit\'a del suono sono  correlate con la posizione della zona convettiva poich\'e il modello non riproduce correttamente il gradiente termico.
+Confronto le caratteristiche della zona convettiva ricavati tramite inversione e  ricavate tramite modelli con diversa composizione.
+
+I modelli con una minore metallicit\'a hanno una opacit\'a minore nella zona radiativa e quindi un minore gradiente termico a parit\'a di flusso (temperatura centrale minore).
+
+Le differenze quadratiche medie nel profilo della velocit\'a del suono sono  correlate con corretta predizione della posizione della zona convettiva: nel caso non si verifiche il modello non riproduce correttamente il gradiente termico ...
 
 \end{wordonframe}
+
+\begin{frame}{Accuratezza profilo radiale della velocit\'a del suono}
+
+\begin{figure}[!ht]%{r}{0.5\textwidth}
+        \includegraphics[width=0.8\textwidth,keepaspectratio]{deltacwu}
+        \caption{Da \cite{villante2014chemical}.}\label{fig:deltacwu}
+\end{figure}
+
+\end{frame}
+
+\begin{wordonframe}{Accuratezza profilo radiale della velocit\'a del suono}
+
+Le differenze quadratiche medie nel profilo della velocit\'a del suono sono  correlate con corretta predizione della posizione della zona convettiva: nel caso non si verifiche il modello non riproduce correttamente il gradiente termico ...
+
+Questa figura rappresenta le differenze nel profilo radiale della velocit\'a del suono risultanti dall'inversione delle frequenze osservate per un modello con composizione $\midfrac{Z}{X}=0.023$ (GS98), linea rossa, e uno con $\midfrac{Z}{X}=0.018$ (AGSS09), linea nera.
+
+La banda rossa intorno allo zero che rappresenta il profilo effettivo della velocit\'a del suono nel Sole indica l'errore dovuto alle tecniche di inversione, alle incertezze sulle frequenze e alla residua dipendenza dell'inversione dal modello solare.
+
+\end{wordonframe}
+
 
 % SOS
 %\part{SSM (sos)}
