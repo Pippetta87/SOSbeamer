@@ -84,7 +84,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\title{Modi normali di oscillazione del Sole (Presentazione)}
+\title{Modi normali di oscillazione del Sole}
 
 % A subtitle is optional and this may be deleted
 \subtitle{Struttura interna e modi di oscillazione}
@@ -200,54 +200,21 @@
   \titlepage
 \end{frame}
 
-\begin{wordonframe}{Intro MSS e i suoi modi}
-
-In questa tesina mi sono occupato dei modi normali gravo-acustici solari. Le frequenze dei modi normali sono determinati dal profilo radiale della densit\'a e velocit\'a del suono quindi l'osservazione di un gran numero di frequenze impone vincoli stringenti al modello solare, determinato in maniera da riprodurre $T_e$ e luminosit\'a poich\'e i modi hanno un comportamento spaziale distinto.
-
-\end{wordonframe}
-
-
 % Section and subsections will appear in the presentation overview
 % and table of contents.
 %\frame{\tableofcontents[onlyparts]}
 
-\begin{frame}[label={intro}]{Studio delle oscillazioni solari}{Argomenti trattati nella tesina}
-
-Lo studio dei modi adiabatici permette di valutare l'accuratezza del MSS.
-
-\begin{equation*}
-c_s^2=\Gamma_1\frac{P}{\rho}
-\end{equation*}
-
-%\begin{columns}
-%\begin{column}{0.6\textwidth}
-\begin{figure}[!ht]
-\includegraphics[height=0.45\textheight,keepaspectratio]{dsoundspeedduvall} 
-
-%\end{column}
-%\begin{column}{0.4\textwidth}
-\captionof{figure}{%Differenza relativa del profilo di $c_s$ (determinata invertendo \eqref{eq:analinversionc}) per frequenze dei modi calcolate con MSS e osservate. La differenza relativa \'e minore del $5\%$.
-Da \cite{christensen1985speed}.}
-\label{dsoundduvall}
-\end{figure}
-%\end{column}
-%\end{columns}
+\begin{frame}[label={intro}]{Modi di oscillazione della struttura solare}
 
 \end{frame}
 
-\begin{wordonframe}{Intro modi gravo-acustici-risonanza-MSS}
+\begin{wordonframe}{Intro MSS e i suoi modi}
 
-Lo studio delle oscillazioni solari come disciplina \'e l'eliosismologia. L'eliosismologia nasce all'inizio degli anni ''60 quando Leighton e collaboratori osservarono un comportamento oscillatorio nell'atmosfera solare con periodo attorno ai 5 minuti.
-
-Questo comportamento \'e dovuto alla sovrapposizione di onde acustiche instappolate in cavit\'a risonanti a diversa profondit\'a a seconda delle grandezze caratteristiche orizzontale. Le frequenze dei modi sono determinate dalla velocit\'a del suono in queste regioni imponendo che  la cavit\'a contenga radialmente un numero semi-intero di lunghezze d'onda. \'E possibile quindi determinare il profilo radiale della velocit\'a del suono dalle frequenze dei modi osservate.
-
-Il profilo radiale della velocit\'a del suono risultante  mostra la validit\'a del modello solare (detto standard per contrasto con i modelli pensati per risolvere il problema dei neutrini solari.)
-
-(Errore sistematico dovuto alle approssimazione di Cowling intorno al $2.5\%$)
-
-Il modello MSS si basa su leggi di conservazione, valide per qualsiasi stella: le prime 3 equazioni usate per determinare la struttura stellare ...
+In questa tesina mi sono occupato dei modi normali gravo-acustici solari: oscillazioni causate da perturbazioni nella densit\'a e nella pressione e le cui caratteristiche sono determinate dal profilo radiale della densit\'a e velocit\'a del suono. \'E possibile osservare un gran numero di frequenze che impone vincoli stringenti al modello solare.
 
 \end{wordonframe}
+
+
 
 \part{Modello solare e osservabili sismologiche}\label{part:MSS}
 \frame{\partpage}
@@ -308,7 +275,13 @@ Deviazioni da forma sferica trascurabili (campi magnetici, rotazione)
 
 \begin{wordonframe}{Simmetria sferica, conservazione massa, equilibrio idrostatico, conservazione energia interna (PRIMA LEGGE)}
 
-Il modello MSS si basa su leggi di conservazione, valide per qualsiasi stella: le prime 3 equazioni usate per determinare la struttura stellare ... sono un caso particolare della conservazione della massa, dell'impulso, dell'energia interna. I tempi scala di evoluzione nucleare sono molto maggiori dei tempi caratteristici dinamici e termici quindi si assume equilibrio idrostatico e che calore netto trasferito per uni\'a di massa sia nullo. Considero le deviazioni dalla simmetria sferica (rotazione campo magnetico) come perturbazioni, quindi le trascuro nella descrizione della struttura di equilibrio. Le prime 3 equazioni della struttura solare quindi
+Il modello MSS si basa su leggi di conservazione, valide per qualsiasi stella: le prime 3 equazioni usate per determinare la struttura stellare ... sono un caso particolare della conservazione della massa, dell'impulso, dell'energia interna. 
+
+I tempi di evoluzione dinamici sono molto minori dei tempi di evoluzione nucleari e radiativi quindi si assume la condizione di equilibrio idrostatico.
+
+I tempi di evoluzione nucleari sono molto pi\'u lenti di quelli termici quindi assumo che il bilancion netto di calore per sia nullo per ogni elemento del gas.
+
+Considero le deviazioni dalla simmetria sferica (rotazione campo magnetico) come perturbazioni, quindi le trascuro nella descrizione della struttura di equilibrio. Le prime 3 equazioni della struttura solare quindi
 
 \begin{align*}
 &\TDy{r}{m}=4\pi r^2\rho\\
@@ -525,7 +498,7 @@ L'efficienza delle regioni convettive esterne \'e quindi un parametro libero det
 %\begin{equation*}
 %\frac{1}{r_D^2}=\frac{4\pi e^2}{kT}\sum_Z Z^2\overline{n}_Z=\frac{4\pi e^2}{kT}N_A\sum_{i}(Z_i^2+Z_i)\frac{\rho X_i}{A_i}
 %\end{equation*}
-\[\Gamma_1=\left(\TDly{\rho}{P}\right)_{Ad}\]
+\[\Gamma_1=\left(\PDly{\rho}{P}\right)_s\]
 
 \begin{figure}[!ht]
         \includegraphics[width=0.9\textwidth,keepaspectratio]{gamma1eos}
@@ -651,157 +624,7 @@ e in condizioni stazionarie il momento trasferito tramite urti con le altre spec
 
 \end{wordonframe}
 
-\begin{frame}{Catena PP}
 
-\begin{block}{Contributo della fusione di nuclei $(i,j)$ alla produzione di energia per grammo}
-
-\begin{align*}
-&\epsilon_{ij}=\frac{1}{1+\delta_{ij}}Q_{ij}\frac{\rho N_A^2X_iX_j}{{A_iA_j}}\exv{\sigma v}_{ij}%\label{eq:energyrate}
-\end{align*}
-\end{block}
-
-
-\begin{columns}
-
-\begin{column}{0.65\textwidth}
-
-\begin{block}{Fusione idrogeno in elio: catena PP}
-
-\setmuskip{\thinmuskip}{0mu}\setmuskip{\medmuskip}{0mu}
-\tikzset{->-/.style={decoration={
-  markings,
-  mark=at position .5 with {\arrow{>}}},postaction={decorate}},
--->/.style={decoration={
-  markings,
-  mark=at position .8 with {\arrow{>}}},postaction={decorate}},
-box/.style={%
-%draw,
-minimum width=25mm,%
-    minimum height=6mm,%
-    align=center}
-}
-
-\centering
-\begin{tikzpicture}
-
-\begin{scope}[scale=0.6,transform shape]
-\node[box] (pp) at (0,0) {$\Pproton{+}\Pproton{\to}\cel{H}{2}{}{}{+}\Pnue{+}\APelectron$};%%pp
-\node[box,right=2cm of pp]  (pep) {$\Pproton{+}\Pproton{+}\Pelectron{\to}\cel{H}{2}{}{}+\Pnue$};%%pep
-\coordinate[below=0.3cm of pp] (bpp);
-\node[left] at (bpp) {$99.76\%$};
-\coordinate[below=0.3cm of pep] (bpep);
-\node[right] at (bpep) {$0.24\%$};
-
-\coordinate[] (ttriton) at ($(bpp)!0.5!(bpep)$);
-\draw[->-] (pp)--(bpp)--(ttriton);
-\draw[->-] (pep)--(bpep)--(ttriton);
-\node[box,below=0.3cm of ttriton] (triton) {$\Pproton+\cel{H}{2}{}{}\to\cel{He}{3}{}{}+\Pphoton$};%%triton
-\coordinate[below=0.3cm of triton] (btriton);
-\draw[-->] (ttriton)--(triton.north);
-\draw[->-] (triton.south)--(btriton.north);
-\coordinate[left=2.5cm of btriton] (tpp1);
-\node[left] at (tpp1) {$83.3\%$};
-\coordinate[right=2.0cm of btriton] (tberillium7);
-\node[above] at (tberillium7) {$16.7\%$};
-\coordinate[right=6.5cm of btriton] (thep);
-\node[right] at (thep) {$\num{2e-5}\%$};
-
-\draw[] (btriton)--(tpp1);
-\draw[] (btriton)--(tberillium7);
-\draw[] (tberillium7)--(thep);
-\node[box,below=0.5cm of tpp1,label={[xshift=0.1cm, yshift=-1.5cm]PPI}]  (pp1) {$\cel{He}{3}{}{}+\cel{He}{3}{}{}\to\cel{He}{4}{}{}+2\Pproton$};%%pp1
-\node[box,below=0.5cm of tberillium7]  (berillium7) {$\cel{He}{3}{}{}+\cel{He}{4}{}{}\to\cel{Be}{7}{}{}+\Pphoton$};%%berillium7
-\node[box,below=0.5cm of thep,label={[xshift=-0.1cm, yshift=-1.5cm]HEP}]  (hep) {$\cel{He}{3}{}{}+\Pproton\to\cel{He}{4}{}{}+\APelectron+\Pnue$};%%hep
-
-\draw[->-] (tpp1)--(pp1.north);
-\draw[->-] (tberillium7)--(berillium7.north);
-\draw[-->] (thep)--(hep.north);
-
-\coordinate[below=0.3cm of berillium7] (bberillium7);
-\coordinate[left=1.5cm of bberillium7] (tlithium7);
-\node[left] at (tlithium7) {$99.88\%$};
-\coordinate[right=2.0cm of bberillium7] (tboron8);
-\node[right] at (tboron8) {$0.12\%$};
-
-\node[box,below=0.5cm of tlithium7]  (li7) {$\cel{Be}{7}{}{}+\Pelectron\to\cel{Li}{7}{}{}+\Pnue$};%%Li7
-\node[box,below=0.5cm of li7,label={[xshift=0.1cm, yshift=-1.5cm]PPII}] (pp2) {$\cel{Li}{7}{}{}+\Pproton\to2\cel{He}{4}{}{}$};%% PP2
-
-\node[box,below=0.5cm of tboron8]  (b8) {$\cel{Be}{7}{}{}+\Pproton\to\cel{B}{8}{}{}+\Pphoton$};%%B8
-\node[box,below=0.25cm of b8]  (be7) {$\cel{B}{8}{}{}\to\cel{Be}{8}{}{}^*+\APelectron+\Pnue$};%%Be8*
-\node[box,below=0.25cm of be7,label={[xshift=0.1cm, yshift=-1.5cm]PPIII}]  (pp3) {$\cel{Be}{8}{}{}^*\to2\cel{He}{4}{}{}$};%%pp3
-
-\draw[->-] (berillium7.south)--(bberillium7);
-\draw[] (bberillium7)--(tlithium7);
-\draw[] (bberillium7)--(tboron8);
-
-\draw[->-] (tlithium7)--(li7.north);
-\draw[->-] (li7.south)--(pp2.north);
-
-\draw[->-] (tboron8.south)--(b8.north);
-\draw[->-] (b8.south)--(be7.north);
-\draw[->-] (be7.south)--(pp3.north);
-\end{scope}
-
-\node[] at (2,-4.5) {\parbox{0.8\textwidth}{\captionof{figure}{Da \cite{adelberger2011solar}.}}};
-
-\end{tikzpicture}
-
-\end{block}
-
-\end{column}
-
-\begin{column}{0.35\textwidth}
-
-\begin{block}{Perdite in neutrini (Sole)}
-\begin{tabular}{cc}
-Ramo&$Q_{eff} (MeV)$\\
-PP1&$26.2 (2\%)$\\
-PP2&$25.66  (4\%)$\\
-PP3 &$19.17 (28\%)$\\
-\end{tabular}
-
-\end{block}
-
-\begin{block}{Tempo di vita}
-
-{\small\begin{tabular}{cc}
-&$\tau(\si{\year})$\\
-$\cel{H}{1}{}{}(p,e^+\Pnue)\cel{D}{2}{}{}$&\num{8e9}\\
-$\cel{D}{2}{}{}(p,\gamma)\cel{He}{3}{}{}$&\num{4.4e-8}\\
-$\cel{He}{3}{}{}(\cel{He}{3}{}{},2p)\cel{He}{4}{}{}$&\num{2.4e5}\\
-%$\cel{B}{8}{}{}\cel{Be}{8}{}{}^*\cel{He}{4}{}{}$&\num{3e-8}\\
-
-\end{tabular}
-}
-
-\end{block}
-
-\end{column}
-
-\end{columns}
-
-%\begin{block}{Tempi reazione e energia efficace prodotta}
-%\begin{tabular}{c|c|}
-%\hline
-%Reazione & $t_r$ \\
-%\hline
-%$^1H+^1H\to^2H+\APelectron+\Pnue$ & $7*10^9\,yr$\\
-%$^2H+^1H\to ^3He+\gamma$ & $4 s$\\
-%$^3He+^3He\to^4He+2^1H$ & $4*10^5\,yr$\\
-%\hline
-%\end{tabular}
-%\end{block}
-
-\end{frame}
-
-\begin{wordonframe}{Catena PP}
-
-nella fase di sequenza principale la reazione efficace \'e la conversione di 4 nuclei di idrogeno in elio + 2 positroni e 2 neutrini.
-
-Nel centro solare circa il $99\%$ della di $\epsilon$ \'e prodotto dalla catena PP.
-Questa figura descrive le reazioni nucleari per condizioni del centro solare. 
-
-\end{wordonframe}
 
 %\section{Equazioni struttura stellare}
 
@@ -1188,6 +1011,11 @@ L'energia cinetica del modo $(n,l)$ mediata su un periodo \'e la media temporale
 
 \begin{wordonframe}{Forma dei picchi nella PSD}
 
+Lo studio delle oscillazioni solari come disciplina \'e l'eliosismologia. L'eliosismologia nasce all'inizio degli anni ''60 quando Leighton e collaboratori osservarono un comportamento oscillatorio nell'atmosfera solare con periodo attorno ai 5 minuti.
+
+Questo comportamento \'e dovuto alla sovrapposizione di onde acustiche instappolate in cavit\'a risonanti a diversa profondit\'a a seconda delle grandezze caratteristiche orizzontale. Le frequenze dei modi sono determinate dalla velocit\'a del suono in queste regioni imponendo che  la cavit\'a contenga radialmente un numero semi-intero di lunghezze d'onda. \'E possibile quindi determinare il profilo radiale della velocit\'a del suono dalle frequenze dei modi osservate.
+
+
 (modi basso l: N=13, n=21)
 
 Le frequenze dei modi sono determinate principalmente misurando lo spostamento doppler di opportune righe di assorbimento in atmosfera ($Ca \lambda=6439 A 129 Km$, $K: 7699 A, 250Km$, $Ni I: 6708 A,300 Km$, $Na D1/D2: 5690 A, 500 Km$). Per identificare modi con $l>2$ \'e necessaria risolouzione spaziale e la proiezione di un'opportuna maschera $W_{l_0m_0}$ isoler\'a il modo con dipendenza spaziale descritta da $Y_{l_0m_0}$. La serie temporale del segnale doppler viene analizzata in termini di componenti armoniche. Le frequenze sono quindi determinate fittando i picchi dello spettro secondo una forma lorentziana  giustificata assumendo che l'ampiezza superficiale dei modi obbedisca all'equazione del moto di un'oscillatore armonico smorzato di frequenza naturale data dalla frequenza del modo e forzante stocastica.
@@ -1387,11 +1215,39 @@ Contributo non-adiabatico ($\alpha(\omega)$): differenze dovute a effetti non ad
 
 \frame{\partpage}
 
-%\begin{frame}{Argomenti}
-%  \tableofcontents[part=3,hideallsubsections%,pausesections
-%  ]
-% You might wish to add the option [pausesections]
-%\end{frame}
+
+\begin{frame}[]{Inversione assoluta}
+
+
+\begin{equation*}
+c_s^2=\Gamma_1\frac{P}{\rho}
+\end{equation*}
+
+%\begin{columns}
+%\begin{column}{0.6\textwidth}
+\begin{figure}[!ht]
+\includegraphics[height=0.45\textheight,keepaspectratio]{dsoundspeedduvall} 
+
+%\end{column}
+%\begin{column}{0.4\textwidth}
+\captionof{figure}{%Differenza relativa del profilo di $c_s$ (determinata invertendo \eqref{eq:analinversionc}) per frequenze dei modi calcolate con MSS e osservate. La differenza relativa \'e minore del $5\%$.
+Da \cite{christensen1985speed}.}
+\label{dsoundduvall}
+\end{figure}
+%\end{column}
+%\end{columns}
+
+\end{frame}
+
+\begin{wordonframe}{Inversione legge di DUvall}
+
+Il profilo radiale della velocit\'a del suono risultante  mostra la validit\'a del modello solare (detto standard per contrasto con i modelli pensati per risolvere il problema dei neutrini solari.)
+
+(Errore sistematico dovuto alle approssimazione di Cowling intorno al $2.5\%$)
+
+Il modello MSS si basa su leggi di conservazione, valide per qualsiasi stella: le prime 3 equazioni usate per determinare la struttura stellare ...
+
+\end{wordonframe}
 
 %\section{Principio variazionale}
 
@@ -1583,6 +1439,160 @@ Le differenze quadratiche medie nel profilo della velocit\'a del suono sono  cor
 Questa figura rappresenta le differenze nel profilo radiale della velocit\'a del suono risultanti dall'inversione delle frequenze osservate per un modello con composizione $\midfrac{Z}{X}=0.023$ (GS98), linea rossa, e uno con $\midfrac{Z}{X}=0.018$ (AGSS09), linea nera.
 
 La banda rossa intorno allo zero che rappresenta il profilo effettivo della velocit\'a del suono nel Sole indica l'errore dovuto alle tecniche di inversione, alle incertezze sulle frequenze e alla residua dipendenza dell'inversione dal modello solare.
+
+\end{wordonframe}
+
+\section{Appendix}
+
+\begin{frame}{Catena PP}
+
+\begin{block}{Contributo della fusione di nuclei $(i,j)$ alla produzione di energia per grammo}
+
+\begin{align*}
+&\epsilon_{ij}=\frac{1}{1+\delta_{ij}}Q_{ij}\frac{\rho N_A^2X_iX_j}{{A_iA_j}}\exv{\sigma v}_{ij}%\label{eq:energyrate}
+\end{align*}
+\end{block}
+
+
+\begin{columns}
+
+\begin{column}{0.65\textwidth}
+
+\begin{block}{Fusione idrogeno in elio: catena PP}
+
+\setmuskip{\thinmuskip}{0mu}\setmuskip{\medmuskip}{0mu}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position .5 with {\arrow{>}}},postaction={decorate}},
+-->/.style={decoration={
+  markings,
+  mark=at position .8 with {\arrow{>}}},postaction={decorate}},
+box/.style={%
+%draw,
+minimum width=25mm,%
+    minimum height=6mm,%
+    align=center}
+}
+
+\centering
+\begin{tikzpicture}
+
+\begin{scope}[scale=0.6,transform shape]
+\node[box] (pp) at (0,0) {$\Pproton{+}\Pproton{\to}\cel{H}{2}{}{}{+}\Pnue{+}\APelectron$};%%pp
+\node[box,right=2cm of pp]  (pep) {$\Pproton{+}\Pproton{+}\Pelectron{\to}\cel{H}{2}{}{}+\Pnue$};%%pep
+\coordinate[below=0.3cm of pp] (bpp);
+\node[left] at (bpp) {$99.76\%$};
+\coordinate[below=0.3cm of pep] (bpep);
+\node[right] at (bpep) {$0.24\%$};
+
+\coordinate[] (ttriton) at ($(bpp)!0.5!(bpep)$);
+\draw[->-] (pp)--(bpp)--(ttriton);
+\draw[->-] (pep)--(bpep)--(ttriton);
+\node[box,below=0.3cm of ttriton] (triton) {$\Pproton+\cel{H}{2}{}{}\to\cel{He}{3}{}{}+\Pphoton$};%%triton
+\coordinate[below=0.3cm of triton] (btriton);
+\draw[-->] (ttriton)--(triton.north);
+\draw[->-] (triton.south)--(btriton.north);
+\coordinate[left=2.5cm of btriton] (tpp1);
+\node[left] at (tpp1) {$83.3\%$};
+\coordinate[right=2.0cm of btriton] (tberillium7);
+\node[above] at (tberillium7) {$16.7\%$};
+\coordinate[right=6.5cm of btriton] (thep);
+\node[right] at (thep) {$\num{2e-5}\%$};
+
+\draw[] (btriton)--(tpp1);
+\draw[] (btriton)--(tberillium7);
+\draw[] (tberillium7)--(thep);
+\node[box,below=0.5cm of tpp1,label={[xshift=0.1cm, yshift=-1.5cm]PPI}]  (pp1) {$\cel{He}{3}{}{}+\cel{He}{3}{}{}\to\cel{He}{4}{}{}+2\Pproton$};%%pp1
+\node[box,below=0.5cm of tberillium7]  (berillium7) {$\cel{He}{3}{}{}+\cel{He}{4}{}{}\to\cel{Be}{7}{}{}+\Pphoton$};%%berillium7
+\node[box,below=0.5cm of thep,label={[xshift=-0.1cm, yshift=-1.5cm]HEP}]  (hep) {$\cel{He}{3}{}{}+\Pproton\to\cel{He}{4}{}{}+\APelectron+\Pnue$};%%hep
+
+\draw[->-] (tpp1)--(pp1.north);
+\draw[->-] (tberillium7)--(berillium7.north);
+\draw[-->] (thep)--(hep.north);
+
+\coordinate[below=0.3cm of berillium7] (bberillium7);
+\coordinate[left=1.5cm of bberillium7] (tlithium7);
+\node[left] at (tlithium7) {$99.88\%$};
+\coordinate[right=2.0cm of bberillium7] (tboron8);
+\node[right] at (tboron8) {$0.12\%$};
+
+\node[box,below=0.5cm of tlithium7]  (li7) {$\cel{Be}{7}{}{}+\Pelectron\to\cel{Li}{7}{}{}+\Pnue$};%%Li7
+\node[box,below=0.5cm of li7,label={[xshift=0.1cm, yshift=-1.5cm]PPII}] (pp2) {$\cel{Li}{7}{}{}+\Pproton\to2\cel{He}{4}{}{}$};%% PP2
+
+\node[box,below=0.5cm of tboron8]  (b8) {$\cel{Be}{7}{}{}+\Pproton\to\cel{B}{8}{}{}+\Pphoton$};%%B8
+\node[box,below=0.25cm of b8]  (be7) {$\cel{B}{8}{}{}\to\cel{Be}{8}{}{}^*+\APelectron+\Pnue$};%%Be8*
+\node[box,below=0.25cm of be7,label={[xshift=0.1cm, yshift=-1.5cm]PPIII}]  (pp3) {$\cel{Be}{8}{}{}^*\to2\cel{He}{4}{}{}$};%%pp3
+
+\draw[->-] (berillium7.south)--(bberillium7);
+\draw[] (bberillium7)--(tlithium7);
+\draw[] (bberillium7)--(tboron8);
+
+\draw[->-] (tlithium7)--(li7.north);
+\draw[->-] (li7.south)--(pp2.north);
+
+\draw[->-] (tboron8.south)--(b8.north);
+\draw[->-] (b8.south)--(be7.north);
+\draw[->-] (be7.south)--(pp3.north);
+\end{scope}
+
+\node[] at (2,-4.5) {\parbox{0.8\textwidth}{\captionof{figure}{Da \cite{adelberger2011solar}.}}};
+
+\end{tikzpicture}
+
+\end{block}
+
+\end{column}
+
+\begin{column}{0.35\textwidth}
+
+\begin{block}{Perdite in neutrini (Sole)}
+\begin{tabular}{cc}
+Ramo&$Q_{eff} (MeV)$\\
+PP1&$26.2 (2\%)$\\
+PP2&$25.66  (4\%)$\\
+PP3 &$19.17 (28\%)$\\
+\end{tabular}
+
+\end{block}
+
+\begin{block}{Tempo di vita}
+
+{\small\begin{tabular}{cc}
+&$\tau(\si{\year})$\\
+$\cel{H}{1}{}{}(p,e^+\Pnue)\cel{D}{2}{}{}$&\num{8e9}\\
+$\cel{D}{2}{}{}(p,\gamma)\cel{He}{3}{}{}$&\num{4.4e-8}\\
+$\cel{He}{3}{}{}(\cel{He}{3}{}{},2p)\cel{He}{4}{}{}$&\num{2.4e5}\\
+%$\cel{B}{8}{}{}\cel{Be}{8}{}{}^*\cel{He}{4}{}{}$&\num{3e-8}\\
+
+\end{tabular}
+}
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+%\begin{block}{Tempi reazione e energia efficace prodotta}
+%\begin{tabular}{c|c|}
+%\hline
+%Reazione & $t_r$ \\
+%\hline
+%$^1H+^1H\to^2H+\APelectron+\Pnue$ & $7*10^9\,yr$\\
+%$^2H+^1H\to ^3He+\gamma$ & $4 s$\\
+%$^3He+^3He\to^4He+2^1H$ & $4*10^5\,yr$\\
+%\hline
+%\end{tabular}
+%\end{block}
+
+\end{frame}
+
+\begin{wordonframe}{Catena PP}
+
+nella fase di sequenza principale la reazione efficace \'e la conversione di 4 nuclei di idrogeno in elio + 2 positroni e 2 neutrini.
+
+Nel centro solare circa il $99\%$ della di $\epsilon$ \'e prodotto dalla catena PP.
+Questa figura descrive le reazioni nucleari per condizioni del centro solare. 
 
 \end{wordonframe}
 
