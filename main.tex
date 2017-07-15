@@ -436,8 +436,8 @@ La quantit\'a $\frac{1}{\kappa_{\nu}}\PDy{T}{B_{\nu}(T)}$ \'e l'opacit\'a media 
 
 \begin{block}{Instabilit\'a convettiva}
 \begin{align*}
-&\nrad{}>\nad{}\\
-&N^2<0
+&N^2<0\\
+&\nrad{}>\nad{}
 \end{align*}
 
 \end{block}
@@ -470,14 +470,15 @@ La quantit\'a $\frac{1}{\kappa_{\nu}}\PDy{T}{B_{\nu}(T)}$ \'e l'opacit\'a media 
 
 \begin{wordonframe}{Instabilit\'a convettiva - Gradiente termico nelle regioni convettive}
 
-La convezione caratterizza le regioni in cui uno spostamento infinitesimo di un blob di gas cresce esponenzialmente a causa della forza di Archimede. 
+La convezione caratterizza le regioni in cui uno spostamento infinitesimo di un blob di gas cresce esponenzialmente a causa della forza di Archimede.
 
-Considero il moto del blob in equilibrio di pressione con l'ambiente: esprimo l'equazione del moto dell'elemento in funzione della frequenza di \bv{} $N^2$. Le regioni stabili, in cui l'equazione del moto descrive un comportamento oscillatorio, sono per $N^2>0$  oppure usando l'equazione di stato per esprimere i gradienti di densit\'a in funzione dei gradienti di temperatura $\nrad{}<\nad{}$.
+{\small Considero il moto del blob in equilibrio di pressione con l'ambiente: esprimo l'equazione del moto dell'elemento in funzione della frequenza di \bv{} $N^2$. Le regioni stabili, in cui l'equazione del moto descrive un comportamento oscillatorio, sono per $N^2>0$  oppure usando l'equazione di stato per esprimere i gradienti di densit\'a in funzione dei gradienti di temperatura $\nrad{}<\nad{}$.)
 
 % e uso l'equazione di stato per esprimere la differenza di densit\'a tra blob e ambiente. Considero in prima approssimazione il moto del blob adiabatico ($dq=c_P\,dT-\frac{\delta}{\rho}\,dP$) (e $\nmu{}\approx0$).
-Per determinare il gradiente ambientale nelle regioni convettive esterne, che caratterizzano stelle $M\leq1.1\msun{}$ \'e pratico usare la teoria della ML. Questa considera l'eccesso di calore trasportato dal moto dell'elemento di gas in equilibrio di pressione con l'ambiente che rilasci il calore dopo aver percorso una lunghezza caratteristica $l_m=\alpha H_P$.
 
-L'efficienza delle regioni convettive esterne \'e quindi un parametro libero determinato tramite calibrazione del modello stellare per riprodurre $T_e$.
+Per determinare il gradiente ambientale nelle regioni convettive esterne, che caratterizzano stelle $M\leq1.1\msun{}$ si usa la teoria della ML. Questa considera l'eccesso di calore trasportato dal moto dell'elemento di gas in equilibrio di pressione con l'ambiente che rilasci il calore dopo aver percorso una lunghezza caratteristica $l_m=\alpha H_P$.
+
+L'efficienza delle regioni convettive esterne \'e quindi un parametro libero determinato tramite calibrazione del modello solare per riprodurre $T_e$.
 
 \end{wordonframe}
 
@@ -486,7 +487,7 @@ L'efficienza delle regioni convettive esterne \'e quindi un parametro libero det
 
 \begin{frame}{Modello plasma solare}
 
-\begin{block}{Popolazione di stati atomici. EOS e grandezze termodinamiche.}
+\begin{block}{EOS e grandezze termodinamiche. Popolazione di stati atomici.}
 
 \begin{columns}
 
@@ -525,56 +526,21 @@ L'efficienza delle regioni convettive esterne \'e quindi un parametro libero det
 
 {\small Per risolvere le equazioni della struttra stellare \'e necessario conoscere le propriet\'a termodinamiche del gas, in particolare l'equazione di stato $P(\rho,T)$.
 
-Nel caso solare l'equazione dei gas perfetti \'e una prima approssimazione poich\'e gli effetti della degenerazione elettronica e delle interazioni coulombiane sono piccoli.
+{\small Nel caso solare l'equazione dei gas perfetti \'e una prima approssimazione poich\'e gli effetti della degenerazione elettronica e delle interazioni coulombiane sono piccoli.}
+
 %Gli approcci pi\'u usati per ricavare un'equazione di stato accurata per il plasma stellare considerano le propriet\'a statistiche di un gas di nuclei ed elettroni oppure di un gas di atomi: nel secondo caso sono necessarie ipotesi ad hoc per tener conto delle perturbazioni ai livelli atomici causati dalle particelle vicine.
 \begin{align*}
 &P=P_r+P_G=\frac{1}{3}aT^4+\frac{\rho}{\mu}\gasconstant{}T\\
 &u=\frac{1}{\rho}\sum_i\int f^{(0)}(\vec{p}_i)\frac{p^2_i}{2m_i}\,d^3p_i=\frac{3}{2}\frac{P}{\rho}%=\frac{3}{2}\frac{\gasconstant{}T}{\mu}
 \end{align*}
 
-La principale correzione che tiene conto della natura non puntiforme delle interazioni \'e la correzione coulombiana: le interazioni elettriche modificano la distribuzione delle cariche nel plasma neutro su distanze maggiori di $R_D$ (???cariche su sfera di raggio $R_D$ attorno a ione hanno energia coulombiana e termica paragonabili????).
+{\small La principale correzione che tiene conto della natura non puntiforme delle interazioni \'e la correzione coulombiana: le interazioni elettriche modificano la distribuzione delle cariche nel plasma neutro su distanze maggiori di $R_D$ (???cariche su sfera di raggio $R_D$ attorno a ione hanno energia coulombiana e termica paragonabili????).}
 
-Una determinazione accurata delle caratteristiche del plasma solare, in particolare dell'esponente adiabatico $\Gamma_1$, permette di investigare la composizione solare poich\'e nelle regioni di ionizzazione degli elementi pi\'u abbondanti si hanno variazioni dal valore $\Gamma_1=\frac{5}{3}$
+Una determinazione accurata delle caratteristiche del plasma solare, in particolare dell'esponente adiabatico $\Gamma_1$, permette di investigare la composizione solare poich\'e nelle regioni di ionizzazione degli elementi pi\'u abbondanti si hanno variazioni dal valore $\Gamma_1=\frac{5}{3}$.
+
+A destra \'e mostrato l'andamento dell'esponente adiabatico calcolato tramite due EOS 
 
 }
-
-\end{wordonframe}
-
-\begin{frame}{Modello plasma solare}
-
-\begin{block}{Processi che contribuiscono all'opacit\'a}
-
-Transizioni tra stati elettronici (BB).
-
-Ionizzazione (BF).
-
-Brehmstrahlung inverso (FF).
-
-Scattering di elettroni (S).
-
-\end{block}
-
-\vfill
-
-\begin{block}{Opacit\'a media di Rosseland}
-
-\vfill
-
-\begin{equation*}
-\frac{1}{\kappa}=\invers{(4aT^3)}\int_0^{+\infty}\PDy{T}{B_{\nu}(T)}\frac{1}{\kappa_{a}(\nu)(1-\exp{-\midfrac{h\nu}{KT}})+\kappa_s(\nu)}\,d\nu
-\end{equation*}
-
-\end{block}
-
-\vfill
-
-\end{frame}
-
-\begin{wordonframe}{Interazioni radiazione-materia}
-
-L'interazione radiazione-materia determina il gradiente termico della regione radiativa e nel caso solare la posizione della base della zona convettiva. L'opacit\'a \'e dovuta ai processi di assorbimento e scattering dei fotoni e dipende dal numero dalla densit\'a di particelle che danno luogo a un determinato fenomeno di assorbimento o scattering e dalla sezione d'urto per singola particella.
-
-L'opacit\'a media per grammo () \'e determinata mediando l'opacit\'a a data lunghezza d'onda rispetto a $\PDy{T}{B_{\nu}(T)}$. L'opacit\'a a data frequenza \'e somma dei contributi da parte dei processi di assorbimento (bb, bf, ff) e scattering.
 
 \end{wordonframe}
 
@@ -1455,6 +1421,47 @@ La banda rossa intorno allo zero che rappresenta il profilo effettivo della velo
 \end{wordonframe}
 
 \section{Appendix}
+
+
+\begin{frame}{Modello plasma solare}
+
+\begin{block}{Processi che contribuiscono all'opacit\'a}
+
+Transizioni tra stati elettronici (BB).
+
+Ionizzazione (BF).
+
+Brehmstrahlung inverso (FF).
+
+Scattering di elettroni (S).
+
+\end{block}
+
+\vfill
+
+\begin{block}{Opacit\'a media di Rosseland}
+
+\vfill
+
+\begin{equation*}
+\frac{1}{\kappa}=\invers{(4aT^3)}\int_0^{+\infty}\PDy{T}{B_{\nu}(T)}\frac{1}{\kappa_{a}(\nu)(1-\exp{-\midfrac{h\nu}{KT}})+\kappa_s(\nu)}\,d\nu
+\end{equation*}
+
+\end{block}
+
+\vfill
+
+\end{frame}
+
+\begin{wordonframe}{Interazioni radiazione-materia}
+
+L'interazione radiazione-materia determina il gradiente termico della regione radiativa e nel caso solare la posizione della base della zona convettiva. L'opacit\'a \'e dovuta ai processi di assorbimento e scattering dei fotoni e dipende dal numero dalla densit\'a di particelle che danno luogo a un determinato fenomeno di assorbimento o scattering e dalla sezione d'urto per singola particella.
+
+L'opacit\'a media per grammo () \'e determinata mediando l'opacit\'a a data lunghezza d'onda rispetto a $\PDy{T}{B_{\nu}(T)}$. L'opacit\'a a data frequenza \'e somma dei contributi da parte dei processi di assorbimento (bb, bf, ff) e scattering.
+
+C'\'e un ulteriore correzione che tiene conto della frazione di emissione spontanea su totale.
+
+\end{wordonframe}
 
 \begin{frame}{Catena PP}
 
