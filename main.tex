@@ -206,11 +206,17 @@
 
 \begin{frame}[label={intro}]{Modi di oscillazione della struttura solare}
 
+Inserire figura sole senza spicchio modi
+
 \end{frame}
 
 \begin{wordonframe}{Intro MSS e i suoi modi}
 
-In questa tesina mi sono occupato dei modi normali gravo-acustici solari: oscillazioni causate da perturbazioni nella densit\'a e nella pressione e le cui caratteristiche sono determinate dal profilo radiale della densit\'a e velocit\'a del suono. \'E possibile osservare un gran numero di frequenze che impone vincoli stringenti al modello solare.
+In questa tesina mi sono occupato dei modi normali gravo-acustici solari cio\'e oscillazioni attorno alla struttura di equilibrio le cui caratteristiche sono determinate dal profilo radiale della densit\'a e velocit\'a del suono. Il gran numero di frequenze osservate impone vincoli stringenti alle caratteristiche del modello solare standard.
+
+Nella prima parte ho considerato analizzato il modello solare standard, nella seconda ho descritto i modi normali adiabatici, in particolare la relazione tra le frequenze dei modi e la struttura solare; infine ho considerato le tecniche che permettono di invertire la dipendenza delle frequenze dalla struttura interna del Sole.
+
+Il modello MSS si basa su leggi di conservazione, valide per qualsiasi stella: le prime 3 equazioni usate per determinare la struttura stellare ... 
 
 \end{wordonframe}
 
@@ -259,7 +265,7 @@ Deviazioni da forma sferica trascurabili (campi magnetici, rotazione)
 \begin{block}{Conservazione energia interna}
 
 \begin{equation*}
-0=\TDy{t}{q}=\epsilon(\rho,T,X_i)-\frac{1}{\rho}\nabla\cdot\vec{F}=\TDy{t}{u}+P\TDof{t}(\frac{1}{\rho})%\label{eq:heatgl}
+\TDy{t}{q}=\epsilon(\rho,T,X_i)-\frac{1}{\rho}\nabla\cdot\vec{F}=\TDy{t}{u}+P\TDof{t}(\frac{1}{\rho})%\label{eq:heatgl}
 %&\TDy{r}{L}=4\pi r^2[\rho\epsilon-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]%\label{eq:fenergyconservation}
 \end{equation*}
 
@@ -275,21 +281,13 @@ Deviazioni da forma sferica trascurabili (campi magnetici, rotazione)
 
 \begin{wordonframe}{Simmetria sferica, conservazione massa, equilibrio idrostatico, conservazione energia interna (PRIMA LEGGE)}
 
-Il modello MSS si basa su leggi di conservazione, valide per qualsiasi stella: le prime 3 equazioni usate per determinare la struttura stellare ... sono un caso particolare della conservazione della massa, dell'impulso, dell'energia interna. 
+Le equazioni che descrivono la struttura di una stella ... sono un caso particolare della conservazione della massa, dell'impulso, dell'energia interna.
 
-I tempi di evoluzione dinamici sono molto minori dei tempi di evoluzione nucleari e radiativi quindi si assume la condizione di equilibrio idrostatico.
+Considero le deviazioni dalla simmetria sferica (rotazione campo magnetico) come perturbazioni, quindi le trascuro nella descrizione della struttura di equilibrio. 
 
-I tempi di evoluzione nucleari sono molto pi\'u lenti di quelli termici quindi assumo che il bilancion netto di calore per sia nullo per ogni elemento del gas.
+L'evoluzione di una stella in sequenza principale come il Sole attuale avviene su tempi nucleari quindi assumo equilibrio idrostatico.
 
-Considero le deviazioni dalla simmetria sferica (rotazione campo magnetico) come perturbazioni, quindi le trascuro nella descrizione della struttura di equilibrio. Le prime 3 equazioni della struttura solare quindi
-
-\begin{align*}
-&\TDy{r}{m}=4\pi r^2\rho\\
-&\nabla P=\rho\vec{g}\\
-&\TDy{r}{L}=4\pi r^2\rho\epsilon
-\end{align*}
-
-%obbedisce alla conservazione della massa da cui risulta l'equazione di continuit\'a $\TDy{t}{\rho}+\nabla\cdot(\rho\vec{v})=0$. Obbedisce alla conservazione della quantit'a di moto; e nella maggior parte della vita delle stelle i tempi scala dei processi di produzione e trasporto di energia sono lunghi rispetto ai tempi dinamici quindi \'e giustificata l'ipotesi di equilibrio tra gradiente di pressione e forza di gravit\'a. Obbedisce alla legge di conservazione dell'energia interna che mette in relazione il bilancio di calore tra flusso uscente e energia prodotta dalle reazioni nucleari $\epsilon$ per grammo per secondo con la variazione di energia interna e lavoro fatto/subito dal gas.
+Quant'\'e il calore aggiunto per unit\'a di massa?? $\approx\midfrac{E_i}{\tau M}$ In sequenza principale il calore aggiunto per unit\'a di massa \'e trascurabile in qunato i tempi evolutivi sono molto maggiori dei tempi di rilassamento radiativi (tipicamente viene indicato il tempo impiegato ad irradiare l'energia interna).
 
 Per determinare il gradiente termico considero il flusso di energia dalle regioni pi\'u calde alla superficie: oltre al trasporto radiativo devo considerare la convezione presente nella regione esterna per stelle con $M<1.1\msun{}$.
 
@@ -400,14 +398,18 @@ In LTE si riduce alla legge di Kirkoff.
 
 Per determinare il gradiente termico considero il flusso di energia dalle regioni pi\'u calde alla superficie: oltre al trasporto radiativo devo considerare la convezione presente nella regione esterna per stelle con $M<1.1\msun{}$...
 
-Per quanto rigurda il trasporto radiativo la soluzione per l'intensit\'a al raggio r in direzione $\hat{s}$ in condizioni di equilibrio termodinamico locale pu\'o essere approssimata come somma (integrale) dei contributi all'intensit\'a  degli strati sottostanti diminuiti a causa dell'opacit\'a con il termine $\exp{\tau_{\nu}}$.
+Negli interni stellari il cammino libero medio di un fotone $\invers{(\kappa_{\nu}\rho)}$ \'e molto breve quindi considero considero localmente equilibrio radiazione-materia. L'intensit\'a di radiazione attraverso il punto $\vec{P}$ nella direzione $\hat{s}$ \'e determinata dall'intensit\'a di corpo nero locale e dal contributo anisotropo della radiazione proveniente dagli strati circostanti: quest'anisotropia dovuta al gradiente termico si descrive tramite un'espansione di Taylor al prim'ordine nel cammino libero medio del fotone $\nu$.
 
-Poich\'e negli interni stellari il cammino libero medio di un fotone \'e piccolo (per condizioni solari $\invers{(\kappa\rho)}$) considero l'espansione di $B_{\nu}(-\tau_{\nu})$ al prim'ordine
+%Per quanto rigurda il trasporto radiativo la soluzione per l'intensit\'a al raggio r in direzione $\hat{s}$ in condizioni di equilibrio termodinamico locale pu\'o essere approssimata come somma (integrale) dei contributi all'intensit\'a  degli strati sottostanti diminuiti a causa dell'opacit\'a con il termine $\exp{\tau_{\nu}}$.
+
+%Poich\'e negli interni stellari il cammino libero medio di un fotone \'e piccolo (per condizioni solari $\invers{(\kappa\rho)}$) considero l'espansione di $B_{\nu}(-\tau_{\nu})$ al prim'ordine
 
 %(emissivit\'a per unit\'a di frequenza:$B(T)=\frac{ac}{4\pi}T^4$). La soluzione dell'equazione del trasporto radiativo \'e la somma di tutti i contributi $B_{\nu}(-\tau_{\nu})$ pesati dall'esponenziale che descrive l'assorbimento del plasma solare.
-In condizioni tipiche degli interni stellari si pu\'o esprimere l'intensit\'a specifica di radiazione nella direzione $\hat{s}$ come somma del termine isotropo $B_{\nu}(T)$ e del termine lineare nel cammino libero medio del fotone di frequenza $\nu$ che tiene conto della piccola anisotropia nell'intensit\'a specifica tramite $\nabla B_{\nu}(T)$.
+%In condizioni tipiche degli interni stellari si pu\'o esprimere l'intensit\'a specifica di radiazione nella direzione $\hat{s}$ come somma del termine isotropo $B_{\nu}(T)$ e del termine lineare nel cammino libero medio del fotone di frequenza $\nu$ che tiene conto della piccola anisotropia nell'intensit\'a specifica tramite $\nabla B_{\nu}(T)$.
 
-Integrando sulle direzioni uscenti e su tutte le frequenze si ottiene la relazione tra flusso radiativo e gradiente termico.
+%Integrando sulle direzioni uscenti e su tutte le frequenze si ottiene la relazione tra flusso radiativo e gradiente termico.
+
+Integrando su tutte le direzioni e su tutte le frequenze si ottiene la relazione tra flusso e gradiente terico cercata.
 
 La quantit\'a $\frac{1}{\kappa_{\nu}}\PDy{T}{B_{\nu}(T)}$ \'e l'opacit\'a media di Rosseland. Nel calcolo della struttura stellare si usa il gradiente termico espresso in termini della derivata logaritmica della pressione: ho usato la definizione di luminosit\'a e la condizione di equilibrio idrostatico.
 
