@@ -383,7 +383,45 @@ Equilibrio termodinamico locale (Emissione=assorbimento): opacit\'a dovuta a pro
 &B(\nu,T)=\frac{2h\nu^3}{c^2}\frac{1}{\exp{\midfrac{h\nu}{KT}}-1}
 \end{align*}
 
+\end{wordonframe}
 
+\begin{wordonframe}{Emissione spontanea/Indotta}
+
+In realt\'a devo tener conto del\[\frac{\text{Spontaneous emission}}{\text{Total emission}}=1-\exp{-\midfrac{h\nu}{KT}}\]
+
+\[j_{\nu}(\theta)=\kappa_{a,\nu}(1-\exp{-\midfrac{h\nu}{KT}})B_{\nu}(T)+\exp{-\midfrac{h\nu}{KT}})I_{\nu}(T)\]
+
+In LTE si riduce alla legge di Kirkoff.
+
+\end{wordonframe}
+
+\begin{wordonframe}{Trasporto radiativo negli interni stellari: equilibrio termodinamico locale ed espansione $B_{\nu}(-\tau_{\nu})$ al prim'ordine in $\tau_{\nu}$.}
+
+{\small
+
+Infine determino la relazione tra flusso verso la superficie e gradiente termico: oltre al trasporto radiativo devo considerare la convezione presente nella regione esterna per stelle con $M<1.1\msun{}$...
+
+Negli interni stellari il cammino libero medio di un fotone $\invers{(\kappa_{\nu}\rho)}$ \'e molto breve quindi considero localmente equilibrio radiazione-materia.
+
+L'intensit\'a di radiazione attraverso il punto $\vec{P}$ nella direzione $\hat{s}$ \'e determinata dalla somma dei contributi degli strati precedenti 
+
+
+%Per quanto rigurda il trasporto radiativo la soluzione per l'intensit\'a al raggio r in direzione $\hat{s}$ in condizioni di equilibrio termodinamico locale pu\'o essere approssimata come somma (integrale) dei contributi all'intensit\'a  degli strati sottostanti diminuiti a causa dell'opacit\'a con il termine $\exp{\tau_{\nu}}$.
+
+%Poich\'e negli interni stellari il cammino libero medio di un fotone \'e piccolo (per condizioni solari $\invers{(\kappa\rho)}$) considero l'espansione di $B_{\nu}(-\tau_{\nu})$ al prim'ordine
+
+%(emissivit\'a per unit\'a di frequenza:$B(T)=\frac{ac}{4\pi}T^4$). La soluzione dell'equazione del trasporto radiativo \'e la somma di tutti i contributi $B_{\nu}(-\tau_{\nu})$ pesati dall'esponenziale che descrive l'assorbimento del plasma solare.
+%In condizioni tipiche degli interni stellari si pu\'o esprimere l'intensit\'a specifica di radiazione nella direzione $\hat{s}$ come somma del termine isotropo $B_{\nu}(T)$ e del termine lineare nel cammino libero medio del fotone di frequenza $\nu$ che tiene conto della piccola anisotropia nell'intensit\'a specifica tramite $\nabla B_{\nu}(T)$.
+
+%Integrando sulle direzioni uscenti e su tutte le frequenze si ottiene la relazione tra flusso radiativo e gradiente termico.
+
+Integrando su tutte le direzioni e su tutte le frequenze si ottiene la relazione tra flusso e gradiente terico cercata.
+
+La quantit\'a $\frac{1}{\kappa_{\nu}}\PDy{T}{B_{\nu}(T)}$ \'e l'opacit\'a media di Rosseland. Nel calcolo della struttura stellare si usa il gradiente termico espresso in termini della derivata logaritmica della pressione: ho usato la definizione di luminosit\'a e la condizione di equilibrio idrostatico.
+
+}
+
+\end{wordonframe}
 
 
 \begin{frame}{Instabilit\'a convettiva - Gradiente termico nelle regioni convettive}
@@ -398,6 +436,7 @@ Equilibrio termodinamico locale (Emissione=assorbimento): opacit\'a dovuta a pro
 \begin{column}{0.45\textwidth}
 
 \begin{block}{Instabilit\'a convettiva}
+
 \begin{align*}
 &N^2<0\\
 &\nrad{}>\nad{}
@@ -436,6 +475,7 @@ Equilibrio termodinamico locale (Emissione=assorbimento): opacit\'a dovuta a pro
 La convezione caratterizza le regioni in cui uno spostamento infinitesimo di un blob di gas cresce esponenzialmente a causa della forza di Archimede.
 
 {\small Considero il moto del blob in equilibrio di pressione con l'ambiente: esprimo l'equazione del moto dell'elemento in funzione della frequenza di \bv{} $N^2$. Le regioni stabili, in cui l'equazione del moto descrive un comportamento oscillatorio, sono per $N^2>0$  oppure usando l'equazione di stato per esprimere i gradienti di densit\'a in funzione dei gradienti di temperatura $\nrad{}<\nad{}$.)
+}
 
 % e uso l'equazione di stato per esprimere la differenza di densit\'a tra blob e ambiente. Considero in prima approssimazione il moto del blob adiabatico ($dq=c_P\,dT-\frac{\delta}{\rho}\,dP$) (e $\nmu{}\approx0$).
 
