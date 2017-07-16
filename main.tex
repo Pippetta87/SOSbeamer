@@ -591,6 +591,7 @@ A destra \'e mostrato l'andamento dell'esponente adiabatico calcolato tramite du
 
 Le reazioni nucleari generano la luminosit\'a stellare nella maggior parte della vita di una stella e ne determinano l'evoluzione chimica.
 
+Il rate di fusione per coppia di nuclei \'e la media della seziode d'urto di fusione per la velocit\'a rispetto alla funzione di MB.
 La sezione d'urto di fusione contiene il termine geometrico $\pi\lambdabar^2\propto\frac{1}{E}$ (contributo alla sezione d'urto in onda S: $b=l\lambdabar$),  la probabilit\'a di attraversamento della barriera coulombiana $P_0=\exp{-2\pi\eta}$ e il contributo delle funzoni d'onda nucleari.
 
 Lo schermaggio elettronico aumenta la probabilit\'a di penetrare la barriera coulombiana.
@@ -608,6 +609,57 @@ dalla diffusione: la presenza di un gradiente di concentrazione determina diffus
 
 
 %\section{Equazioni struttura stellare}
+
+
+\begin{frame}{Modello solare standard}
+
+%Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
+\begin{subequations}%\label{subeqn:stellarstructure}
+\begin{align*}
+&\TDy{r}{m}=4\pi r^2\rho\\
+&\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\\
+&\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}\\
+&\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
+\end{align*}
+\end{subequations}
+%con $v_i$ velocit\'a di diffusione specie i. Ottengo il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note la metallicit\'a iniziale Z, l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
+
+\begin{columns}
+
+\begin{column}{0.3\textwidth}
+Condizioni al bordo:
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\begin{itemize}
+    \item Superficie: $T_e$, $P_{atm}$
+    \item Centro: $l(r=0)$, $m(r=0)$.
+\end{itemize}
+
+\end{column}
+
+\end{columns}
+
+\begin{block}{Evoluzione del modello solare}
+
+\begin{equation*}
+\PDy{t}{n_i}+\frac{1}{r^2}\PDof{r}(r^2n_iv_i)=\Dcvar{\PDy{t}{n_i}}{Nucl}%\label{eq:difffusionchange}
+\end{equation*}
+
+\end{block}
+
+\end{frame}
+
+
+\begin{wordonframe}{Soluzione equazioni modello solare}
+
+Integro numericamente per la struttura solare con 2 condizioni in superficie per $T_e$ e $P$ e due condizioni al centro per $l$ e $m$ con metallicit\'a e abbondanza di elio da determinare.
+
+L'evoluzione chimica del core di fusione comporta un aumento di temperatura che avviene su tempi-scala molto maggiori dei tempi caratteristici per trasporto radiativo quindi la struttura del modello solare \'e stazionaria.
+
+La presenza di gradienti di concentrazione, di pressione e termici causano fenomeni di diffusione. La velocit\'a di diffusione \'e determinata supponendo il processo stazionario cio\'e la forza per unit\'a di volume agente sulla specie i \'e bilanciata dal trasperimento di impulso negli urti con le altre specie.
+
+\end{wordonframe}
 
 \begin{frame}{Calibrazione modello solare}
 
@@ -665,7 +717,10 @@ Mixing length $l_m=H_p\alpha$
 
 \begin{wordonframe}{Costruzione del MSS e vincoli}
 
-La costruzione di un modello solare \'e molto meno incerta rispetto a un modello di una stella generica data la mole di informazioni disponibili. Conosciamo con grande accuratezza la distanza tramite lo studio delle orbite dei corpi celesti attorno al Sole, l'et\'a di formazione del sistema solare tramite studio dei meteoriti, la luminosit\'a, e il raggio tramite la misura delle dimensioni apparenti del disco solare.
+
+Determino i parametri del modello solare in maniera che riproduca la luminosit\'a, la temperatura efficace e la composizione attuale: il valore di Y determina principalmente la temperatura, l'efficienza della convezione la temperatura superficiale.
+
+%La costruzione di un modello solare \'e molto meno incerta rispetto a un modello di una stella generica data la mole di informazioni disponibili. Conosciamo con grande accuratezza la distanza tramite lo studio delle orbite dei corpi celesti attorno al Sole, l'et\'a di formazione del sistema solare tramite studio dei meteoriti, la luminosit\'a, e il raggio tramite la misura delle dimensioni apparenti del disco solare.
 
 Inoltre \'e possibile determinare la composizione solare della fotosfera supposta identica a quella della zona convettiva tramite l'analisi delle righe di assorbimento nell'atmosfera.
 
@@ -675,85 +730,6 @@ L'incertezza sul contenuto di metalli \'e dovuta alle difficolt\'a insite nella 
 
 \end{wordonframe}
 
-\begin{frame}{Equazioni della struttura solare}
-
-%Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
-\begin{subequations}%\label{subeqn:stellarstructure}
-\begin{align*}
-&\TDy{r}{m}=4\pi r^2\rho\\
-&\TDy{r}{P}=-\frac{Gm(r)\rho(r)}{r^2}\\
-&\TDy{r}{T}=\nabla\frac{T}{p}\TDy{r}{p}\\
-&\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
-\end{align*}
-\end{subequations}
-%con $v_i$ velocit\'a di diffusione specie i. Ottengo il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note la metallicit\'a iniziale Z, l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
-
-\begin{columns}
-
-\begin{column}{0.3\textwidth}
-Condizioni al bordo:
-\end{column}
-
-\begin{column}{0.5\textwidth}
-\begin{itemize}
-    \item Superficie: $T_e$, $P_{atm}$
-    \item Centro: $l(r=0)$, $m(r=0)$.
-\end{itemize}
-
-\end{column}
-
-\end{columns}
-
-\begin{block}{Evoluzione del modello solare}
-
-\begin{equation*}
-\PDy{t}{n_i}+\frac{1}{r^2}\PDof{r}(r^2n_iv_i)=\Dcvar{\PDy{t}{n_i}}{Nucl}%\label{eq:difffusionchange}
-\end{equation*}
-
-\end{block}
-
-\end{frame}
-
-
-\begin{wordonframe}{Soluzione equazioni modello solare}
-
-Integro numericamente per la struttura solare con 2 condizioni in superficie per $T_e$ e $P$ e due condizioni al centro per $l$ e $m$ con metallicit\'a e abbondanza di elio da determinare.
-
-L'evoluzione chimica del core di fusione comporta un aumento di temperatura che avviene su tempi-scala molto maggiori dei tempi caratteristici per trasporto radiativo quindi la struttura del modello solare \'e stazionaria.
-
-La presenza di gradienti di concentrazione, di pressione e termici causano fenomeni di diffusione. La velocit\'a di diffusione \'e determinata supponendo il processo stazionario cio\'e la forza per unit\'a di volume agente sulla specie i \'e bilanciata dal trasperimento di impulso negli urti con le altre specie.
-
-\end{wordonframe}
-
-\begin{wordonframe}{Abbondanza di elio attuale e diffusione - mixing length}
-
-Vario il valore primordiale di Y finoch\'e il modello evoluto all'et\'a attuale riproduce la luminosit\'a osservata. L'abbondanza di elio determinata tramite calibrazione \'e afflitta dalle incertezze su l'efficienza della fusione, l'et\'a del Sole, la luminosit\'a attuale, l'opacit\'a.
-
-La metallicit\'a primordiale \'e determinata dalla metallicit\'a attuale tenendo conto della diffusione.
-
-L'efficienza della convezione determina il gradiente nella regione convettiva esterna per riprodurre $T_e$ attuale.
-
-Determino i due parametri Y e $\alpha$ (efficienza trasporto convettivo) in modo che il modello riproduca a $\agesun{}$ la luminosit\'a attuale e la temperatura efficace attuale.
-
-\begin{block}{Abbondanza iniziale di elio}
-
-Il modello evoluto a $\agesun{}$ riproduce la luminosit\'a attuale $\lsun{}$
-
-\end{block}
-
-\begin{block}{Efficienza convezione}
-
-Mixing length $l_m=H_p\alpha$.
-
-Il modello evoluto a $\agesun{}$ riproduce la temperatura effettiva attuale $T_e$
-
-\end{block}
-
-\begin{block}{Diffusione: matching fra composizione attuale del MSS e composizione fotosferica}
-
-\end{block}
-
-\end{wordonframe}
 
 \begin{frame}{Struttura del MSS}
 
