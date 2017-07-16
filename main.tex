@@ -653,7 +653,7 @@ Condizioni al bordo:
 
 \begin{wordonframe}{Soluzione equazioni modello solare}
 
-Integro numericamente per la struttura solare con 2 condizioni in superficie per $T_e$ e $P$ e due condizioni al centro per $l$ e $m$ con metallicit\'a e abbondanza di elio da determinare.
+Integro numericamente per la struttura solare con 2 condizioni in superficie per $T_e$ e $P$ e due condizioni al centro per $l$ e $m$ con metallicit\'a e abbondanza di elio da determinare. E note le funzioni $\epsilon(X_i,\rho,T)$, $\kappa(X_i,\rho,T)$ e $P(X_i,rho,T)$.
 
 L'evoluzione chimica del core di fusione comporta un aumento di temperatura che avviene su tempi-scala molto maggiori dei tempi caratteristici per trasporto radiativo quindi la struttura del modello solare \'e stazionaria.
 
@@ -722,11 +722,10 @@ Determino i parametri del modello solare in maniera che riproduca la luminosit\'
 
 %La costruzione di un modello solare \'e molto meno incerta rispetto a un modello di una stella generica data la mole di informazioni disponibili. Conosciamo con grande accuratezza la distanza tramite lo studio delle orbite dei corpi celesti attorno al Sole, l'et\'a di formazione del sistema solare tramite studio dei meteoriti, la luminosit\'a, e il raggio tramite la misura delle dimensioni apparenti del disco solare.
 
-Inoltre \'e possibile determinare la composizione solare della fotosfera supposta identica a quella della zona convettiva tramite l'analisi delle righe di assorbimento nell'atmosfera.
+%Inoltre \'e possibile determinare la composizione solare della fotosfera supposta identica a quella della zona convettiva tramite l'analisi delle righe di assorbimento nell'atmosfera.
 
-Le righe di assorbimento dell'elio si formano nelle regioni pi\'u esterne dell'atmosfera dove non \'e ovvia la relazione con la composizione della fotosfera quindi il metodo pi\'u accurato per determinare l'abbondanza di elio \'e tramite calibrazione del modello solare.
+%Le righe di assorbimento dell'elio si formano nelle regioni pi\'u esterne dell'atmosfera dove non \'e ovvia la relazione con la composizione della fotosfera quindi il metodo pi\'u accurato per determinare l'abbondanza di elio \'e tramite calibrazione del modello solare.
 
-L'incertezza sul contenuto di metalli \'e dovuta alle difficolt\'a insite nella descrizione dell'atmosfera: come si vede dalla tabella a destra la disponibilit\'a di modelli pi\'u accurati nelle assunzioni fisiche ha portato a un'abbassamento della metallicit\'a. 
 
 \end{wordonframe}
 
@@ -783,7 +782,7 @@ In figura abbiamo il profilo della velocit\'a del suono del modello solare prece
 \rho_0\TDof{t}\vec{v}=\rho_0\PtwoDy{t}{\vec{\xi}}=-\nabla P'+\rho_0\vec{g}'+\rho'\vec{g}_0%\label{eq:emper}
 \end{equation*}
 \end{block}
-\begin{block}{Equazione di continuit\'a e del moto perturbate}
+\begin{block}{Equazione di continuit\'a}
 \begin{equation*}
 \rho'+\div{(\rho_0\vec{\xi})}=0%\label{eq:contper}
 \end{equation*}
@@ -910,81 +909,7 @@ L'approssimazione di Cowling, valida per grandi l o n (uso la soluzione dell'equ
 
 La figura mostra lo spettro delle frequenze discrete per cui il sistema dei modi ha soluzione in funzione del grado angolare l. I modi con stesso ordine radiale sono uniti da una linea: nella parte ad alte frequenze abbiamo i modi p, di natura acustica, nella parte a basse frequenze modi g, che sono onde di gravit\'a, e modi f, modi di superficie ($\div{\vec{\xi}}\approx0$, $\omega^2=gk_h$). 
 
-L'energia cinetica del modo $(n,l)$ mediata su un periodo \'e la media temporale dell'integrale della densit\'a di energia sul volume solare: \'e utile introdurre l'inerzia normalizzata all'ampiezza superficiale.
-
-\end{wordonframe}
-
-\begin{frame}{Osservazione delle oscillazioni della fotosfera}
-
-\begin{figure}[!ht]
-
-%\includegraphics[keepaspectratio,width=0.95\textwidth]{midlmodes}
-%\caption{I picchi della densit\'a spettrale si dispongono su creste in cui \'e concentrata la potenza in accordo al modello. Determinata usando i primi 144 giorni di osservazione di MDI con $l\leq300$. Da \cite{chr02helioseismology}.}\label{fig:midlmodes}
-
-\includegraphics[keepaspectratio,width=0.95\textwidth]{PSD}
-\caption{Da \cite{houdek2006stochastic}.}\label{fig:PSD}
-
-\end{figure}
-
-\begin{align*}
-&I_{nl}[\TtwoDy{t}{A_{nl}}+\Gamma_{nl}\TDy{t}{A_{nl}}+\omega_{nl}^2A_{nl}]=f(t)\\
-&P(\omega)\propto P_LP_f=\frac{\midfrac{\Gamma_{nl}}{2\pi}}{(\omega-\omega_{nl})^2+\midfrac{\Gamma_{nl}}{4}}P_f\\
-&P_x(\nu)=\sum_i\frac{AB_i\midfrac{\Gamma^2}{4}}{(\nu-\nu_0-\Delta\nu_i)^2+\midfrac{\Gamma^2}{4}}+P_n(\nu)\\
-&\exv{V_{nl}^2}=I_{nl}\frac{1}{T_{obs}}\int_{-\infty}^{\infty}|V_{nl}(\nu)|^2\,d\nu\propto I_{nl}\Gamma_{nl}A_{nl}
-\end{align*}
-
-
-\end{frame}
-
-\begin{wordonframe}{Forma dei picchi nella PSD}
-
-Lo studio delle oscillazioni solari come disciplina \'e l'eliosismologia. L'eliosismologia nasce all'inizio degli anni ''60 quando Leighton e collaboratori osservarono un comportamento oscillatorio nell'atmosfera solare con periodo attorno ai 5 minuti.
-
-Questo comportamento \'e dovuto alla sovrapposizione di onde acustiche instappolate in cavit\'a risonanti a diversa profondit\'a a seconda delle grandezze caratteristiche orizzontale. Le frequenze dei modi sono determinate dalla velocit\'a del suono in queste regioni imponendo che  la cavit\'a contenga radialmente un numero semi-intero di lunghezze d'onda. \'E possibile quindi determinare il profilo radiale della velocit\'a del suono dalle frequenze dei modi osservate.
-
-
-(modi basso l: N=13, n=21)
-
-Le frequenze dei modi sono determinate principalmente misurando lo spostamento doppler di opportune righe di assorbimento in atmosfera ($Ca \lambda=6439 A 129 Km$, $K: 7699 A, 250Km$, $Ni I: 6708 A,300 Km$, $Na D1/D2: 5690 A, 500 Km$). Per identificare modi con $l>2$ \'e necessaria risolouzione spaziale e la proiezione di un'opportuna maschera $W_{l_0m_0}$ isoler\'a il modo con dipendenza spaziale descritta da $Y_{l_0m_0}$. La serie temporale del segnale doppler viene analizzata in termini di componenti armoniche. Le frequenze sono quindi determinate fittando i picchi dello spettro secondo una forma lorentziana  giustificata assumendo che l'ampiezza superficiale dei modi obbedisca all'equazione del moto di un'oscillatore armonico smorzato di frequenza naturale data dalla frequenza del modo e forzante stocastica.
-
-La PSD $P_T(\nu)=\frac{1}{T_{obs}}|X_T(\nu)|^2$ contiene oltre al picco principale (lorentziano) picchi parassiti dovuti a gap nella serie temporale e il contributo del rumore solare.
-
-\end{wordonframe}
-
-\begin{frame}{Modello dell'ampiezza superficiale delle oscillazioni}
-
-\begin{columns}
-
-\begin{column}{0.4\textwidth}
-
-\begin{figure}[!ht]
-\centering
-\includegraphics[keepaspectratio,width=0.85\textwidth]{modespheomenology}
-\caption{Da \cite{libbrecht1988solar}.}\label{fig:Powerspectraldensity}
-\end{figure}
-
-\end{column}
-
-\begin{column}{0.6\textwidth}
-
-\begin{align*}
-%&I_{nl}[\TtwoDy{t}{A_{nl}}+\Gamma_{nl}\TDy{t}{A_{nl}}+\omega_0^2A_{nl}]=f(t)\\
-%&P(\omega)\propto P_LP_f=\frac{\midfrac{\Gamma_{nl}}{2\pi}}{(\omega-\omega_{nl})^2+\midfrac{\Gamma_{nl}}{4}}P_f\\
-&\TDy{t}{E_{nl}}+\Gamma_{nl}E_{nl}=\exv{\dvec{\xi}_{nl}\cdot\vec{F}}\\
-&\bar{E}_{nl}=I_{nl}\exv{V_{nl}^2}=I_{nl}\frac{1}{T_{obs}}\int_{-\infty}^{\infty}|V_{nl}(\nu)|^2\,d\nu\propto I_{nl}\Gamma_{nl}A_{nl}\\
-&\bar{E}_{nl}=\frac{\exv{\dvec{\xi}_{nl}\cdot\vec{F}}}{\Gamma_{nl}}
-\end{align*}
-%dove $\exv{\dvec{\xi}_{nl}\cdot\vec{F}}$ \'e il lavoro della forzante mediato su un periodo.
-
-\end{column}
-
-\end{columns}
-
-\end{frame}
-
-\begin{wordonframe}{Ampiezza delle oscillazioni}
-
-L'energia dell'oscillatore varia su tempi scala proporzionali a $\invers{\Gamma}_{nl}$ attorno al valor medio $\bar{E}_{nl}$:
+L'energia cinetica del modo $(n,l)$ mediata su un periodo \'e la media temporale dell'integrale della densit\'a di energia sul volume solare. Definendo l'inerzia normalizzata all'ampiezza superficiale l'energia cinetica di un modo \'e determinata dalla velocit\'a quadratica media in superficie.
 
 \end{wordonframe}
 
@@ -1166,7 +1091,7 @@ Da \cite{christensen1985speed}.}
 
 \end{frame}
 
-\begin{wordonframe}{Inversione legge di DUvall}
+\begin{wordonframe}{Inversione legge di Duvall}
 
 Il profilo radiale della velocit\'a del suono risultante  mostra la validit\'a del modello solare (detto standard per contrasto con i modelli pensati per risolvere il problema dei neutrini solari.)
 
@@ -1561,6 +1486,82 @@ nella fase di sequenza principale la reazione efficace \'e la conversione di 4 n
 
 Nel centro solare circa il $99\%$ della di $\epsilon$ \'e prodotto dalla catena PP.
 Questa figura descrive le reazioni nucleari per condizioni del centro solare. 
+
+\end{wordonframe}
+
+\begin{frame}{Osservazione delle oscillazioni della fotosfera}
+
+\begin{figure}[!ht]
+
+%\includegraphics[keepaspectratio,width=0.95\textwidth]{midlmodes}
+%\caption{I picchi della densit\'a spettrale si dispongono su creste in cui \'e concentrata la potenza in accordo al modello. Determinata usando i primi 144 giorni di osservazione di MDI con $l\leq300$. Da \cite{chr02helioseismology}.}\label{fig:midlmodes}
+
+\includegraphics[keepaspectratio,width=0.95\textwidth]{PSD}
+\caption{Da \cite{houdek2006stochastic}.}\label{fig:PSD}
+
+\end{figure}
+
+\begin{align*}
+&I_{nl}[\TtwoDy{t}{A_{nl}}+\Gamma_{nl}\TDy{t}{A_{nl}}+\omega_{nl}^2A_{nl}]=f(t)\\
+&P(\omega)\propto P_LP_f=\frac{\midfrac{\Gamma_{nl}}{2\pi}}{(\omega-\omega_{nl})^2+\midfrac{\Gamma_{nl}}{4}}P_f\\
+&P_x(\nu)=\sum_i\frac{AB_i\midfrac{\Gamma^2}{4}}{(\nu-\nu_0-\Delta\nu_i)^2+\midfrac{\Gamma^2}{4}}+P_n(\nu)\\
+&\exv{V_{nl}^2}=I_{nl}\frac{1}{T_{obs}}\int_{-\infty}^{\infty}|V_{nl}(\nu)|^2\,d\nu\propto I_{nl}\Gamma_{nl}A_{nl}
+\end{align*}
+
+
+\end{frame}
+
+\begin{wordonframe}{Forma dei picchi nella PSD}
+
+Lo studio delle oscillazioni solari come disciplina \'e l'eliosismologia. L'eliosismologia nasce all'inizio degli anni ''60 quando Leighton e collaboratori osservarono un comportamento oscillatorio nell'atmosfera solare con periodo attorno ai 5 minuti.
+
+Questo comportamento \'e dovuto alla sovrapposizione di onde acustiche instappolate in cavit\'a risonanti a diversa profondit\'a a seconda delle grandezze caratteristiche orizzontale. Le frequenze dei modi sono determinate dalla velocit\'a del suono in queste regioni imponendo che  la cavit\'a contenga radialmente un numero semi-intero di lunghezze d'onda. \'E possibile quindi determinare il profilo radiale della velocit\'a del suono dalle frequenze dei modi osservate.
+
+
+(modi basso l: N=13, n=21)
+
+Le frequenze dei modi sono determinate principalmente misurando lo spostamento doppler di opportune righe di assorbimento in atmosfera ($Ca \lambda=6439 A 129 Km$, $K: 7699 A, 250Km$, $Ni I: 6708 A,300 Km$, $Na D1/D2: 5690 A, 500 Km$). Per identificare modi con $l>2$ \'e necessaria risolouzione spaziale e la proiezione di un'opportuna maschera $W_{l_0m_0}$ isoler\'a il modo con dipendenza spaziale descritta da $Y_{l_0m_0}$. La serie temporale del segnale doppler viene analizzata in termini di componenti armoniche. Le frequenze sono quindi determinate fittando i picchi dello spettro secondo una forma lorentziana  giustificata assumendo che l'ampiezza superficiale dei modi obbedisca all'equazione del moto di un'oscillatore armonico smorzato di frequenza naturale data dalla frequenza del modo e forzante stocastica.
+
+La PSD $P_T(\nu)=\frac{1}{T_{obs}}|X_T(\nu)|^2$ contiene oltre al picco principale (lorentziano) picchi parassiti dovuti a gap nella serie temporale e il contributo del rumore solare.
+
+\end{wordonframe}
+
+
+
+\begin{frame}{Modello dell'ampiezza superficiale delle oscillazioni}
+
+\begin{columns}
+
+\begin{column}{0.4\textwidth}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[keepaspectratio,width=0.85\textwidth]{modespheomenology}
+\caption{Da \cite{libbrecht1988solar}.}\label{fig:Powerspectraldensity}
+\end{figure}
+
+\end{column}
+
+\begin{column}{0.6\textwidth}
+
+\begin{align*}
+%&I_{nl}[\TtwoDy{t}{A_{nl}}+\Gamma_{nl}\TDy{t}{A_{nl}}+\omega_0^2A_{nl}]=f(t)\\
+%&P(\omega)\propto P_LP_f=\frac{\midfrac{\Gamma_{nl}}{2\pi}}{(\omega-\omega_{nl})^2+\midfrac{\Gamma_{nl}}{4}}P_f\\
+&\TDy{t}{E_{nl}}+\Gamma_{nl}E_{nl}=\exv{\dvec{\xi}_{nl}\cdot\vec{F}}\\
+&\bar{E}_{nl}=I_{nl}\exv{V_{nl}^2}=I_{nl}\frac{1}{T_{obs}}\int_{-\infty}^{\infty}|V_{nl}(\nu)|^2\,d\nu\propto I_{nl}\Gamma_{nl}A_{nl}\\
+&\bar{E}_{nl}=\frac{\exv{\dvec{\xi}_{nl}\cdot\vec{F}}}{\Gamma_{nl}}
+\end{align*}
+%dove $\exv{\dvec{\xi}_{nl}\cdot\vec{F}}$ \'e il lavoro della forzante mediato su un periodo.
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+\begin{wordonframe}{Ampiezza delle oscillazioni}
+
+L'energia dell'oscillatore varia su tempi scala proporzionali a $\invers{\Gamma}_{nl}$ attorno al valor medio $\bar{E}_{nl}$:
 
 \end{wordonframe}
 
