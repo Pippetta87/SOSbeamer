@@ -1025,61 +1025,7 @@ Analogamente  esprimo le differenze nelle frequenze dei modi in termini di varia
 
 \end{wordonframe}
 
-\begin{frame}{Tecniche d'inversione}
 
-\[\delta L(\frac{\delta f}{f})\]
-
-\begin{block}{RLS}
-
-I parametri sono determinati minimizzando:
-\begin{equation*}
-Y=\sum_{\alpha=1}^N(\frac{\delta\omega_{obs}-\delta\omega_{fit}}{\sigma})^2_{\alpha}+\lambda N\int_0^1(\TDof{x}\frac{\delta f}{f})^2\,dx
-\end{equation*}
-
-\end{block}
-
-\begin{block}{Subtractive Optimally Localized Averaging.}
-
-\begin{equation*}
-\sum_ic_i(r_0)\frac{\delta\omega_i}{\omega_i}=\int_0^R\sum_ic_i(r_0)K^i(r)\frac{\delta f(r)}{f(r)}\,dr=\int_0^R\mathcal{K}(r_0,r)\frac{\delta f(r)}{f(r)}\,dr=\exv{\frac{\delta f(r_0)}{f(r_0)}}
-\end{equation*}
-
-I coefficienti $c_i(r_0)$ sono determina minimizzando la funzione
-\begin{equation*}
-\int_0^R[\mathcal{K}(r_0,r)-\mathcal{T}(r_0,r)]^2\,dr+\mu\sum_{ij}E_{ij}c_i(r_0)c_j(r_0)
-\end{equation*}
-
-\end{block}
-
-\end{frame}
-
-\begin{wordonframe}{Metodi d'inversione}
-
-Descrivo i metodi del minimo chi-quadro regolarizzato e Sola usati per determinare le correzione introdotte nell'equazione di stato.
-
-Considero la perturbazione dell'equazione del moto $\delta L$ dipendente da una funzione $\delta f/f$
-
-Usando la tecnica del minimo $\chi^2$ regolarizzato si parametrizza la funzione incognita $\frac{\delta f}{f}$, tramite funzioni di base opportune, che sar\'a determinata minimizzando Y; N indica il numero totale di modi $\alpha$, $N_p$ il numero di parametri da determinare, $\Delta\omega_{fit}$ contiene la funzione incognita espressa tramiote il principio variazionale; il secondo addendo del lato destro \'e introdotto per ridurre oscillazioni indesiderate nel risultato dell'inverisone.
-
-
-Determino dei coefficienti $c_i(r_0)$ tali che \[\sum c_i(r_0)\frac{\delta\omega_i}{\omega_i}\] fornisca una media del valore di $\frac{\delta f(r)}{f(r)}$ in $r=r_0$:
-
-La larghezza finita di $\mathcal{K}(r_0,r)$ determina il valor medio di $\frac{\delta f}{f}$ in intorno di $r_0$ e ci\'o causa una differenza sistematica  dal valore effettivo in $r_0$: per $c_s$ l'errore \'e minore del $0.03\%$ e le regioni pi\'u afflitte sono la base della zona convettiva, per la rapida variazione di $\frac{\delta c_s}{c_s}$ e la regione centrale, per il ridotto numero di modi che penetrano in questar zona.
-
-Illustro la tecnica SOLA per determinare $\frac{\delta_rc^2}{c^2}$: si formano delle combinazioni lineari di $\frac{\Lvar{\omega_i}}{\omega_i}$ pesate da coefficienti $c_i(r_0)$ tali che $\frac{\Lvar{c^2}}{c^2}$ sia centrato attorno $r_0$ e che gli altri termini in \eqref{eq:invstructure} siano soppressi, queste compongo un averaging kernel $\mathcal{K}_{c^2,\rho}(r_0,r)=\sum_ic_i(r_0)K_{c^2,\rho}^i(r)$, con $\int_0^R\mathcal{K}(r_0,r)\,dr=1$.
-
-
-Determino i coefficienti minimizzando l'espressione
-\begin{equation}
-\int_0^R[\mathcal{K}_{c^2,\rho}(r_0,r)-\mathcal{T}(r_0,r)]^2\,dr+\beta\int_0^R\mathcal{L}_{\rho,c^2}(r_0,r)\,dr+\mu\sum_i\sigma_ic_i(r_0)c_j(r_0)
-\end{equation}
-dove il kernel cross-term
-\begin{equation}
-\mathcal{L}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)
-\end{equation}
-controlla i contributi indesiderati di $\frac{\delta_r\rho}{\rho}$.
-
-\end{wordonframe}
 
 \begin{frame}{Accuratezza posizione base zona convettiva e abbondanza elio}
 
@@ -1648,6 +1594,63 @@ L'energia dell'oscillatore varia su tempi scala proporzionali a $\invers{\Gamma}
 \begin{wordonframe}{Effetti delle regioni superficiali sulle frequenze dei modi}
 
 Contributo non-adiabatico ($\alpha(\omega)$): differenze dovute a effetti non adiabatici in superficie maggiori per l maggiori perche confinati in guscio sottile e maggiori ad alte frequenze perch\'e punto di inversione pi\'u in alto.
+
+\end{wordonframe}
+
+\begin{frame}{Tecniche d'inversione}
+
+\[\delta L(\frac{\delta f}{f})\]
+
+\begin{block}{RLS}
+
+I parametri sono determinati minimizzando:
+\begin{equation*}
+Y=\sum_{\alpha=1}^N(\frac{\delta\omega_{obs}-\delta\omega_{fit}}{\sigma})^2_{\alpha}+\lambda N\int_0^1(\TDof{x}\frac{\delta f}{f})^2\,dx
+\end{equation*}
+
+\end{block}
+
+\begin{block}{Subtractive Optimally Localized Averaging.}
+
+\begin{align*}
+&\sum_ic_i(r_0)\frac{\delta\omega_i}{\omega_i}=\int_0^R\sum_ic_i(r_0)K^i(r)\frac{\delta f(r)}{f(r)}\,dr\\
+&=\int_0^R\mathcal{K}(r_0,r)\frac{\delta f(r)}{f(r)}\,dr=\exv{\frac{\delta f(r_0)}{f(r_0)}}
+\end{align*}
+
+I coefficienti $c_i(r_0)$ sono determina minimizzando la funzione
+\begin{equation*}
+\int_0^R[\mathcal{K}(r_0,r)-\mathcal{T}(r_0,r)]^2\,dr+\mu\sum_{ij}E_{ij}c_i(r_0)c_j(r_0)
+\end{equation*}
+
+\end{block}
+
+\end{frame}
+
+\begin{wordonframe}{Metodi d'inversione}
+
+Descrivo i metodi del minimo chi-quadro regolarizzato e Sola usati per determinare le correzione introdotte nell'equazione di stato.
+
+Considero la perturbazione dell'equazione del moto $\delta L$ dipendente da una funzione $\delta f/f$
+
+Usando la tecnica del minimo $\chi^2$ regolarizzato si parametrizza la funzione incognita $\frac{\delta f}{f}$, tramite funzioni di base opportune, che sar\'a determinata minimizzando Y; N indica il numero totale di modi $\alpha$, $N_p$ il numero di parametri da determinare, $\Delta\omega_{fit}$ contiene la funzione incognita espressa tramiote il principio variazionale; il secondo addendo del lato destro \'e introdotto per ridurre oscillazioni indesiderate nel risultato dell'inverisone.
+
+
+Determino dei coefficienti $c_i(r_0)$ tali che \[\sum c_i(r_0)\frac{\delta\omega_i}{\omega_i}\] fornisca una media del valore di $\frac{\delta f(r)}{f(r)}$ in $r=r_0$:
+
+La larghezza finita di $\mathcal{K}(r_0,r)$ determina il valor medio di $\frac{\delta f}{f}$ in intorno di $r_0$ e ci\'o causa una differenza sistematica  dal valore effettivo in $r_0$: per $c_s$ l'errore \'e minore del $0.03\%$ e le regioni pi\'u afflitte sono la base della zona convettiva, per la rapida variazione di $\frac{\delta c_s}{c_s}$ e la regione centrale, per il ridotto numero di modi che penetrano in questar zona.
+
+Illustro la tecnica SOLA per determinare $\frac{\delta_rc^2}{c^2}$: si formano delle combinazioni lineari di $\frac{\Lvar{\omega_i}}{\omega_i}$ pesate da coefficienti $c_i(r_0)$ tali che $\frac{\Lvar{c^2}}{c^2}$ sia centrato attorno $r_0$ e che gli altri termini in \eqref{eq:invstructure} siano soppressi, queste compongo un averaging kernel $\mathcal{K}_{c^2,\rho}(r_0,r)=\sum_ic_i(r_0)K_{c^2,\rho}^i(r)$, con $\int_0^R\mathcal{K}(r_0,r)\,dr=1$.
+
+
+Determino i coefficienti minimizzando l'espressione
+\begin{equation}
+\int_0^R[\mathcal{K}_{c^2,\rho}(r_0,r)-\mathcal{T}(r_0,r)]^2\,dr+\beta\int_0^R\mathcal{L}_{\rho,c^2}(r_0,r)\,dr+\mu\sum_i\sigma_ic_i(r_0)c_j(r_0)
+\end{equation}
+dove il kernel cross-term
+\begin{equation}
+\mathcal{L}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)
+\end{equation}
+controlla i contributi indesiderati di $\frac{\delta_r\rho}{\rho}$.
 
 \end{wordonframe}
 
