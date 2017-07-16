@@ -617,6 +617,7 @@ dalla diffusione: la presenza di un gradiente di concentrazione determina diffus
 \begin{column}{0.5\textwidth}
 
 \begin{block}{Et\'a, luminosit\'a, massa, raggio solari}
+
 \begin{tabular}{l|c}
 \hline
 $\agesun{}$&\SI[separate-uncertainty=true]{4.57\pm0.02e9}{\year}\\
@@ -628,13 +629,12 @@ $G\msun$&\num{132712440018+-8}\SI{e9}{\cubic\meter\per\square\second}\\
 $\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
 \hline
 \end{tabular}
-%\caption[Osservabili solari principali.]{Osservabili solari principali. \cite{haberreiter2008solving}.}
-\label{tab:sunO}
+
 \end{block}
 
 \begin{block}{Composizione chimica}
 
-Righe di assorbimento della fotosfera - 
+Righe di assorbimento della fotosfera - Abbondanza elementi pesant $\left(\frac{Z}{X}\right)_{odot}$
 
 \end{block}
 
@@ -655,41 +655,6 @@ Mixing length $l_m=H_p\alpha$
 \[\left(\frac{Z}{X}\right)_{\odot}\]
 \end{block}
 
-
-\begin{comment}
-\begin{block}{Composizione chimica}
-%\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
-Righe di assorbimento della fotosfera.
-\begin{table}[]
-\pgfplotstabletypeset[
-every head row/.style={
-before row={\toprule},
-after row={\midrule}},
-every nth row={2}{before row=\midrule},every last row/.style={after row=\bottomrule},
-every first column/.style={column type/.add={|}{}},
-every last column/.style={column type/.add={}{|}},
-%columns/x/.style = {column type/.add={|}{}},
-columns/zx/.style = {column type/.add={|}{}},
-display columns/0/.style={column name={}},
-%display columns/1/.style={column name={$X$}},
-%display columns/2/.style={column name={$Y$}},
-%display columns/3/.style={column name={$Z$}},
-display columns/1/.style={column name={$\left(\frac{Z}{X}\right)_{ph}$}},
-%display columns/5/.style={column name={$X$}},
-%display columns/6/.style={column name={$Y$}},
-%display columns/7/.style={column name={$Z$}},
-%display columns/8/.style={column name={$\frac{Z}{X}$}},
-create on use/authors/.style={create col/set list={
-%Anders \& Grevesse (1989),Grevesse \& Noels (1993),
-Grevesse et al. (1998),Lodders (2003),Asplund et al. (2005),Lodders et al. (2009),\cite{asplund2009chemical},\cite{caffau2011solar}}},
-columns/authors/.style={string type},
-columns={authors,zx},
-/pgf/number format/precision=4
-     ]{asplund.txt} %%%
-%\captionof{table}{Metallicit\'a attuale determinata da varii autori.}\label{tab:Zhistory}
-\end{table}
-\end{block}
-\end{comment}
 
 \end{column}
 
