@@ -305,6 +305,7 @@ Per determinare il gradiente termico considero il flusso di energia dalle region
 
 Criterio di \sch{}:
 \[\nrad{}<\nad{}\]
+\[\vec{F}=-[\frac{4\pi}{3\rho}\intzi{}\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\,d\nu]\nabla T\]
 
 \end{block}
 
@@ -312,6 +313,13 @@ Criterio di \sch{}:
 
 \[\nrad{}>\nad{}\]
 \[F=F_c+F_r\]
+
+Teoria della Mixing-lenght
+
+\begin{align*}
+&F_{con}=\exv{\rho vc_P\Delta T}\\
+&l_m=\alpha H_P
+\end{align*}
 
 \end{block}
 
@@ -321,200 +329,16 @@ Criterio di \sch{}:
 
 Infine \'e necessaria una descrizione dei meccanismi di trasporto dell'energia dalle regioni interne pi\'u calde alla superficie.
 
-Nelle regioni convettivamente stabili il trasporto 
+Nelle regioni convettivamente stabili il trasporto \'e radiativo.
 {\small regioni convettivamente stabili=un elemento di fluido che subisce una perturbazione radiale compie oscillazioni attorno lla posizione di equilibrio}
 
-Nelle condizioni tipiche degli interni stellari i fotoni hanno cammino libero medio molto breve $\invers{(\kappa_{\nu})}$ quindi posso cansiderare materia radiazione in LTE
+Nelle condizioni tipiche degli interni stellari i fotoni hanno cammino libero medio molto breve $\invers{(\kappa_{\nu})}$ quindi posso considerare materia radiazione in LTE: il flusso \'e trasportato dall'anisotropia nella radiazione di Plank dovuta generata appunto dal gradiente termico.
+Il flusso \'e proporzionale al gradiente e all'opacit\'a per frequenza $\nu$ mediata rispetto alla derivata della funzione di Plank rispetto alla temperatura.
 
-\end{wordonframe}
+Le stelle con $M<1.1\msun{}$ sono caratterizzata da una zona convettiva esterna in cui $\nrad{}>\nad{}$ e dove piccole perturbazioni adiabatiche di elementi di gas vengono amplificate cos\'i trasportando il loro eccesso di calore su grandi distanze.
 
+Per determinare il gradiente termico ambientale in queste zone si usa la teoria della mixing lenght che introduce il parametro $\alpha$ per descrivere l'efficienza della convezione che fornisce il metodo per ricavare il gradiente ambientale.
 
-\begin{frame}{Trasporto radiativo}
-
-\begin{columns}
-
-\begin{column}{0.5\textwidth}
-
-\begin{block}{Equazione del Trasporto radiativo}
-\begin{align*}
-%P_{rad}=\int\,d\nu\frac{4\pi}{3c}B_{\nu}=\frac{1}{3}aT^4\\
-%\vec{F}=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{c}{\kappa\rho}\nabla P_{rad}\\
-\frac{dI_{\nu}}{\rho\,ds}=j_{\nu}-\kappa_{\nu}I_{\nu}\\
-\end{align*}
-\end{block}
-
-\end{column}
-
-\begin{column}{0.5\textwidth}
-
-\begin{block}{Equilibrio termodinamico locale}
-
-\begin{align*}
-&4\pi j_{\nu}=\kappa_{\nu a}cu(\nu)\\
-&B(\nu,T)=\frac{2h\nu^3}{c^2}\frac{1}{\exp{\midfrac{h\nu}{KT}}-1}
-\end{align*}
-
-\end{block}
-
-\end{column}
-
-\end{columns}
-
-\begin{equation*}
-I_{\nu}=\int_0^{\infty}B_{\nu}(-\tau_{\nu})\exp{-\tau_{\nu}}\,d\tau_{\nu}\approx B(\nu,T)-\frac{1}{\kappa_{\nu}\rho}\nabla_s B(\nu,T)
-\end{equation*}
-
-\begin{block}{Relazione tra flusso radiativo e gradiente termico negli interni stellari}
-
-%Il flusso di energia verso la superficie \'e generato da una piccola anisotropia nell'intensit\'a descritta al prim'ordine tramite:
-\begin{align*}
-%&I_{\nu}=B(\nu,T)-\frac{1}{\kappa_{\nu}'\rho}\nabla_s B(\nu,T)\\
-%P_{rad}=\int\,d\nu\frac{4\pi}{3c}B_{\nu}=\frac{1}{3}aT^4\\
-%\vec{F}=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{c}{\kappa\rho}\nabla P_{rad}\\
-%&\frac{dI_{\nu}}{\rho\,ds}=\kappa_{a\nu}B_{\nu}(T)-\kappa_{\nu}I_{\nu}\\
-%\frac{1}{\kappa}=(\frac{acT^3}{\pi})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\label{eq:rosselandopacity}
-&\vec{F}=-[\frac{4\pi}{3\rho}\intzi{}\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\,d\nu]\nabla T%=-\frac{c}{\kappa\rho}\nabla P_{rad}
-\end{align*}
-
-\end{block}
-
-\begin{block}{Gradiente radiativo}
-
-\begin{equation*}
-\nrad{}=\Dcvar{\PDly{P}{T}}{rad}=\frac{3}{16\pi acG}\frac{\kappa l(r)P}{m(r)T^4}%\label{eq:radiativegradient}
-\end{equation*}
-
-\end{block}
-
-\end{frame}
-
-\begin{wordonframe}{Relation between energy density u, energy flus in polar direction F and radiation pressure $P_r$ are related to 3 moments of radiation field $I(\theta)$}
-
-\begin{align*}
-&I(\theta)=I_0+I_1\cos{\theta}+\ldots\\
-&u=\frac{1}{c}\int I(\theta)\,d\Omega=\frac{2\pi}{c}\int_0^{\pi} I(\theta)\sin{\theta}\,d\theta=\frac{4\pi}{c}I_0\\
-&F=\int I(\theta)\cos{\theta}\,d\Omega=2\pi\int_0^{\pi} I(\theta)\cos{\theta}\sin{\theta}\,d\theta=\frac{4\pi}{3}I_1\\
-&P_r=\frac{1}{c}\int I(\theta)\cos{\theta}^2\,d\Omega=\frac{2\pi}{c}\int_0^{\pi} I(\theta)\cos{\theta}^2\sin{\theta}\,d\theta=\frac{4\pi}{3c}I_0
-\end{align*}
-
-\end{wordonframe}
-
-\begin{wordonframe}{Densit\'a di energia fotoni per unit\'a di volume e equilibrio termodinamico radiazione-materia}
-
-Per determinare il gradiente termico considero il flusso di energia dalle regioni pi\'u calde alla superficie: oltre al trasporto radiativo devo considerare la convezione presente nella regione esterna per stelle con $M<1.1\msun{}$.
-
-Il cammino libero medio nell'interno solare \'e molto breve quindi considero la radiazione in equilibro con la materia. La densit\'a di energia dei fotoni per unit\'a di frequenza \'e
-\begin{align*}
-&u(\nu)=\frac{8\pi h\nu^3}{c^3}\frac{1}{\exp{\midfrac{h\nu}{KT}}-1}\\
-&u=aT^4\\
-&I(\nu)=\frac{u(\nu)c}{4\pi}
-\end{align*}
-
-Equilibrio termodinamico locale (Emissione=assorbimento): opacit\'a dovuta a processi di assorbimento.
-\begin{align*}
-&4\pi j_{\nu}=\kappa_{\nu a}cu(\nu)\\
-&B(\nu,T)=\frac{2h\nu^3}{c^2}\frac{1}{\exp{\midfrac{h\nu}{KT}}-1}
-\end{align*}
-
-\end{wordonframe}
-
-\begin{wordonframe}{Emissione spontanea/Indotta}
-
-In realt\'a devo tener conto del\[\frac{\text{Spontaneous emission}}{\text{Total emission}}=1-\exp{-\midfrac{h\nu}{KT}}\]
-
-\[j_{\nu}(\theta)=\kappa_{a,\nu}(1-\exp{-\midfrac{h\nu}{KT}})B_{\nu}(T)+\exp{-\midfrac{h\nu}{KT}})I_{\nu}(T)\]
-
-In LTE si riduce alla legge di Kirkoff.
-
-\end{wordonframe}
-
-\begin{wordonframe}{Trasporto radiativo negli interni stellari: equilibrio termodinamico locale ed espansione $B_{\nu}(-\tau_{\nu})$ al prim'ordine in $\tau_{\nu}$.}
-
-{\small
-
-Infine determino la relazione tra flusso verso la superficie e gradiente termico: oltre al trasporto radiativo devo considerare la convezione presente nella regione esterna per stelle con $M<1.1\msun{}$...
-
-Negli interni stellari il cammino libero medio di un fotone $\invers{(\kappa_{\nu}\rho)}$ \'e molto breve quindi considero localmente equilibrio radiazione-materia.
-
-L'intensit\'a di radiazione attraverso il punto $\vec{P}$ nella direzione $\hat{s}$ \'e determinata dalla somma dei contributi degli strati precedenti 
-
-
-%Per quanto rigurda il trasporto radiativo la soluzione per l'intensit\'a al raggio r in direzione $\hat{s}$ in condizioni di equilibrio termodinamico locale pu\'o essere approssimata come somma (integrale) dei contributi all'intensit\'a  degli strati sottostanti diminuiti a causa dell'opacit\'a con il termine $\exp{\tau_{\nu}}$.
-
-%Poich\'e negli interni stellari il cammino libero medio di un fotone \'e piccolo (per condizioni solari $\invers{(\kappa\rho)}$) considero l'espansione di $B_{\nu}(-\tau_{\nu})$ al prim'ordine
-
-%(emissivit\'a per unit\'a di frequenza:$B(T)=\frac{ac}{4\pi}T^4$). La soluzione dell'equazione del trasporto radiativo \'e la somma di tutti i contributi $B_{\nu}(-\tau_{\nu})$ pesati dall'esponenziale che descrive l'assorbimento del plasma solare.
-%In condizioni tipiche degli interni stellari si pu\'o esprimere l'intensit\'a specifica di radiazione nella direzione $\hat{s}$ come somma del termine isotropo $B_{\nu}(T)$ e del termine lineare nel cammino libero medio del fotone di frequenza $\nu$ che tiene conto della piccola anisotropia nell'intensit\'a specifica tramite $\nabla B_{\nu}(T)$.
-
-%Integrando sulle direzioni uscenti e su tutte le frequenze si ottiene la relazione tra flusso radiativo e gradiente termico.
-
-Integrando su tutte le direzioni e su tutte le frequenze si ottiene la relazione tra flusso e gradiente terico cercata.
-
-La quantit\'a $\frac{1}{\kappa_{\nu}}\PDy{T}{B_{\nu}(T)}$ \'e l'opacit\'a media di Rosseland. Nel calcolo della struttura stellare si usa il gradiente termico espresso in termini della derivata logaritmica della pressione: ho usato la definizione di luminosit\'a e la condizione di equilibrio idrostatico.
-
-}
-
-\end{wordonframe}
-
-
-\begin{frame}{Instabilit\'a convettiva - Gradiente termico nelle regioni convettive}
-
-\begin{align*}
-&\rho\PtwoDy{t}{(\Delta r)}=-g\Delta\rho=-g[\Dcvar{\TDy{r}{\rho}}{e}-\Dcvar{\TDy{r}{\rho}}{amb}]\Delta r=-N^2\Delta r\\
-&N^2=g(\frac{1}{\Gamma_1P}\TDy{r}{P}-\frac{1}{\rho}\TDy{r}{\rho})=g(\frac{1}{\densityscale{}}-\frac{g}{c_s^2})%\label{eq:bvfs}
-\end{align*}
-
-\begin{columns}
-
-\begin{column}{0.45\textwidth}
-
-\begin{block}{Instabilit\'a convettiva}
-
-\begin{align*}
-&N^2<0\\
-&\nrad{}>\nad{}
-\end{align*}
-
-\end{block}
-
-\begin{block}{Trasporto convettivo}
-
-\begin{align*}
-&F=F_c+F_r\\
-&F_{con}=\exv{\rho vc_P\Delta T}\\
-&l_m=\alpha H_P
-\end{align*}
-
-\end{block}
-
-\end{column}
-
-\begin{column}{0.55\textwidth}
-
-\begin{figure}[!h]
-    \includegraphics[width=0.99\textwidth,keepaspectratio]{proportionflux}
-    \caption{Da \cite{christensen1997effects}.}
-\end{figure}
-
-
-\end{column}
-
-\end{columns}
-
-\end{frame}
-
-\begin{wordonframe}{Instabilit\'a convettiva - Gradiente termico nelle regioni convettive}
-
-La convezione caratterizza le regioni in cui uno spostamento infinitesimo di un blob di gas cresce esponenzialmente a causa della forza di Archimede.
-
-{\small Considero il moto del blob in equilibrio di pressione con l'ambiente: esprimo l'equazione del moto dell'elemento in funzione della frequenza di \bv{} $N^2$. Le regioni stabili, in cui l'equazione del moto descrive un comportamento oscillatorio, sono per $N^2>0$  oppure usando l'equazione di stato per esprimere i gradienti di densit\'a in funzione dei gradienti di temperatura $\nrad{}<\nad{}$.)
-}
-
-% e uso l'equazione di stato per esprimere la differenza di densit\'a tra blob e ambiente. Considero in prima approssimazione il moto del blob adiabatico ($dq=c_P\,dT-\frac{\delta}{\rho}\,dP$) (e $\nmu{}\approx0$).
-
-Per determinare il gradiente ambientale nelle regioni convettive esterne, che caratterizzano stelle $M\leq1.1\msun{}$ si usa la teoria della ML. Questa considera l'eccesso di calore trasportato dal moto dell'elemento di gas in equilibrio di pressione con l'ambiente che rilasci il calore dopo aver percorso una lunghezza caratteristica $l_m=\alpha H_P$.
-
-L'efficienza delle regioni convettive esterne \'e quindi un parametro libero determinato tramite calibrazione del modello solare per riprodurre $T_e$.
 
 \end{wordonframe}
 
@@ -1294,6 +1118,195 @@ La banda rossa intorno allo zero che rappresenta il profilo effettivo della velo
 \end{wordonframe}
 
 \section{Appendix}
+
+\begin{frame}{Trasporto radiativo}
+
+\begin{columns}
+
+\begin{column}{0.5\textwidth}
+
+\begin{block}{Equazione del Trasporto radiativo}
+\begin{align*}
+%P_{rad}=\int\,d\nu\frac{4\pi}{3c}B_{\nu}=\frac{1}{3}aT^4\\
+%\vec{F}=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{c}{\kappa\rho}\nabla P_{rad}\\
+\frac{dI_{\nu}}{\rho\,ds}=j_{\nu}-\kappa_{\nu}I_{\nu}\\
+\end{align*}
+\end{block}
+
+\end{column}
+
+\begin{column}{0.5\textwidth}
+
+\begin{block}{Equilibrio termodinamico locale}
+
+\begin{align*}
+&4\pi j_{\nu}=\kappa_{\nu a}cu(\nu)\\
+&B(\nu,T)=\frac{2h\nu^3}{c^2}\frac{1}{\exp{\midfrac{h\nu}{KT}}-1}
+\end{align*}
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\begin{equation*}
+I_{\nu}=\int_0^{\infty}B_{\nu}(-\tau_{\nu})\exp{-\tau_{\nu}}\,d\tau_{\nu}\approx B(\nu,T)-\frac{1}{\kappa_{\nu}\rho}\nabla_s B(\nu,T)
+\end{equation*}
+
+\begin{block}{Relazione tra flusso radiativo e gradiente termico negli interni stellari}
+
+%Il flusso di energia verso la superficie \'e generato da una piccola anisotropia nell'intensit\'a descritta al prim'ordine tramite:
+\begin{align*}
+%&I_{\nu}=B(\nu,T)-\frac{1}{\kappa_{\nu}'\rho}\nabla_s B(\nu,T)\\
+%P_{rad}=\int\,d\nu\frac{4\pi}{3c}B_{\nu}=\frac{1}{3}aT^4\\
+%\vec{F}=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{4\pi}{3\kappa\rho}\nabla B=-\frac{c}{\kappa\rho}\nabla P_{rad}\\
+%&\frac{dI_{\nu}}{\rho\,ds}=\kappa_{a\nu}B_{\nu}(T)-\kappa_{\nu}I_{\nu}\\
+%\frac{1}{\kappa}=(\frac{acT^3}{\pi})\expy{-1}\intzi{}\,d\nu\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\label{eq:rosselandopacity}
+&\vec{F}=-[\frac{4\pi}{3\rho}\intzi{}\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\,d\nu]\nabla T%=-\frac{c}{\kappa\rho}\nabla P_{rad}
+\end{align*}
+
+\end{block}
+
+\begin{block}{Gradiente radiativo}
+
+\begin{equation*}
+\nrad{}=\Dcvar{\PDly{P}{T}}{rad}=\frac{3}{16\pi acG}\frac{\kappa l(r)P}{m(r)T^4}%\label{eq:radiativegradient}
+\end{equation*}
+
+\end{block}
+
+\end{frame}
+
+\begin{wordonframe}{Relation between energy density u, energy flus in polar direction F and radiation pressure $P_r$ are related to 3 moments of radiation field $I(\theta)$}
+
+\begin{align*}
+&I(\theta)=I_0+I_1\cos{\theta}+\ldots\\
+&u=\frac{1}{c}\int I(\theta)\,d\Omega=\frac{2\pi}{c}\int_0^{\pi} I(\theta)\sin{\theta}\,d\theta=\frac{4\pi}{c}I_0\\
+&F=\int I(\theta)\cos{\theta}\,d\Omega=2\pi\int_0^{\pi} I(\theta)\cos{\theta}\sin{\theta}\,d\theta=\frac{4\pi}{3}I_1\\
+&P_r=\frac{1}{c}\int I(\theta)\cos{\theta}^2\,d\Omega=\frac{2\pi}{c}\int_0^{\pi} I(\theta)\cos{\theta}^2\sin{\theta}\,d\theta=\frac{4\pi}{3c}I_0
+\end{align*}
+
+\end{wordonframe}
+
+\begin{wordonframe}{Densit\'a di energia fotoni per unit\'a di volume e equilibrio termodinamico radiazione-materia}
+
+Per determinare il gradiente termico considero il flusso di energia dalle regioni pi\'u calde alla superficie: oltre al trasporto radiativo devo considerare la convezione presente nella regione esterna per stelle con $M<1.1\msun{}$.
+
+Il cammino libero medio nell'interno solare \'e molto breve quindi considero la radiazione in equilibro con la materia. La densit\'a di energia dei fotoni per unit\'a di frequenza \'e
+\begin{align*}
+&u(\nu)=\frac{8\pi h\nu^3}{c^3}\frac{1}{\exp{\midfrac{h\nu}{KT}}-1}\\
+&u=aT^4\\
+&I(\nu)=\frac{u(\nu)c}{4\pi}
+\end{align*}
+
+Equilibrio termodinamico locale (Emissione=assorbimento): opacit\'a dovuta a processi di assorbimento.
+\begin{align*}
+&4\pi j_{\nu}=\kappa_{\nu a}cu(\nu)\\
+&B(\nu,T)=\frac{2h\nu^3}{c^2}\frac{1}{\exp{\midfrac{h\nu}{KT}}-1}
+\end{align*}
+
+\end{wordonframe}
+
+\begin{wordonframe}{Emissione spontanea/Indotta}
+
+In realt\'a devo tener conto del\[\frac{\text{Spontaneous emission}}{\text{Total emission}}=1-\exp{-\midfrac{h\nu}{KT}}\]
+
+\[j_{\nu}(\theta)=\kappa_{a,\nu}(1-\exp{-\midfrac{h\nu}{KT}})B_{\nu}(T)+\exp{-\midfrac{h\nu}{KT}})I_{\nu}(T)\]
+
+In LTE si riduce alla legge di Kirkoff.
+
+\end{wordonframe}
+
+\begin{wordonframe}{Trasporto radiativo negli interni stellari: equilibrio termodinamico locale ed espansione $B_{\nu}(-\tau_{\nu})$ al prim'ordine in $\tau_{\nu}$.}
+
+{\small
+
+Infine determino la relazione tra flusso verso la superficie e gradiente termico: oltre al trasporto radiativo devo considerare la convezione presente nella regione esterna per stelle con $M<1.1\msun{}$...
+
+Negli interni stellari il cammino libero medio di un fotone $\invers{(\kappa_{\nu}\rho)}$ \'e molto breve quindi considero localmente equilibrio radiazione-materia.
+
+L'intensit\'a di radiazione attraverso il punto $\vec{P}$ nella direzione $\hat{s}$ \'e determinata dalla somma dei contributi degli strati precedenti 
+
+
+%Per quanto rigurda il trasporto radiativo la soluzione per l'intensit\'a al raggio r in direzione $\hat{s}$ in condizioni di equilibrio termodinamico locale pu\'o essere approssimata come somma (integrale) dei contributi all'intensit\'a  degli strati sottostanti diminuiti a causa dell'opacit\'a con il termine $\exp{\tau_{\nu}}$.
+
+%Poich\'e negli interni stellari il cammino libero medio di un fotone \'e piccolo (per condizioni solari $\invers{(\kappa\rho)}$) considero l'espansione di $B_{\nu}(-\tau_{\nu})$ al prim'ordine
+
+%(emissivit\'a per unit\'a di frequenza:$B(T)=\frac{ac}{4\pi}T^4$). La soluzione dell'equazione del trasporto radiativo \'e la somma di tutti i contributi $B_{\nu}(-\tau_{\nu})$ pesati dall'esponenziale che descrive l'assorbimento del plasma solare.
+%In condizioni tipiche degli interni stellari si pu\'o esprimere l'intensit\'a specifica di radiazione nella direzione $\hat{s}$ come somma del termine isotropo $B_{\nu}(T)$ e del termine lineare nel cammino libero medio del fotone di frequenza $\nu$ che tiene conto della piccola anisotropia nell'intensit\'a specifica tramite $\nabla B_{\nu}(T)$.
+
+%Integrando sulle direzioni uscenti e su tutte le frequenze si ottiene la relazione tra flusso radiativo e gradiente termico.
+
+Integrando su tutte le direzioni e su tutte le frequenze si ottiene la relazione tra flusso e gradiente terico cercata.
+
+La quantit\'a $\frac{1}{\kappa_{\nu}}\PDy{T}{B_{\nu}(T)}$ \'e l'opacit\'a media di Rosseland. Nel calcolo della struttura stellare si usa il gradiente termico espresso in termini della derivata logaritmica della pressione: ho usato la definizione di luminosit\'a e la condizione di equilibrio idrostatico.
+
+}
+
+\end{wordonframe}
+
+
+\begin{frame}{Instabilit\'a convettiva - Gradiente termico nelle regioni convettive}
+
+\begin{align*}
+&\rho\PtwoDy{t}{(\Delta r)}=-g\Delta\rho=-g[\Dcvar{\TDy{r}{\rho}}{e}-\Dcvar{\TDy{r}{\rho}}{amb}]\Delta r=-N^2\Delta r\\
+&N^2=g(\frac{1}{\Gamma_1P}\TDy{r}{P}-\frac{1}{\rho}\TDy{r}{\rho})=g(\frac{1}{\densityscale{}}-\frac{g}{c_s^2})%\label{eq:bvfs}
+\end{align*}
+
+\begin{columns}
+
+\begin{column}{0.45\textwidth}
+
+\begin{block}{Instabilit\'a convettiva}
+
+\begin{align*}
+&N^2<0\\
+&\nrad{}>\nad{}
+\end{align*}
+
+\end{block}
+
+\begin{block}{Trasporto convettivo}
+
+\begin{align*}
+&F=F_c+F_r\\
+&F_{con}=\exv{\rho vc_P\Delta T}\\
+&l_m=\alpha H_P
+\end{align*}
+
+\end{block}
+
+\end{column}
+
+\begin{column}{0.55\textwidth}
+
+\begin{figure}[!h]
+    \includegraphics[width=0.99\textwidth,keepaspectratio]{proportionflux}
+    \caption{Da \cite{christensen1997effects}.}
+\end{figure}
+
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+\begin{wordonframe}{Instabilit\'a convettiva - Gradiente termico nelle regioni convettive}
+
+La convezione caratterizza le regioni in cui uno spostamento infinitesimo di un blob di gas cresce esponenzialmente a causa della forza di Archimede.
+
+{\small Considero il moto del blob in equilibrio di pressione con l'ambiente: esprimo l'equazione del moto dell'elemento in funzione della frequenza di \bv{} $N^2$. Le regioni stabili, in cui l'equazione del moto descrive un comportamento oscillatorio, sono per $N^2>0$  oppure usando l'equazione di stato per esprimere i gradienti di densit\'a in funzione dei gradienti di temperatura $\nrad{}<\nad{}$.)
+}
+
+% e uso l'equazione di stato per esprimere la differenza di densit\'a tra blob e ambiente. Considero in prima approssimazione il moto del blob adiabatico ($dq=c_P\,dT-\frac{\delta}{\rho}\,dP$) (e $\nmu{}\approx0$).
+
+Per determinare il gradiente ambientale nelle regioni convettive esterne, che caratterizzano stelle $M\leq1.1\msun{}$ si usa la teoria della ML. Questa considera l'eccesso di calore trasportato dal moto dell'elemento di gas in equilibrio di pressione con l'ambiente che rilasci il calore dopo aver percorso una lunghezza caratteristica $l_m=\alpha H_P$.
+
+L'efficienza delle regioni convettive esterne \'e quindi un parametro libero determinato tramite calibrazione del modello solare per riprodurre $T_e$.
+
+\end{wordonframe}
 
 
 \begin{frame}{Modello plasma solare}
