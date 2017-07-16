@@ -919,33 +919,37 @@ La condizione di risonanza radiale \'e nota come legge di Duvall per modi p ed \
 
 \frame{\partpage}
 
+\begin{wordonframe}{Inversione}
+
+In questa sezione ho riassunto alcuni risultati sulla struttura interna del Sole determinati sulla base delle frequenze osservate:
+\'e possibile distinguere il contributo alle frequenze dei modi dei diversi strati grazie al comportamento spaziale differente delle ampiezze dei modi.
+
+\end{wordonframe}
 
 \begin{frame}{Inversione assoluta}
 
 
-\begin{equation*}
-c_s^2=\Gamma_1\frac{P}{\rho}
-\end{equation*}
-
 %\begin{columns}
 %\begin{column}{0.6\textwidth}
-\begin{figure}[!ht]
-\includegraphics[height=0.45\textheight,keepaspectratio]{dsoundspeedduvall} 
-
 %\end{column}
 %\begin{column}{0.4\textwidth}
-\captionof{figure}{%Differenza relativa del profilo di $c_s$ (determinata invertendo \eqref{eq:analinversionc}) per frequenze dei modi calcolate con MSS e osservate. La differenza relativa \'e minore del $5\%$.
-Da \cite{christensen1985speed}.}
-\label{dsoundduvall}
-\end{figure}
 %\end{column}
 %\end{columns}
+
+\begin{figure}[!ht]
+\includegraphics[height=0.45\textheight,keepaspectratio]{dsoundspeedduvall} 
+\captionof{figure}{Da \cite{christensen1985speed}.}
+\end{figure}
 
 \end{frame}
 
 \begin{wordonframe}{Inversione legge di Duvall}
 
-Il profilo radiale della velocit\'a del suono risultante  mostra la validit\'a del modello solare (detto standard per contrasto con i modelli pensati per risolvere il problema dei neutrini solari.)
+Inizio con un esempio di inversione assuluta: che non dipenden da un modello.
+
+\'E possibile ricavare il profilo radiale della velocit\'a del suono dalle frequenze osservate usando la condizione di risonanza radiale (Invertendo la legge di Duvall).
+
+Il profilo radiale della velocit\'a del suono risultante  mostra la validit\'a del modello solare: in figura vediamo la differenza tra il profilo radiale di $c_s$ determinato invertendo le frequenze adiabatiche calcolate tramite modello e quelle misurate.
 
 (Errore sistematico dovuto alle approssimazione di Cowling intorno al $2.5\%$)
 
@@ -989,7 +993,7 @@ Definisco l'operatore lineare L riscrivendo l'equazione del moto perturbato in t
 
 Chandrasekhar ha dimostrato che L definisce un problema agli autovalori hermitiano per condizioni alla superfice stellare di pressione e densit\'a nulle.
 
-Considero gli effetti di una variazione piccola di L, cio\'e una variazione dell'equazione del moto perturbato, $\delta L$ sulle frequenze dei modi. Tengo i termini lineari nelle perturbazioni e data la stazionariet\'a di $\omega$ rispetto a $\xi$ il termine $L\delta \xi$ \'e nullo. Moltiplicando per $\xi*$  e integrando sul volume stellare ottengo l'espressione per la variazione nelle frequenze dei modi in funzione della variazione dell'equazione del moto perturbato.
+Considero gli effetti di una variazione dell'equazione del moto perturbato, $\delta L$ sulle frequenze dei modi. Tengo i termini lineari nelle perturbazioni e data la stazionariet\'a di $\omega$ rispetto a $\xi$ il termine $L\delta \xi$ \'e nullo. Moltiplicando per $\xi*$  e integrando sul volume stellare ottengo l'espressione per la variazione nelle frequenze dei modi in funzione della variazione dell'equazione del moto perturbato.
 
 \end{wordonframe}
 
@@ -1023,11 +1027,13 @@ Analogamente  esprimo le differenze nelle frequenze dei modi in termini di varia
 
 \begin{frame}{Tecniche d'inversione}
 
+\[\delta L(\frac{\delta f}{f})\]
+
 \begin{block}{RLS}
 
 I parametri sono determinati minimizzando:
 \begin{equation*}
-Y=\sum_{\alpha=1}^N(\frac{\delta\omega_{obs}-\delta\omega_{fit}}{\sigma})^2_{\alpha}+\alpha N\int_0^1(x\TDof{x}\frac{\Delta f}{f})^2\,dx
+Y=\sum_{\alpha=1}^N(\frac{\delta\omega_{obs}-\delta\omega_{fit}}{\sigma})^2_{\alpha}+\lambda N\int_0^1(\TDof{x}\frac{\delta f}{f})^2\,dx
 \end{equation*}
 
 \end{block}
@@ -1035,7 +1041,7 @@ Y=\sum_{\alpha=1}^N(\frac{\delta\omega_{obs}-\delta\omega_{fit}}{\sigma})^2_{\al
 \begin{block}{Subtractive Optimally Localized Averaging.}
 
 \begin{equation*}
-\sum_ic_i(r_0)\frac{\delta\omega_i}{\omega_i}=\int_0^R\sum_ic_i(r_0)K^i(r)\frac{\delta f(r)}{f(r)}\,dr=\exv{\frac{\delta f(r_0)}{f(r_0)}}
+\sum_ic_i(r_0)\frac{\delta\omega_i}{\omega_i}=\int_0^R\sum_ic_i(r_0)K^i(r)\frac{\delta f(r)}{f(r)}\,dr=\int_0^R\mathcal{K}(r_0,r)\frac{\delta f(r)}{f(r)}\,dr=\exv{\frac{\delta f(r_0)}{f(r_0)}}
 \end{equation*}
 
 I coefficienti $c_i(r_0)$ sono determina minimizzando la funzione
@@ -1047,11 +1053,14 @@ I coefficienti $c_i(r_0)$ sono determina minimizzando la funzione
 
 \end{frame}
 
-\begin{wordonframe}{Tecniche d'inversione}
+\begin{wordonframe}{Metodi d'inversione}
 
-Usando la tecnica del minimo $\chi^2$ regolarizzato si parametrizza la funzione incognita $\frac{\delta f}{f}$, tramite funzioni di base opportune, determinata minimizzando:
+Descrivo i metodi del minimo chi-quadro regolarizzato e Sola usati per determinare le correzione introdotte nell'equazione di stato.
 
-N indica il numero totale di modi $\alpha$, $N_p$ il numero di parametri da determinare, $\Delta\omega_{fit}$, ricavato tramite eq:variational, contiene la funzione incognita; il secondo addendo del lato destro di eq:minimizerls \'e introdotto per ridurre oscillazioni indesiderate nel risultato dell'inverisone con $\alpha$ parametro di regolarizzazione.
+Considero la perturbazione dell'equazione del moto $\delta L$ dipendente da una funzione $\delta f/f$
+
+Usando la tecnica del minimo $\chi^2$ regolarizzato si parametrizza la funzione incognita $\frac{\delta f}{f}$, tramite funzioni di base opportune, che sar\'a determinata minimizzando Y; N indica il numero totale di modi $\alpha$, $N_p$ il numero di parametri da determinare, $\Delta\omega_{fit}$ contiene la funzione incognita espressa tramiote il principio variazionale; il secondo addendo del lato destro \'e introdotto per ridurre oscillazioni indesiderate nel risultato dell'inverisone.
+
 
 Determino dei coefficienti $c_i(r_0)$ tali che \[\sum c_i(r_0)\frac{\delta\omega_i}{\omega_i}\] fornisca una media del valore di $\frac{\delta f(r)}{f(r)}$ in $r=r_0$:
 
