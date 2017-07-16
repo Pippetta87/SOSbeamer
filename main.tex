@@ -214,18 +214,15 @@
 
 \begin{wordonframe}{Intro MSS e i suoi modi}
 
-In questa tesina mi sono occupato dei modi normali gravo-acustici solari, cio\'e oscillazioni attorno alla struttura di equilibrio le cui caratteristiche sono determinate dal profilo radiale della densit\'a e velocit\'a del suono nell'interno solare.
-Le prime osservazioni di un comportamento periodico nell'atmosfera solare sono state effettuate da Leighton all'inizio degli anni '60 e in seguito il fenomeno \'e stato spiegato come sovrapposizione di modi acustici confinati in cavit'a risonanti.
+In questa tesina mi sono occupato dei modi normali gravo-acustici solari, cio\'e oscillazioni  stazionarie attorno alla struttura di equilibrio le cui caratteristiche sono determinate dal profilo radiale della densit\'a e velocit\'a del suono nell'interno solare: la disciplina che studia la propagazione delle onde all'interno del Sole \'e eliosismologia.
+
+L'osservazione delle frequenze dei modi normali avviene tramite lo spostamento Doppler di righe di assorbimento dell'atmosfera; negli anni '60 Leigthon e collaboratori osservarono per primi un comportamento oscillatorio con periodo 5 minuti e dimensioni cartteristiche di qualche megametro, in seguito il fenomeno \'e stato spiegato come sovrapposizione di un gran numero di modi acustici confinati in cavit'a risonanti.
 
 {\small ALtezze linee Dopler: $Ca \lambda=6439 A 129 Km$, $K: 7699 A, 250Km$, $Ni I: 6708 A,300 Km$, $Na D1/D2: 5690 A, 500 Km$}
 
-L'eliosismologia \'e la disciplina che studia la propagazione delle onde all'interno del Sole.
-Il gran numero di frequenze osservate impone vincoli stringenti alle caratteristiche del modello solare standard.
-
-
 %Cos'\'e un modo??Sovrapposizione di onde di stessa ampiezza propagantesi in direzioni opposte
-
-Nella prima parte ho considerato analizzato il modello solare standard, nella seconda ho descritto i modi normali adiabatici, in particolare la relazione tra le frequenze dei modi e la struttura solare; infine ho considerato le tecniche che permettono di invertire la dipendenza delle frequenze dalla struttura interna del Sole.
+Il gran numero di frequenze osservate impone vincoli stringenti alle caratteristiche del modello solare standard.
+Nella prima parte ho analizzato il modello solare standard, nella seconda ho descritto i modi normali adiabatici, in particolare la relazione tra le frequenze dei modi e la struttura solare; infine ho considerato le tecniche che permettono di invertire la dipendenza delle frequenze dalla struttura interna del Sole.
 
 Il modello MSS si basa su leggi di conservazione, valide per qualsiasi stella: le prime 3 equazioni usate per determinare la struttura stellare ... 
 
@@ -255,7 +252,7 @@ Il modello MSS si basa su leggi di conservazione, valide per qualsiasi stella: l
 Deviazioni da forma sferica trascurabili (campi magnetici, rotazione)
 \end{block}
 
-\begin{block}{Conservazione della massa}
+\begin{block}{Massa in un guscio sferico}
 
 \begin{equation*}
 %\TDy{t}{\rho}+\nabla\cdot(\rho\vec{v})=0
@@ -276,7 +273,8 @@ Deviazioni da forma sferica trascurabili (campi magnetici, rotazione)
 \begin{block}{Conservazione energia interna}
 
 \begin{equation*}
-\TDy{t}{q}=\epsilon(\rho,T,X_i)-\frac{1}{\rho}\nabla\cdot\vec{F}=\TDy{t}{u}+P\TDof{t}(\frac{1}{\rho})%\label{eq:heatgl}
+\TDy{r}{L}=4\pi r^2[\rho(\epsilon-\epsilon_{\nu})-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]
+%\TDy{t}{q}=\epsilon(\rho,T,X_i)-\frac{1}{\rho}\nabla\cdot\vec{F}=\TDy{t}{u}+P\TDof{t}(\frac{1}{\rho})%\label{eq:heatgl}
 %&\TDy{r}{L}=4\pi r^2[\rho\epsilon-\rho\TDof{t}u+\frac{P}{\rho}\TDy{t}{\rho}]%\label{eq:fenergyconservation}
 \end{equation*}
 
@@ -298,11 +296,13 @@ Considero le deviazioni dalla simmetria sferica (rotazione campo magnetico) come
 
 L'evoluzione di una stella in sequenza principale come il Sole attuale avviene su tempi nucleari quindi assumo equilibrio idrostatico.
 
-La legge di conservazione dell'ìenergia interna determina la relazione tra il calore trasferito dalle reazioni nucleari per unit\'a di massa, e il flusso: si ha situazione staziopnaria quando l'energia prodotta dalle reazioni nucleari bilancia il flusso uscente (divergenza del flusso uscente proporzionale a $\nabla T\propto\nabla P$).
+%La legge di conservazione dell'energia interna determina la relazione tra il calore trasferito per unit\'a di massa, cio\'e bilancio netto fra energia prodotta dalle reazioni nucleari e il gradiente del flusso e cambiamento di temperatura espansione/compressione: si ha situazione stazionaria quando l'energia prodotta dalle reazioni nucleari bilancia il flusso uscente (divergenza del flusso uscente proporzionale a $\nabla T\propto\nabla P$).
 
-Quant'\'e il calore aggiunto per unit\'a di massa?? $\approx\midfrac{E_i}{\tau M}$ In sequenza principale il calore aggiunto per unit\'a di massa \'e trascurabile in qunato i tempi evolutivi sono molto maggiori dei tempi di rilassamento radiativi (tipicamente viene indicato il tempo impiegato ad irradiare l'energia interna).
+%Quant'\'e il calore aggiunto per unit\'a di massa?? $\approx\midfrac{E_i}{\tau M}$ In sequenza principale il calore aggiunto per unit\'a di massa \'e trascurabile in qunato i tempi evolutivi sono molto maggiori dei tempi di rilassamento radiativi (tipicamente viene indicato il tempo impiegato ad irradiare l'energia interna).
 
-Per determinare il gradiente termico considero il flusso di energia dalle regioni pi\'u calde alla superficie: oltre al trasporto radiativo devo considerare la convezione presente nella regione esterna per stelle con $M<1.1\msun{}$.
+La prima legge della termodinamica apllicata alla struttura stellare si legge che se esiste un trasferimento netto di calore per elemento di massa unitaria dovuto a un disequilibrio tra energia prodotta per unit\'a di massa dalla reazioni nucleari e divergenza del flusso l'elemento subisce modifiche dello stato termodinamico.
+
+Per determinare il gradiente termico considero le caratteristiche del trasporto di energia dalle regioni pi\'u calde alla superficie: oltre al trasporto radiativo devo considerare la convezione presente nella regione esterna per stelle con $M<1.1\msun{}$.
 
 \end{wordonframe}
 
@@ -356,6 +356,8 @@ Per determinare il gradiente termico ambientale in queste zone si usa la teoria 
 \begin{frame}{Modello plasma solare}
 
 \begin{block}{EOS e grandezze termodinamiche. Popolazione di stati atomici.}
+
+\[P(\rho,T,X_i)\]
 
 \begin{columns}
 
@@ -435,9 +437,8 @@ A destra \'e mostrato l'andamento dell'esponente adiabatico calcolato tramite du
 
 \begin{block}{Diffusione}
 
-\begin{equation*}
-\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})=\sum_{i\neq j}\int m_{ij}\vec{v}_{ij}C(f_i,f_j)\,d^3v_i%
-\end{equation*}
+Condizioni non omogenee: diffusione di elio e metalli verso il centro.
+%\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})=\sum_{i\neq j}\int m_{ij}\vec{v}_{ij}C(f_i,f_j)\,d^3v_i%
 
 \end{block}
 
@@ -480,7 +481,7 @@ dalla diffusione: la presenza di un gradiente di concentrazione determina diffus
 
 \begin{columns}
 
-\begin{column}{0.7\textwidth}
+\begin{column}{0.6\textwidth}
 
 %Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
 \begin{subequations}%\label{subeqn:stellarstructure}
@@ -495,7 +496,7 @@ dalla diffusione: la presenza di un gradiente di concentrazione determina diffus
 
 \end{column}
 
-\begin{column}{0.3\textwidth}
+\begin{column}{0.4\textwidth}
 \begin{itemize}
     \item Superficie: $T_e$, $P_{atm}$
     \item Centro: $l(r=0)$, $m(r=0)$.
@@ -629,7 +630,8 @@ In figura abbiamo il profilo della velocit\'a del suono del modello solare prece
 \end{wordonframe}
 
 
-\part{Oscillazioni della fotosfera con grande coerenza spaziale e temporale - Modi normali di cavit\'a risonanti dell'interno solare}\label{part:oscillations}
+%\part{Oscillazioni della fotosfera con grande coerenza spaziale e temporale - Modi normali di cavit\'a risonanti dell'interno solare}\label{part:oscillations}
+\part{Modi normali adiabatici}
 
 \frame{\partpage}
 
@@ -643,7 +645,7 @@ In figura abbiamo il profilo della velocit\'a del suono del modello solare prece
 
 \begin{wordonframe}{Intro part 2}
 
-In questa sezione descrivo il sistema di equazioni che descrive i modi normali adiabatici, le caratteristiche dei modi per alte e basse frequenza, ricavo usando l'approssimazione di Cowling, la relazione di dispersione per onde gravo acustiche e mostro la condizione di risonanza radiale per modi p e modi g.
+In questa sezione determino i modi normali adiabatici, le caratteristiche dei modi per alte e basse frequenza, ricavo usando l'approssimazione di Cowling, la relazione di dispersione per onde gravo acustiche e mostro la condizione di risonanza radiale per modi p e modi g.
 
 \end{wordonframe}
 
@@ -674,8 +676,10 @@ sono un sistema di 5 equazioni in 5 incognite che con le opportune condizioni al
 
 Considero le perturbazioni euleriane $\rho'$, $P'$
 
+Considero l'equazione del moto per un elemento di fluido spostato dalla posizione di equilibrio di $\vec{\xi}$: la forza agente sull'elemento \'e determinata da pressione densit\'a e accelerazione di gravit\'a a $\vec{r}+\vec{\xi}$. Ottengo l'equazione del moto perturbata al prim'ordine nelle perturbazioni considerando il valore attuale di P, $\rho'$, $\vec{g}$ come sovrapposizione della perturbazione euleriana al valore di equilibrio: le quantit\'a primate sono perturbazioni euleriane e $\vec{g}'=-\nabla\Phi'$ e $\nabla^2\Phi'=4\pi G\rho'$.
 
-Considero un campo di perturbazioni infinitesi della posizione di equilibrio $\vec{\xi}$ di un elemento di gas: la forza agente sull'elemento \'e determinata da pressione densit\'a e accelerazione di gravit\'a a $\vec{r}+\vec{\xi}$. Ottengo l'equazione del moto perturbata al prim'ordine nelle perturbazioni consioderando il valore attuale di P, $\rho'$, $\vec{g}$ come sovrapposizione della perturbazione euleriana al valore di equilibrio: le quantit\'a primate sono perturbazioni euleriane e $\vec{g}'=-\nabla\Phi'$ e $\nabla^2\Phi'=4\pi G\rho'$.
+\[P(r+\delta r)=P_0(r)+P'
+
 
 Completo il sistema con l'equazione di continuit\'a e la condizione di moto adiabatico. La condizione di adiabaticit\'a \'e giustificata perch\'e il periodo dei modi \'e molto minore del tempo di rilassamento radiativo e dei tempi scala di generazione di energia.
 
@@ -685,8 +689,8 @@ Completo il sistema con l'equazione di continuit\'a e la condizione di moto adia
 
 \begin{block}{Onde stazionarie}
 \begin{align*}
-&Y_{lm}(\theta,\phi)=(-)^mc_{lm}P_l^m(\cos{\theta})\exp{im\phi}\\
-&(\rho',P',\Phi')=\exp{i\omega t}[\rho'(r),P'(r),\Phi'(r)]Y_l^m
+&(\rho',P',\Phi')=\exp{i\omega t}[\rho'(r),P'(r),\Phi'(r)]Y_l^m\\
+&Y_{lm}(\theta,\phi)=(-)^mc_{lm}P_l^m(\cos{\theta})\exp{im\phi}
 \end{align*}
 \end{block}
 
