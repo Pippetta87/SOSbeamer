@@ -637,6 +637,12 @@ In figura abbiamo il profilo della velocit\'a del suono del modello solare prece
 
 %\section{Modi normali della struttura solare}
 
+\begin{wordonframe}{Intro part 2}
+
+In questa sezione descrivo il sistema di equazioni che descrive i modi normali adiabatici, le caratteristiche dei modi per alte e basse frequenza, ricavo usando l'approssimazione di Cowling, la relazione di dispersione per onde gravo acustiche e mostro la condizione di risonanza radiale per modi p e modi g.
+
+\end{wordonframe}
+
 \begin{frame}{Modi normali: perturbazioni di una struttura a simmetria sferica}
 \begin{block}{Equazione del moto perturbato linearizzata}
 \begin{equation*}
@@ -657,10 +663,15 @@ P'+\vec{\xi}\cdot\nabla P_0=\frac{\Gamma_{1,0}P_0}{\rho_0}(\rho'+\vec{\xi}\cdot\
 
 \begin{wordonframe}{Determinazione del moto perturbato}
 
-L'equazione del moto nel SR solidale con l'elemento di gas linearizzata nella perturbazione insieme alla condizione di adiabaticit\'a del moto e la continuit\'a della massa, sempre al termine lineare nella perturbazione, sono un sistema di 5 equazioni in 5 incognite che con le opportune condizioni al bordo determina i modi di oscillazione adiabatici della struttura solare.
-Considero uno spostamento infinitesimo $\vec{\xi}$ dalla posizione di equilibrio di un elemento di gas: la forza agente sull'elemento \'e determinata da pressione densit\'a e accelerazione di gravit\'a a $\vec{r}+\vec{\xi}$. Ottengo l'equazione del moto perturbata al prim'ordine nelle perturbazioni.
+I modi lineari adiabatici sono determinati dall'equazione del moto perturbato, assieme all'equazione di continuit\'a, la condizione di adiabaticit\'a e le opportune condizioni al contorno.
 
-Le quantit\'a primate sono perturbazioni euleriane e $\vec{g}'=-\nabla\Phi'$ e $\nabla^2\Phi'=4\pi G\rho'$.
+{\small
+sono un sistema di 5 equazioni in 5 incognite che con le opportune condizioni al bordo determina i modi di oscillazione adiabatici della struttura solare.}
+
+Considero le perturbazioni euleriane $\rho'$, $P'$
+
+
+Considero un campo di perturbazioni infinitesi della posizione di equilibrio $\vec{\xi}$ di un elemento di gas: la forza agente sull'elemento \'e determinata da pressione densit\'a e accelerazione di gravit\'a a $\vec{r}+\vec{\xi}$. Ottengo l'equazione del moto perturbata al prim'ordine nelle perturbazioni consioderando il valore attuale di P, $\rho'$, $\vec{g}$ come sovrapposizione della perturbazione euleriana al valore di equilibrio: le quantit\'a primate sono perturbazioni euleriane e $\vec{g}'=-\nabla\Phi'$ e $\nabla^2\Phi'=4\pi G\rho'$.
 
 Completo il sistema con l'equazione di continuit\'a e la condizione di moto adiabatico. La condizione di adiabaticit\'a \'e giustificata perch\'e il periodo dei modi \'e molto minore del tempo di rilassamento radiativo e dei tempi scala di generazione di energia.
 
@@ -726,7 +737,7 @@ Questo \'e il sistema che determina i modi normali: ha soluzioni per $\omega_{nl
 
 Le frequenze sono $2l+1$ degeneri perch\'e il sistema non dipende da m.
 
-L'approssimazione di Cowling, valida per grandi l o n (uso la soluzione dell'equazione di Poisson per $\Phi'$), consiste nel trascurare la perturbazione al potenziale gravitazionale, restringendosi quindi alle prime 2 equazioni.
+L'approssimazione di Cowling, valida per grandi l o n (uso la soluzione dell'equazione di Poisson per $\Phi'$), consiste nel trascurare la perturbazione al potenziale gravitazionale, restringendosi quindi alle prime 2 equazioni. L'approssimazione di Cowling consente un'interpretazione dei modi normali come onde gravo-acustiche confinate in cavit\'a le cui dimensioni sono determinate dalla relazione di dispersione.
 
 \end{wordonframe}
 
@@ -768,9 +779,12 @@ L'approssimazione di Cowling, valida per grandi l o n (uso la soluzione dell'equ
 
 \begin{wordonframe}{Spettro dei modi: modi p, modi g, modi f}
 
+Le frequenze dei modi determinate tramite il sistema visto prima si dispongono su delle linee nel diagramma $\nu-l$ che corrispondono con le creste nel diagramma $\nu-l$ osservativo.
 La figura mostra lo spettro delle frequenze discrete per cui il sistema dei modi ha soluzione in funzione del grado angolare l. I modi con stesso ordine radiale sono uniti da una linea: nella parte ad alte frequenze abbiamo i modi p, di natura acustica, nella parte a basse frequenze modi g, che sono onde di gravit\'a, e modi f, modi di superficie ($\div{\vec{\xi}}\approx0$, $\omega^2=gk_h$). 
 
 L'energia cinetica del modo $(n,l)$ mediata su un periodo \'e la media temporale dell'integrale della densit\'a di energia sul volume solare. Definendo l'inerzia normalizzata all'ampiezza superficiale l'energia cinetica di un modo \'e determinata dalla velocit\'a quadratica media in superficie.
+
+La velocit\'a quadratica media \'e determinata dalle caratteristiche dello spettro nella SPD e ricavata teoricamente tramite modello per l'eccitazione dei modi.
 
 \end{wordonframe}
 
@@ -787,9 +801,9 @@ L'energia cinetica del modo $(n,l)$ mediata su un periodo \'e la media temporale
 \begin{columns}
 
 \begin{column}{0.4\textwidth}
-Onde acustiche:\[k_r^2=\frac{\omega^2}{c_s^2}(\frac{S_l^2}{\omega^2}-1)\]
+Cavit\'a acustiche:\[k_r^2=\frac{\omega^2}{c_s^2}(\frac{S_l^2}{\omega^2}-1)\]
 Raggio di inversione del moto:\[\frac{k_h^2}{\omega^2}=c_s^2\]
-Onde di gravit\'a:\[k_r^2=\frac{S_l^2}{c_s^2}(\frac{N^2}{\omega^2}-1)\]
+Cavit\'a per modi g:\[k_r^2=\frac{S_l^2}{c_s^2}(\frac{N^2}{\omega^2}-1)\]
 
 \end{column}
 
@@ -809,6 +823,12 @@ Onde di gravit\'a:\[k_r^2=\frac{S_l^2}{c_s^2}(\frac{N^2}{\omega^2}-1)\]
 
 \begin{wordonframe}{Relazione di dispersione e frequenze critiche}
 
+Considero il sistema di equazioni per i modi in approssimazione di Cowling e considero  la derivata prima della perturbazione dominante rispetto alla perturbazione.{\small
+trascuro $H_P$ importante vicino alla superficie e $\frac{2}{r}$}, infine assumo una dipendenza spaziale di onda piana $\exp{ik_rr}$.
+
+IL sistema si riduce ad un'equazione che descrive  un comportamento oscillatorio per $k_r^2>0$: nel limite per alte frequenze ho la relazione di disp. per onde acustiche che definisce cavit\'a acustiche la cui profondit\'a \'e determinata dall'aumentare della velocit\'a del suono fino a che la velocit\'a di fase $k_h/\omega$ \'e la velocit\'a del suono.($k_h^2=\frac{l((l+1)}{r^2}$); nel limite per basse frequenze ho rel disp onde di gravit\'a: sono convinate in regioni in cui $N^2$ \'e grande e reale.
+
+
 \end{wordonframe}
 
 \begin{frame}{Condizione di risonanza radiale}
@@ -824,14 +844,19 @@ Onde di gravit\'a:\[k_r^2=\frac{S_l^2}{c_s^2}(\frac{N^2}{\omega^2}-1)\]
 %&(n+\alpha)\pi\approx\int_{r_t}^Rk_r\,dr\\
 &(n+\alpha)\pi\approx\int_{r_t}^R\frac{\omega}{c_s}\sqrt{1-\frac{S_l^2}{\omega^2}}\,dr
 \quad
-\frac{(n+\alpha_g)\pi}{L}\approx\int_{r_1}^{r_2}(\frac{N^2}{\omega^2}-1)\expy{\frac{1}{2}}\,d\ln{r}
+\frac{(n+\alpha_g)\pi}{L}\approx\int_{r_1}^{r_2}(\frac{N^2}{\omega^2}-1)\expy{\frac{1}{2}}\,d\ln{r}\\
+&\omega_A=\frac{c_s}{2\densityscale{}}\sqrt{1-2\TDy{r}{\densityscale{}}}\propto T\expy{-\frac{1}{2}}
 \end{align*}
 
 \end{frame}
 
 \begin{wordonframe}{Condizione di risonanza radiale}
 
-La condizione di risonanza radiale \'e nota come legge di Duvall per modi p
+La figura mostra le traiettorie di onde acustiche e di gravit\'a confinate in diverse regioni; per descrivere la frequenza critica acustica che determina la riflessione vicino alla superficie dovrei usare un formalismo adeguato per analizzare il sistema di equazioni di Cowling.
+
+La condizione di risonanza radiale, che la cavit\'a contenga un numero semi-intero di lunghezze d'onda e una fase dovuta allo spessore finito in cui avviene la riflessione interna, determina le frequenze dei modi.
+
+La condizione di risonanza radiale \'e nota come legge di Duvall per modi p ed \'e stata determinata sperimentalmente da Duvall.
 
 \end{wordonframe}
 
