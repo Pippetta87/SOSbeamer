@@ -550,7 +550,7 @@ A destra \'e mostrato l'andamento dell'esponente adiabatico calcolato tramite du
 
 \begin{frame}{Evoluzione chimica: reazioni nucleari e diffusione.}
 
-\begin{block}{Probabilit\'a reazioni di fusione}
+\begin{block}{Rate di reazione per coppia nuclei}
 
 \begin{align*}
 %&\sigma=\pi\lambdabar^2\Exp{-\dfrac{2\pi Z_1Z_2e^2}{\hbar v}}S(E)\\
@@ -571,7 +571,7 @@ A destra \'e mostrato l'andamento dell'esponente adiabatico calcolato tramite du
 \begin{block}{Diffusione}
 
 \begin{equation*}
-\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})=\sum_{i\neq j}\int m_{ij}\vec{v}_{ij}C(f_i,f_j)\,d^3v_i (??)%
+\vec{F}_i=-\nabla P_i+n_i(q_i\vec{E}+m_i\vec{g})=\sum_{i\neq j}\int m_{ij}\vec{v}_{ij}C(f_i,f_j)\,d^3v_i%
 \end{equation*}
 
 \end{block}
@@ -595,10 +595,13 @@ La sezione d'urto di fusione contiene il termine geometrico $\pi\lambdabar^2\pro
 
 Lo schermaggio elettronico aumenta la probabilit\'a di penetrare la barriera coulombiana.
 
-La funzione $\epsilon(T,\rho,X_i)$ descrive la produzione di energia.
+%La funzione $\epsilon(T,\rho,X_i)$ descrive la produzione di energia.
 
-La forza per unit\'a di volume agente sulle particelle di specie i (trascurando il gradiente termico) \'e
-e in condizioni stazionarie il momento trasferito tramite urti con le altre specie \'e uguale alla forza per unit\'a di volume:
+Per stelle di sequenza principale la reazione efficace converte 4 protoni n un elio: $Q=28.6 meV$ meno l'energia dei neutrini per nucleo di elio prodotto.
+
+
+Inoltre un piccolo contributo ma non trascurabile \'e dato 
+dalla diffusione: la presenza di un gradiente di concentrazione determina diffusione in senso opposto; a livello microscopico la risultante delle forze per unit\'a di volume agenti su una specie di particelle pu\'o essere non nulla, quindi in condizioni stazionarie il momento trasferito tramite urti (proporzionale alla velocit\'a di diffusione relativa) con le altre specie \'e uguale alla forza per unit\'a di volume.
 
 \end{wordonframe}
 
@@ -606,7 +609,8 @@ e in condizioni stazionarie il momento trasferito tramite urti con le altre spec
 
 %\section{Equazioni struttura stellare}
 
-\begin{frame}{Dati osservativi}
+\begin{frame}{Calibrazione modello solare}
+
 
 \begin{columns}
 
@@ -628,17 +632,35 @@ $\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
 \label{tab:sunO}
 \end{block}
 
+\begin{block}{Composizione chimica}
+
+Righe di assorbimento della fotosfera - 
+
+\end{block}
+
 \end{column}
 
 \begin{column}{0.5\textwidth}
 
-\begin{block}{Composizione chimica}
 
+\begin{block}{Abbondanze elio iniziale}
+Un maggiore peso molecolare medio comporta un maggiore temperatura nel core di fusione
+\end{block}
+
+\begin{block}{efficienza convezione}
+Mixing length $l_m=H_p\alpha$
+\end{block}
+
+\begin{block}{diffusione}
+\[\left(\frac{Z}{X}\right)_{\odot}\]
+\end{block}
+
+
+\begin{comment}
+\begin{block}{Composizione chimica}
 %\begin{itemize}[noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt]
 Righe di assorbimento della fotosfera.
-
 \begin{table}[]
-
 \pgfplotstabletypeset[
 every head row/.style={
 before row={\toprule},
@@ -666,8 +688,8 @@ columns={authors,zx},
      ]{asplund.txt} %%%
 %\captionof{table}{Metallicit\'a attuale determinata da varii autori.}\label{tab:Zhistory}
 \end{table}
-
 \end{block}
+\end{comment}
 
 \end{column}
 
@@ -730,21 +752,6 @@ Condizioni al bordo:
 
 \end{frame}
 
-\begin{frame}{Calibrazione modello solare}
-
-\begin{block}{Abbondanze elio iniziale}
-Un maggiore peso molecolare medio comporta un maggiore temperatura nel core di fusione
-\end{block}
-
-\begin{block}{efficienza convezione}
-Mixing length $l_m=H_p\alpha$
-\end{block}
-
-\begin{block}{diffusione}
-\[\left(\frac{Z}{X}\right)_{\odot}\]
-\end{block}
-
-\end{frame}
 
 \begin{wordonframe}{Soluzione equazioni modello solare}
 
