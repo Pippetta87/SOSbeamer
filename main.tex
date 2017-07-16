@@ -214,7 +214,11 @@
 
 \begin{wordonframe}{Intro MSS e i suoi modi}
 
-In questa tesina mi sono occupato dei modi normali gravo-acustici solari, cio\'e oscillazioni attorno alla struttura di equilibrio le cui caratteristiche sono determinate dal profilo radiale della densit\'a e velocit\'a del suono nell'interno solare. Il gran numero di frequenze osservate impone vincoli stringenti alle caratteristiche del modello solare standard.
+In questa tesina mi sono occupato dei modi normali gravo-acustici solari, cio\'e oscillazioni attorno alla struttura di equilibrio le cui caratteristiche sono determinate dal profilo radiale della densit\'a e velocit\'a del suono nell'interno solare.
+Le prime osservazioni di un comportamento periodico nell'atmosfera solare sono state effettuate da Leighton all'inizio degli anni '60 e in seguito il fenomeno \'e tstato spiegato come sovrapposizione di modi acustici confinati in cavit'a risonanti. L'eliosismologia \'e la disciplina che studia la propagazione delle onde all'interno del Sole.
+Il gran numero di frequenze osservate impone vincoli stringenti alle caratteristiche del modello solare standard.
+
+
 %Cos'\'e un modo??Sovrapposizione di onde di stessa ampiezza propagantesi in direzioni opposte
 
 Nella prima parte ho considerato analizzato il modello solare standard, nella seconda ho descritto i modi normali adiabatici, in particolare la relazione tra le frequenze dei modi e la struttura solare; infine ho considerato le tecniche che permettono di invertire la dipendenza delle frequenze dalla struttura interna del Sole.
@@ -303,10 +307,8 @@ Per determinare il gradiente termico considero il flusso di energia dalle region
 
 \begin{frame}{Relazione tra flusso di energia e gradiente termico}
 
-\begin{block}{Regioni di stabilit\'a convettiva}
+\begin{block}{Trasporto radiativo}
 
-Criterio di \sch{}:
-\[\nrad{}<\nad{}\]
 \[\vec{F}=-[\frac{4\pi}{3\rho}\intzi{}\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\,d\nu]\nabla T\]
 
 \end{block}
@@ -334,10 +336,10 @@ Infine \'e necessaria una descrizione dei meccanismi di trasporto dell'energia d
 Nelle regioni convettivamente stabili il trasporto \'e radiativo.
 {\small regioni convettivamente stabili=un elemento di fluido che subisce una perturbazione radiale compie oscillazioni attorno lla posizione di equilibrio}
 
-Nelle condizioni tipiche degli interni stellari i fotoni hanno cammino libero medio molto breve $\invers{(\kappa_{\nu})}$ quindi posso considerare materia radiazione in LTE: il flusso \'e trasportato dall'anisotropia nella radiazione di Plank dovuta generata appunto dal gradiente termico.
-Il flusso \'e proporzionale al gradiente e all'opacit\'a per frequenza $\nu$ mediata rispetto alla derivata della funzione di Plank rispetto alla temperatura.
+Nelle condizioni tipiche degli interni stellari i fotoni hanno cammino libero medio molto breve $\invers{(\kappa_{\nu}\rho)}$ quindi posso considerare materia radiazione in LTE: il flusso \'e trasportato dall'anisotropia nella radiazione di Plank dovuta al gradiente termico.
+Il flusso a frequenza $\nu$ \'e proporzionale al gradiente termico e al cammino libero medio del fotone $\nu$ mediata rispetto alla derivata della funzione di Plank rispetto alla temperatura.
 
-Le stelle con $M<1.1\msun{}$ sono caratterizzata da una zona convettiva esterna in cui $\nrad{}>\nad{}$ e dove piccole perturbazioni adiabatiche di elementi di gas vengono amplificate cos\'i trasportando il loro eccesso di calore su grandi distanze.
+Le stelle con $M<1.1\msun{}$ sono caratterizzata da una zona convettiva esterna in cui $\nrad{}>\nad{}$ e dove piccole perturbazioni adiabatiche di elementi di gas vengono amplificate e cos\'i trasportano il loro eccesso di calore su grandi distanze.
 
 Per determinare il gradiente termico ambientale in queste zone si usa la teoria della mixing lenght che introduce il parametro $\alpha$ per descrivere l'efficienza della convezione che fornisce il metodo per ricavare il gradiente ambientale.
 
@@ -472,6 +474,10 @@ dalla diffusione: la presenza di un gradiente di concentrazione determina diffus
 
 \begin{frame}{Modello solare standard}
 
+\begin{columns}
+
+\begin{column}{0.7\textwidth}
+
 %Determino la struttura solare integrando numericamente le equazioni fondamentali della struttura stellare
 \begin{subequations}%\label{subeqn:stellarstructure}
 \begin{align*}
@@ -483,13 +489,9 @@ dalla diffusione: la presenza di un gradiente di concentrazione determina diffus
 \end{subequations}
 %con $v_i$ velocit\'a di diffusione specie i. Ottengo il profilo radiale delle grandezze $\{P,m,T,L,X_i\}$, note la metallicit\'a iniziale Z, l'equazione di stato $P(\rho,T,X_i)$, l'opacit\'a $\kappa(P,T,X_i)$, il rate di produzione di energia nucleare per grammo $\epsilon(P,T,X_i)$.
 
-\begin{columns}
-
-\begin{column}{0.3\textwidth}
-Condizioni al bordo:
 \end{column}
 
-\begin{column}{0.5\textwidth}
+\begin{column}{0.3\textwidth}
 \begin{itemize}
     \item Superficie: $T_e$, $P_{atm}$
     \item Centro: $l(r=0)$, $m(r=0)$.
