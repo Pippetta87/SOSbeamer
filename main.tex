@@ -214,17 +214,19 @@
 
 \begin{wordonframe}{Intro MSS e i suoi modi}
 
-In questa tesina mi sono occupato dei modi normali gravo-acustici solari, cio\'e oscillazioni  stazionarie attorno alla struttura di equilibrio le cui caratteristiche sono determinate dal profilo radiale della densit\'a e velocit\'a del suono nell'interno solare: la disciplina che studia la propagazione delle onde all'interno del Sole \'e eliosismologia.
+In questa tesina ho considerato i modi gravo-acustici di oscillazione della struttura solare.
+%In questa tesina mi sono occupato dei modi normali gravo-acustici solari, cio\'e oscillazioni  stazionarie attorno alla struttura di equilibrio le cui caratteristiche sono determinate dal profilo radiale della densit\'a e velocit\'a del suono nell'interno solare: la disciplina che studia la propagazione delle onde all'interno del Sole \'e eliosismologia.
 
-L'osservazione delle frequenze dei modi normali avviene tramite lo spostamento Doppler di righe di assorbimento dell'atmosfera; negli anni '60 Leigthon e collaboratori osservarono per primi un comportamento oscillatorio con periodo 5 minuti e dimensioni cartteristiche di qualche megametro, in seguito il fenomeno \'e stato spiegato come sovrapposizione di un gran numero di modi acustici confinati in cavit'a risonanti.
+%L'osservazione delle frequenze dei modi normali avviene tramite lo spostamento Doppler di righe di assorbimento dell'atmosfera; negli anni '60 Leigthon e collaboratori osservarono per primi un comportamento oscillatorio con periodo 5 minuti e dimensioni cartteristiche di qualche megametro, in seguito il fenomeno \'e stato spiegato come sovrapposizione di un gran numero di modi acustici confinati in cavit'a risonanti.
 
 {\small ALtezze linee Dopler: $Ca \lambda=6439 A 129 Km$, $K: 7699 A, 250Km$, $Ni I: 6708 A,300 Km$, $Na D1/D2: 5690 A, 500 Km$}
 
 %Cos'\'e un modo??Sovrapposizione di onde di stessa ampiezza propagantesi in direzioni opposte
-Il gran numero di frequenze osservate impone vincoli stringenti alle caratteristiche del modello solare standard.
+%Il gran numero di frequenze osservate impone vincoli stringenti alle caratteristiche del modello solare standard.
+
 Nella prima parte ho analizzato il modello solare standard, nella seconda ho descritto i modi normali adiabatici, in particolare la relazione tra le frequenze dei modi e la struttura solare; infine ho considerato le tecniche che permettono di invertire la dipendenza delle frequenze dalla struttura interna del Sole.
 
-Il modello MSS si basa su leggi di conservazione, valide per qualsiasi stella: le prime 3 equazioni usate per determinare la struttura stellare ... 
+Le equazioni della struttra stellare, sono il punto di partenza per costruire un modello solare:
 
 \end{wordonframe}
 
@@ -290,19 +292,18 @@ Deviazioni da forma sferica trascurabili (campi magnetici, rotazione)
 
 \begin{wordonframe}{Simmetria sferica, conservazione massa, equilibrio idrostatico, conservazione energia interna (PRIMA LEGGE)}
 
-Le equazioni che descrivono la struttura di una stella ... sono un caso particolare della conservazione della massa, dell'impulso, dell'energia interna.
+La massa \'e distribuita in gusci sferici di densit'a $\rho$ determinata dalla condizione di equilibriop idrostatico.
 
-Considero le deviazioni dalla simmetria sferica (rotazione campo magnetico) come perturbazioni, quindi le trascuro nella descrizione della struttura di equilibrio. 
-
-L'evoluzione di una stella in sequenza principale come il Sole attuale avviene su tempi nucleari quindi assumo equilibrio idrostatico.
+{\small L'evoluzione di una stella in sequenza principale come il Sole attuale avviene su tempi nucleari quindi assumo equilibrio idrostatico.}
 
 %La legge di conservazione dell'energia interna determina la relazione tra il calore trasferito per unit\'a di massa, cio\'e bilancio netto fra energia prodotta dalle reazioni nucleari e il gradiente del flusso e cambiamento di temperatura espansione/compressione: si ha situazione stazionaria quando l'energia prodotta dalle reazioni nucleari bilancia il flusso uscente (divergenza del flusso uscente proporzionale a $\nabla T\propto\nabla P$).
 
 %Quant'\'e il calore aggiunto per unit\'a di massa?? $\approx\midfrac{E_i}{\tau M}$ In sequenza principale il calore aggiunto per unit\'a di massa \'e trascurabile in qunato i tempi evolutivi sono molto maggiori dei tempi di rilassamento radiativi (tipicamente viene indicato il tempo impiegato ad irradiare l'energia interna).
 
-La prima legge della termodinamica apllicata alla struttura stellare si legge che se esiste un trasferimento netto di calore per elemento di massa unitaria dovuto a un disequilibrio tra energia prodotta per unit\'a di massa dalla reazioni nucleari e divergenza del flusso l'elemento subisce modifiche dello stato termodinamico.
+La prima legge della termodinamica (conservazione energia interna) determina la variazione di luminosit\'a i direzione radiale in funzione dell'energia generata tramite reazioni nucleari e trasformazioni dello stato termodinamico del gas. (In situazioni stazionarie la variazione di luminosit\'a \'e pari all'energia prodotta)
+%si legge che se esiste un trasferimento netto di calore per elemento di massa unitaria dovuto a un disequilibrio tra energia prodotta per unit\'a di massa dalla reazioni nucleari e divergenza del flusso l'elemento subisce modifiche dello stato termodinamico.
 
-Per determinare il gradiente termico considero le caratteristiche del trasporto di energia dalle regioni pi\'u calde alla superficie: oltre al trasporto radiativo devo considerare la convezione presente nella regione esterna per stelle con $M<1.1\msun{}$.
+Per determinare il gradiente termico considero le caratteristiche del trasporto di energia dalle regioni pi\'u calde alla superficie: oltre al trasporto radiativo nella regione esterna per stelle con $M<1.1\msun{}$ ho trasporto convettivo.
 
 \end{wordonframe}
 
@@ -310,7 +311,7 @@ Per determinare il gradiente termico considero le caratteristiche del trasporto 
 %\section{Meccanismi di trasporto dell'energia}
 
 \begin{frame}{Relazione tra flusso di energia e gradiente termico}
-
+\[\Dcvar{\PDly{P}{T}}\]
 \begin{block}{Trasporto radiativo}
 
 \[\vec{F}=-[\frac{4\pi}{3\rho}\intzi{}\frac{1}{\kappa_{\nu}}\PDy{T}{B(\nu,T)}\,d\nu]\nabla T\]
@@ -337,15 +338,19 @@ Teoria della Mixing-lenght
 
 Infine \'e necessaria una descrizione dei meccanismi di trasporto dell'energia dalle regioni interne pi\'u calde alla superficie.
 
+\'E utile introdurre la notazione $\nabla$
+
 Nelle regioni convettivamente stabili il trasporto \'e radiativo.
 {\small regioni convettivamente stabili=un elemento di fluido che subisce una perturbazione radiale compie oscillazioni attorno lla posizione di equilibrio}
 
-Nelle condizioni tipiche degli interni stellari i fotoni hanno cammino libero medio molto breve $\invers{(\kappa_{\nu}\rho)}$ quindi posso considerare materia radiazione in LTE: il flusso \'e trasportato dall'anisotropia nella radiazione di Plank dovuta al gradiente termico.
+%Nelle condizioni tipiche degli interni stellari i fotoni hanno cammino libero medio molto breve $\invers{(\kappa_{\nu}\rho)}$ quindi posso considerare materia radiazione in LTE: il flusso \'e trasportato dall'anisotropia nella radiazione di Plank dovuta al gradiente termico.
 Il flusso a frequenza $\nu$ \'e proporzionale al gradiente termico e al cammino libero medio del fotone $\nu$ mediata rispetto alla derivata della funzione di Plank rispetto alla temperatura.
+
+Il flusso radiativo a frequenza $\nu$\'e proporzionale al gradiente termico e al cammino libero medio di un fotone di frequenza $\nu$ $\invers{(\kappa_{\nu}\rho)}$ e il flusso totale \'e la somma su tutte le frequenze.
 
 Le stelle con $M<1.1\msun{}$ sono caratterizzata da una zona convettiva esterna in cui $\nrad{}>\nad{}$ e dove piccole perturbazioni adiabatiche di elementi di gas vengono amplificate e cos\'i trasportano il loro eccesso di calore su grandi distanze.
 
-Per determinare il gradiente termico ambientale in queste zone si usa la teoria della mixing lenght che introduce il parametro $\alpha$ per descrivere l'efficienza della convezione che fornisce il metodo per ricavare il gradiente ambientale.
+Per determinare il gradiente termico ambientale in queste zone si usa la teoria della mixing length che introduce il parametro $\alpha$ per descrivere l'efficienza della convezione che fornisce il metodo per ricavare il gradiente ambientale.
 
 
 \end{wordonframe}
@@ -552,7 +557,7 @@ $\lsun{}$&\SI{3.8275+-0.0014e33}{\erg\per\second}\\
 
 \begin{block}{Composizione chimica}
 
-Righe di assorbimento della fotosfera - Abbondanza elementi pesant $\left(\frac{Z}{X}\right)_{odot}$
+Righe di assorbimento della fotosfera - Abbondanza elementi pesanti $\left(\frac{Z}{X}\right)_{\odot}$
 
 \end{block}
 
