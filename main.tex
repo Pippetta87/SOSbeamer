@@ -928,7 +928,7 @@ La condizione di risonanza radiale \'e nota come legge di Duvall per modi p ed \
 
 
 
-\part{Invesione: tecniche e risultati}\label{part:inverseproblem}
+\part{Inversione: tecniche e risultati}\label{part:inverseproblem}
 
 \frame{\partpage}
 
@@ -940,7 +940,6 @@ In questa sezione ho riassunto alcuni risultati sulla struttura interna del Sole
 \end{wordonframe}
 
 \begin{frame}{Inversione assoluta}
-
 
 %\begin{columns}
 %\begin{column}{0.6\textwidth}
@@ -972,7 +971,7 @@ Il modello MSS si basa su leggi di conservazione, valide per qualsiasi stella: l
 
 %\section{Principio variazionale}
 
-\begin{frame}{Effetto di perturbazioni nell'equazione del moto sulle frequenze}
+\begin{wordonframe}{Effetto di perturbazioni nell'equazione del moto sulle frequenze}
 
 \begin{block}{Problema agli autovalori hermitiano}
 
@@ -998,7 +997,7 @@ Il modello MSS si basa su leggi di conservazione, valide per qualsiasi stella: l
 
 \end{block}
 
-\end{frame}
+\end{wordonframe}
 
 \begin{wordonframe}{Principio variazionale}
 
@@ -1039,7 +1038,7 @@ Analogamente  esprimo le differenze nelle frequenze dei modi in termini di varia
 \end{wordonframe}
 
 
-\begin{frame}{Valutazione accuratezza del modello}
+\begin{frame}{Caratteristiche zona convettiva}
 
 \begin{table}[!ht]%{r}{0.7\textwidth}
 
@@ -1098,7 +1097,7 @@ Le differenze quadratiche medie nel profilo della velocit\'a del suono sono  cor
 
 \end{wordonframe}
 
-\begin{frame}{Accuratezza profilo radiale della velocit\'a del suono}
+\begin{frame}{Correzioni al profilo radiale della velocit\'a del suono}
 
 \begin{figure}[!ht]%{r}{0.5\textwidth}
         \includegraphics[width=0.8\textwidth,keepaspectratio]{deltacwu}
@@ -1120,6 +1119,34 @@ Un modello con composizione pi\'u accurata riproduce peggio il profilo della vel
 \end{wordonframe}
 
 \section{Appendix}
+
+\begin{frame}{Effetto di perturbazioni nell'equazione del moto sulle frequenze}
+
+\begin{block}{Problema agli autovalori hermitiano}
+
+\begin{align*}%\label{eq:EOMrhoc}%Unno89
+&L(\vec{\xi})=\frac{1}{\rho_0}\nabla p'-\vec{g}'-\frac{\rho'}{\rho_0}\vec{g}_0\\
+&\rho_0L(\xi)=\nabla(c_s^2\rho\scap{\nabla}{\xi}+\nabla P\cdot\vec{\xi})-\vec{g}_0\nabla\cdot(\rho_0\vec{\xi})-G\rho_0\nabla(\int_V\frac{\nabla\cdot(\rho_0\vec{\xi})\,d^3r'}{|\vec{r}-\vec{r}'|})\\
+&L(\xi)=-\omega^2\xi
+\end{align*}
+
+\end{block}
+
+\begin{block}{Variazioni nell'equazione del moto perturbato}
+
+\begin{equation*}
+(L+\Lvar{L})(\xi+\Lvar{\xi})=-(\omega+\Lvar{\omega})^2(\xi+\Lvar{\xi})%&\label{eq:EMvar}
+\end{equation*}
+
+\end{block}
+
+\begin{block}{Variazioni nelle frequenze}
+
+\[\frac{\Lvar{\omega}}{\omega}=-\frac{\int_V\rho\vec{\xi}\Lvar{L}\vec{\xi}\,d^3x}{2\omega^2\int_V\rho\scap{\xi}{\xi}d^3x}\]
+
+\end{block}
+
+\end{frame}
 
 \begin{frame}{Trasporto radiativo}
 
