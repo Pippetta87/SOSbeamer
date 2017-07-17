@@ -928,7 +928,7 @@ La condizione di risonanza radiale \'e nota come legge di Duvall per modi p ed \
 
 
 
-\part{Tecniche e risultati di inversione}\label{part:inverseproblem}
+\part{Invesione: tecniche e risultati}\label{part:inverseproblem}
 
 \frame{\partpage}
 
@@ -1039,7 +1039,7 @@ Analogamente  esprimo le differenze nelle frequenze dei modi in termini di varia
 \end{wordonframe}
 
 
-\begin{frame}{Accuratezza posizione base zona convettiva e abbondanza elio}
+\begin{frame}{Valutazione accuratezza del modello}
 
 \begin{table}[!ht]%{r}{0.7\textwidth}
 
@@ -1064,7 +1064,11 @@ display columns/2/.style={column name={$R_{CZ}$}},
 display columns/3/.style={column name={$Y_{CZ}$}},
 display columns/4/.style={column name={$Y_0$}},
 create on use/comp/.style={create col/set list={
-inversione,GS98,AGS05,AGSS09,C+11}},
+inversione,GS98,
+%AGS05,
+AGSS09
+%,C+11
+}},
 columns/comp/.style = {column type/.add={|}{}},
 columns/comp/.style={string type},
 columns/ZX/.style={string type},
@@ -1085,6 +1089,8 @@ columns={comp,ZX,RCZ,YCZ,Y0},
 \end{frame}
 
 \begin{wordonframe}{Accuratezza posizione base zona convettiva e abbondanza elio}
+
+Considero alcuni risultati dell'inversione sismologica per confrontare modelli solari con differente metallicit\'a.
 
 Confronto le caratteristiche della zona convettiva ricavati tramite inversione e  ricavate tramite 4 modelli (GS98: $Z/X=0.023$-AGSS09:$Z/X=0.018$) con diversa composizione: la diminuzione di metallicit'a delle recenti determinazioni della composizione della fotosfera comporta una diminuzione dell'opacit\'a con conseguente innalzamento della base della zon a con vettiva e la minore opacit\'a a parit\'a di luminosit\'a comporta una diminuzione della temperatura centrale (minore gradiente termico a parit\'a di flusso).
 
