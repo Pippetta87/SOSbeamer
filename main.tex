@@ -1038,64 +1038,6 @@ Analogamente  esprimo le differenze nelle frequenze dei modi in termini di varia
 \end{wordonframe}
 
 
-\begin{frame}{Caratteristiche zona convettiva}
-
-\begin{table}[!ht]%{r}{0.7\textwidth}
-
-\pgfplotstabletypeset[
-math/.style={%
-        preproc cell content/.append style={/pgfplots/table/@cell content/.add={$}{$}},
-    },
-every head row/.style={
- before row={\toprule
- %&\multicolumn{4}{c|}{Primordiale}
- },
- every last row/.style={after row=\bottomrule},
- after row={\midrule}
-},
-every last row/.style={after row=\bottomrule},
-every first column/.style={column type/.add={|}{}},
-every last column/.style={column type/.add={}{|}},
-%columns/0/.style = {column type/.add={|}{}},
-display columns/0/.style={column name={Composizione}},
-display columns/1/.style={column name={$Z/X$}},
-display columns/2/.style={column name={$R_{CZ}$}},
-display columns/3/.style={column name={$Y_{CZ}$}},
-display columns/4/.style={column name={$Y_0$}},
-create on use/comp/.style={create col/set list={
-inversione,GS98,
-%AGS05,
-AGSS09
-%,C+11
-}},
-columns/comp/.style = {column type/.add={|}{}},
-columns/comp/.style={string type},
-columns/ZX/.style={string type},
-columns/ZX/.append style={math},
-columns/RCZ/.style={string type},
-columns/RCZ/.append style={math},
-columns/YCZ/.style={string type},
-columns/YCZ/.append style={math},
-columns/Y0/.style={string type},
-columns/Y0/.append style={math},
-columns={comp,ZX,RCZ,YCZ,Y0},
-%/pgf/number format/precision=4
-     ]{CZvsZ.txt} %%%
-     \caption{Da \cite{basu2016global}.}
-\label{tab:CZZvar}
-\end{table}
-
-\end{frame}
-
-\begin{wordonframe}{Accuratezza posizione base zona convettiva e abbondanza elio}
-
-Considero alcuni risultati dell'inversione sismologica per confrontare modelli solari con differente metallicit\'a.
-
-Confronto le caratteristiche della zona convettiva ricavati tramite inversione e  ricavate tramite 4 modelli (GS98: $Z/X=0.023$-AGSS09:$Z/X=0.018$) con diversa composizione: la diminuzione di metallicit'a delle recenti determinazioni della composizione della fotosfera comporta una diminuzione dell'opacit\'a con conseguente innalzamento della base della zon a con vettiva e la minore opacit\'a a parit\'a di luminosit\'a comporta una diminuzione della temperatura centrale (minore gradiente termico a parit\'a di flusso).
-
-Le differenze quadratiche medie nel profilo della velocit\'a del suono sono  correlate con corretta predizione della posizione della zona convettiva: nel caso non si verifiche il modello non riproduce correttamente il gradiente termico ...
-
-\end{wordonframe}
 
 \begin{frame}{Correzioni al profilo radiale della velocit\'a del suono}
 
@@ -1695,6 +1637,66 @@ dove il kernel cross-term
 \mathcal{L}_{\rho,c^2}(r_0,r)=\sum_ic_i(r_0)K_{\rho,c^2}^i(r)
 \end{equation}
 controlla i contributi indesiderati di $\frac{\delta_r\rho}{\rho}$.
+
+\end{wordonframe}
+
+
+\begin{frame}{Caratteristiche zona convettiva}
+
+\begin{table}[!ht]%{r}{0.7\textwidth}
+
+\pgfplotstabletypeset[
+math/.style={%
+        preproc cell content/.append style={/pgfplots/table/@cell content/.add={$}{$}},
+    },
+every head row/.style={
+ before row={\toprule
+ %&\multicolumn{4}{c|}{Primordiale}
+ },
+ every last row/.style={after row=\bottomrule},
+ after row={\midrule}
+},
+every last row/.style={after row=\bottomrule},
+every first column/.style={column type/.add={|}{}},
+every last column/.style={column type/.add={}{|}},
+%columns/0/.style = {column type/.add={|}{}},
+display columns/0/.style={column name={Composizione}},
+display columns/1/.style={column name={$Z/X$}},
+display columns/2/.style={column name={$R_{CZ}$}},
+display columns/3/.style={column name={$Y_{CZ}$}},
+display columns/4/.style={column name={$Y_0$}},
+create on use/comp/.style={create col/set list={
+inversione,GS98,
+%AGS05,
+AGSS09
+%,C+11
+}},
+columns/comp/.style = {column type/.add={|}{}},
+columns/comp/.style={string type},
+columns/ZX/.style={string type},
+columns/ZX/.append style={math},
+columns/RCZ/.style={string type},
+columns/RCZ/.append style={math},
+columns/YCZ/.style={string type},
+columns/YCZ/.append style={math},
+columns/Y0/.style={string type},
+columns/Y0/.append style={math},
+columns={comp,ZX,RCZ,YCZ,Y0},
+%/pgf/number format/precision=4
+     ]{CZvsZ.txt} %%%
+     \caption{Da \cite{basu2016global}.}
+\label{tab:CZZvar}
+\end{table}
+
+\end{frame}
+
+\begin{wordonframe}{Accuratezza posizione base zona convettiva e abbondanza elio}
+
+Considero alcuni risultati dell'inversione sismologica per confrontare modelli solari con differente metallicit\'a.
+
+Confronto le caratteristiche della zona convettiva ricavati tramite inversione e  ricavate tramite 4 modelli (GS98: $Z/X=0.023$-AGSS09:$Z/X=0.018$) con diversa composizione: la diminuzione di metallicit'a delle recenti determinazioni della composizione della fotosfera comporta una diminuzione dell'opacit\'a con conseguente innalzamento della base della zon a con vettiva e la minore opacit\'a a parit\'a di luminosit\'a comporta una diminuzione della temperatura centrale (minore gradiente termico a parit\'a di flusso).
+
+Le differenze quadratiche medie nel profilo della velocit\'a del suono sono  correlate con corretta predizione della posizione della zona convettiva: nel caso non si verifiche il modello non riproduce correttamente il gradiente termico ...
 
 \end{wordonframe}
 
