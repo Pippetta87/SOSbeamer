@@ -1280,6 +1280,22 @@ L'efficienza delle regioni convettive esterne \'e quindi un parametro libero det
 \end{wordonframe}
 
 
+\begin{frame}{Modello del plasma solare}
+
+\begin{block}{Interazioni coulombiane}
+
+\end{block}
+
+\begin{block}{Contributi alla pressione e all'energia interna dalle interazioni Coulombiane}
+
+\end{block}
+
+\begin{block}{Ionizzazione da pressione.}
+
+\end{block}
+
+\end{frame}
+
 \begin{frame}{Modello plasma solare}
 
 \begin{block}{Processi che contribuiscono all'opacit\'a}
@@ -1322,12 +1338,34 @@ C'\'e un ulteriore correzione che tiene conto della frazione di emissione sponta
 
 \begin{frame}{Catena PP}
 
+\begin{columns}
+
+\begin{column}{0.7\textwidth}
+
 \begin{block}{Contributo della fusione di nuclei $(i,j)$ alla produzione di energia per grammo}
 
 \begin{align*}
 &\epsilon_{ij}=\frac{1}{1+\delta_{ij}}Q_{ij}\frac{\rho N_A^2X_iX_j}{{A_iA_j}}\exv{\sigma v}_{ij}%\label{eq:energyrate}
 \end{align*}
 \end{block}
+
+\end{column}
+
+\begin{column}{0.4\textwidth}
+
+\begin{block}{Perdite in neutrini (Sole)}
+\begin{tabular}{cc}
+Ramo&$Q_{eff} (MeV)$\\
+PP1&$26.2 (2\%)$\\
+PP2&$25.66  (4\%)$\\
+PP3 &$19.17 (28\%)$\\
+\end{tabular}
+
+\end{block}
+
+\end{column}
+
+\end{columns}
 
 
 \begin{columns}
@@ -1421,16 +1459,6 @@ minimum width=25mm,%
 
 \begin{column}{0.35\textwidth}
 
-\begin{block}{Perdite in neutrini (Sole)}
-\begin{tabular}{cc}
-Ramo&$Q_{eff} (MeV)$\\
-PP1&$26.2 (2\%)$\\
-PP2&$25.66  (4\%)$\\
-PP3 &$19.17 (28\%)$\\
-\end{tabular}
-
-\end{block}
-
 \begin{block}{Tempo di vita}
 
 {\small\begin{tabular}{cc}
@@ -1438,7 +1466,11 @@ PP3 &$19.17 (28\%)$\\
 $\cel{H}{1}{}{}(p,e^+\Pnue)\cel{D}{2}{}{}$&\num{8e9}\\
 $\cel{D}{2}{}{}(p,\gamma)\cel{He}{3}{}{}$&\num{4.4e-8}\\
 $\cel{He}{3}{}{}(\cel{He}{3}{}{},2p)\cel{He}{4}{}{}$&\num{2.4e5}\\
-%$\cel{B}{8}{}{}\cel{Be}{8}{}{}^*\cel{He}{4}{}{}$&\num{3e-8}\\
+$\cel{He}{3}{}{}(\alpha,\gamma)\cel{Be}{7}{}{}$&\num{9.7e5}\\
+$\cel{Be}{7}{}{}(\Pelectron,\Pnu)\cel{Li}{7}{}{}$&\num{3.9e-1}\\
+$\cel{Li}{7}{}{}(p,\alpha)\cel{He}{4}{}{}$&\num{1.8e-5}\\
+$\cel{Be}{7}{}{}(p,\gamma)\cel{B}{8}{}{}$&\num{6.6e1}\\
+$\cel{B}{8}{}{}\cel{Be}{8}{}{}^*\cel{He}{4}{}{}$&\num{3e-8}\\
 
 \end{tabular}
 }
@@ -1546,6 +1578,14 @@ La PSD $P_T(\nu)=\frac{1}{T_{obs}}|X_T(\nu)|^2$ contiene oltre al picco principa
 L'energia dell'oscillatore varia su tempi scala proporzionali a $\invers{\Gamma}_{nl}$ attorno al valor medio $\bar{E}_{nl}$:
 
 \end{wordonframe}
+
+\begin{frame}{JWKB}
+
+\begin{equation*}
+\TtwoDy{z}{\psi}+k^2f(z)\psi=0
+\end{equation*}
+
+\end{frame}
 
 \begin{frame}{Effetti delle regioni superficiali sulle frequenze dei modi}
 
